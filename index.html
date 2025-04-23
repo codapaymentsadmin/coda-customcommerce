@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<title>Document</title>
+		<link type="text/tailwindcss" href="./style.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/daisyui@5"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+		/>
+	</head>
+	<body class="bg-gray-100/50">
+		<!-- Navbar -->
+		<header class="w-full bg-white shadow-lg">
+			<div class="navbar max-w-7xl mx-auto">
+				<div class="flex-1">
+					<a class="btn btn-ghost text-xl">Company Name</a>
+				</div>
+				<div class="flex-none">
+					<ul
+						class="menu menu-horizontal hidden sm:flex items-center px-1"
+					>
+						<li><a>Contact Support</a></li>
+						<li><a>Visit Webstore</a></li>
+						<div
+							class="divider divider-horizontal divider-neutral"
+						></div>
+						<li>
+							<details>
+								<summary class="btn btn-ghost">English</summary>
+								<ul class="bg-base-100 rounded-t-none p-2">
+									<li><a>English</a></li>
+									<li><a>Germany</a></li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<div
+						id="hamburger-btn"
+						tabindex="0"
+						role="button"
+						class="btn btn-ghost sm:hidden"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-5 w-5"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M4 6h16M4 12h16M4 18h7"
+							/>
+						</svg>
+					</div>
+				</div>
+			</div>
+			<!-- Menu drawer on mobile -->
+			<ul
+				id="mobile-drawer"
+				class="menu bg-base-200 rounded-box w-full hidden sm:hidden"
+			>
+				<li><a>Contact Support</a></li>
+				<li><a>Visit Webstore</a></li>
+				<li>
+					<details>
+						<summary
+							class="!active:bg-sky-500 hover:bg-sky-500 focus:bg-sky-500 focus-within:bg-sky-500 visited:bg-sky-500 focus-visible:bg-sky-500 focus:text-white"
+						>
+							Parent
+						</summary>
+						<ul>
+							<li><a>Submenu 1</a></li>
+							<li><a>Submenu 2</a></li>
+						</ul>
+					</details>
+				</li>
+			</ul>
+		</header>
+
+		<!-- Hero Section -->
+		<section
+			id="cc-hero-section"
+			class="hero min-h-[50dvh]"
+			style="
+				background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);
+			"
+		>
+			<div class="hero-overlay"></div>
+			<div
+				class="hero-content w-full max-w-3xl text-neutral-content text-center"
+			>
+				<div class="w-full">
+					<h1 class="mb-5 text-3xl font-bold">
+						How can we help you today?
+					</h1>
+					<label
+						class="input max-md:w-full md:w-2/3 lg:w-full focus-within:outline-sky-500 h-12"
+					>
+						<svg
+							class="h-[1em] opacity-50"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+						>
+							<g
+								stroke-linejoin="round"
+								stroke-linecap="round"
+								stroke-width="2.5"
+								fill="none"
+								stroke="black"
+							>
+								<circle cx="11" cy="11" r="8"></circle>
+								<path d="m21 21-4.3-4.3"></path>
+							</g>
+						</svg>
+						<input
+							type="search"
+							required
+							placeholder="Search"
+							class="text-black"
+						/>
+					</label>
+				</div>
+			</div>
+		</section>
+
+		<section
+			id="popular-resource-section"
+			class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12"
+		>
+			<div class="flex flex-col items-center">
+				<h2 class="text-3xl font-bold">Popular Resources</h2>
+				<p class="text-center text-gray-500 mt-2">
+					Our most helpful articles based on user feedback
+				</p>
+				<ul class="w-full list mt-8 gap-4">
+					<li>
+						<button
+							class="btn btn-block btn-outline btn-info hover:opacity-75 items-center justify-between hover:text-white py-6"
+						>
+							Lorem ipsum dolor sit
+							<i class="ph ph-arrow-right"></i>
+						</button>
+					</li>
+					<li>
+						<button
+							class="btn btn-block btn-outline btn-info hover:opacity-75 items-center justify-between hover:text-white py-6"
+						>
+							Lorem ipsum dolor sit
+							<i class="ph ph-arrow-right"></i>
+						</button>
+					</li>
+					<li>
+						<button
+							class="btn btn-block btn-outline btn-info hover:opacity-75 items-center justify-between hover:text-white py-6"
+						>
+							Lorem ipsum dolor sit
+							<i class="ph ph-arrow-right"></i>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section
+			id="self-service-articles-section"
+			class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12"
+		>
+			<div class="flex flex-col items-center">
+				<h2 class="text-3xl font-bold">Self Service Support Center</h2>
+				<p class="text-center text-gray-500 mt-2">
+					Get instant help by exploring our well-organized knowledge
+					base.
+				</p>
+				<ul class="w-full list mt-8 gap-4">
+					<div
+						class="collapse collapse-arrow bg-base-100 border border-base-300"
+					>
+						<input type="radio" name="my-accordion-2" />
+						<div class="collapse-title font-semibold">
+							<h5 class="text-lg font-semibold">
+								How do I create an account?
+							</h5>
+							<p class="text-gray-500 font-light">
+								Lorem ipsum dolor sit amet consectetur
+								adipisicing elit.
+							</p>
+						</div>
+						<div class="collapse-content text-sm">
+							Click the "Sign Up" button in the top right corner
+							and follow the registration process.
+						</div>
+					</div>
+					<div
+						class="collapse collapse-arrow bg-base-100 border border-base-300"
+					>
+						<input type="radio" name="my-accordion-2" />
+						<div class="collapse-title font-semibold">
+							<h5 class="text-lg font-semibold">
+								How do I create an account?
+							</h5>
+							<p class="text-gray-500 font-light">
+								Lorem ipsum dolor sit amet consectetur
+								adipisicing elit.
+							</p>
+						</div>
+						<div class="collapse-content text-sm">
+							Click the "Sign Up" button in the top right corner
+							and follow the registration process.
+						</div>
+					</div>
+					<div
+						class="collapse collapse-arrow bg-base-100 border border-base-300"
+					>
+						<input type="radio" name="my-accordion-2" />
+						<div class="collapse-title font-semibold">
+							<h5 class="text-lg font-semibold">
+								How do I create an account?
+							</h5>
+							<p class="text-gray-500 font-light">
+								Lorem ipsum dolor sit amet consectetur
+								adipisicing elit.
+							</p>
+						</div>
+						<div class="collapse-content text-sm">
+							Click the "Sign Up" button in the top right corner
+							and follow the registration process.
+						</div>
+					</div>
+				</ul>
+			</div>
+		</section>
+
+		<section
+			id="self-service-articles-section"
+			class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12"
+		>
+			<div class="flex flex-col items-center">
+				<div
+					class="p-4 flex items-center justify-center rounded-full bg-sky-200"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="32"
+						height="32"
+						fill="#000000"
+						viewBox="0 0 256 256"
+					>
+						<path
+							d="M144,180a16,16,0,1,1-16-16A16,16,0,0,1,144,180Zm92-52A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128ZM128,64c-24.26,0-44,17.94-44,40v4a12,12,0,0,0,24,0v-4c0-8.82,9-16,20-16s20,7.18,20,16-9,16-20,16a12,12,0,0,0-12,12v8a12,12,0,0,0,23.73,2.56C158.31,137.88,172,122.37,172,104,172,81.94,152.26,64,128,64Z"
+						></path>
+					</svg>
+				</div>
+				<h2 class="text-3xl font-bold mt-2">
+					Have questions or need assistance?
+				</h2>
+				<p class="text-center text-gray-500 mt-2">
+					Our dedicated support team is ready to help you resolve any
+					issues quickly and efficiently.
+				</p>
+				<button class="btn btn-info text-white mt-4">
+					Contact Support
+				</button>
+			</div>
+		</section>
+		<footer
+			class="footer sm:footer-horizontal bg-white text-neutral-content items-center p-4 border-t border-gray-100"
+		>
+			<aside class="flex flex-col items-start gap-1">
+				<h5 class="text-md text-black font-semibold">Company Name</h5>
+				<p class="text-sm text-gray-500">
+					Copyright © 2025 - All right reserved
+				</p>
+			</aside>
+			<nav
+				class="grid-flow-col gap-4 md:place-self-center md:justify-self-end"
+			>
+				<a class="link link-hover text-gray-500"> Privacy Policy </a>
+				<a class="link link-hover text-gray-500">
+					Terms & Conditions
+				</a>
+			</nav>
+		</footer>
+	</body>
+
+	<script src="./main.js"></script>
+</html>
