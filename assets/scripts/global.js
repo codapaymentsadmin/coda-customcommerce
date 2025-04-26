@@ -1,3 +1,4 @@
+document.documentElement.setAttribute("data-theme", "light");
 document.addEventListener("DOMContentLoaded", () => {
 	const hamburgBtn = document.getElementById("hamburger-btn");
 	const mobileDrawer = document.getElementById("mobile-drawer");

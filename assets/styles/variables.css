@@ -1,0 +1,22 @@
+@theme {
+	--color-brand: $brand_color;
+	--color-brand-text: $brand_text_color;
+	--color-main-text: $text_color;
+	--color-link: $link_color;
+	--color-link-hover: $hover_link_color;
+	--color-link-visited: $visited_link_color;
+	--color-bg-main: $background_color;
+	--font-heading: $heading_font;
+	--font-main-text: $text_font;
+}
+:root {
+	--color-brand: $brand_color;
+	--color-brand-text: $brand_text_color;
+	--color-main-text: $text_color;
+	--color-link: $link_color;
+	--color-link-hover: $hover_link_color;
+	--color-link-visited: $visited_link_color;
+	--color-bg-main: $background_color;
+	--font-heading: $heading_font;
+	--font-main-text: $text_font;
+}

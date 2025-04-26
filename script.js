@@ -1,0 +1,1 @@
+document.documentElement.setAttribute("data-theme","light");document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("hamburger-btn"),t=document.getElementById("mobile-drawer");e.addEventListener("click",()=>{t.classList.contains("hidden")?(t.classList.remove("hidden"),e.classList.add("open")):(t.classList.add("hidden"),e.classList.remove("open"))})});

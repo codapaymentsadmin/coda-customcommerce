@@ -1,12 +1,32 @@
 {
-  "name": "cc-html",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+	"name": "cc-html",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"watch": "vite",
+		"serve": "vite preview",
+		"watch:css": "npx @tailwindcss/cli -i ./assets/styles/style.css -o ./style.css --watch",
+		"build:css": "npx @tailwindcss/cli -i ./assets/styles/style.css -o ./style.css --minify",
+		"preview": "zcli themes:preview --port 8080"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a",
+	"devDependencies": {
+		"autoprefixer": "^10.4.21",
+		"postcss": "^8.5.3",
+		"postcss-nested": "^7.0.2",
+		"tailwindcss": "^4.1.4",
+		"vite": "^6.3.2"
+	},
+	"dependencies": {
+		"@tailwindcss/cli": "^4.1.4",
+		"@tailwindcss/postcss": "^4.1.4",
+		"@tailwindcss/vite": "^4.1.4",
+		"daisyui": "^5.0.28"
+	}
 }

@@ -1,0 +1,127 @@
+<!-- Hero Section -->
+<section
+	id="cc-hero-section"
+	class="hero min-h-[50dvh]"
+	style="background-image: url({{settings.homepage_background_image}});"
+>
+	<div class="hero-overlay"></div>
+	<div class="hero-content w-full max-w-3xl text-neutral-content text-center">
+		<div class="w-full">
+			<h1 class="mb-5 text-white font-bold">
+				How can we help you today?
+			</h1>
+			{{search
+				instant=true
+				class="input max-md:w-full md:w-2/3 lg:w-full focus-within:outline-sky-500 rounded-lg text-black h-12 py-1"
+			}}
+		</div>
+	</div>
+</section>
+
+<section
+	id="popular-resource-section"
+	class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12"
+>
+	<div class="flex flex-col items-center">
+		<h2 class="text-3xl font-bold">Popular Resources</h2>
+		<p class="text-center text-gray-500 mt-2">
+			Our most helpful articles based on user feedback
+		</p>
+		<ul class="w-full list mt-8 gap-4">
+			{{#each promoted_articles}}
+				<li id="article-{{id}}">
+					<a
+						href="{{url}}"
+						class="btn btn-block border-brand text-brand hover:bg-brand hover:opacity-75 items-center justify-between hover:text-white py-6"
+					>
+						{{title}}
+						<i class="ph ph-arrow-right"></i>
+					</a>
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+</section>
+
+<section
+	id="self-service-articles-section"
+	class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12"
+>
+	<div class="flex flex-col items-center">
+		<h2 class="text-3xl font-bold">Self Service Support Center</h2>
+		<p class="text-center text-gray-500 mt-2">
+			Get instant help by exploring our well-organized knowledge base.
+		</p>
+		<ul class="w-full list mt-8 gap-4">
+			{{#each categories}}
+				{{#each sections}}
+					<div
+						class="collapse collapse-arrow bg-white border border-gray-200 shadow-sm"
+					>
+						<input type="radio" name="my-accordion-2" />
+						<div class="collapse-title font-semibold">
+							<h4 class="text-lg font-semibold">
+								{{name}}
+							</h4>
+							<p class="text-gray-500 font-light">
+								{{description}}
+							</p>
+						</div>
+						<div
+							id="article-{{id}}"
+							class="collapse-content text-sm gap-2"
+						>
+							<div class="w-full flex flex-col gap-2">
+								{{#each articles}}
+									<a
+										href="{{url}}"
+										class="btn btn-block btn-outline btn-info hover:opacity-75 items-center justify-between hover:text-white text-sm py-4"
+									>
+										{{title}}
+										<i class="ph ph-arrow-right"></i>
+									</a>
+								{{/each}}
+							</div>
+						</div>
+					</div>
+				{{/each}}
+			{{/each}}
+		</ul>
+	</div>
+</section>
+
+<section
+	id="self-service-articles-section"
+	class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12"
+>
+	<div class="flex flex-col items-center">
+		<div
+			class="p-4 flex items-center justify-center rounded-full bg-sky-200"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="32"
+				height="32"
+				fill="#000000"
+				viewBox="0 0 256 256"
+			>
+				<path
+					d="M144,180a16,16,0,1,1-16-16A16,16,0,0,1,144,180Zm92-52A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128ZM128,64c-24.26,0-44,17.94-44,40v4a12,12,0,0,0,24,0v-4c0-8.82,9-16,20-16s20,7.18,20,16-9,16-20,16a12,12,0,0,0-12,12v8a12,12,0,0,0,23.73,2.56C158.31,137.88,172,122.37,172,104,172,81.94,152.26,64,128,64Z"
+				></path>
+			</svg>
+		</div>
+		<h2 class="text-3xl font-bold mt-2">
+			Have questions or need assistance?
+		</h2>
+		<p class="text-center text-gray-500 mt-2">
+			Our dedicated support team is ready to help you resolve any issues
+			quickly and efficiently.
+		</p>
+		<a
+			href="{{page_path 'new_request'}}"
+			class="btn btn-info text-white mt-4"
+		>
+			Contact Support
+		</a>
+	</div>
+</section>

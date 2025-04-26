@@ -1,0 +1,97 @@
+@import "./variables.css";
+
+@layer components {
+	form.request-form {
+		@apply flex flex-col gap-4;
+
+		div.form-field {
+			@apply flex flex-col gap-2;
+
+			label {
+				@apply text-sm font-semibold;
+			}
+
+			&.request_cc_emails ul[data-hc-pills-container="true"] {
+				@apply !w-full !text-sm !text-black !rounded-lg border-gray-200;
+
+				&:focus {
+					outline-color: var(--color-brand);
+				}
+
+				&[data-hc-focus="true"] {
+					outline-color: var(--color-brand) !important;
+					border-color: var(--color-brand);
+				}
+
+				li {
+					@apply w-full !border-none;
+
+					input[type="text"] {
+						@apply !w-full input;
+					}
+				}
+			}
+
+			/* TEXT AND TEXTAREA INPUT */
+			input[type="text"],
+			input[type="textarea"] {
+				@apply input w-full text-black border-gray-200 rounded-lg;
+
+				&:focus,
+				&:focus-within {
+					outline-color: var(--color-brand);
+				}
+			}
+
+			/* SELECT INPUT */
+			a.nesty-input {
+				@apply !h-[40px] !flex !items-center !text-sm !text-black !rounded-lg !border-gray-200;
+			}
+
+			/* Attachments input */
+			.upload-dropzone {
+				input[type="file"] {
+					@apply !rounded-lg;
+					border: 1px dashed #99a1af;
+				}
+
+				span {
+					@apply !text-sm !text-gray-400;
+				}
+			}
+			ul.upload-pool {
+				li.upload-item {
+					@apply flex items-center justify-between;
+
+					svg {
+						@apply w-5 h-5;
+					}
+
+					a.upload-link {
+						@apply text-sm w-1/2 text-ellipsis overflow-hidden whitespace-nowrap;
+					}
+
+					div.upload-progress {
+						@apply w-[75%];
+					}
+
+					span.upload-remove {
+						@apply order-last;
+					}
+				}
+			}
+
+			div.notification.notification-error,
+			p {
+				@apply !text-sm text-red-500;
+			}
+		}
+
+		footer {
+			input[type="submit"] {
+				@apply btn btn-block transition-colors rounded-lg text-sm text-white;
+				background-color: var(--color-brand) !important;
+			}
+		}
+	}
+}
