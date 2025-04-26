@@ -24,8 +24,8 @@
 				{
 					"identifier": "brand_name",
 					"type": "text",
-					"description": "",
-					"label": "",
+					"description": "show_brand_name_description",
+					"label": "show_brand_name_description",
 					"value": "Custom Commerce"
 				},
 				{
