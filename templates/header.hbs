@@ -6,12 +6,18 @@
 				href="{{page_path 'help_center'}}"
 				class="link no-underline text-xl"
 			>{{settings.brand_name}}</a> -->
-			<a href="{{page_path 'help_center'}}">
+			<a
+				href="{{page_path 'help_center'}}"
+				class="flex items-center gap-2"
+			>
 				<img
 					src="{{settings.logo}}"
 					alt="{{settings.brand_name}}"
 					class="w-32 h-auto"
 				/>
+				{{#if settings.show_brand_name}}
+					{{settings.brand_name}}
+				{{/if}}
 			</a>
 		</div>
 		<div class="flex-none">
