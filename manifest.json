@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -62,7 +62,7 @@
 				},
 				{
 					"identifier": "infobar_text_color",
-					"type": "text",
+					"type": "color",
 					"description": "infobar_text_color_description",
 					"label": "infobar_text_color_label",
 					"value": "#fff"
