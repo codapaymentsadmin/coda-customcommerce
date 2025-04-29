@@ -9,6 +9,8 @@
 	--color-link-hover: $hover_link_color;
 	--color-link-visited: $visited_link_color;
 	--color-bg-main: $background_color;
+	--color-infobar-bg: $infobar_bg_color;
+	--color-infobar-text: $infobar_text_color;
 	--font-heading: $heading_font;
 	--font-main-text: $text_font;
 }

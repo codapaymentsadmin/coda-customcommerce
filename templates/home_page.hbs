@@ -1,3 +1,33 @@
+<!-- Infobar -->
+<section id="infobar-container" class="w-full flex flex-col">
+	<!-- {{dc "ea_fcm_hc_infobar_global"}} -->
+	{{#if settings.show_infobar_global}}
+		<div
+			id="infobar-component"
+			class="infobar-component w-full bg-infobar-bg"
+		>
+			<div
+				role="alert"
+				class="alert bg-infobar-bg flex items-center max-w-7xl mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none"
+			>
+				<i
+					class="ph ph-bold ph-info text-2xl text-infobar-text me-2"
+				></i>
+				<div id="infobar-content">
+					<p
+						class="!text-sm text-center text-infobar-text font-semibold"
+					>
+						{{settings.infobar_content_global}}
+					</p>
+				</div>
+				<span class="infobar-dismiss ms-auto cursor-pointer">
+					<i class="ph ph-x text-infobar-text"></i>
+				</span>
+			</div>
+		</div>
+	{{/if}}
+</section>
+
 <!-- Hero Section -->
 <section
 	id="cc-hero-section"
@@ -32,7 +62,7 @@
 				<li id="article-{{id}}">
 					<a
 						href="{{url}}"
-						class="btn btn-block border-brand text-brand hover:bg-brand hover:opacity-75 items-center justify-between hover:text-white py-6"
+						class="btn btn-md h-[50px] flex items-center justify-between border-brand text-brand hover:bg-brand transition-colors rounded-lg hover:text-white text-start text-sm line-clamp-1 leading-4"
 					>
 						{{title}}
 						<i class="ph ph-arrow-right"></i>
@@ -75,7 +105,7 @@
 								{{#each articles}}
 									<a
 										href="{{url}}"
-										class="btn btn-block btn-outline btn-info hover:opacity-75 items-center justify-between hover:text-white text-sm py-4"
+										class="btn border-brand text-brand text-start line-clamp-1 bg-white hover:bg-brand hover:opacity-75 items-center justify-between hover:text-white py-6"
 									>
 										{{title}}
 										<i class="ph ph-arrow-right"></i>
@@ -119,7 +149,7 @@
 		</p>
 		<a
 			href="{{page_path 'new_request'}}"
-			class="btn btn-info text-white mt-4"
+			class="btn bg-brand/90 text-white hover:bg-brand text-white mt-4"
 		>
 			Contact Support
 		</a>

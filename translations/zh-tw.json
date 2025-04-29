@@ -72,5 +72,15 @@
   "text_font_description": "主體文字字型",
   "text_font_label": "文字字型",
   "visited_link_color_description": "已造訪連結元素文字色彩",
-  "visited_link_color_label": "已造訪連結色彩"
+  "visited_link_color_label": "已造訪連結色彩",
+  "show_infobar_label": "Show infobar",
+	"show_infobar_description": "Show infobar on the homepage",
+	"infobar_content_label": "Infobar content",
+	"infobar_content_description": "Content of the infobar (use dynamic content for multiple language)",
+	"infobar_bg_color_label": "Infobar background color",
+	"infobar_bg_color_description": "Background color of the infobar",
+	"infobar_text_color_label": "Infobar text color",
+	"infobar_text_color_description": "Text color of the infobar",
+	"brand_name_label": "Brand name",
+	"brand_name_description": "Name of your Help Center"
 }
