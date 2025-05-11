@@ -3,13 +3,18 @@
 >
 	<aside class="flex flex-col items-start gap-1">
 		<h4 class="text-black font-semibold">{{settings.brand_name}}</h4>
-		<p class="!text-sm text-gray-500">
-			Copyright © 2025 - All right reserved
-		</p>
+		{{#if settings.show_copyright}}
+			<p class="!text-sm text-gray-500">
+				Copyright © 2025 - All right reserved
+			</p>
+		{{/if}}
 	</aside>
 	<nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-		<a class="link link-hover text-gray-500"> Privacy Policy </a>
-		<a class="link link-hover text-gray-500">
+		<a
+			href="{{settings.privacy_link}}"
+			class="link link-hover text-gray-500"
+		> Privacy Policy </a>
+		<a href="{{settings.terms_link}}" class="link link-hover text-gray-500">
 			Terms & Conditions
 		</a>
 	</nav>

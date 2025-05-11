@@ -36,7 +36,7 @@
 	"heading_font_description": "خط العناوين",
 	"heading_font_label": "خط العناوين",
 	"home_page_group_label": "عناصر الصفحة الرئيسية",
-	"homepage_background_image_description": "صورة الخلفية الرئيسية للصفحة الرئيسية",
+	"homepage_background_image_description": "Recommended: 1600x300, .webp format.",
 	"homepage_background_image_label": "صورة الخلفية الرئيسية للصفحة الرئيسية",
 	"hover_link_color_description": "لون النص لحالة التحويم الخاصة بعناصر الارتباط",
 	"hover_link_color_label": "لون ارتباط التحويم",
@@ -75,6 +75,8 @@
 	"visited_link_color_label": "لون الروابط التي تمت زيارتها",
 	"show_infobar_label": "Show infobar",
 	"show_infobar_description": "Show infobar on the homepage",
+	"show_warning_infobar_label": "Show warning infobar",
+	"show_warning_infobar_description": "Show warning infobar on the homepage",
 	"infobar_content_label": "Infobar content",
 	"infobar_content_description": "Content of the infobar (use dynamic content for multiple language)",
 	"infobar_bg_color_label": "Infobar background color",
@@ -83,5 +85,9 @@
 	"infobar_text_color_description": "Text color of the infobar",
 	"brand_name_label": "Brand name",
 	"brand_name_description": "Name of your Help Center",
-	"infobar_group_label": "Infobar"
+	"infobar_group_label": "Infobar",
+	"terms_link_description": "Link to your terms of service",
+	"terms_link_label": "Terms of service link",
+	"privacy_link_description": "Link to your privacy policy",
+	"privacy_link_label": "Privacy policy link"
 }

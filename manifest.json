@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -47,11 +47,11 @@
 					"value": true
 				},
 				{
-					"identifier": "infobar_content_global",
-					"type": "text",
-					"description": "infobar_content_description",
-					"label": "infobar_content_label",
-					"value": "Infobar Content"
+					"identifier": "show_warning_infobar_global",
+					"type": "checkbox",
+					"description": "show_warning_infobar_description",
+					"label": "show_warning_infobar_label",
+					"value": true
 				},
 				{
 					"identifier": "infobar_bg_color",
@@ -119,7 +119,7 @@
 					"type": "color",
 					"description": "background_color_description",
 					"label": "background_color_label",
-					"value": "#fafaf9"
+					"value": "#f8fafc"
 				}
 			]
 		},
@@ -282,6 +282,32 @@
 					"type": "file",
 					"description": "homepage_background_image_description",
 					"label": "homepage_background_image_label"
+				}
+			]
+		},
+		{
+			"label": "footer_group_label",
+			"variables": [
+				{
+					"identifier": "terms_link",
+					"type": "text",
+					"description": "terms_link_description",
+					"label": "terms_link_label",
+					"value": "https://codashop.com/"
+				},
+				{
+					"identifier": "privacy_link",
+					"type": "text",
+					"description": "privacy_link_description",
+					"label": "privacy_link_label",
+					"value": "https://codashop.com/"
+				},
+				{
+					"identifier": "show_copyright",
+					"type": "checkbox",
+					"description": "show_copyright_description",
+					"label": "show_copyright_label",
+					"value": true
 				}
 			]
 		}

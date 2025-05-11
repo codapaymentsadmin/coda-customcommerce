@@ -36,7 +36,7 @@
 	"heading_font_description": "머리글의 글꼴",
 	"heading_font_label": "머리글 글꼴",
 	"home_page_group_label": "홈 페이지 요소",
-	"homepage_background_image_description": "홈 페이지의 히어로 이미지",
+	"homepage_background_image_description": "Recommended: 1600x300, .webp format",
 	"homepage_background_image_label": "홈 히어로 이미지",
 	"hover_link_color_description": "링크 요소의 마우스오버 상태에 대한 텍스트 색",
 	"hover_link_color_label": "마우스오버 링크 색",
@@ -75,6 +75,8 @@
 	"visited_link_color_label": "방문한 링크 색",
 	"show_infobar_label": "Show infobar",
 	"show_infobar_description": "Show infobar on the homepage",
+	"show_warning_infobar_label": "Show warning infobar",
+	"show_warning_infobar_description": "Show warning infobar on the homepage",
 	"infobar_content_label": "Infobar content",
 	"infobar_content_description": "Content of the infobar (use dynamic content for multiple language)",
 	"infobar_bg_color_label": "Infobar background color",
@@ -83,5 +85,9 @@
 	"infobar_text_color_description": "Text color of the infobar",
 	"brand_name_label": "Brand name",
 	"brand_name_description": "Name of your Help Center",
-	"infobar_group_label": "Infobar"
+	"infobar_group_label": "Infobar",
+	"terms_link_description": "Link to your terms of service",
+	"terms_link_label": "Terms of service link",
+	"privacy_link_description": "Link to your privacy policy",
+	"privacy_link_label": "Privacy policy link"
 }

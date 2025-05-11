@@ -22,17 +22,17 @@
 		</div>
 		<div class="flex-none">
 			<ul class="menu menu-horizontal hidden sm:flex items-center px-1">
-				<li><a href="{{page_path 'new_request'}}">Contact Support</a></li>
+				<li>
+					<a id="dynamic-link" href=""></a>
+				</li>
 				<li><a>Visit Webstore</a></li>
-				{{#if alternative_locales}}
-					<div
-						class="divider divider-horizontal divider-neutral"
-					></div>
-					<li>
-						<details>
-							<summary
-								class="btn btn-ghost"
-							>{{current_locale.name}}</summary>
+				<div class="divider divider-horizontal divider-neutral"></div>
+				<li>
+					<details>
+						<summary
+							class="btn btn-ghost btn-sm"
+						>{{current_locale.name}}</summary>
+						{{#if alternative_locales}}
 							<ul
 								class="bg-white shadow-sm border border-gray-200 rounded-t-none p-2"
 							>
@@ -43,9 +43,9 @@
 										>{{name}}</a></li>
 								{{/each}}
 							</ul>
-						</details>
-					</li>
-				{{/if}}
+						{{/if}}
+					</details>
+				</li>
 			</ul>
 			<div
 				id="hamburger-btn"
@@ -75,19 +75,31 @@
 		id="mobile-drawer"
 		class="menu bg-base-200 rounded-box w-full hidden sm:hidden"
 	>
-		<li><a href="{{page_path 'new_request'}}">Contact Support</a></li>
+		<li>
+			{{#if (page_path "new_request")}}
+				<a href="{{page_path 'help_center'}}">FAQs</a>
+			{{else}}
+				<a href="{{page_path 'new_request'}}">Contact Support</a>
+			{{/if}}
+		</li>
 		<li><a>Visit Webstore</a></li>
 		<li>
 			<details>
 				<summary
-					class="!active:bg-sky-500 hover:bg-sky-500 focus:bg-sky-500 focus-within:bg-sky-500 visited:bg-sky-500 focus-visible:bg-sky-500 focus:text-white"
-				>
-					Parent
-				</summary>
-				<ul>
-					<li><a>Submenu 1</a></li>
-					<li><a>Submenu 2</a></li>
-				</ul>
+					class="btn btn-ghost btn-sm"
+				>{{current_locale.name}}</summary>
+				{{#if alternative_locales}}
+					<ul
+						class="bg-white shadow-sm border border-gray-200 rounded-t-none p-2"
+					>
+						{{#each alternative_locales}}
+							<li><a
+									href="{{url}}"
+									dir="{{direction}}"
+								>{{name}}</a></li>
+						{{/each}}
+					</ul>
+				{{/if}}
 			</details>
 		</li>
 	</ul>

@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	const hamburgBtn = document.getElementById("hamburger-btn");
 	const mobileDrawer = document.getElementById("mobile-drawer");
 	const infobars = document.querySelectorAll(".infobar-component");
+	const dynamicLink = document.getElementById("dynamic-link");
+
+	const currentPath = window.location.pathname;
+	const currentLocale = window.location.pathname.split("/")[2];
 
 	hamburgBtn.addEventListener("click", () => {
 		if (mobileDrawer.classList.contains("hidden")) {
@@ -22,5 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
 				bar.classList.add("hidden");
 			});
 		});
+	}
+
+	if (currentPath.includes("/requests/new")) {
+		dynamicLink.href = `/hc/${currentLocale}`;
+		dynamicLink.textContent = "FAQs";
+	} else {
+		dynamicLink.href = `/hc/${currentLocale}/requests/new`;
+		dynamicLink.textContent = "Contact Support";
 	}
 });

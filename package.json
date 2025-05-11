@@ -27,6 +27,7 @@
 		"@tailwindcss/cli": "^4.1.4",
 		"@tailwindcss/postcss": "^4.1.4",
 		"@tailwindcss/vite": "^4.1.4",
-		"daisyui": "^5.0.28"
+		"daisyui": "^5.0.28",
+		"handlebars": "^4.7.8"
 	}
 }
