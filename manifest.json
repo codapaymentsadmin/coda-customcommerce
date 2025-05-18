@@ -317,13 +317,6 @@
 					"value": "Privacy Policy"
 				},
 				{
-					"identifier": "privacy_link",
-					"type": "text",
-					"description": "privacy_link_description",
-					"label": "privacy_link_label",
-					"value": "https://codashop.com/"
-				},
-				{
 					"identifier": "show_copyright",
 					"type": "checkbox",
 					"description": "show_copyright_description",
