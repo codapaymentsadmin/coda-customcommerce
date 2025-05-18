@@ -90,6 +90,12 @@
 	"terms_link_label": "Terms of service link",
 	"privacy_link_description": "Link to your privacy policy",
 	"privacy_link_label": "Privacy policy link",
+	"terms_condition_description": "Text content for terms and conditions link",
+	"terms_condition_label": "Terms and Conditions",
+	"privacy_policy_description": "Text content for privacy policy link",
+	"privacy_policy_label": "Privacy policy",
 	"show_copyright_label": "Show copyright",
-	"show_copyright_description": "Show copyright text on the footer"
+	"show_copyright_description": "Show copyright text on the footer",
+	"copyright_text_label": "Copyright text content",
+	"copyright_text_description": "Set the copyright text content"
 }

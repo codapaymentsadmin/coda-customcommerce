@@ -27,12 +27,12 @@
 				</li>
 				<li><a>Visit Webstore</a></li>
 				<div class="divider divider-horizontal divider-neutral"></div>
-				<li>
-					<details>
-						<summary
-							class="btn btn-ghost btn-sm"
-						>{{current_locale.name}}</summary>
-						{{#if alternative_locales}}
+				{{#if alternative_locales}}
+					<li>
+						<details>
+							<summary
+								class="btn btn-ghost"
+							>{{current_locale.name}}</summary>
 							<ul
 								class="bg-white shadow-sm border border-gray-200 rounded-t-none p-2"
 							>
@@ -43,9 +43,9 @@
 										>{{name}}</a></li>
 								{{/each}}
 							</ul>
-						{{/if}}
-					</details>
-				</li>
+						</details>
+					</li>
+				{{/if}}
 			</ul>
 			<div
 				id="hamburger-btn"
@@ -76,22 +76,14 @@
 		class="menu bg-base-200 rounded-box w-full hidden sm:hidden"
 	>
 		<li>
-			{{#if (page_path "new_request")}}
-				<a href="{{page_path 'help_center'}}">FAQs</a>
-			{{else}}
-				<a href="{{page_path 'new_request'}}">Contact Support</a>
-			{{/if}}
+			<a id="dynamic-link-mobile" href=""></a>
 		</li>
 		<li><a>Visit Webstore</a></li>
-		<li>
-			<details>
-				<summary
-					class="btn btn-ghost btn-sm"
-				>{{current_locale.name}}</summary>
-				{{#if alternative_locales}}
-					<ul
-						class="bg-white shadow-sm border border-gray-200 rounded-t-none p-2"
-					>
+		{{#if alternative_locales}}
+			<li>
+				<details>
+					<summary class="">{{current_locale.name}}</summary>
+					<ul class="p-2">
 						{{#each alternative_locales}}
 							<li><a
 									href="{{url}}"
@@ -99,8 +91,8 @@
 								>{{name}}</a></li>
 						{{/each}}
 					</ul>
-				{{/if}}
-			</details>
-		</li>
+				</details>
+			</li>
+		{{/if}}
 	</ul>
 </header>

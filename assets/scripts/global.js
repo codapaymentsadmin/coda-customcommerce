@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const mobileDrawer = document.getElementById("mobile-drawer");
 	const infobars = document.querySelectorAll(".infobar-component");
 	const dynamicLink = document.getElementById("dynamic-link");
+	const dynamicLinkMobile = document.getElementById("dynamic-link-mobile");
 
 	const currentPath = window.location.pathname;
 	const currentLocale = window.location.pathname.split("/")[2];
@@ -30,9 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	if (currentPath.includes("/requests/new")) {
 		dynamicLink.href = `/hc/${currentLocale}`;
+		dynamicLinkMobile.href = `/hc/${currentLocale}`;
 		dynamicLink.textContent = "FAQs";
+		dynamicLinkMobile.textContent = "FAQs";
 	} else {
 		dynamicLink.href = `/hc/${currentLocale}/requests/new`;
+		dynamicLinkMobile.href = `/hc/${currentLocale}/requests/new`;
 		dynamicLink.textContent = "Contact Support";
+		dynamicLinkMobile.textContent = "Contact Support";
 	}
 });
