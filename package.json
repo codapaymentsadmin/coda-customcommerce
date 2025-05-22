@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"watch": "vite",
+		"watch": "vite --watch",
 		"serve": "vite preview",
 		"watch:css": "npx @tailwindcss/cli -i ./assets/styles/style.css -o ./style.css --watch",
 		"build:css": "npx @tailwindcss/cli -i ./assets/styles/style.css -o ./style.css --minify",

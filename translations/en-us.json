@@ -97,5 +97,8 @@
 	"show_copyright_label": "Show copyright",
 	"show_copyright_description": "Show copyright text on the footer",
 	"copyright_text_label": "Copyright text content",
-	"copyright_text_description": "Set the copyright text content"
+	"copyright_text_description": "Set the copyright text content",
+	"footer_group_label": "Footer",
+	"webstore_link_label": "Webstore link",
+	"webstore_link_description": "Link to your webstore"
 }

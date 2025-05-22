@@ -17,10 +17,7 @@
 	</div>
 </section> -->
 
-<section
-	id="contact-support"
-	class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 pt-16 pb-12"
->
+<section id="contact-support" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 pt-16 pb-12">
 	<div class="w-full">
 		<h1 class="mb-5 !text-3xl font-bold text-center">
 			Contact Support
@@ -31,11 +28,18 @@
 	</div>
 </section>
 
-<section
-	id="submit-request"
-	class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12"
->
+<section id="submit-request" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12">
 	<div class="w-full bg-white p-6 rounded-lg shadow-md">
 		{{request_form wysiwyg=true}}
 	</div>
 </section>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const emailFormField =
+			document.querySelector("label[for='request_collaborators_']"); const
+				emailInput = document.querySelector("#request_collaborators_");
+		emailFormField.innerHTML = "Your Email address"; emailInput.setAttribute(
+			"placeholder", "");
+	});
+</script>
