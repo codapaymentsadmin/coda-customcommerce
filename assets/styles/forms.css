@@ -90,7 +90,11 @@
 		footer {
 			input[type="submit"] {
 				@apply btn btn-block transition-colors rounded-lg text-sm text-white;
-				background-color: var(--color-brand) !important;
+				background-color: var(--color-brand);
+
+				&:disabled {
+					@apply !bg-gray-300 cursor-not-allowed;
+				}
 			}
 		}
 	}

@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (currentPath.includes("/requests/new")) {
 		dynamicLink.href = `/hc/${currentLocale}`;
 		dynamicLinkMobile.href = `/hc/${currentLocale}`;
-		dynamicLink.textContent = "FAQs";
-		dynamicLinkMobile.textContent = "FAQs";
+		dynamicLink.textContent = "Help Center";
+		dynamicLinkMobile.textContent = "Help Center";
 	} else {
 		dynamicLink.href = `/hc/${currentLocale}/requests/new`;
 		dynamicLinkMobile.href = `/hc/${currentLocale}/requests/new`;

@@ -1,11 +1,25 @@
-// const currentUrl = window.location.pathname;
+document.addEventListener("DOMContentLoaded", () => {
+	const inquirySelect = document.getElementById(
+		"request_custom_fields_12825829898895"
+	);
+	const warningText = document.getElementById("ingame-warning");
+	const submitButton = document.querySelector(
+		'input[type="submit"][name="commit"]'
+	);
 
-// if (currentUrl.includes("/requests/new")) {
-// 	document.addEventListener("DOMContentLoaded", () => {
-// 		const emailFormField = document.querySelector(
-// 			"label[for='request_collaborators_']"
-// 		);
+	console.log("Inquiry Select Element:", inquirySelect);
+	console.log("Warning Text Element:", warningText);
+	console.log("Submit Button Element:", submitButton);
 
-// 		emailFormField.innerHTML = "Your Email address";
-// 	});
-// }
+	if (inquirySelect) {
+		inquirySelect.addEventListener("change", () => {
+			if (inquirySelect.value === "in_game_inquiry_r6m") {
+				submitButton.disabled = true;
+				warningText.classList.remove("hidden");
+			} else {
+				submitButton.disabled = false;
+				warningText.classList.add("hidden");
+			}
+		});
+	}
+});
