@@ -31,17 +31,17 @@
 <section id="submit-request" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12">
 	<div class="w-full bg-white p-6 rounded-lg shadow-md">
 		{{request_form wysiwyg=true}}
-		<p id="ingame-warning" class="hidden text-red-500 !text-sm mt-2">
+		<p id="ingame-warning" class="hidden !text-sm mt-2">
 			<span>
 				<i class="ph ph-bold ph-warning text-yellow-500"></i>
 			</span>
-			For in-game inquiries issues, please visit
+			For in-game inquiries, please visit
 			<span>
-				<a href="https://codashop.com" target="_blank" class="text-fc-green hover:text-fc-dark-green transition-colors">
-					Help Center
+				<a href="{{settings.webstore_helpcenter_link}}" target="_blank" class="warning-hc-link">
+					{{settings.webstore_helpcenter_link_text}}
 				</a>
 			</span>
-			for further investigation
+			for further investigation.
 		</p>
 	</div>
 </section>

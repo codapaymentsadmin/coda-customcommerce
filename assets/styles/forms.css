@@ -98,4 +98,13 @@
 			}
 		}
 	}
+
+	#ingame-warning span .warning-hc-link {
+		@apply text-blue-500 hover:underline transition-colors;
+		color: var(--color-link) !important;
+
+		&:hover {
+			color: var(--color-link-hover) !important;
+		}
+	}
 }
