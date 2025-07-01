@@ -100,5 +100,11 @@
 	"copyright_text_description": "Set the copyright text content",
 	"footer_group_label": "Footer",
 	"webstore_link_label": "Webstore link",
-	"webstore_link_description": "Link to your webstore"
+	"webstore_link_description": "Link to your webstore",
+	"webstore_helpcenter_link_label": "Web Store HC Link",
+	"webstore_helpcenter_link_description": "Link Web Store's Help Center",
+	"navbar_background_color_label": "Navbar background color",
+	"navbar_background_color_description": "Background color of the navbar",
+	"footer_background_color_label": "Footer background color",
+	"footer_background_color_description": "Background color of the footer"
 }

@@ -1,20 +1,15 @@
-<footer
-	class="footer sm:footer-horizontal bg-white text-neutral-content items-center p-4 border-t border-gray-100"
->
+<footer class="footer sm:footer-horizontal bg-footer-bg text-main-text items-center p-4 border-t border-gray-100">
 	<aside class="flex flex-col items-start gap-1">
-		<h4 class="text-black font-semibold">{{settings.brand_name}}</h4>
+		<h4 class="font-semibold">{{settings.brand_name}}</h4>
 		{{#if settings.show_copyright}}
-			<p class="!text-sm text-gray-500">
-				{{settings.copyright_text}}
-			</p>
+		<p class="!text-sm">
+			{{settings.copyright_text}}
+		</p>
 		{{/if}}
 	</aside>
 	<nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-		<a
-			href="{{settings.privacy_link}}"
-			class="link link-hover text-gray-500"
-		> {{settings.privacy_label}} </a>
-		<a href="{{settings.terms_link}}" class="link link-hover text-gray-500">
+		<a href="{{settings.privacy_link}}" class="link link-hover"> {{settings.privacy_label}} </a>
+		<a href="{{settings.terms_link}}" class="link link-hover">
 			{{settings.terms_label}}
 		</a>
 	</nav>

@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.1.4",
+	"version": "1.1.5",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -98,21 +98,21 @@
 					"type": "color",
 					"description": "brand_color_description",
 					"label": "brand_color_label",
-					"value": "#00bcff"
+					"value": "#76F3FF"
 				},
 				{
 					"identifier": "brand_text_color",
 					"type": "color",
 					"description": "brand_text_color_description",
 					"label": "brand_text_color_label",
-					"value": "#000"
+					"value": "#203E4E"
 				},
 				{
 					"identifier": "text_color",
 					"type": "color",
 					"description": "text_color_description",
 					"label": "text_color_label",
-					"value": "#000"
+					"value": "#fff"
 				},
 				{
 					"identifier": "link_color",
@@ -140,7 +140,35 @@
 					"type": "color",
 					"description": "background_color_description",
 					"label": "background_color_label",
-					"value": "#f9fafb"
+					"value": "#203E4E"
+				},
+				{
+					"identifier": "navbar_background_color",
+					"type": "color",
+					"description": "navbar_background_color_description",
+					"label": "navbar_background_color_label",
+					"value": "#203E4E"
+				},
+				{
+					"identifier": "footer_background_color",
+					"type": "color",
+					"description": "footer_background_color_description",
+					"label": "footer_background_color_label",
+					"value": "#203E4E"
+				},
+				{
+					"identifier": "accordion_background_color",
+					"type": "color",
+					"description": "accordion_background_color_description",
+					"label": "accordion_background_color_label",
+					"value": "#fff"
+				},
+				{
+					"identifier": "accordion_text_color",
+					"type": "color",
+					"description": "accordion_text_color_description",
+					"label": "accordion_text_color_label",
+					"value": "#000"
 				}
 			]
 		},

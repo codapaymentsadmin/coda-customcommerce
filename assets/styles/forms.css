@@ -8,7 +8,7 @@
 			@apply flex flex-col gap-2;
 
 			label {
-				@apply text-sm font-semibold;
+				@apply text-sm text-black font-semibold;
 			}
 
 			&.request_cc_emails ul[data-hc-pills-container="true"] {

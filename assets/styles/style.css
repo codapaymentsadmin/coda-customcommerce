@@ -11,6 +11,10 @@
 	--color-bg-main: $background_color;
 	--color-infobar-bg: $infobar_bg_color;
 	--color-infobar-text: $infobar_text_color;
+	--color-navbar-bg: $navbar_background_color;
+	--color-footer-bg: $footer_background_color;
+	--color-accordion-bg: $accordion_background_color;
+	--color-accordion-text: $accordion_text_color;
 	--font-heading: $heading_font;
 	--font-main-text: $text_font;
 }
@@ -76,4 +80,15 @@ form.input {
 		background-color: var(--color-brand);
 		color: white;
 	}
+}
+
+.custom-line-clamp {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	line-clamp: 2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-height: none; /* Override any max-height restrictions */
+	word-break: break-word;
 }

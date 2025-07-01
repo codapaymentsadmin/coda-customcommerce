@@ -6,6 +6,10 @@
 	--color-link-hover: $hover_link_color;
 	--color-link-visited: $visited_link_color;
 	--color-bg-main: $background_color;
+	--color-navbar-bg: $navbar_background_color;
+	--color-footer-bg: $footer_background_color;
+	--color-accordion-bg: $accordion_background_color;
+	--color-accordion-text: $accordion_text_color;
 	--font-heading: $heading_font;
 	--font-main-text: $text_font;
 }
@@ -17,6 +21,10 @@
 	--color-link-hover: $hover_link_color;
 	--color-link-visited: $visited_link_color;
 	--color-bg-main: $background_color;
+	--color-navbar-bg: $navbar_background_color;
+	--color-footer-bg: $footer_background_color;
+	--color-accordion-bg: $accordion_background_color;
+	--color-accordion-text: $accordion_text_color;
 	--font-heading: $heading_font;
 	--font-main-text: $text_font;
 }
