@@ -82,7 +82,7 @@
 	@apply flex flex-col gap-2;
 }
 .article-body p {
-	@apply !text-sm;
+	@apply !text-sm sm:!text-base;
 }
 .article-body a {
 	color: var(--color-link);
