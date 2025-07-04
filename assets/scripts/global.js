@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		infobars.forEach((bar) => {
 			const closeButton = bar.querySelector(".infobar-dismiss");
 
+			if (!closeButton) return;
 			closeButton.addEventListener("click", () => {
 				bar.classList.add("hidden");
 			});

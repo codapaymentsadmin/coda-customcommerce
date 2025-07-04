@@ -2,6 +2,18 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@font-face {
+	font-family: "scout_black";
+	src: url("$assets-scout-black-eot");
+	src: url("$assets-scout-black-eot?#iefix") format("embedded-opentype"),
+		url("$assets-scout-black-woff2") format("woff2"),
+		url("$assets-scout-black-woff") format("woff"),
+		url("$assets-scout-black-ttf") format("truetype"),
+		url("$assets-scout-black-svg#scoutblack") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
 @theme {
 	--color-brand: $brand_color;
 	--color-brand-text: $brand_text_color;

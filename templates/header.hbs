@@ -12,7 +12,7 @@
 				</path>
 			</svg>
 			<div id="infobar-content">
-				<p class="!text-xs text-center text-crit-infobar-text font-bold">
+				<p class="!text-xs text-crit-infobar-text font-bold">
 					{{dc "cc_help_center_infobar_content"}}
 				</p>
 			</div>
@@ -22,7 +22,8 @@
 
 	<!-- Infobar General -->
 	{{#if settings.show_infobar_global}}
-	<div id="infobar-component" class="infobar-component w-full items-center justfy-center bg-infobar-bg h-[40px]">
+	<div id="infobar-component"
+		class="infobar-component w-full items-center justfy-center bg-infobar-bg h-[50px] sm:h-[40px]">
 		<div role="alert"
 			class="alert bg-transparent flex items-center max-w-7xl mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"
@@ -32,7 +33,7 @@
 				</path>
 			</svg>
 			<div id="infobar-content">
-				<p class="!text-xs text-center text-infobar-text font-bold">
+				<p class="!text-xs text-infobar-text font-bold">
 					{{dc "cc_help_center_infobar_content"}}
 				</p>
 			</div>

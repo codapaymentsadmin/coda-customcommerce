@@ -26,7 +26,7 @@
 					"type": "text",
 					"description": "brand_name_description",
 					"label": "brand_name_label",
-					"value": "Custom Commerce"
+					"value": "Rainbow 6 Mobile LATAM"
 				},
 				{
 					"identifier": "favicon",
@@ -39,21 +39,21 @@
 					"type": "text",
 					"description": "webstore_link_description",
 					"label": "webstore_link_label",
-					"value": "https://coda.co"
+					"value": "https://www.ubisoft.com/es-ar/game/rainbow-six/mobile/store"
 				},
 				{
 					"identifier": "webstore_helpcenter_link",
 					"type": "text",
 					"description": "webstore_helpcenter_link_description",
 					"label": "webstore_helpcenter_link_label",
-					"value": "https://coda.co"
+					"value": "https://www.ubisoft.com/en-us/help"
 				},
 				{
 					"identifier": "webstore_helpcenter_link_text",
 					"type": "text",
 					"description": "webstore_helpcenter_link_text_description",
 					"label": "webstore_helpcenter_link_text_label",
-					"value": "Custom Commerce Help Center"
+					"value": "Ubisoft Help Center"
 				}
 			]
 		},
@@ -272,9 +272,13 @@
 						{
 							"label": "Trebuchet MS",
 							"value": "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"
+						},
+						{
+							"label": "Scout Black",
+							"value": "scout_black"
 						}
 					],
-					"value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+					"value": "scout_black"
 				},
 				{
 					"identifier": "text_font",
@@ -345,9 +349,13 @@
 						{
 							"label": "Trebuchet MS",
 							"value": "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"
+						},
+						{
+							"label": "Scout Black",
+							"value": "scout_black"
 						}
 					],
-					"value": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
+					"value": "scout_black"
 				}
 			]
 		},
