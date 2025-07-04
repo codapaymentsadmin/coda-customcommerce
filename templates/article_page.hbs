@@ -22,7 +22,7 @@
       <div class="w-full join join-vertical mt-2 gap-2">
         {{#each section.articles}}
         <a href="{{url}}"
-          class="btn btn-md w-full min-h-[50px] flex items-center justify-start {{#is id ../article.id}}bg-brand text-white{{else}}border-brand text-brand{{/is}} hover:bg-brand transition-colors rounded-lg hover:text-white text-start text-sm line-clamp-1 leading-4">
+          class="btn btn-md w-full min-h-[50px] flex items-center justify-start {{#is id ../article.id}}bg-brand text-cta-text{{else}}border-cta-text text-cta-text{{/is}} hover:bg-brand transition-colors rounded-lg hover:border-brand text-start text-sm line-clamp-1 leading-4">
           {{title}}
         </a>
         {{/each}}

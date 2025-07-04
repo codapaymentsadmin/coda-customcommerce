@@ -1,3 +1,4 @@
+@import "./variables.css";
 @import "tailwindcss";
 @plugin "daisyui";
 
@@ -11,10 +12,14 @@
 	--color-bg-main: $background_color;
 	--color-infobar-bg: $infobar_bg_color;
 	--color-infobar-text: $infobar_text_color;
+	--color-crit-infobar-bg: $critical_infobar_bg_color;
+	--color-crit-infobar-text: $critical_infobar_text_color;
 	--color-navbar-bg: $navbar_background_color;
 	--color-footer-bg: $footer_background_color;
 	--color-accordion-bg: $accordion_background_color;
 	--color-accordion-text: $accordion_text_color;
+	--color-cta-text: $cta_text_color;
+	--color-banner-text: $banner_text_color;
 	--font-heading: $heading_font;
 	--font-main-text: $text_font;
 }
@@ -91,4 +96,10 @@ form.input {
 	text-overflow: ellipsis;
 	max-height: none; /* Override any max-height restrictions */
 	word-break: break-word;
+}
+
+form[role="search"] {
+	input[type="submit"][value="Search"] {
+		@apply bg-brand !text-cta-text;
+	}
 }

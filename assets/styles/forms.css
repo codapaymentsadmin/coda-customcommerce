@@ -4,6 +4,10 @@
 	form.request-form {
 		@apply flex flex-col gap-4;
 
+		div.suggestion-list {
+			@apply !hidden;
+		}
+
 		div.form-field {
 			@apply flex flex-col gap-2;
 

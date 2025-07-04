@@ -1,53 +1,38 @@
-<!-- Infobar -->
+<!-- Critical Infobar -->
 <section id="infobar-container" class="w-full flex flex-col">
-	<!-- Infobar General -->
-	{{#if settings.show_infobar_global}}
-	<div id="infobar-component" class="infobar-component w-full bg-infobar-bg">
+	{{#if settings.show_warning_infobar_global}}
+	<div id="infobar-component"
+		class="critical infobar-component w-full flex items-center justify-center bg-crit-infobar-bg h-[60px]">
 		<div role="alert"
-			class="alert bg-infobar-bg flex items-center max-w-7xl mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none">
-			<svg width="20px" height="20px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<rect width="48" height="48" fill="white" fill-opacity="0.01" />
+			class="alert w-full bg-transparent flex items-center max-w-7xl mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none shadow-none">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"
+				class="!text-crit-infobar-text">
 				<path
-					d="M24 44C29.5228 44 34.5228 41.7614 38.1421 38.1421C41.7614 34.5228 44 29.5228 44 24C44 18.4772 41.7614 13.4772 38.1421 9.85786C34.5228 6.23858 29.5228 4 24 4C18.4772 4 13.4772 6.23858 9.85786 9.85786C6.23858 13.4772 4 18.4772 4 24C4 29.5228 6.23858 34.5228 9.85786 38.1421C13.4772 41.7614 18.4772 44 24 44Z"
-					fill="#2F88FF" stroke="#000000" stroke-width="4" stroke-linejoin="round" />
-				<path fill-rule="evenodd" clip-rule="evenodd"
-					d="M24 11C25.3807 11 26.5 12.1193 26.5 13.5C26.5 14.8807 25.3807 16 24 16C22.6193 16 21.5 14.8807 21.5 13.5C21.5 12.1193 22.6193 11 24 11Z"
-					fill="white" />
-				<path d="M24.5 34V20H23.5H22.5" stroke="white" stroke-width="4" stroke-linecap="round"
-					stroke-linejoin="round" />
-				<path d="M21 34H28" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+					d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z">
+				</path>
 			</svg>
 			<div id="infobar-content">
-				<p class="!text-sm text-center text-infobar-text font-semibold">
+				<p class="!text-xs text-center text-crit-infobar-text font-bold">
 					{{dc "cc_help_center_infobar_content"}}
 				</p>
 			</div>
-			<span class="infobar-dismiss ms-auto cursor-pointer">
-				<i class="ph ph-x text-infobar-text"></i>
-			</span>
 		</div>
 	</div>
 	{{/if}}
 
-	{{#if settings.show_warning_infobar_global}}
-	<div id="infobar-component" class="infobar-component w-full bg-infobar-bg">
+	<!-- Infobar General -->
+	{{#if settings.show_infobar_global}}
+	<div id="infobar-component" class="infobar-component w-full items-center justfy-center bg-infobar-bg h-[40px]">
 		<div role="alert"
-			class="alert bg-infobar-bg flex items-center max-w-7xl mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none">
-			<svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
-				xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione"
-				preserveAspectRatio="xMidYMid meet">
-				<path d="M5.9 62c-3.3 0-4.8-2.4-3.3-5.3L29.3 4.2c1.5-2.9 3.9-2.9 5.4 0l26.7 52.5c1.5 2.9 0 5.3-3.3 5.3H5.9z"
-					fill="#ffce31">
+			class="alert bg-transparent flex items-center max-w-7xl mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"
+				class="!text-infobar-text">
+				<path
+					d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z">
 				</path>
-				<g fill="#231f20">
-					<path d="M27.8 23.6l2.8 18.5c.3 1.8 2.6 1.8 2.9 0l2.7-18.5c.5-7.2-8.9-7.2-8.4 0">
-					</path>
-					<circle cx="32" cy="49.6" r="4.2">
-					</circle>
-				</g>
 			</svg>
 			<div id="infobar-content">
-				<p class="!text-sm text-center text-infobar-text font-semibold">
+				<p class="!text-xs text-center text-infobar-text font-bold">
 					{{dc "cc_help_center_infobar_content"}}
 				</p>
 			</div>
@@ -77,15 +62,16 @@
 		<div class="flex-none">
 			<ul class="menu menu-horizontal hidden sm:flex items-center px-1">
 				<li>
-					<a id="dynamic-link" href="" class="hover:bg-white hover:text-brand-text"></a>
+					<a id="dynamic-link" href="" class="text-white hover:bg-brand hover:text-cta-text mr-2"></a>
 				</li>
-				<li><a href="{{settings.webstore_link}}" class="hover:bg-white hover:text-brand-text">Visit Webstore</a></li>
+				<li><a href="{{settings.webstore_link}}" class="text-white hover:bg-brand hover:text-cta-text">Visit
+						Webstore</a></li>
 				{{#if alternative_locales}}
 				<div class="divider divider-horizontal after:bg-white before:bg-white"></div>
 				<li>
 					<details>
 						<summary
-							class="font-normal hover:bg-white hover:text-brand-text focus:bg-white focus:text-brand-text focus-within:bg-white focus-within:text-brand-text active:bg-white active:text-brand-text">
+							class="font-normal text-white hover:bg-brand hover:text-cta-text focus:bg-brand focus:text-cta-text focus-within:bg-brand focus-within:text-cta-text active:bg-brand active:text-cta-text">
 							{{current_locale.name}}</summary>
 						<ul class="bg-white shadow-sm border border-gray-200 rounded-t-none p-2">
 							{{#each alternative_locales}}
