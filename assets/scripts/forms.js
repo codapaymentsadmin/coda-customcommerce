@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const inquirySelect = document.getElementById(
-		"request_custom_fields_12825829898895"
+		"request_custom_fields_13141166847759"
 	);
 	const warningText = document.getElementById("ingame-warning");
 	const submitButton = document.querySelector(
@@ -9,7 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	if (inquirySelect) {
 		inquirySelect.addEventListener("change", () => {
-			if (inquirySelect.value === "in_game_inquiry_r6m") {
+			if (
+				inquirySelect.value === "inquiry_type_cc_in-game_inquiry_" ||
+				inquirySelect.value === "inquiry_type_cc_in-game_txn_"
+			) {
 				submitButton.disabled = true;
 				warningText.classList.remove("hidden");
 			} else {

@@ -106,5 +106,17 @@
 	"navbar_background_color_label": "Navbar background color",
 	"navbar_background_color_description": "Background color of the navbar",
 	"footer_background_color_label": "Footer background color",
-	"footer_background_color_description": "Background color of the footer"
+	"footer_background_color_description": "Background color of the footer",
+	"accordion_background_color_label": "Accordion component background color",
+	"accordion_background_color_description": "Background color of the accordion component",
+	"accordion_text_color_label": "Accordion text color",
+	"accordion_text_color_description": "Text color of the Accordion component",
+	"cta_text_color_label": "CTA text color",
+	"cta_text_color_description": "Text color of the call to action button",
+	"banner_text_color_label": "Banner text color",
+	"banner_text_color_description": "Text color of the banner",
+	"critical_infobar_bg_color_label": "Critical infobar background color",
+	"critical_infobar_bg_color_description": "Background color of the critical infobar",
+	"critical_infobar_text_color_label": "Critical infobar text color",
+	"critical_infobar_text_color_description": "Text color of the critical infobar"
 }

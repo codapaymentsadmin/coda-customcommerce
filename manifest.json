@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.1.5",
+	"version": "1.1.6",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -79,13 +79,27 @@
 					"type": "color",
 					"description": "infobar_bg_color_description",
 					"label": "infobar_bg_color_label",
-					"value": "#00bcff"
+					"value": "#203E4E"
 				},
 				{
 					"identifier": "infobar_text_color",
 					"type": "color",
 					"description": "infobar_text_color_description",
 					"label": "infobar_text_color_label",
+					"value": "#fff"
+				},
+				{
+					"identifier": "critical_infobar_bg_color",
+					"type": "color",
+					"description": "critical_infobar_bg_color_description",
+					"label": "critical_infobar_bg_color_label",
+					"value": "#ff6467"
+				},
+				{
+					"identifier": "critical_infobar_text_color",
+					"type": "color",
+					"description": "critical_infobar_text_color_description",
+					"label": "critical_infobar_text_color_label",
 					"value": "#fff"
 				}
 			]
@@ -112,7 +126,7 @@
 					"type": "color",
 					"description": "text_color_description",
 					"label": "text_color_label",
-					"value": "#fff"
+					"value": "#203E4E"
 				},
 				{
 					"identifier": "link_color",
@@ -140,21 +154,21 @@
 					"type": "color",
 					"description": "background_color_description",
 					"label": "background_color_label",
-					"value": "#203E4E"
+					"value": "#fff"
 				},
 				{
 					"identifier": "navbar_background_color",
 					"type": "color",
 					"description": "navbar_background_color_description",
 					"label": "navbar_background_color_label",
-					"value": "#203E4E"
+					"value": "#000"
 				},
 				{
 					"identifier": "footer_background_color",
 					"type": "color",
 					"description": "footer_background_color_description",
 					"label": "footer_background_color_label",
-					"value": "#203E4E"
+					"value": "#000"
 				},
 				{
 					"identifier": "accordion_background_color",
@@ -169,6 +183,20 @@
 					"description": "accordion_text_color_description",
 					"label": "accordion_text_color_label",
 					"value": "#000"
+				},
+				{
+					"identifier": "cta_text_color",
+					"type": "color",
+					"description": "cta_text_color_description",
+					"label": "cta_text_color_label",
+					"value": "#203E4E"
+				},
+				{
+					"identifier": "banner_text_color",
+					"type": "color",
+					"description": "banner_text_color_description",
+					"label": "banner_text_color_label",
+					"value": "#fff"
 				}
 			]
 		},

@@ -5,11 +5,15 @@
 	--color-link: $link_color;
 	--color-link-hover: $hover_link_color;
 	--color-link-visited: $visited_link_color;
+	--color-infobar-bg: $infobar_bg_color;
+	--color-infobar-text: $infobar_text_color;
 	--color-bg-main: $background_color;
 	--color-navbar-bg: $navbar_background_color;
 	--color-footer-bg: $footer_background_color;
 	--color-accordion-bg: $accordion_background_color;
 	--color-accordion-text: $accordion_text_color;
+	--color-cta-text: $cta_text_color;
+	--color-banner-text: $banner_text_color;
 	--font-heading: $heading_font;
 	--font-main-text: $text_font;
 }
@@ -20,11 +24,15 @@
 	--color-link: $link_color;
 	--color-link-hover: $hover_link_color;
 	--color-link-visited: $visited_link_color;
+	--color-infobar-bg: $infobar_bg_color;
+	--color-infobar-text: $infobar_text_color;
 	--color-bg-main: $background_color;
 	--color-navbar-bg: $navbar_background_color;
 	--color-footer-bg: $footer_background_color;
 	--color-accordion-bg: $accordion_background_color;
 	--color-accordion-text: $accordion_text_color;
+	--color-cta-text: $cta_text_color;
+	--color-banner-text: $banner_text_color;
 	--font-heading: $heading_font;
 	--font-main-text: $text_font;
 }

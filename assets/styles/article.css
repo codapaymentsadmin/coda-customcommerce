@@ -79,7 +79,10 @@
 	vertical-align: middle;
 }
 .article-body {
-	@apply flex flex-col gap-3;
+	@apply flex flex-col gap-2;
+}
+.article-body p {
+	@apply !text-sm;
 }
 .article-body a {
 	color: var(--color-link);
@@ -148,7 +151,7 @@
 .article-body ol {
 	padding-left: 20px;
 	list-style-position: outside;
-	margin: 20px 0 20px 20px;
+	margin: 10px 0 10px 20px;
 }
 [dir="rtl"] .article-body ul,
 [dir="rtl"] .article-body ol {
@@ -382,10 +385,10 @@
 	}
 
 	ol {
-		@apply !list-decimal !pl-1;
+		@apply !list-decimal !pl-1 !text-sm;
 	}
 
 	ul {
-		@apply !list-disc !pl-1;
+		@apply !list-disc !pl-1 !text-sm;
 	}
 }

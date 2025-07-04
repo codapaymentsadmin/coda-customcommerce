@@ -1,15 +1,15 @@
 <!-- Hero Section -->
-<section id="cc-hero-section" class="hero min-h-[50dvh]"
+<section id="cc-hero-section" class="hero min-h-[40dvh]"
 	style="background-image: url({{settings.homepage_background_image}});">
 	<div class="hero-overlay"></div>
 	<div class="hero-content w-full max-w-3xl text-neutral-content text-center">
 		<div class="w-full">
-			<h1 class="mb-5 text-main-text font-bold">
+			<h1 class="mb-5 text-banner-text font-bold">
 				How can we help you today?
 			</h1>
 			{{search
 			instant=true
-			class="input max-md:w-full md:w-2/3 lg:w-full focus-within:outline-sky-500 rounded-lg text-black h-12 py-1"
+			class="input max-md:w-full md:w-2/3 lg:w-full focus-within:outline-sky-500 !text-cta-text rounded-lg h-12 py-1"
 			}}
 		</div>
 	</div>
@@ -26,7 +26,7 @@
 			{{#each promoted_articles}}
 			<li id="article-{{id}}">
 				<a href="{{url}}"
-					class="btn btn-md h-[50px] flex items-center justify-between border-2 border-brand text-brand bg-white hover:bg-brand transition-colors rounded-lg hover:text-white text-start text-sm line-clamp-1 leading-4 shadow-sm">
+					class="btn btn-md h-[50px] flex items-center justify-between border-2 border-brand bg-brand/80 hover:bg-brand transition-colors rounded-lg text-cta-text text-start text-sm line-clamp-1 leading-4 shadow-sm">
 					{{title}}
 					<i class="ph ph-arrow-right"></i>
 				</a>
@@ -61,12 +61,11 @@
 					<div class="w-full flex flex-col gap-2">
 						{{#each articles}}
 						<a href="{{url}}"
-							class="btn btn-md h-[50px] flex items-center justify-between border-2 border-brand bg-brand/90 hover:bg-brand transition-colors rounded-lg text-white text-start text-sm line-clamp-1 leading-4 shadow-sm">
+							class="btn btn-md h-[50px] flex items-center justify-between border-2 border-brand bg-brand/90 hover:bg-brand transition-colors rounded-lg text-cta-text text-start text-sm line-clamp-1 leading-4 shadow-sm">
 							{{title}}
 							<i class="ph ph-arrow-right"></i>
 						</a>
 						{{/each}}
-
 					</div>
 				</div>
 			</div>
@@ -93,7 +92,8 @@
 			Our dedicated support team is ready to help you resolve any issues
 			quickly and efficiently
 		</p>
-		<a href="{{page_path 'new_request'}}" class="btn bg-brand/90 hover:bg-brand text-white mt-4">
+		<a href="{{page_path 'new_request'}}"
+			class="btn bg-brand/80 hover:bg-brand border-none shadow-none text-cta-text mt-4">
 			Contact Support
 		</a>
 	</div>
