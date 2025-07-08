@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const infobars = document.querySelectorAll(".infobar-component");
 	const dynamicLink = document.getElementById("dynamic-link");
 	const dynamicLinkMobile = document.getElementById("dynamic-link-mobile");
+	const searchInput = document.getElementById("query");
 
 	const currentPath = window.location.pathname;
 	const currentLocale = window.location.pathname.split("/")[2];
@@ -18,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			hamburgBtn.classList.remove("open");
 		}
 	});
+
+	if (searchInput) {
+		searchInput.setAttribute("placeholder", "Search for help with...");
+	}
 
 	if (infobars) {
 		infobars.forEach((bar) => {
