@@ -15,13 +15,14 @@
 	</div>
 </section>
 
-{{#if (compare promoted_articles.length ">" 0)}}
+
 <section id="popular-resource-section" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12">
 	<div class="flex flex-col items-center">
 		<h2 class="!text-3xl text-main-text font-bold">Popular Resources</h2>
 		<p class="text-center text-main-text mt-2">
 			Our most helpful articles based on user feedback
 		</p>
+		{{#if (compare promoted_articles.length ">" 0)}}
 		<ul class="w-full list mt-8 gap-4">
 			{{#each promoted_articles}}
 			<li id="article-{{id}}">
@@ -33,9 +34,10 @@
 			</li>
 			{{/each}}
 		</ul>
+		{{/if}}
 	</div>
 </section>
-{{/if}}
+
 
 <section id="self-service-articles-section" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12">
 	<div class="flex flex-col items-center">
@@ -46,7 +48,6 @@
 		<ul class="w-full list mt-8 gap-4">
 			{{#each categories}}
 			{{#each sections}}
-			{{#if (compare articles.length ">" 0)}}
 			<div class="collapse collapse-arrow bg-accordion-bg border border-gray-200 shadow-sm">
 				<input type="checkbox" name="my-accordion-2" />
 				<div class="collapse-title font-semibold">
@@ -69,7 +70,6 @@
 					</div>
 				</div>
 			</div>
-			{{/if}}
 			{{/each}}
 			{{/each}}
 		</ul>

@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.1.8",
+	"version": "1.1.9",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -65,14 +65,14 @@
 					"type": "checkbox",
 					"description": "show_infobar_description",
 					"label": "show_infobar_label",
-					"value": true
+					"value": false
 				},
 				{
 					"identifier": "show_warning_infobar_global",
 					"type": "checkbox",
 					"description": "show_warning_infobar_description",
 					"label": "show_warning_infobar_label",
-					"value": true
+					"value": false
 				},
 				{
 					"identifier": "infobar_bg_color",
