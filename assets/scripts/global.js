@@ -1,4 +1,7 @@
 document.documentElement.setAttribute("data-theme", "light");
+window.zendeskTranslations = {
+	contactSupport: "{{dc 'hc_-_contact_support'}}",
+};
 document.addEventListener("DOMContentLoaded", () => {
 	const hamburgBtn = document.getElementById("hamburger-btn");
 	const mobileDrawer = document.getElementById("mobile-drawer");
@@ -20,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 
-	if (searchInput) {
-		searchInput.setAttribute("placeholder", "Search for help with...");
-	}
+	// if (searchInput) {
+	// 	searchInput.setAttribute("placeholder", searchInput.placeholder);
+	// }
 
 	if (infobars) {
 		infobars.forEach((bar) => {
@@ -35,15 +38,17 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
-	if (currentPath.includes("/requests/new")) {
-		dynamicLink.href = `/hc/${currentLocale}`;
-		dynamicLinkMobile.href = `/hc/${currentLocale}`;
-		dynamicLink.textContent = "Help Center";
-		dynamicLinkMobile.textContent = "Help Center";
-	} else {
-		dynamicLink.href = `/hc/${currentLocale}/requests/new`;
-		dynamicLinkMobile.href = `/hc/${currentLocale}/requests/new`;
-		dynamicLink.textContent = "Contact Support";
-		dynamicLinkMobile.textContent = "Contact Support";
+	if (dynamicLink && dynamicLinkMobile) {
+		if (currentPath.includes("/requests/new")) {
+			dynamicLink.href = `/hc/${currentLocale}`;
+			dynamicLinkMobile.href = `/hc/${currentLocale}`;
+			dynamicLink.textContent = "Help Center";
+			dynamicLinkMobile.textContent = "Help Center";
+		} else {
+			dynamicLink.href = `/hc/${currentLocale}/requests/new`;
+			dynamicLinkMobile.href = `/hc/${currentLocale}/requests/new`;
+			dynamicLink.innerHTML = dynamicLink.dataset.contactText;
+			dynamicLinkMobile.innerHTML = dynamicLink.dataset.contactText;
+		}
 	}
 });

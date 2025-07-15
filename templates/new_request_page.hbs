@@ -19,12 +19,7 @@
 
 <section id="contact-support" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 pt-16 pb-12">
 	<div class="w-full">
-		<h1 class="mb-5 !text-3xl font-bold text-center">
-			Contact Support
-		</h1>
-		<p class="text-center">Need help? Our support team is here to assist
-			you. Fill out the form below and we'll get back to you as soon as
-			possible.</p>
+		{{dc 'hc_-_contact_support_subheading'}}
 	</div>
 </section>
 
@@ -35,23 +30,12 @@
 			<span>
 				<i class="ph ph-bold ph-warning text-yellow-500"></i>
 			</span>
-			For in-game inquiries, please visit
+			{{dc 'hc_-_for_in-game_inquiries'}}
 			<span>
 				<a href="{{settings.webstore_helpcenter_link}}" target="_blank" class="warning-hc-link">
 					{{settings.webstore_helpcenter_link_text}}
 				</a>
 			</span>
-			for further investigation.
 		</p>
 	</div>
 </section>
-
-<script>
-	document.addEventListener("DOMContentLoaded", () => {
-		const emailFormField =
-			document.querySelector("label[for='request_collaborators_']"); const
-				emailInput = document.querySelector("#request_collaborators_");
-		emailFormField.innerHTML = "Your Email Address"; emailInput.setAttribute(
-			"placeholder", "");
-	});
-</script>

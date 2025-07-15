@@ -63,10 +63,11 @@
 		<div class="flex-none">
 			<ul class="menu menu-horizontal hidden sm:flex items-center px-1">
 				<li>
-					<a id="dynamic-link" href="" class="text-white hover:bg-brand hover:text-cta-text mr-2"></a>
+					<a id="dynamic-link" href="" data-contact-text="{{dc 'hc_-_contact_support'}}"
+						class="text-white hover:bg-brand hover:text-cta-text mr-2"></a>
 				</li>
-				<li><a href="{{settings.webstore_link}}" class="text-white hover:bg-brand hover:text-cta-text">Visit
-						Webstore</a></li>
+				<li><a href="{{settings.webstore_link}}" class="text-white hover:bg-brand hover:text-cta-text">{{dc
+						'hc_-_visit_webstore'}}</a></li>
 				{{#if alternative_locales}}
 				<div class="divider divider-horizontal after:bg-white before:bg-white"></div>
 				<li>

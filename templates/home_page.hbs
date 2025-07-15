@@ -5,7 +5,7 @@
 	<div class="hero-content w-full max-w-3xl text-neutral-content text-center">
 		<div class="w-full">
 			<h1 class="mb-5 text-banner-text font-bold">
-				How can we help you today?
+				{{dc 'hc_-_how_can_we_help'}}
 			</h1>
 			{{search
 			instant=true
@@ -18,10 +18,7 @@
 
 <section id="popular-resource-section" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12">
 	<div class="flex flex-col items-center">
-		<h2 class="!text-3xl text-main-text font-bold">Popular Resources</h2>
-		<p class="text-center text-main-text mt-2">
-			Our most helpful articles based on user feedback
-		</p>
+		{{dc 'hc_-_popular_resources'}}
 		{{#if (compare promoted_articles.length ">" 0)}}
 		<ul class="w-full list mt-8 gap-4">
 			{{#each promoted_articles}}
@@ -41,10 +38,7 @@
 
 <section id="self-service-articles-section" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12">
 	<div class="flex flex-col items-center">
-		<h2 class="!text-3xl text-main-text font-bold">Self Service Support Center</h2>
-		<p class="text-center text-main-text mt-2">
-			Get instant help by exploring our well-organized knowledge base
-		</p>
+		{{dc 'hc_-_self_service_support'}}
 		<ul class="w-full list mt-8 gap-4">
 			{{#each categories}}
 			{{#each sections}}
@@ -85,16 +79,10 @@
 				</path>
 			</svg>
 		</div>
-		<h2 class="text-3xl font-bold mt-28">
-			Have questions or need assistance?
-		</h2>
-		<p class="text-center text-main-text mt-2">
-			Our dedicated support team is ready to help you resolve any issues
-			quickly and efficiently
-		</p>
+		{{dc 'hc_-_need_assistance'}}
 		<a href="{{page_path 'new_request'}}"
 			class="btn bg-brand/80 hover:bg-brand border-none shadow-none text-cta-text mt-4">
-			Contact Support
+			{{dc 'hc_-_contact_support'}}
 		</a>
 	</div>
 </section>

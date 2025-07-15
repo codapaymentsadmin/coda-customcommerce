@@ -62,7 +62,7 @@ h3,
 h4,
 h5,
 h6 {
-	@apply mt-0;
+	@apply mt-0 tracking-wide;
 	font-family: var(--font-heading);
 }
 
@@ -83,8 +83,13 @@ h4 {
 }
 
 p {
-	@apply text-base;
+	@apply text-base tracking-wide;
 	font-family: var(--font-main-text);
+}
+
+a,
+button {
+	@apply tracking-wide;
 }
 
 form.input {

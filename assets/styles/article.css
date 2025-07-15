@@ -160,6 +160,9 @@
 	margin-left: 0;
 	margin-right: 20px;
 }
+.article-body li {
+	@apply tracking-wide;
+}
 .article-body ul > ul,
 .article-body ol > ol,
 .article-body ol > ul,
