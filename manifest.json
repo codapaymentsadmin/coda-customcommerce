@@ -381,25 +381,11 @@
 					"value": "https://codashop.com/"
 				},
 				{
-					"identifier": "terms_label",
-					"type": "text",
-					"description": "terms_condition_description",
-					"label": "terms_condition_label",
-					"value": "Terms and Conditions"
-				},
-				{
 					"identifier": "privacy_link",
 					"type": "text",
 					"description": "privacy_link_description",
 					"label": "privacy_link_label",
 					"value": "https://codashop.com/"
-				},
-				{
-					"identifier": "privacy_label",
-					"type": "text",
-					"description": "privacy_policy_description",
-					"label": "privacy_policy_label",
-					"value": "Privacy Policy"
 				},
 				{
 					"identifier": "show_copyright",
