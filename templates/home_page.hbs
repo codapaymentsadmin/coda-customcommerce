@@ -55,12 +55,20 @@
 				<div id="article-{{id}}" class="collapse-content text-sm gap-2">
 					<div class="w-full flex flex-col gap-2">
 						{{#each articles}}
-						<a href="{{url}}"
+						{{#if (compare @index "<" 5)}} <a href="{{url}}"
 							class="btn btn-md h-[50px] flex items-center justify-between border-2 border-brand bg-brand/90 hover:bg-brand transition-colors rounded-lg text-cta-text text-start text-sm line-clamp-1 leading-4 shadow-sm">
 							{{title}}
 							<i class="ph ph-arrow-right"></i>
-						</a>
-						{{/each}}
+							</a>
+							{{/if}}
+							{{/each}}
+							{{#if (compare article_count ">" 5)}}
+							<a href="{{url}}"
+								class="btn btn-md btn-link shadow-none border-none hover:bg-transparent h-[50px] w-max ml-auto flex items-center text-cta-text text-start text-sm line-clamp-1 leading-4">
+								View all articles
+								<i class="ph ph-arrow-right"></i>
+							</a>
+							{{/if}}
 					</div>
 				</div>
 			</div>
