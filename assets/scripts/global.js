@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const dynamicLink = document.getElementById("dynamic-link");
 	const dynamicLinkMobile = document.getElementById("dynamic-link-mobile");
 	const searchInput = document.getElementById("query");
+	const copyrightText = document.querySelector(".copyright");
 
 	const currentPath = window.location.pathname;
 	const currentLocale = window.location.pathname.split("/")[2];
@@ -26,6 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	// if (searchInput) {
 	// 	searchInput.setAttribute("placeholder", searchInput.placeholder);
 	// }
+
+	if (copyrightText) {
+		copyrightText.innerHTML = `&copy; ${new Date().getFullYear() + " "}`;
+	}
 
 	if (infobars) {
 		infobars.forEach((bar) => {

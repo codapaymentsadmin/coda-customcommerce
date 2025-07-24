@@ -3,7 +3,8 @@
 		<h4 class="font-semibold text-white">{{settings.brand_name}}</h4>
 		{{#if settings.show_copyright}}
 		<p class="!text-sm text-white">
-			{{settings.copyright_text}}
+			<span class="copyright"></span>
+			{{dc 'hc_-_coda_copyright'}}
 		</p>
 		{{/if}}
 	</aside>
