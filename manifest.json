@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.0.0",
+	"version": "1.2.1",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -393,13 +393,6 @@
 					"description": "show_copyright_description",
 					"label": "show_copyright_label",
 					"value": true
-				},
-				{
-					"identifier": "copyright_text",
-					"type": "text",
-					"description": "copyright_text_description",
-					"label": "copyright_text_label",
-					"value": "© 2025 Codashop. All rights reserved."
 				}
 			]
 		}
