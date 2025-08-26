@@ -18,8 +18,14 @@
 </section> -->
 
 <section id="contact-support" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 pt-16 pb-12">
+	<!-- Breadcrumbs using Zendesk helper -->
+	<nav class="custom-breadcrumbs text-sm mb-6">
+		{{breadcrumbs}}
+	</nav>
+	
 	<div class="w-full">
-		{{dc 'hc_-_contact_support_subheading'}}
+		<h2 class="text-2xl font-bold text-main-text mb-4">Contact Support</h2>
+		<p class="text-main-text">Need help? Fill out the form below and our support team will get back to you as soon as possible.</p>
 	</div>
 </section>
 
@@ -30,7 +36,7 @@
 			<span>
 				<i class="ph ph-bold ph-warning text-yellow-500"></i>
 			</span>
-			{{dc 'hc_-_for_in-game_inquiries'}}
+			<strong>For in-game inquiries:</strong> Please make sure to include your Player ID, Server, and detailed description of the issue.
 			<span>
 				<a href="{{settings.webstore_helpcenter_link}}" target="_blank" class="warning-hc-link">
 					{{settings.webstore_helpcenter_link_text}}

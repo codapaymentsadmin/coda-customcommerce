@@ -96,6 +96,17 @@
 .article-body a:focus {
 	color: var(--color-link-hover);
 }
+
+/* Game-specific article body link theming */
+.efootball-themed .article-body a {
+	color: var(--color-efootball-primary);
+}
+.efootball-themed .article-body a:hover,
+.efootball-themed .article-body a:active,
+.efootball-themed .article-body a:focus {
+	color: var(--color-efootball-primary);
+	opacity: 0.8;
+}
 .article-body img {
 	height: auto;
 	max-width: 100%;
@@ -202,7 +213,7 @@
 }
 .article-content {
 	line-height: 1.6;
-	margin: 40px 0;
+	margin: 0 0;
 	word-wrap: break-word;
 }
 .article-footer {

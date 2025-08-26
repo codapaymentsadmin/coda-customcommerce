@@ -49,31 +49,24 @@
 <header class="w-full bg-navbar-bg shadow-lg">
 	<div class="navbar max-w-7xl mx-auto">
 		<div class="flex-1">
-			<!-- <a
-				href="{{page_path 'help_center'}}"
-				class="link no-underline text-xl"
-			>{{settings.brand_name}}</a> -->
-			<a href="{{page_path 'help_center'}}" class="w-max flex items-center gap-2">
-				<img src="{{settings.logo}}" alt="{{settings.brand_name}}" class="w-32 h-auto" />
-				{{#if settings.show_brand_name}}
+			<a href="{{page_path 'help_center'}}"
+				class="link no-underline text-base sm:text-md text-brand-text tracking-tight">
 				{{settings.brand_name}}
-				{{/if}}
 			</a>
 		</div>
 		<div class="flex-none">
 			<ul class="menu menu-horizontal hidden sm:flex items-center px-1">
 				<li>
-					<a id="dynamic-link" href="" data-contact-text="{{dc 'hc_-_contact_support'}}"
-						class="text-white hover:bg-brand hover:text-cta-text mr-2"></a>
+					<a id="dynamic-link" href="" data-contact-text="Contact Support"
+						class="text-white hover:text-cta hover:underline mr-2"></a>
 				</li>
-				<li><a href="{{settings.webstore_link}}" class="text-white hover:bg-brand hover:text-cta-text">{{dc
-						'hc_-_visit_webstore'}}</a></li>
+				<li><a href="{{settings.webstore_link}}" class="text-white hover:text-cta hover:underline">Visit
+						Webstore</a></li>
 				{{#if alternative_locales}}
 				<div class="divider divider-horizontal after:bg-white before:bg-white"></div>
 				<li>
 					<details>
-						<summary
-							class="font-normal text-white hover:bg-brand hover:text-cta-text focus:bg-brand focus:text-cta-text focus-within:bg-brand focus-within:text-cta-text active:bg-brand active:text-cta-text">
+						<summary class="font-normal text-white hover:text-cta hover:underline">
 							{{current_locale.name}}</summary>
 						<ul class="bg-white shadow-sm border border-gray-200 rounded-t-none p-2">
 							{{#each alternative_locales}}
@@ -95,22 +88,44 @@
 		</div>
 	</div>
 	<!-- Menu drawer on mobile -->
-	<ul id="mobile-drawer" class="menu bg-base-200 rounded-box w-full hidden sm:hidden">
-		<li>
-			<a id="dynamic-link-mobile" href=""></a>
-		</li>
-		<li><a href="{{settings.webstore_link}}">Visit Webstore</a></li>
-		{{#if alternative_locales}}
-		<li>
-			<details>
-				<summary class="font-normal">{{current_locale.name}}</summary>
-				<ul class="p-2">
-					{{#each alternative_locales}}
-					<li><a href="{{url}}" dir="{{direction}}">{{name}}</a></li>
-					{{/each}}
-				</ul>
-			</details>
-		</li>
-		{{/if}}
-	</ul>
+	<div id="mobile-drawer" class="w-full bg-black border-t border-gray-800 shadow-lg hidden sm:hidden">
+		<div class="max-w-7xl mx-auto px-4 py-6">
+			<nav class="space-y-4">
+				<!-- Dynamic Link (Contact/Help Center) -->
+				<a id="dynamic-link-mobile" data-contact-text="Contact Support" href=""
+					class="block py-3 px-4 text-white border border-white hover:bg-cta hover:border-cta hover:text-white rounded-lg transition-colors">
+				</a>
+
+				<!-- Visit Webstore -->
+				<a href="{{settings.webstore_link}}"
+					class="block py-3 px-4 text-white border border-white hover:bg-cta hover:border-cta hover:text-white rounded-lg transition-colors">
+					Visit Webstore
+				</a>
+
+				{{#if alternative_locales}}
+				<!-- Language Selector -->
+				<div class="border-t border-gray-600 pt-4 mt-4">
+					<p class="text-sm font-semibold text-gray-300 mb-2">Language / Idioma</p>
+					<details class="group">
+						<summary
+							class="block py-3 px-4 text-white border border-white hover:bg-cta hover:border-cta hover:text-white rounded-lg transition-colors cursor-pointer list-none">
+							<div class="flex items-center justify-between">
+								<span>{{current_locale.name}}</span>
+								<i class="ph ph-caret-down text-sm group-open:rotate-180 transition-transform"></i>
+							</div>
+						</summary>
+						<div class="mt-2 space-y-1 pl-4">
+							{{#each alternative_locales}}
+							<a href="{{url}}" dir="{{direction}}"
+								class="block py-2 px-3 text-sm text-gray-300 hover:text-cta rounded transition-colors">
+								{{name}}
+							</a>
+							{{/each}}
+						</div>
+					</details>
+				</div>
+				{{/if}}
+			</nav>
+		</div>
+	</div>
 </header>

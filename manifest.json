@@ -26,7 +26,7 @@
 					"type": "text",
 					"description": "brand_name_description",
 					"label": "brand_name_label",
-					"value": "Rainbow 6 Mobile LATAM"
+					"value": "Konami │ Web Store Help Center"
 				},
 				{
 					"identifier": "favicon",
@@ -39,21 +39,21 @@
 					"type": "text",
 					"description": "webstore_link_description",
 					"label": "webstore_link_label",
-					"value": "https://www.ubisoft.com/es-ar/game/rainbow-six/mobile/store"
+					"value": "https://www.konami.com/store"
 				},
 				{
 					"identifier": "webstore_helpcenter_link",
 					"type": "text",
 					"description": "webstore_helpcenter_link_description",
 					"label": "webstore_helpcenter_link_label",
-					"value": "https://www.ubisoft.com/en-us/help"
+					"value": "https://www.konami.com/help"
 				},
 				{
 					"identifier": "webstore_helpcenter_link_text",
 					"type": "text",
 					"description": "webstore_helpcenter_link_text_description",
 					"label": "webstore_helpcenter_link_text_label",
-					"value": "Ubisoft Help Center"
+					"value": "Konami Help Center"
 				}
 			]
 		},
@@ -112,28 +112,28 @@
 					"type": "color",
 					"description": "brand_color_description",
 					"label": "brand_color_label",
-					"value": "#76F3FF"
+					"value": "#BF0019"
 				},
 				{
 					"identifier": "brand_text_color",
 					"type": "color",
 					"description": "brand_text_color_description",
 					"label": "brand_text_color_label",
-					"value": "#203E4E"
+					"value": "#ffffff"
 				},
 				{
 					"identifier": "text_color",
 					"type": "color",
 					"description": "text_color_description",
 					"label": "text_color_label",
-					"value": "#203E4E"
+					"value": "#333333"
 				},
 				{
 					"identifier": "link_color",
 					"type": "color",
 					"description": "link_color_description",
 					"label": "link_color_label",
-					"value": "#2b7fff"
+					"value": "#BF0019"
 				},
 				{
 					"identifier": "hover_link_color",
@@ -189,7 +189,7 @@
 					"type": "color",
 					"description": "cta_text_color_description",
 					"label": "cta_text_color_label",
-					"value": "#203E4E"
+					"value": "#ffffff"
 				},
 				{
 					"identifier": "banner_text_color",
@@ -197,6 +197,13 @@
 					"description": "banner_text_color_description",
 					"label": "banner_text_color_label",
 					"value": "#fff"
+				},
+				{
+					"identifier": "cta_color",
+					"type": "color",
+					"description": "cta_color_description",
+					"label": "cta_color_label",
+					"value": "#EF4444"
 				}
 			]
 		},
@@ -210,6 +217,10 @@
 					"label": "heading_font_label",
 					"options": [
 						{
+							"label": "Inter",
+							"value": "'Inter', ui-sans-serif, system-ui, sans-serif"
+						},
+						{
 							"label": "System",
 							"value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
 						},
@@ -278,7 +289,7 @@
 							"value": "scout_black"
 						}
 					],
-					"value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+					"value": "'Inter', ui-sans-serif, system-ui, sans-serif"
 				},
 				{
 					"identifier": "text_font",
@@ -287,6 +298,10 @@
 					"label": "text_font_label",
 					"options": [
 						{
+							"label": "Inter",
+							"value": "'Inter', ui-sans-serif, system-ui, sans-serif"
+						},
+						{
 							"label": "System",
 							"value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
 						},
@@ -355,7 +370,7 @@
 							"value": "scout_black"
 						}
 					],
-					"value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+					"value": "'Inter', ui-sans-serif, system-ui, sans-serif"
 				}
 			]
 		},
@@ -367,6 +382,44 @@
 					"type": "file",
 					"description": "homepage_background_image_description",
 					"label": "homepage_background_image_label"
+				}
+			]
+		},
+		{
+			"label": "game_group_label",
+			"variables": [
+				{
+					"identifier": "efootball_logo",
+					"type": "file",
+					"description": "efootball_logo_description",
+					"label": "efootball_logo_label"
+				},
+				{
+					"identifier": "efootball_banner_image",
+					"type": "file",
+					"description": "efootball_banner_image_description",
+					"label": "efootball_banner_image_label"
+				},
+				{
+					"identifier": "show_efootball_section",
+					"type": "checkbox",
+					"description": "show_efootball_section_description",
+					"label": "show_efootball_section_label",
+					"value": true
+				},
+				{
+					"identifier": "efootball_primary_color",
+					"type": "color",
+					"description": "efootball_primary_color_description",
+					"label": "efootball_primary_color_label",
+					"value": "#1E40AF"
+				},
+				{
+					"identifier": "efootball_secondary_color",
+					"type": "color",
+					"description": "efootball_secondary_color_description",
+					"label": "efootball_secondary_color_label",
+					"value": "#3B82F6"
 				}
 			]
 		},

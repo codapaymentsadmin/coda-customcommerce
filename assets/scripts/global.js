@@ -1,6 +1,6 @@
 document.documentElement.setAttribute("data-theme", "light");
 window.zendeskTranslations = {
-	contactSupport: "{{dc 'hc_-_contact_support'}}",
+	contactSupport: "Contact Support",
 };
 document.addEventListener("DOMContentLoaded", () => {
 	const hamburgBtn = document.getElementById("hamburger-btn");
