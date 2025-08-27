@@ -190,4 +190,8 @@ form[role="search"] {
 	input[type="submit"][value="Search"] {
 		@apply bg-brand !text-cta-text;
 	}
+
+	input[type="search"][name="query"] {
+		@apply !text-main-text
+	}
 }
