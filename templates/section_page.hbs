@@ -1,21 +1,21 @@
 <section id="cc-hero-section" class="hero min-h-[40dvh]"
-	style="background-image: url({{settings.efootball_banner_image}});">
-	<div class="hero-overlay"></div>
-	<div class="hero-content w-full max-w-3xl text-neutral-content text-center">
-		<div class="w-full">
-			{{#if settings.efootball_logo}}
-			<div class="mb-4">
-				<img src="{{settings.efootball_logo}}" alt="eFootball Logo" class="mx-auto max-h-20">
-			</div>
-			{{/if}}
-			<h1 class="mb-5 text-banner-text font-bold">
-				{{section.name}}
-			</h1>
-			{{#if section.description}}
-			<p class="text-banner-text mb-6">{{section.description}}</p>
-			{{/if}}
-		</div>
-	</div>
+  style="background-image: url({{settings.efootball_banner_image}});">
+  <div class="hero-overlay"></div>
+  <div class="hero-content w-full max-w-3xl text-neutral-content text-center">
+    <div class="w-full">
+      {{#if settings.efootball_logo}}
+      <div class="mb-4">
+        <img src="{{settings.efootball_logo}}" alt="eFootball Logo" class="mx-auto max-h-20">
+      </div>
+      {{/if}}
+      <h1 class="mb-5 text-banner-text font-bold">
+        {{section.name}}
+      </h1>
+      {{#if section.description}}
+      <p class="text-banner-text mb-6">{{section.description}}</p>
+      {{/if}}
+    </div>
+  </div>
 </section>
 
 <section id="main-content" class="flex-1 min-h-[50dvh] py-12 bg-white">
@@ -26,15 +26,45 @@
     </nav>
 
 
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-      {{#each section.articles}}
-      <a id="article-{{id}}" href="{{url}}"
-        class="btn btn-md h-[50px] flex items-center justify-between border-2 border-cta bg-white text-cta hover:bg-cta !hover:text-white transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm">
-        <span class="w-full line-clamp-1">
-          {{title}}
-        </span>
-      </a>
-      {{/each}}
+    <div class="w-full flex flex-col gap-4 mt-8">
+      {{#if section.sections}}
+      <div class="w-full mb-4 border-b border-gray-300 pb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {{#each section.sections}}
+          <a href="{{url}}"
+            class="btn btn-md h-[60px] flex items-center justify-between bg-cta text-cta-text hover:bg-cta/90 transition-colors rounded-lg text-start text-sm font-medium shadow-md subsection-btn">
+            <div class="flex items-center gap-3">
+              <i class="ph ph-folder text-lg"></i>
+              <span class="line-clamp-1">{{name}}</span>
+            </div>
+            <i class="ph ph-arrow-right"></i>
+          </a>
+          {{/each}}
+        </div>
+      </div>
+      {{/if}}
+
+      {{#if section.articles}}
+      <div class="w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {{#each section.articles}}
+          <a id="article-{{id}}" href="{{url}}"
+            class="btn btn-md h-[50px] flex items-center justify-between border-2 border-cta bg-white text-cta hover:bg-cta !hover:text-white transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm article-btn">
+            <span class="w-full line-clamp-1">
+              {{title}}
+            </span>
+            <i class="ph ph-arrow-right"></i>
+          </a>
+          {{/each}}
+        </div>
+      </div>
+      {{/if}}
+
+      {{#unless section.sections}}{{#unless section.articles}}
+      <div class="text-center py-8">
+        <p class="text-main-text">No content available in this section yet.</p>
+      </div>
+      {{/unless}}{{/unless}}
     </div>
   </div>
 </section>
@@ -49,7 +79,7 @@
 
     // The category is typically the second-to-last link in breadcrumbs
     if (breadcrumbLinks && breadcrumbLinks.length >= 2) {
-      const categoryLink = breadcrumbLinks[breadcrumbLinks.length - 2];
+      const categoryLink = breadcrumbLinks[1];
       categoryName = categoryLink.textContent?.toLowerCase().trim();
     }
 
@@ -71,13 +101,45 @@
       mainContent.style.setProperty('--category-theme-primary', theme.primary);
       mainContent.style.setProperty('--category-theme-secondary', theme.secondary);
 
+      // Apply eFootball theming to subsection buttons
+      const subsectionBtns = document.querySelectorAll('.subsection-btn');
+      subsectionBtns.forEach(btn => {
+        btn.style.backgroundColor = theme.primary;
+        btn.style.color = 'white';
+        btn.style.borderColor = theme.primary;
+        btn.addEventListener('mouseenter', function () {
+          this.style.backgroundColor = theme.primary;
+          this.style.opacity = '0.9';
+        });
+        btn.addEventListener('mouseleave', function () {
+          this.style.backgroundColor = theme.primary;
+          this.style.opacity = '1';
+        });
+      });
+
+      // Apply eFootball theming to article buttons  
+      const articleBtns = document.querySelectorAll('.article-btn');
+      articleBtns.forEach(btn => {
+        btn.style.borderColor = theme.primary;
+        btn.style.color = theme.primary;
+        btn.addEventListener('mouseenter', function () {
+          this.style.backgroundColor = theme.primary;
+          this.style.color = 'white';
+        });
+        btn.addEventListener('mouseleave', function () {
+          this.style.backgroundColor = 'white';
+          this.style.color = theme.primary;
+        });
+      });
+
       // Style the category link in breadcrumbs
-      const categoryLink = breadcrumbLinks[breadcrumbLinks.length - 2];
-      if (categoryLink) {
-        categoryLink.style.setProperty('--hover-color', theme.primary);
-        categoryLink.classList.add('category-themed');
-      }
+      breadcrumbLinks.forEach((breadcrumb, index) => {
+        const categoryLink = breadcrumbLinks[index];
+        if (categoryLink) {
+          categoryLink.style.setProperty('--hover-color', theme.primary);
+          categoryLink.classList.add('category-themed');
+        }
+      })
     }
   });
 </script>
-

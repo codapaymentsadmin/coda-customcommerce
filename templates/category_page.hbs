@@ -48,17 +48,30 @@
 				</div>
 				<div id="articles-{{id}}" class="collapse-content text-sm gap-2 relative">
 					<div class="w-full flex flex-col gap-2">
-						{{#each articles}}
-						{{#if (compare @index "<" 5)}} <a href="{{url}}"
-							class="btn btn-md h-[50px] flex items-center justify-between border-2 border-cta bg-white text-cta hover:bg-cta hover:text-white transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm article-btn">
-							{{title}}
+						{{#each sections}}
+						{{#if (compare @index "<" 3)}} <a href="{{url}}"
+							class="btn btn-md h-[60px] flex items-center justify-between bg-cta text-cta-text hover:bg-cta/90 transition-colors rounded-lg text-start text-sm font-medium shadow-md subsection-btn">
+							<div class="flex items-center gap-3">
+								<i class="ph ph-folder text-lg"></i>
+								<span>{{name}}</span>
+							</div>
 							<i class="ph ph-arrow-right"></i>
 							</a>
 							{{/if}}
 							{{/each}}
-							{{#unless articles}}
-							<p class="text-accordion-text text-sm italic">No articles available in this section yet.</p>
-							{{/unless}}
+
+							{{#each articles}}
+							{{#if (compare @index "<" 5)}} <a href="{{url}}"
+								class="btn btn-md h-[50px] flex items-center justify-between border-2 border-cta bg-white text-cta hover:bg-cta hover:text-white transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm article-btn">
+								{{title}}
+								<i class="ph ph-arrow-right"></i>
+								</a>
+								{{/if}}
+								{{/each}}
+
+								{{#unless sections}}{{#unless articles}}
+								<p class="text-accordion-text text-sm italic">No content available in this section yet.</p>
+								{{/unless}}{{/unless}}
 					</div>
 
 					{{#if (compare articles.length ">" 5)}}
@@ -94,52 +107,87 @@
 		</div>
 		<h3 class="text-lg font-semibold text-main-text !mt-4">Need Assistance?</h3>
 		<p class="text-main-text text-center mt-2">Can't find what you're looking for? Our support team is here to help.</p>
-		<a href="{{page_path 'new_request'}}" class="btn bg-cta/80 hover:bg-cta border-none shadow-none text-cta-text mt-4 contact-support-btn">
+		<a href="{{page_path 'new_request'}}"
+			class="btn bg-cta/80 hover:bg-cta border-none shadow-none text-cta-text mt-4 contact-support-btn">
 			Contact Support
 		</a>
 	</div>
 </section>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-	// Get the breadcrumbs to determine category
-	const breadcrumbsNav = document.querySelector('.custom-breadcrumbs');
-	const breadcrumbLinks = breadcrumbsNav?.querySelectorAll('a');
-	let categoryName = null;
+	document.addEventListener('DOMContentLoaded', function () {
+		// Get the breadcrumbs to determine category
+		const breadcrumbsNav = document.querySelector('.custom-breadcrumbs');
+		const breadcrumbLinks = breadcrumbsNav?.querySelectorAll('a');
+		let categoryName = null;
 
-	// Get category name from the page title or breadcrumbs
-	const categoryTitle = document.querySelector('h1')?.textContent?.toLowerCase().trim();
-	const pagePath = window.location.pathname.toLowerCase();
-	
-	// Check if we're on eFootball category page
-	if (categoryTitle?.includes('efootball') || pagePath.includes('efootball')) {
-		// Apply eFootball theming to article buttons
-		const articleBtns = document.querySelectorAll('.article-btn');
-		articleBtns.forEach(btn => {
-			btn.classList.remove('border-cta', 'text-cta', 'hover:bg-cta');
-			btn.classList.add('border-efootball-primary', 'text-efootball-primary', 'hover:bg-efootball-primary');
-		});
-		
-		// Apply eFootball theming to view more buttons
-		const viewMoreBtns = document.querySelectorAll('.view-more-btn');
-		viewMoreBtns.forEach(btn => {
-			btn.classList.remove('border-cta', 'text-cta', 'hover:bg-cta');
-			btn.classList.add('border-efootball-primary', 'text-efootball-primary', 'hover:bg-efootball-primary');
-		});
-		
-		// Apply eFootball theming to contact support button
-		const contactBtns = document.querySelectorAll('.contact-support-btn');
-		contactBtns.forEach(btn => {
-			btn.classList.remove('bg-cta/80', 'hover:bg-cta');
-			btn.classList.add('bg-efootball-primary/80', 'hover:bg-efootball-primary');
-		});
-		
-		// Apply eFootball theming to support icon background
-		const supportIconBg = document.querySelector('.support-icon-bg');
-		if (supportIconBg) {
-			supportIconBg.classList.remove('bg-brand');
-			supportIconBg.classList.add('bg-efootball-primary');
+		// Get category name from the page title or breadcrumbs
+		const categoryTitle = document.querySelector('h1')?.textContent?.toLowerCase().trim();
+		const pagePath = window.location.pathname.toLowerCase();
+
+		// Category-specific theme colors (map category names to manifest settings)
+		const categoryThemes = {
+			'efootball': {
+				primary: '{{settings.efootball_primary_color}}',
+				secondary: '{{settings.efootball_secondary_color}}'
+			}
+			// Add more games here as needed
+		};
+
+		// Check if we're on eFootball category page
+		if (categoryTitle?.includes('efootball') || pagePath.includes('efootball')) {
+			const theme = categoryThemes['efootball'];
+
+			// Apply eFootball theming to subsection buttons
+			const subsectionBtns = document.querySelectorAll('.subsection-btn');
+			subsectionBtns.forEach(btn => {
+				btn.classList.remove('bg-cta', 'hover:bg-cta/90');
+				btn.classList.add('bg-efootball-primary', 'hover:bg-efootball-primary/90');
+			});
+
+			// Apply eFootball theming to article buttons
+			const articleBtns = document.querySelectorAll('.article-btn');
+			articleBtns.forEach(btn => {
+				btn.classList.remove('border-cta', 'text-cta', 'hover:bg-cta');
+				btn.classList.add('border-efootball-primary', 'text-efootball-primary', 'hover:bg-efootball-primary');
+			});
+
+			// Apply eFootball theming to view more buttons
+			const viewMoreBtns = document.querySelectorAll('.view-more-btn');
+			viewMoreBtns.forEach(btn => {
+				btn.classList.remove('border-cta', 'text-cta', 'hover:bg-cta');
+				btn.classList.add('border-efootball-primary', 'text-efootball-primary', 'hover:bg-efootball-primary');
+			});
+
+			// Apply eFootball theming to contact support button
+			const contactBtns = document.querySelectorAll('.contact-support-btn');
+			contactBtns.forEach(btn => {
+				btn.classList.remove('bg-cta/80', 'hover:bg-cta');
+				btn.classList.add('bg-efootball-primary', 'hover:bg-efootball-primary');
+			});
+
+			// Apply eFootball theming to support icon background
+			const supportIconBg = document.querySelector('.support-icon-bg');
+			if (supportIconBg) {
+				supportIconBg.classList.remove('bg-brand');
+				supportIconBg.classList.add('bg-efootball-primary');
+			}
+
+			// Style the category link in breadcrumbs
+			breadcrumbLinks.forEach((breadcrumb, index) => {
+				const categoryLink = breadcrumbLinks[index];
+				if (categoryLink) {
+					categoryLink.style.setProperty('--hover-color', theme.primary);
+					categoryLink.classList.add('category-themed');
+				}
+			});
+
+			// Style search button
+			const searchButton = document.querySelector('input[name="commit"][value="Search"]');
+			if (searchButton) {
+				searchButton.style.setProperty('background-color', theme.primary);
+				searchButton.classList.add('category-themed');
+			}
 		}
-	}
-});
+	});
 </script>

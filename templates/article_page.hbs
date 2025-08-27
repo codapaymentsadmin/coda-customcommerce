@@ -96,56 +96,58 @@
 </section>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-	// Extract category name from breadcrumbs
-	const breadcrumbsNav = document.querySelector('.custom-breadcrumbs');
-	const breadcrumbLinks = breadcrumbsNav?.querySelectorAll('a');
-	let categoryName = null;
-	
-	// The category is typically the second-to-last link in breadcrumbs
-	if (breadcrumbLinks && breadcrumbLinks.length >= 2) {
-		const categoryLink = breadcrumbLinks[breadcrumbLinks.length - 2];
-		categoryName = categoryLink.textContent?.toLowerCase().trim();
-	}
-	
-	// Category-specific theme colors (map category names to manifest settings)
-	const categoryThemes = {
-		'efootball': {
-			primary: '{{settings.efootball_primary_color}}',
-			secondary: '{{settings.efootball_secondary_color}}'
-		}
-		// Add more games here as needed
-	};
+  document.addEventListener('DOMContentLoaded', function () {
+    // Extract category name from breadcrumbs
+    const breadcrumbsNav = document.querySelector('.custom-breadcrumbs');
+    const breadcrumbLinks = breadcrumbsNav?.querySelectorAll('a');
+    let categoryName = null;
 
-	if (categoryName && categoryThemes[categoryName]) {
-		const theme = categoryThemes[categoryName];
-		
-		// Apply eFootball theming to sidebar buttons
-		const sidebarBtns = document.querySelectorAll('.article-sidebar-btn');
-		sidebarBtns.forEach(btn => {
-			if (btn.classList.contains('bg-cta')) {
-				// Active button
-				btn.classList.remove('bg-cta', 'hover:bg-cta');
-				btn.classList.add('bg-efootball-primary', 'hover:bg-efootball-primary');
-			} else {
-				// Inactive buttons
-				btn.classList.remove('border-cta', 'text-cta', 'hover:bg-cta');
-				btn.classList.add('border-efootball-primary', 'text-efootball-primary', 'hover:bg-efootball-primary');
-			}
-		});
-		
-		// Apply eFootball theming to article body links
-		const articleContainer = document.querySelector('.article');
-		if (articleContainer) {
-			articleContainer.classList.add('efootball-themed');
-		}
-		
-		// Style the category link in breadcrumbs
-		const categoryLink = breadcrumbLinks[breadcrumbLinks.length - 2];
-		if (categoryLink) {
-			categoryLink.style.setProperty('--hover-color', theme.primary);
-			categoryLink.classList.add('category-themed');
-		}
-	}
-});
+    // The category is typically the second-to-last link in breadcrumbs
+    if (breadcrumbLinks && breadcrumbLinks.length >= 2) {
+      const categoryLink = breadcrumbLinks[breadcrumbLinks.length - 2];
+      categoryName = categoryLink.textContent?.toLowerCase().trim();
+    }
+
+    // Category-specific theme colors (map category names to manifest settings)
+    const categoryThemes = {
+      'efootball': {
+        primary: '{{settings.efootball_primary_color}}',
+        secondary: '{{settings.efootball_secondary_color}}'
+      }
+      // Add more games here as needed
+    };
+
+    if (categoryName && categoryThemes[categoryName]) {
+      const theme = categoryThemes[categoryName];
+
+      // Apply eFootball theming to sidebar buttons
+      const sidebarBtns = document.querySelectorAll('.article-sidebar-btn');
+      sidebarBtns.forEach(btn => {
+        if (btn.classList.contains('bg-cta')) {
+          // Active button
+          btn.classList.remove('bg-cta', 'hover:bg-cta');
+          btn.classList.add('bg-efootball-primary', 'hover:bg-efootball-primary');
+        } else {
+          // Inactive buttons
+          btn.classList.remove('border-cta', 'text-cta', 'hover:bg-cta');
+          btn.classList.add('border-efootball-primary', 'text-efootball-primary', 'hover:bg-efootball-primary');
+        }
+      });
+
+      // Apply eFootball theming to article body links
+      const articleContainer = document.querySelector('.article');
+      if (articleContainer) {
+        articleContainer.classList.add('efootball-themed');
+      }
+
+      // Style the category link in breadcrumbs
+      breadcrumbLinks.forEach((breadcrumb, index) => {
+        const categoryLink = breadcrumbLinks[index];
+        if (categoryLink) {
+          categoryLink.style.setProperty('--hover-color', theme.primary);
+          categoryLink.classList.add('category-themed');
+        }
+      })
+    }
+  });
 </script>

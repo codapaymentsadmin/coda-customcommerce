@@ -1,6 +1,5 @@
 <!-- Hero Section -->
-<section id="cc-hero-section" class="hero min-h-[40dvh]"
-	style="background-image: url({{settings.homepage_background_image}});">
+<section id="cc-hero-section" class="hero min-h-[40dvh]" style="background-color: #242424;">
 	<div class="hero-overlay"></div>
 	<div class="hero-content w-full max-w-3xl text-neutral-content text-center">
 		<div class="w-full">
@@ -9,7 +8,7 @@
 			</h1>
 			{{search
 			instant=true
-			class="input max-md:w-full md:w-2/3 lg:w-full focus-within:outline-sky-500 !text-cta-text rounded-lg h-12 py-1"
+			class="input max-md:w-full md:w-2/3 lg:w-full focus-within:outline-sky-500 !text-main-text rounded-lg h-12 py-1"
 			}}
 		</div>
 	</div>
@@ -74,7 +73,8 @@
 		</div>
 		<h3 class="text-lg font-semibold text-main-text !mt-4">Need Assistance?</h3>
 		<p class="text-main-text text-center mt-2">Can't find what you're looking for? Our support team is here to help.</p>
-		<a href="{{page_path 'new_request'}}" class="btn bg-cta/80 hover:bg-cta border-none shadow-none text-cta-text mt-4">
+		<a href="{{page_path 'new_request'}}"
+			class="btn bg-brand hover:bg-brand/90 border-none shadow-none text-cta-text mt-4">
 			Contact Support
 		</a>
 	</div>
