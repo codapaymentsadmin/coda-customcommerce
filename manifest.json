@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.2.3",
+	"version": "1.2.4",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -19,14 +19,14 @@
 					"type": "checkbox",
 					"description": "show_brand_name_description",
 					"label": "show_brand_name_label",
-					"value": false
+					"value": true
 				},
 				{
 					"identifier": "brand_name",
 					"type": "text",
 					"description": "brand_name_description",
 					"label": "brand_name_label",
-					"value": "Rainbow 6 Mobile LATAM"
+					"value": "Rainbow Six Mobile Web Store Help Center LATAM"
 				},
 				{
 					"identifier": "favicon",
@@ -46,7 +46,7 @@
 					"type": "text",
 					"description": "webstore_helpcenter_link_description",
 					"label": "webstore_helpcenter_link_label",
-					"value": "https://www.ubisoft.com/en-us/help"
+					"value": "https://ubisoft-mobile.helpshift.com/hc/app/45-rainbow-six-mobile/"
 				},
 				{
 					"identifier": "webstore_helpcenter_link_text",
