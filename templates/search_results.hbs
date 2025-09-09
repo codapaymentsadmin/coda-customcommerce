@@ -1,5 +1,5 @@
 <!-- Hero Section -->
-<section id="cc-hero-section" class="hero min-h-[50dvh]"
+<section id="cc-hero-section" class="hero min-h-[40dvh]"
 	style="background-image: url({{settings.homepage_background_image}});">
 	<div class="hero-overlay"></div>
 	<div class="hero-content w-full max-w-3xl text-neutral-content text-center">
@@ -18,11 +18,12 @@
 <section class="max-w-5xl max-md:w-full md:w-2/3 min-h-[50dvh] lg:w-full mx-auto px-4 py-12">
 	<section class="flex-1 flex items-start mt-6">
 		<aside id="promoted-articles-section" class="w-full md:w-1/3 h-max">
-			<h3 class="text-md font-semibold">{{dc 'hc_-_articles_in_this_section'}}</h3>
+			<!-- <h3 class="text-md font-semibold">{{dc 'hc_-_articles_in_this_section'}}</h3> -->
+			<h3 class="text-md font-semibold">{{t 'featured_posts'}}</h3>
 			<div class="w-full join join-vertical mt-2 gap-2">
 				{{#each promoted_articles}}
 				<a href="{{url}}"
-					class="btn btn-md h-[50px] flex items-center justify-start border-brand text-brand hover:bg-brand transition-colors rounded-lg hover:text-white text-start text-sm line-clamp-2 leading-4">
+					class="btn btn-md h-[50px] flex items-center justify-start border-cta-text text-cta-text transition-colors rounded-lg hover:border-brand hover:bg-brand hover:text-cta-text text-start text-sm line-clamp-2 leading-4">
 					{{title}}
 				</a>
 				{{/each}}
@@ -36,10 +37,11 @@
 			<hr class="w-full border-1.5 border-ott-tertiary/50" />
 			<div class="w-full flex flex-col gap-4 pt-4">
 				{{#each results}}
-				<div class="flex-1 flex flex-col justify-start">
-					<a href="{{url}}" class="text-lg text-brand hover:text-brand/85 transition-colors font-bold">
+				<a href="{{url}}"
+					class="flex-1 flex flex-col justify-start px-4 py-2 rounded-md box-border border border-transparent hover:border-cta-text cursor-pointer">
+					<h3 class="text-lg text-cta-text transition-colors font-bold">
 						{{title}}
-					</a>
+					</h3>
 					<p class="!text-xs text-ott-tertiary mt-1.5">
 						by
 						<span class="font-semibold">
@@ -51,7 +53,7 @@
 					<p class="text-main-text !text-sm mt-1.5">
 						{{text}}
 					</p>
-				</div>
+				</a>
 				{{/each}}
 			</div>
 			{{pagination}}
