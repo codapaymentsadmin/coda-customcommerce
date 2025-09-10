@@ -42,14 +42,6 @@
 					<h3 class="text-lg text-cta-text transition-colors font-bold">
 						{{title}}
 					</h3>
-					<p class="!text-xs text-ott-tertiary mt-1.5">
-						by
-						<span class="font-semibold">
-							{{author.name}}
-							&#x2022;
-							{{date created_at format="medium"}}
-						</span>
-					</p>
 					<p class="text-main-text !text-sm mt-1.5">
 						{{text}}
 					</p>
@@ -58,7 +50,7 @@
 			</div>
 			{{pagination}}
 			{{else}}
-			<p class="text-ott-tertiary font-semibold">
+			<p class="text-main-text font-semibold">
 				{{t "no_results_unified"}}
 			</p>
 			{{/if}}
