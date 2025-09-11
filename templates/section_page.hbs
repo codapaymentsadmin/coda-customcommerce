@@ -1,13 +1,10 @@
-<section id="cc-hero-section" class="hero min-h-[40dvh]"
-  style="background-image: url({{settings.efootball_banner_image}});">
+<section id="cc-hero-section" class="hero min-h-[40dvh]" data-hero-section>
   <div class="hero-overlay"></div>
   <div class="hero-content w-full max-w-3xl text-neutral-content text-center">
     <div class="w-full">
-      {{#if settings.efootball_logo}}
-      <div class="mb-4">
-        <img src="{{settings.efootball_logo}}" alt="eFootball Logo" class="mx-auto max-h-20">
+      <div id="category-logo" class="mb-4" style="display: none;">
+        <img id="category-logo-img" src="" alt="Game Logo" class="mx-auto max-h-20">
       </div>
-      {{/if}}
       <h1 class="mb-5 text-banner-text font-bold">
         {{section.name}}
       </h1>
@@ -83,11 +80,19 @@
       categoryName = categoryLink.textContent?.toLowerCase().trim();
     }
 
-    // Category-specific theme colors (map category names to manifest settings)
+    // Category-specific theme colors and assets (map category names to manifest settings)
     const categoryThemes = {
       'efootball': {
         primary: '{{settings.efootball_primary_color}}',
-        secondary: '{{settings.efootball_secondary_color}}'
+        secondary: '{{settings.efootball_secondary_color}}',
+        bannerImage: '{{settings.efootball_banner_image}}',
+        logo: '{{settings.efootball_logo}}'
+      },
+      'ebaseball': {
+        primary: '{{settings.ebaseball_primary_color}}',
+        secondary: '{{settings.ebaseball_secondary_color}}',
+        bannerImage: '{{settings.ebaseball_banner_image}}',
+        logo: '{{settings.ebaseball_logo}}'
       }
       // Add more games here as needed
     };
@@ -95,6 +100,20 @@
     if (categoryName && categoryThemes[categoryName]) {
       const theme = categoryThemes[categoryName];
       const mainContent = document.querySelector('#main-content');
+
+      // Set banner image
+      const heroSection = document.querySelector('[data-hero-section]');
+      if (heroSection && theme.bannerImage) {
+        heroSection.style.backgroundImage = `url(${theme.bannerImage})`;
+      }
+
+      // Set logo
+      const logoContainer = document.getElementById('category-logo');
+      const logoImg = document.getElementById('category-logo-img');
+      if (logoContainer && logoImg && theme.logo) {
+        logoImg.src = theme.logo;
+        logoContainer.style.display = 'block';
+      }
 
       // Apply dynamic theming to the main content section
       mainContent.style.setProperty('--color-cta', theme.primary);

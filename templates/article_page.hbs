@@ -1,6 +1,5 @@
 <!-- Hero Section -->
-<section id="cc-hero-section" class="hero min-h-[40dvh]"
-  style="background-image: url({{settings.efootball_banner_image}});">
+<section id="cc-hero-section" class="hero min-h-[40dvh]" data-hero-section>
   <div class="hero-overlay"></div>
 </section>
 
@@ -24,7 +23,7 @@
       </div>
     </aside>
 
-    <article id="main-content" class="article sm:mt-8 lg:mt-0 sm:order-2 order-1">
+    <article id="main-content" class="article min-h-[40dvh] sm:mt-8 lg:mt-0 sm:order-2 order-1">
       {{#if article.internal}}
       <header class="article-header">
         <div class="flex items-center gap-2 mb-4">
@@ -108,11 +107,19 @@
       categoryName = categoryLink.textContent?.toLowerCase().trim();
     }
 
-    // Category-specific theme colors (map category names to manifest settings)
+    // Category-specific theme colors and assets (map category names to manifest settings)
     const categoryThemes = {
       'efootball': {
         primary: '{{settings.efootball_primary_color}}',
-        secondary: '{{settings.efootball_secondary_color}}'
+        secondary: '{{settings.efootball_secondary_color}}',
+        bannerImage: '{{settings.efootball_banner_image}}',
+        logo: '{{settings.efootball_logo}}'
+      },
+      'ebaseball': {
+        primary: '{{settings.ebaseball_primary_color}}',
+        secondary: '{{settings.ebaseball_secondary_color}}',
+        bannerImage: '{{settings.ebaseball_banner_image}}',
+        logo: '{{settings.ebaseball_logo}}'
       }
       // Add more games here as needed
     };
@@ -120,24 +127,38 @@
     if (categoryName && categoryThemes[categoryName]) {
       const theme = categoryThemes[categoryName];
 
-      // Apply eFootball theming to sidebar buttons
+      // Set banner image
+      const heroSection = document.querySelector('[data-hero-section]');
+      if (heroSection && theme.bannerImage) {
+        heroSection.style.backgroundImage = `url(${theme.bannerImage})`;
+      }
+
+      // Apply dynamic theming to sidebar buttons
       const sidebarBtns = document.querySelectorAll('.article-sidebar-btn');
       sidebarBtns.forEach(btn => {
         if (btn.classList.contains('bg-cta')) {
-          // Active button
-          btn.classList.remove('bg-cta', 'hover:bg-cta');
-          btn.classList.add('bg-efootball-primary', 'hover:bg-efootball-primary');
+          // Active button - use inline styles for dynamic theming
+          btn.style.backgroundColor = theme.primary;
+          btn.style.color = 'white';
         } else {
-          // Inactive buttons
-          btn.classList.remove('border-cta', 'text-cta', 'hover:bg-cta');
-          btn.classList.add('border-efootball-primary', 'text-efootball-primary', 'hover:bg-efootball-primary');
+          // Inactive buttons - use inline styles for dynamic theming
+          btn.style.borderColor = theme.primary;
+          btn.style.color = theme.primary;
+          btn.addEventListener('mouseenter', function () {
+            this.style.backgroundColor = theme.primary;
+            this.style.color = 'white';
+          });
+          btn.addEventListener('mouseleave', function () {
+            this.style.backgroundColor = 'white';
+            this.style.color = theme.primary;
+          });
         }
       });
 
-      // Apply eFootball theming to article body links
+      // Apply dynamic theming to article body links
       const articleContainer = document.querySelector('.article');
       if (articleContainer) {
-        articleContainer.classList.add('efootball-themed');
+        articleContainer.classList.add(`${categoryName}-themed`);
       }
 
       // Style the category link in breadcrumbs
