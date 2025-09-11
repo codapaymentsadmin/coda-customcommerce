@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -419,6 +419,39 @@
 					"type": "color",
 					"description": "efootball_secondary_color_description",
 					"label": "efootball_secondary_color_label",
+					"value": "#3B82F6"
+				},
+				{
+					"identifier": "ebaseball_logo",
+					"type": "file",
+					"description": "ebaseball_logo_description",
+					"label": "ebaseball_logo_label"
+				},
+				{
+					"identifier": "ebaseball_banner_image",
+					"type": "file",
+					"description": "ebaseball_banner_image_description",
+					"label": "ebaseball_banner_image_label"
+				},
+				{
+					"identifier": "show_ebaseball_section",
+					"type": "checkbox",
+					"description": "show_ebaseball_section_description",
+					"label": "show_ebaseball_section_label",
+					"value": true
+				},
+				{
+					"identifier": "ebaseball_primary_color",
+					"type": "color",
+					"description": "ebaseball_primary_color_description",
+					"label": "ebaseball_primary_color_label",
+					"value": "#1E40AF"
+				},
+				{
+					"identifier": "ebaseball_secondary_color",
+					"type": "color",
+					"description": "ebaseball_secondary_color_description",
+					"label": "ebaseball_secondary_color_label",
 					"value": "#3B82F6"
 				}
 			]
