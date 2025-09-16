@@ -106,6 +106,9 @@
       const heroSection = document.querySelector('[data-hero-section]');
       if (heroSection && theme.bannerImage) {
         heroSection.style.backgroundImage = `url(${theme.bannerImage})`;
+        heroSection.style.backgroundSize = 'cover';
+        heroSection.style.backgroundPosition = 'center center';
+        heroSection.style.backgroundRepeat = 'no-repeat';
       }
 
       // Set logo
@@ -161,5 +164,14 @@
         }
       })
     }
+
+    // Add 'notranslate' class to breadcrumb links containing game names
+    const breadcrumbLinksElement = document.querySelectorAll('.custom-breadcrumbs ol.breadcrumbs li a');
+    breadcrumbLinksElement.forEach(link => {
+      const linkText = link.textContent.toLowerCase();
+      if (linkText.includes('efootball') || linkText.includes('ebaseball')) {
+        link.classList.add('notranslate');
+      }
+    });
   });
 </script>

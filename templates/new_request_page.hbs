@@ -48,3 +48,16 @@
 		</p>
 	</div>
 </section>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		// Add 'notranslate' class to breadcrumb links containing game names
+		const breadcrumbLinks = document.querySelectorAll('.custom-breadcrumbs ol.breadcrumbs li a');
+		breadcrumbLinks.forEach(link => {
+			const linkText = link.textContent.toLowerCase();
+			if (linkText.includes('efootball') || linkText.includes('ebaseball')) {
+				link.classList.add('notranslate');
+			}
+		});
+	});
+</script>

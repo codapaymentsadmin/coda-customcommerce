@@ -28,8 +28,12 @@
 			{{breadcrumbs}}
 		</nav>
 
-		<h2 class="!text-3xl text-main-text font-bold">{{category.name}} Support</h2>
-		<p class="text-center text-main-text mt-2">Browse through sections and articles for {{category.name}}</p>
+		<h2 class="!text-3xl text-main-text font-bold">
+			<span>{{category.name}}</span>
+			Support
+		</h2>
+		<p class="text-center text-main-text mt-2">Browse through sections and articles for <span>{{category.name}}</span>
+		</p>
 		<ul class="w-full list mt-8 gap-4">
 			{{#each sections}}
 			<div class="collapse collapse-arrow bg-accordion-bg border border-gray-200 shadow-sm">
@@ -44,7 +48,7 @@
 					</p>
 					{{/if}}
 				</div>
-				<div id="articles-{{id}}" class="collapse-content text-sm gap-2 relative">
+				<div id="articles-{{id}}" class="collapse-content text-sm gap-2">
 					<div class="w-full flex flex-col gap-2">
 						{{#each sections}}
 						{{#if (compare @index "<" 3)}} <a href="{{url}}"
@@ -73,7 +77,7 @@
 					</div>
 
 					{{#if (compare articles.length ">" 5)}}
-					<div class="absolute bottom-0 right-0 pt-4">
+					<div class="w-full flex justify-end mt-4">
 						<a href="{{url}}"
 							class="btn btn-sm bg-transparent border border-cta text-cta hover:bg-cta hover:text-cta-text transition-colors rounded-lg shadow-sm view-more-btn">
 							View More
@@ -148,6 +152,9 @@
 			const heroSection = document.querySelector('[data-hero-section]');
 			if (heroSection && theme.bannerImage) {
 				heroSection.style.backgroundImage = `url(${theme.bannerImage})`;
+				heroSection.style.backgroundSize = 'cover';
+				heroSection.style.backgroundPosition = 'center center';
+				heroSection.style.backgroundRepeat = 'no-repeat';
 			}
 
 			// Set logo
@@ -218,6 +225,9 @@
 			const heroSection = document.querySelector('[data-hero-section]');
 			if (heroSection && theme.bannerImage) {
 				heroSection.style.backgroundImage = `url(${theme.bannerImage})`;
+				heroSection.style.backgroundSize = 'cover';
+				heroSection.style.backgroundPosition = 'center center';
+				heroSection.style.backgroundRepeat = 'no-repeat';
 			}
 
 			// Set logo
@@ -279,5 +289,14 @@
 				searchButton.classList.add('category-themed');
 			}
 		}
+
+		// Add 'notranslate' class to breadcrumb links containing game names
+		const breadcrumbLinksElement = document.querySelectorAll('.custom-breadcrumbs ol.breadcrumbs li a');
+		breadcrumbLinksElement.forEach(link => {
+			const linkText = link.textContent.toLowerCase();
+			if (linkText.includes('efootball') || linkText.includes('ebaseball')) {
+				link.classList.add('notranslate');
+			}
+		});
 	});
 </script>
