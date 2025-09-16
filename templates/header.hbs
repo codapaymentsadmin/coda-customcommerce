@@ -50,7 +50,7 @@
 	<div class="navbar max-w-7xl mx-auto">
 		<div class="flex-1">
 			<a href="{{page_path 'help_center'}}"
-				class="link no-underline text-base sm:text-md text-brand-text tracking-tight">
+				class="link no-underline text-base sm:text-md text-brand-text tracking-tight notranslate">
 				{{settings.brand_name}}
 			</a>
 		</div>
@@ -121,3 +121,52 @@
 		</div>
 	</div>
 </header>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		// Category-specific theme colors and assets (map category names to manifest settings)
+		const categoryThemes = {
+			'efootball': {
+				primary: '{{settings.efootball_primary_color}}',
+				secondary: '{{settings.efootball_secondary_color}}'
+			},
+			'ebaseball': {
+				primary: '{{settings.ebaseball_primary_color}}',
+				secondary: '{{settings.ebaseball_secondary_color}}'
+			}
+		};
+
+		// Detect game category from URL path or page title
+		const pagePath = window.location.pathname.toLowerCase();
+		const pageTitle = document.querySelector('h1')?.textContent?.toLowerCase().trim();
+
+		let detectedCategory = null;
+
+		// Check URL path first
+		if (pagePath.includes('efootball')) {
+			detectedCategory = 'efootball';
+		} else if (pagePath.includes('ebaseball')) {
+			detectedCategory = 'ebaseball';
+		}
+
+		// If not found in path, check page title
+		if (!detectedCategory && pageTitle) {
+			if (pageTitle.includes('efootball')) {
+				detectedCategory = 'efootball';
+			} else if (pageTitle.includes('ebaseball')) {
+				detectedCategory = 'ebaseball';
+			}
+		}
+
+		// Apply theming if a category is detected
+		if (detectedCategory && categoryThemes[detectedCategory]) {
+			const theme = categoryThemes[detectedCategory];
+			const hamburgerBtn = document.getElementById('hamburger-btn');
+
+			if (hamburgerBtn) {
+				hamburgerBtn.style.backgroundColor = theme.primary;
+				hamburgerBtn.style.borderColor = theme.primary;
+			}
+		}
+	});
+</script>
