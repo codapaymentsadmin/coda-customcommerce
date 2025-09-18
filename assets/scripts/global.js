@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const dynamicLink = document.getElementById("dynamic-link");
 	const dynamicLinkMobile = document.getElementById("dynamic-link-mobile");
 	const searchInput = document.getElementById("query");
+	const searchButton = document.querySelector("input[type='submit'][name='commit']");
 	const copyrightText = document.querySelector(".copyright");
 
 	const currentPath = window.location.pathname;
@@ -24,9 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 
-	// if (searchInput) {
-	// 	searchInput.setAttribute("placeholder", searchInput.placeholder);
-	// }
+	if (searchInput) {
+		searchInput.classList.add("notranslate");
+	}
+
+	if (searchButton) {
+		searchButton.classList.add("notranslate");
+	}
 
 	if (copyrightText) {
 		copyrightText.innerHTML = `&copy; ${new Date().getFullYear() + " "}`;

@@ -162,14 +162,21 @@
           categoryLink.style.setProperty('--hover-color', theme.primary);
           categoryLink.classList.add('category-themed');
         }
-      })
+      });
+
+      // Apply theming to hamburger button
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      if (hamburgerBtn) {
+        hamburgerBtn.style.backgroundColor = theme.primary;
+        hamburgerBtn.style.borderColor = theme.primary;
+      }
     }
 
     // Add 'notranslate' class to breadcrumb links containing game names
     const breadcrumbLinksElement = document.querySelectorAll('.custom-breadcrumbs ol.breadcrumbs li a');
     breadcrumbLinksElement.forEach(link => {
       const linkText = link.textContent.toLowerCase();
-      if (linkText.includes('efootball') || linkText.includes('ebaseball')) {
+      if (linkText.includes('efootball') || linkText.includes('ebaseball') || linkText.includes('konami web store support')) {
         link.classList.add('notranslate');
       }
     });

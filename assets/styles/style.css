@@ -41,6 +41,10 @@
 	--font-main-text: $text_font;
 }
 
+.cc-hero-section {
+	
+}
+
 /* Custom breadcrumbs styling */
 .custom-breadcrumbs {
 	font-size: 0.875rem;
