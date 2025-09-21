@@ -401,6 +401,12 @@
 					"label": "efootball_banner_image_label"
 				},
 				{
+					"identifier": "efootball_banner_mobile",
+					"type": "file",
+					"description": "efootball_banner_image_description",
+					"label": "efootball_banner_image_label"
+				},
+				{
 					"identifier": "show_efootball_section",
 					"type": "checkbox",
 					"description": "show_efootball_section_description",
@@ -429,6 +435,12 @@
 				},
 				{
 					"identifier": "ebaseball_banner_image",
+					"type": "file",
+					"description": "ebaseball_banner_image_description",
+					"label": "ebaseball_banner_image_label"
+				},
+				{
+					"identifier": "ebaseball_banner_mobile",
 					"type": "file",
 					"description": "ebaseball_banner_image_description",
 					"label": "ebaseball_banner_image_label"

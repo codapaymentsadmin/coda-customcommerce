@@ -1,6 +1,6 @@
 <div class="gtranslate_wrapper"></div>
 <!-- Hero Section -->
-<section id="cc-hero-section" class="hero min-h-[40dvh] bg-cover" data-hero-section>
+<section id="cc-hero-section" class="hero min-h-[30dvh] bg-cover" data-hero-section>
 	<div class="hero-overlay"></div>
 	<div class="hero-content w-full max-w-3xl text-neutral-content text-center">
 		<div class="w-full">
@@ -148,13 +148,19 @@
 		if (categoryTitle?.includes('efootball') || pagePath.includes('efootball')) {
 			const theme = categoryThemes['efootball'];
 
-			// Set banner image
+			// Set banner image with responsive handling
 			const heroSection = document.querySelector('[data-hero-section]');
 			if (heroSection && theme.bannerImage) {
-				heroSection.style.backgroundImage = `url(${theme.bannerImage})`;
-				heroSection.style.backgroundSize = 'cover';
-				heroSection.style.backgroundPosition = 'center center';
-				heroSection.style.backgroundRepeat = 'no-repeat';
+				const isMobile = window.innerWidth <= 475;
+				const bannerImage = isMobile ? '{{settings.efootball_banner_mobile}}' : theme.bannerImage;
+
+				if (bannerImage) {
+					heroSection.style.backgroundImage = `url(${bannerImage})`;
+					heroSection.style.backgroundSize = 'cover';
+					heroSection.style.backgroundPosition = 'center center';
+					heroSection.style.backgroundRepeat = 'no-repeat';
+					heroSection.style.backgroundColor = '#00009d';
+				}
 			}
 
 			// Set logo
@@ -221,13 +227,19 @@
 		if (categoryTitle?.includes('ebaseball') || pagePath.includes('ebaseball')) {
 			const theme = categoryThemes['ebaseball'];
 
-			// Set banner image
+			// Set banner image with responsive handling
 			const heroSection = document.querySelector('[data-hero-section]');
 			if (heroSection && theme.bannerImage) {
-				heroSection.style.backgroundImage = `url(${theme.bannerImage})`;
-				heroSection.style.backgroundSize = 'cover';
-				heroSection.style.backgroundPosition = 'center center';
-				heroSection.style.backgroundRepeat = 'no-repeat';
+				const isMobile = window.innerWidth <= 768;
+				const bannerImage = isMobile ? '{{settings.ebaseball_banner_mobile}}' : theme.bannerImage;
+
+				if (bannerImage) {
+					heroSection.style.backgroundImage = `url(${bannerImage})`;
+					heroSection.style.backgroundSize = 'cover';
+					heroSection.style.backgroundPosition = 'center center';
+					heroSection.style.backgroundRepeat = 'no-repeat';
+					heroSection.style.backgroundColor = '#121b28';
+				}
 			}
 
 			// Set logo
@@ -296,6 +308,30 @@
 			const linkText = link.textContent.toLowerCase();
 			if (linkText.includes('efootball') || linkText.includes('ebaseball') || linkText.includes('konami web store support')) {
 				link.classList.add('notranslate');
+			}
+		});
+
+		// Handle window resize for responsive banner images
+		window.addEventListener('resize', function () {
+			const heroSection = document.querySelector('[data-hero-section]');
+			if (!heroSection) return;
+
+			const isMobile = window.innerWidth <= 768;
+
+			if (categoryTitle?.includes('efootball') || pagePath.includes('efootball')) {
+				const theme = categoryThemes['efootball'];
+				const bannerImage = isMobile ? '{{settings.efootball_banner_mobile}}' : theme.bannerImage;
+				if (bannerImage) {
+					heroSection.style.backgroundImage = `url(${bannerImage})`;
+				}
+			}
+
+			if (categoryTitle?.includes('ebaseball') || pagePath.includes('ebaseball')) {
+				const theme = categoryThemes['ebaseball'];
+				const bannerImage = isMobile ? '{{settings.ebaseball_banner_mobile}}' : theme.bannerImage;
+				if (bannerImage) {
+					heroSection.style.backgroundImage = `url(${bannerImage})`;
+				}
 			}
 		});
 	});

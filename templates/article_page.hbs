@@ -1,5 +1,5 @@
 <!-- Hero Section -->
-<section id="cc-hero-section" class="hero min-h-[40dvh]" data-hero-section>
+<section id="cc-hero-section" class="hero min-h-[30dvh]" data-hero-section>
   <div class="hero-overlay"></div>
 </section>
 
@@ -127,13 +127,26 @@
     if (categoryName && categoryThemes[categoryName]) {
       const theme = categoryThemes[categoryName];
 
-      // Set banner image
+      // Set banner image with responsive handling
       const heroSection = document.querySelector('[data-hero-section]');
       if (heroSection && theme.bannerImage) {
-        heroSection.style.backgroundImage = `url(${theme.bannerImage})`;
-        heroSection.style.backgroundSize = 'cover';
-        heroSection.style.backgroundPosition = 'center center';
-        heroSection.style.backgroundRepeat = 'no-repeat';
+        const isMobile = window.innerWidth <= 768;
+        let bannerImage;
+
+        if (categoryName === 'efootball') {
+          bannerImage = isMobile ? '{{settings.efootball_banner_mobile}}' : theme.bannerImage;
+        } else if (categoryName === 'ebaseball') {
+          bannerImage = isMobile ? '{{settings.ebaseball_banner_mobile}}' : theme.bannerImage;
+        } else {
+          bannerImage = theme.bannerImage;
+        }
+
+        if (bannerImage) {
+          heroSection.style.backgroundImage = `url(${bannerImage})`;
+          heroSection.style.backgroundSize = 'cover';
+          heroSection.style.backgroundPosition = 'center center';
+          heroSection.style.backgroundRepeat = 'no-repeat';
+        }
       }
 
       // Apply dynamic theming to sidebar buttons
@@ -187,6 +200,31 @@
       const linkText = link.textContent.toLowerCase();
       if (linkText.includes('efootball') || linkText.includes('ebaseball') || linkText.includes('konami web store support')) {
         link.classList.add('notranslate');
+      }
+    });
+
+    // Handle window resize for responsive banner images
+    window.addEventListener('resize', function () {
+      if (categoryName && categoryThemes[categoryName]) {
+        const theme = categoryThemes[categoryName];
+        const heroSection = document.querySelector('[data-hero-section]');
+
+        if (heroSection && theme.bannerImage) {
+          const isMobile = window.innerWidth <= 768;
+          let bannerImage;
+
+          if (categoryName === 'efootball') {
+            bannerImage = isMobile ? '{{settings.efootball_banner_mobile}}' : theme.bannerImage;
+          } else if (categoryName === 'ebaseball') {
+            bannerImage = isMobile ? '{{settings.ebaseball_banner_mobile}}' : theme.bannerImage;
+          } else {
+            bannerImage = theme.bannerImage;
+          }
+
+          if (bannerImage) {
+            heroSection.style.backgroundImage = `url(${bannerImage})`;
+          }
+        }
       }
     });
   });
