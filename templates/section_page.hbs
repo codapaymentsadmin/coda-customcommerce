@@ -1,5 +1,5 @@
 <div class="gtranslate_wrapper"></div>
-<section id="cc-hero-section" class="hero min-h-[30dvh]" data-hero-section>
+<section id="cc-hero-section" class="hero min-h-[30dvh] sm:min-h-[40dvh]" data-hero-section>
   <div class="hero-overlay"></div>
   <div class="hero-content w-full max-w-3xl text-neutral-content text-center">
     <div class="w-full">
@@ -110,17 +110,26 @@
 
         if (categoryName === 'efootball') {
           bannerImage = isMobile ? '{{settings.efootball_banner_mobile}}' : theme.bannerImage;
+
+          if (bannerImage) {
+            heroSection.style.backgroundImage = `url(${bannerImage})`;
+            heroSection.style.backgroundSize = 'cover';
+            heroSection.style.backgroundPosition = 'center center';
+            heroSection.style.backgroundRepeat = 'no-repeat';
+            heroSection.style.backgroundColor = '#00009d';
+          }
         } else if (categoryName === 'ebaseball') {
           bannerImage = isMobile ? '{{settings.ebaseball_banner_mobile}}' : theme.bannerImage;
+
+          if (bannerImage) {
+            heroSection.style.backgroundImage = `url(${bannerImage})`;
+            heroSection.style.backgroundSize = 'cover';
+            heroSection.style.backgroundPosition = 'center center';
+            heroSection.style.backgroundRepeat = 'no-repeat';
+            heroSection.style.backgroundColor = '#121b28';
+          }
         } else {
           bannerImage = theme.bannerImage;
-        }
-
-        if (bannerImage) {
-          heroSection.style.backgroundImage = `url(${bannerImage})`;
-          heroSection.style.backgroundSize = 'cover';
-          heroSection.style.backgroundPosition = 'center center';
-          heroSection.style.backgroundRepeat = 'no-repeat';
         }
       }
 
