@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -403,8 +403,8 @@
 				{
 					"identifier": "efootball_banner_mobile",
 					"type": "file",
-					"description": "efootball_banner_image_description",
-					"label": "efootball_banner_image_label"
+					"description": "efootball_banner_mobile_description",
+					"label": "efootball_banner_mobile_label"
 				},
 				{
 					"identifier": "show_efootball_section",
@@ -442,8 +442,8 @@
 				{
 					"identifier": "ebaseball_banner_mobile",
 					"type": "file",
-					"description": "ebaseball_banner_image_description",
-					"label": "ebaseball_banner_image_label"
+					"description": "ebaseball_banner_mobile_description",
+					"label": "ebaseball_banner_mobile_label"
 				},
 				{
 					"identifier": "show_ebaseball_section",
