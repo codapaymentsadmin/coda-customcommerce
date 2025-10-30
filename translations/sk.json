@@ -118,5 +118,11 @@
 	"ebaseball_primary_color_label": "eBaseball Primary Color",
 	"ebaseball_primary_color_description": "Primary theme color for eBaseball pages",
 	"ebaseball_secondary_color_label": "eBaseball Secondary Color",
-	"ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages"
+	"ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages",
+	"show_alt_webstore_helpcenter_link_label": "Zobraziť alternatívny odkaz na centrum nápovedy webového obchodu",
+	"show_alt_webstore_helpcenter_link_description": "Zobraziť alternatívny odkaz na centrum nápovedy webového obchodu",
+	"alt_webstore_helpcenter_link_label": "Alternatívny odkaz na centrum nápovedy webového obchodu",
+	"alt_webstore_helpcenter_link_description": "Odkaz na alternatívne centrum nápovedy webového obchodu",
+	"alt_webstore_helpcenter_link_text_label": "Text alternatívneho odkazu na centrum nápovedy webového obchodu",
+	"alt_webstore_helpcenter_link_text_description": "Text pre alternatívny odkaz na centrum nápovedy webového obchodu"
 }

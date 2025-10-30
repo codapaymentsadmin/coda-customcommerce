@@ -118,5 +118,11 @@
 	"ebaseball_primary_color_label": "eBaseball Primary Color",
 	"ebaseball_primary_color_description": "Primary theme color for eBaseball pages",
 	"ebaseball_secondary_color_label": "eBaseball Secondary Color",
-	"ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages"
+	"ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages",
+	"show_alt_webstore_helpcenter_link_label": "显示替代网店帮助中心链接",
+	"show_alt_webstore_helpcenter_link_description": "显示替代网店帮助中心链接",
+	"alt_webstore_helpcenter_link_label": "替代网店帮助中心链接",
+	"alt_webstore_helpcenter_link_description": "指向替代网店帮助中心的链接",
+	"alt_webstore_helpcenter_link_text_label": "替代网店帮助中心链接文字",
+	"alt_webstore_helpcenter_link_text_description": "替代网店帮助中心链接的文字"
 }

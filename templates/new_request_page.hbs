@@ -1,22 +1,4 @@
 <div class="gtranslate_wrapper"></div>
-<!-- Hero Section -->
-<!-- <section
-	id="cc-hero-section"
-	class="hero min-h-[50dvh]"
-	style="background-image: url({{settings.homepage_background_image}});"
->
-	<div class="hero-overlay"></div>
-	<div class="hero-content w-full max-w-3xl text-neutral-content text-center">
-		<div class="w-full">
-			<h1 class="mb-5 text-3xl font-bold">
-				Contact Support
-			</h1>
-			<p class="">Need help? Our support team is here to assist you. Fill
-				out the form below and we'll get back to you as soon as
-				possible.</p>
-		</div>
-	</div>
-</section> -->
 
 <section id="contact-support" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 pt-16 pb-12">
 	<!-- Breadcrumbs using Zendesk helper -->
@@ -38,12 +20,17 @@
 			<span>
 				<i class="ph ph-bold ph-warning text-yellow-500"></i>
 			</span>
-			<strong>For in-game inquiries:</strong> Please make sure to include your Player ID, Server, and detailed
-			description of the issue.
+			<strong>For in-game inquiries:</strong> Please visit the game help center for further investigation.
 			<span>
 				<a href="{{settings.webstore_helpcenter_link}}" target="_blank" class="warning-hc-link">
 					{{settings.webstore_helpcenter_link_text}}
 				</a>
+				{{#if settings.show_alt_webstore_helpcenter}}
+				•
+				<a href="{{settings.alt_webstore_helpcenter_link}}" target="_blank" class="warning-hc-link">
+					{{settings.alt_webstore_helpcenter_link_text}}
+				</a>
+				{{/if}}
 			</span>
 		</p>
 	</div>

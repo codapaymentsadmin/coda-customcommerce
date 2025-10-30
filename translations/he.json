@@ -101,5 +101,11 @@
   "ebaseball_primary_color_label": "eBaseball Primary Color",
   "ebaseball_primary_color_description": "Primary theme color for eBaseball pages",
   "ebaseball_secondary_color_label": "eBaseball Secondary Color",
-  "ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages"
+  "ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages",
+  "show_alt_webstore_helpcenter_link_label": "הצגת קישור חלופי למרכז העזרה של החנות המקוונת",
+  "show_alt_webstore_helpcenter_link_description": "הצגת קישור חלופי למרכז העזרה של החנות המקוונת",
+  "alt_webstore_helpcenter_link_label": "קישור חלופי למרכז העזרה של החנות המקוונת",
+  "alt_webstore_helpcenter_link_description": "קישור למרכז העזרה החלופי של החנות המקוונת",
+  "alt_webstore_helpcenter_link_text_label": "טקסט הקישור החלופי למרכז העזרה של החנות המקוונת",
+  "alt_webstore_helpcenter_link_text_description": "טקסט עבור הקישור החלופי למרכז העזרה של החנות המקוונת"
 }

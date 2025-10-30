@@ -118,5 +118,11 @@
 	"ebaseball_primary_color_label": "eBaseball Primary Color",
 	"ebaseball_primary_color_description": "Primary theme color for eBaseball pages",
 	"ebaseball_secondary_color_label": "eBaseball Secondary Color",
-	"ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages"
+	"ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages",
+	"show_alt_webstore_helpcenter_link_label": "Alternatív webshop súgóközpont link megjelenítése",
+	"show_alt_webstore_helpcenter_link_description": "Alternatív webshop súgóközpont link megjelenítése",
+	"alt_webstore_helpcenter_link_label": "Alternatív webshop súgóközpont link",
+	"alt_webstore_helpcenter_link_description": "Link az alternatív webshop súgóközponthoz",
+	"alt_webstore_helpcenter_link_text_label": "Alternatív webshop súgóközpont link szöveg",
+	"alt_webstore_helpcenter_link_text_description": "Szöveg az alternatív webshop súgóközpont linkhez"
 }

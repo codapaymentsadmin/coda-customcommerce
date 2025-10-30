@@ -118,5 +118,11 @@
 	"ebaseball_primary_color_label": "eBaseball Primary Color",
 	"ebaseball_primary_color_description": "Primary theme color for eBaseball pages",
 	"ebaseball_secondary_color_label": "eBaseball Secondary Color",
-	"ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages"
+	"ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages",
+	"show_alt_webstore_helpcenter_link_label": "إظهار رابط مركز مساعدة المتجر البديل",
+	"show_alt_webstore_helpcenter_link_description": "عرض رابط مركز مساعدة المتجر البديل",
+	"alt_webstore_helpcenter_link_label": "رابط مركز مساعدة المتجر البديل",
+	"alt_webstore_helpcenter_link_description": "رابط إلى مركز مساعدة المتجر البديل",
+	"alt_webstore_helpcenter_link_text_label": "نص رابط مركز مساعدة المتجر البديل",
+	"alt_webstore_helpcenter_link_text_description": "نص رابط مركز مساعدة المتجر البديل"
 }

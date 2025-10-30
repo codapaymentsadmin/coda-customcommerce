@@ -118,5 +118,11 @@
 	"ebaseball_primary_color_label": "eBaseball Primary Color",
 	"ebaseball_primary_color_description": "Primary theme color for eBaseball pages",
 	"ebaseball_secondary_color_label": "eBaseball Secondary Color",
-	"ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages"
+	"ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages",
+	"show_alt_webstore_helpcenter_link_label": "Alternatives Hilfezentrum anzeigen",
+	"show_alt_webstore_helpcenter_link_description": "Link zum alternativen Hilfezentrum anzeigen",
+	"alt_webstore_helpcenter_link_label": "Alternatives Hilfezentrum-Link",
+	"alt_webstore_helpcenter_link_description": "Link zum alternativen Hilfezentrum",
+	"alt_webstore_helpcenter_link_text_label": "Text für alternatives Hilfezentrum-Link",
+	"alt_webstore_helpcenter_link_text_description": "Text für den Link zum alternativen Hilfezentrum"
 }

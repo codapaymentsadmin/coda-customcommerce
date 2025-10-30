@@ -118,5 +118,11 @@
 	"ebaseball_primary_color_label": "eBaseball Primary Color",
 	"ebaseball_primary_color_description": "Primary theme color for eBaseball pages",
 	"ebaseball_secondary_color_label": "eBaseball Secondary Color",
-	"ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages"
+	"ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages",
+	"show_alt_webstore_helpcenter_link_label": "Tampilkan tautan pusat bantuan webstore alternatif",
+	"show_alt_webstore_helpcenter_link_description": "Tampilkan tautan pusat bantuan webstore alternatif",
+	"alt_webstore_helpcenter_link_label": "Tautan pusat bantuan webstore alternatif",
+	"alt_webstore_helpcenter_link_description": "Tautan ke pusat bantuan webstore alternatif",
+	"alt_webstore_helpcenter_link_text_label": "Teks tautan pusat bantuan webstore alternatif",
+	"alt_webstore_helpcenter_link_text_description": "Teks untuk tautan pusat bantuan webstore alternatif"
 }

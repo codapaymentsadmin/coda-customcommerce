@@ -118,5 +118,11 @@
 	"ebaseball_primary_color_label": "eBaseball Primary Color",
 	"ebaseball_primary_color_description": "Primary theme color for eBaseball pages",
 	"ebaseball_secondary_color_label": "eBaseball Secondary Color",
-	"ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages"
+	"ebaseball_secondary_color_description": "Secondary theme color for eBaseball pages",
+	"show_alt_webstore_helpcenter_link_label": "대체 웹스토어 도움말 센터 링크 표시",
+	"show_alt_webstore_helpcenter_link_description": "대체 웹스토어 도움말 센터 링크 표시",
+	"alt_webstore_helpcenter_link_label": "대체 웹스토어 도움말 센터 링크",
+	"alt_webstore_helpcenter_link_description": "대체 웹스토어 도움말 센터 링크",
+	"alt_webstore_helpcenter_link_text_label": "대체 웹스토어 도움말 센터 링크 텍스트",
+	"alt_webstore_helpcenter_link_text_description": "대체 웹스토어 도움말 센터 링크 텍스트"
 }
