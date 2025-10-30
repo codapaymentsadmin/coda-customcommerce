@@ -72,8 +72,8 @@
 				{
 					"identifier": "alt_webstore_helpcenter_link_text",
 					"type": "text",
-					"description": "alt_webstore_helpcenter_link_text_description",
-					"label": "alt_webstore_helpcenter_link_text_label",
+					"description": "webstore_helpcenter_link_text_description",
+					"label": "webstore_helpcenter_link_text_label",
 					"value": "eBaseball Help Center"
 				}
 			]
