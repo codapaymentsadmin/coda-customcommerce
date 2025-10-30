@@ -68,13 +68,6 @@
 					"description": "alt_webstore_helpcenter_link_description",
 					"label": "alt_webstore_helpcenter_link_label",
 					"value": "https://www.konami.com/help"
-				},
-				{
-					"identifier": "alt_webstore_helpcenter_link_text",
-					"type": "text",
-					"description": "webstore_helpcenter_link_text_description",
-					"label": "webstore_helpcenter_link_text_label",
-					"value": "eBaseball Help Center"
 				}
 			]
 		},
