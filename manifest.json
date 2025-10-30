@@ -40,34 +40,6 @@
 					"description": "webstore_link_description",
 					"label": "webstore_link_label",
 					"value": "https://www.konami.com/store"
-				},
-				{
-					"identifier": "webstore_helpcenter_link",
-					"type": "text",
-					"description": "webstore_helpcenter_link_description",
-					"label": "webstore_helpcenter_link_label",
-					"value": "https://www.konami.com/efootball/faq/0/en-us/"
-				},
-				{
-					"identifier": "webstore_helpcenter_link_text",
-					"type": "text",
-					"description": "webstore_helpcenter_link_text_description",
-					"label": "webstore_helpcenter_link_text_label",
-					"value": "eFootball Help Center"
-				},
-				{
-					"identifier": "show_alt_webstore_helpcenter",
-					"type": "checkbox",
-					"description": "show_alt_webstore_helpcenter_link_description",
-					"label": "show_alt_webstore_helpcenter_link_label",
-					"value": false
-				},
-				{
-					"identifier": "alt_webstore_helpcenter_link",
-					"type": "text",
-					"description": "alt_webstore_helpcenter_link_description",
-					"label": "alt_webstore_helpcenter_link_label",
-					"value": "https://www.konami.com/help"
 				}
 			]
 		},
@@ -441,6 +413,21 @@
 					"label": "efootball_secondary_color_label",
 					"value": "#3B82F6"
 				},
+				
+				{
+					"identifier": "efootball_webstore_helpcenter_link",
+					"type": "text",
+					"description": "webstore_helpcenter_link_description",
+					"label": "webstore_helpcenter_link_label",
+					"value": "https://www.konami.com/efootball/faq/0/en-us/"
+				},
+				{
+					"identifier": "efootball_webstore_helpcenter_link_text",
+					"type": "text",
+					"description": "webstore_helpcenter_link_text_description",
+					"label": "webstore_helpcenter_link_text_label",
+					"value": "eFootball Help Center"
+				},
 				{
 					"identifier": "ebaseball_logo",
 					"type": "file",
@@ -479,6 +466,20 @@
 					"description": "ebaseball_secondary_color_description",
 					"label": "ebaseball_secondary_color_label",
 					"value": "#3B82F6"
+				},
+				{
+					"identifier": "ebaseball_webstore_helpcenter_link",
+					"type": "text",
+					"description": "alt_webstore_helpcenter_link_description",
+					"label": "alt_webstore_helpcenter_link_label",
+					"value": "https://www.konami.com/help"
+				},
+				{
+					"identifier": "ebaseball_webstore_helpcenter_link_text",
+					"type": "text",
+					"description": "webstore_helpcenter_link_text_description",
+					"label": "webstore_helpcenter_link_text_label",
+					"value": "eBaseball Help Center"
 				}
 			]
 		},
