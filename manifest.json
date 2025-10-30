@@ -415,14 +415,14 @@
 				},
 				
 				{
-					"identifier": "efootball_webstore_helpcenter_link",
+					"identifier": "efootball_helpcenter_link",
 					"type": "text",
 					"description": "eFootball Help Center Link to be put in New Request Page",
 					"label": "eFootball Help Center Link",
 					"value": "https://www.konami.com/efootball/faq/0/en-us/"
 				},
 				{
-					"identifier": "efootball_webstore_helpcenter_link_text",
+					"identifier": "efootball_helpcenter_link_text",
 					"type": "text",
 					"description": "eFootball Help Center Link Caption",
 					"label": "eFootball Help Center Link Caption",
@@ -468,14 +468,14 @@
 					"value": "#3B82F6"
 				},
 				{
-					"identifier": "ebaseball_webstore_helpcenter_link",
+					"identifier": "ebaseball_helpcenter_link",
 					"type": "text",
 					"description": "eBaseball Help Center Link to be put in New Request Page",
 					"label": "eBaseball Help Center Link",
 					"value": "https://www.konami.com/help"
 				},
 				{
-					"identifier": "ebaseball_webstore_helpcenter_link_text",
+					"identifier": "ebaseball_helpcenter_link_text",
 					"type": "text",
 					"description": "webstore_helpcenter_link_text_description",
 					"label": "webstore_helpcenter_link_text_label",
