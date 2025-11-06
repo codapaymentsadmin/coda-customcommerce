@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const currentLocale = window.location.pathname.split("/")[2];
 
 	if (gtElement) {
-		gtElement.style.bottom = "70px";
+		gtElement.style.bottom = "40px";
 	}
 
 	hamburgBtn.addEventListener("click", () => {
