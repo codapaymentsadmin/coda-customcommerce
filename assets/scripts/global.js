@@ -11,9 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
 	const searchInput = document.getElementById("query");
 	const searchButton = document.querySelector("input[type='submit'][name='commit']");
 	const copyrightText = document.querySelector(".copyright");
+	const gtElement = document.getElementById("gt_float_wrapper");
 
 	const currentPath = window.location.pathname;
 	const currentLocale = window.location.pathname.split("/")[2];
+
+	if (gtElement) {
+		gtElement.style.bottom = "70px";
+	}
 
 	hamburgBtn.addEventListener("click", () => {
 		if (mobileDrawer.classList.contains("hidden")) {

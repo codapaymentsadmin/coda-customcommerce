@@ -41,6 +41,10 @@
 	--font-main-text: $text_font;
 }
 
+main {
+	min-height: calc(100dvh - 160px);
+}
+
 /* Custom breadcrumbs styling */
 .custom-breadcrumbs {
 	font-size: 0.875rem;
