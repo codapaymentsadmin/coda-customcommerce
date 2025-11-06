@@ -124,18 +124,18 @@
 		let categoryName = null;
 
 		// Get category name from the page title or breadcrumbs
-		const categoryTitle = document.querySelector('h1')?.textContent?.toLowerCase().trim();
+		const categoryTitle = document.querySelector('h1')?.textContent?.trim();
 		const pagePath = window.location.pathname.toLowerCase();
 
 		// Category-specific theme colors and assets (map category names to manifest settings)
 		const categoryThemes = {
-			'efootball': {
+			'eFootball™': {
 				primary: '{{settings.efootball_primary_color}}',
 				secondary: '{{settings.efootball_secondary_color}}',
 				bannerImage: '{{settings.efootball_banner_image}}',
 				logo: '{{settings.efootball_logo}}'
 			},
-			'ebaseball': {
+			'eBaseball™: MLB PRO SPIRIT': {
 				primary: '{{settings.ebaseball_primary_color}}',
 				secondary: '{{settings.ebaseball_secondary_color}}',
 				bannerImage: '{{settings.ebaseball_banner_image}}',
@@ -145,8 +145,8 @@
 		};
 
 		// Check if we're on eFootball category page
-		if (categoryTitle?.includes('efootball') || pagePath.includes('efootball')) {
-			const theme = categoryThemes['efootball'];
+		if (categoryTitle?.includes('eFootball™') || pagePath.includes('efootball')) {
+			const theme = categoryThemes['eFootball™'];
 
 			// Set banner image with responsive handling
 			const heroSection = document.querySelector('[data-hero-section]');
@@ -206,6 +206,7 @@
 				supportIconBg.classList.add('bg-efootball-primary');
 			}
 
+			breadcrumbLinks[0].textContent = 'KONAMI Web Store Support';
 			// Style the category link in breadcrumbs
 			breadcrumbLinks.forEach((breadcrumb, index) => {
 				const categoryLink = breadcrumbLinks[index];
@@ -224,8 +225,8 @@
 		}
 
 		// Check if we're on eBaseball category page
-		if (categoryTitle?.includes('ebaseball') || pagePath.includes('ebaseball')) {
-			const theme = categoryThemes['ebaseball'];
+		if (categoryTitle?.includes('eBaseball™: MLB PRO SPIRIT') || pagePath.includes('ebaseball')) {
+			const theme = categoryThemes['eBaseball™: MLB PRO SPIRIT'];
 
 			// Set banner image with responsive handling
 			const heroSection = document.querySelector('[data-hero-section]');
@@ -304,9 +305,10 @@
 
 		// Add 'notranslate' class to breadcrumb links containing game names
 		const breadcrumbLinksElement = document.querySelectorAll('.custom-breadcrumbs ol.breadcrumbs li a');
+		breadcrumbLinksElement[0].textContent = 'KONAMI Web Store Support';
 		breadcrumbLinksElement.forEach(link => {
 			const linkText = link.textContent.toLowerCase();
-			if (linkText.includes('efootball') || linkText.includes('ebaseball') || linkText.includes('konami web store support')) {
+			if (linkText.includes('eFootball™') || linkText.includes('eBaseball™: MLB PRO SPIRIT') || linkText.includes('KONAMI Web Store Support')) {
 				link.classList.add('notranslate');
 			}
 		});
@@ -318,16 +320,16 @@
 
 			const isMobile = window.innerWidth <= 768;
 
-			if (categoryTitle?.includes('efootball') || pagePath.includes('efootball')) {
-				const theme = categoryThemes['efootball'];
+			if (categoryTitle?.includes('eFootball™') || pagePath.includes('efootball')) {
+				const theme = categoryThemes['eFootball™'];
 				const bannerImage = isMobile ? '{{settings.efootball_banner_mobile}}' : theme.bannerImage;
 				if (bannerImage) {
 					heroSection.style.backgroundImage = `url(${bannerImage})`;
 				}
 			}
 
-			if (categoryTitle?.includes('ebaseball') || pagePath.includes('ebaseball')) {
-				const theme = categoryThemes['ebaseball'];
+			if (categoryTitle?.includes('eBaseball™: MLB PRO SPIRIT') || pagePath.includes('ebaseball')) {
+				const theme = categoryThemes['eBaseball™: MLB PRO SPIRIT'];
 				const bannerImage = isMobile ? '{{settings.ebaseball_banner_mobile}}' : theme.bannerImage;
 				if (bannerImage) {
 					heroSection.style.backgroundImage = `url(${bannerImage})`;

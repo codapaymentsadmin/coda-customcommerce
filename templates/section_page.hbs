@@ -75,21 +75,22 @@
     const breadcrumbLinks = breadcrumbsNav?.querySelectorAll('a');
     let categoryName = null;
 
+    breadcrumbLinks[0].textContent = 'KONAMI Web Store Support';
     // The category is typically the second-to-last link in breadcrumbs
     if (breadcrumbLinks && breadcrumbLinks.length >= 2) {
       const categoryLink = breadcrumbLinks[1];
-      categoryName = categoryLink.textContent?.toLowerCase().trim();
+      categoryName = categoryLink.textContent?.trim();
     }
 
     // Category-specific theme colors and assets (map category names to manifest settings)
     const categoryThemes = {
-      'efootball': {
+      'eFootball™': {
         primary: '{{settings.efootball_primary_color}}',
         secondary: '{{settings.efootball_secondary_color}}',
         bannerImage: '{{settings.efootball_banner_image}}',
         logo: '{{settings.efootball_logo}}'
       },
-      'ebaseball': {
+      'eBaseball™: MLB PRO SPIRIT': {
         primary: '{{settings.ebaseball_primary_color}}',
         secondary: '{{settings.ebaseball_secondary_color}}',
         bannerImage: '{{settings.ebaseball_banner_image}}',
@@ -108,7 +109,7 @@
         const isMobile = window.innerWidth <= 768;
         let bannerImage;
 
-        if (categoryName === 'efootball') {
+        if (categoryName === 'eFootball™') {
           bannerImage = isMobile ? '{{settings.efootball_banner_mobile}}' : theme.bannerImage;
 
           if (bannerImage) {
@@ -118,7 +119,7 @@
             heroSection.style.backgroundRepeat = 'no-repeat';
             heroSection.style.backgroundColor = '#00009d';
           }
-        } else if (categoryName === 'ebaseball') {
+        } else if (categoryName === 'eBaseball™: MLB PRO SPIRIT') {
           bannerImage = isMobile ? '{{settings.ebaseball_banner_mobile}}' : theme.bannerImage;
 
           if (bannerImage) {
@@ -197,8 +198,8 @@
     // Add 'notranslate' class to breadcrumb links containing game names
     const breadcrumbLinksElement = document.querySelectorAll('.custom-breadcrumbs ol.breadcrumbs li a');
     breadcrumbLinksElement.forEach(link => {
-      const linkText = link.textContent.toLowerCase();
-      if (linkText.includes('efootball') || linkText.includes('ebaseball') || linkText.includes('konami web store support')) {
+      const linkText = link.textContent;
+      if (linkText.includes('eFootball™') || linkText.includes('eBaseball™: MLB PRO SPIRIT') || linkText.includes('KONAMI Web Store Support')) {
         link.classList.add('notranslate');
       }
     });
@@ -213,9 +214,9 @@
           const isMobile = window.innerWidth <= 768;
           let bannerImage;
 
-          if (categoryName === 'efootball') {
+          if (categoryName === 'eFootball™') {
             bannerImage = isMobile ? '{{settings.efootball_banner_mobile}}' : theme.bannerImage;
-          } else if (categoryName === 'ebaseball') {
+          } else if (categoryName === 'eBaseball™: MLB PRO SPIRIT') {
             bannerImage = isMobile ? '{{settings.ebaseball_banner_mobile}}' : theme.bannerImage;
           } else {
             bannerImage = theme.bannerImage;
