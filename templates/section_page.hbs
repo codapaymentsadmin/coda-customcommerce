@@ -76,7 +76,7 @@
     const breadcrumbLinks = breadcrumbsNav?.querySelectorAll('a');
     let categoryName = null;
 
-    breadcrumbLinks[0].textContent = 'KONAMI Web Store Support';
+    breadcrumbLinks[0].textContent = 'Web Store Support';
     // The category is typically the second-to-last link in breadcrumbs
     if (breadcrumbLinks && breadcrumbLinks.length >= 2) {
       const categoryLink = breadcrumbLinks[1];
@@ -200,7 +200,7 @@
     const breadcrumbLinksElement = document.querySelectorAll('.custom-breadcrumbs ol.breadcrumbs li a');
     breadcrumbLinksElement.forEach(link => {
       const linkText = link.textContent;
-      if (linkText.includes('eFootball™') || linkText.includes('eBaseball™: MLB PRO SPIRIT') || linkText.includes('KONAMI Web Store Support')) {
+      if (linkText.includes('eFootball™') || linkText.includes('eBaseball™: MLB PRO SPIRIT') || linkText.includes('Web Store Support')) {
         link.classList.add('notranslate');
       }
     });

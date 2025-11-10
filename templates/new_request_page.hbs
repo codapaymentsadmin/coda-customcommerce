@@ -30,10 +30,10 @@
 	document.addEventListener('DOMContentLoaded', function () {
 		// Add 'notranslate' class to breadcrumb links containing game names
 		const breadcrumbLinks = document.querySelectorAll('.custom-breadcrumbs ol.breadcrumbs li a');
-		breadcrumbLinks[0].textContent = 'KONAMI Web Store Support';
+		breadcrumbLinks[0].textContent = 'Web Store Support';
 		breadcrumbLinks.forEach(link => {
 			const linkText = link.textContent;
-			if (linkText.includes('eFootball™') || linkText.includes('eBaseball™: MLB PRO SPIRIT') || linkText.includes('KONAMI Web Store Support')) {
+			if (linkText.includes('eFootball™') || linkText.includes('eBaseball™: MLB PRO SPIRIT') || linkText.includes('Web Store Support')) {
 				link.classList.add('notranslate');
 			}
 		});

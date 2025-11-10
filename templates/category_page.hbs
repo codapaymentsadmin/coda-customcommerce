@@ -207,7 +207,7 @@
 				supportIconBg.classList.add('bg-efootball-primary');
 			}
 
-			breadcrumbLinks[0].textContent = 'KONAMI Web Store Support';
+			breadcrumbLinks[0].textContent = 'Web Store Support';
 			// Style the category link in breadcrumbs
 			breadcrumbLinks.forEach((breadcrumb, index) => {
 				const categoryLink = breadcrumbLinks[index];
@@ -306,10 +306,10 @@
 
 		// Add 'notranslate' class to breadcrumb links containing game names
 		const breadcrumbLinksElement = document.querySelectorAll('.custom-breadcrumbs ol.breadcrumbs li a');
-		breadcrumbLinksElement[0].textContent = 'KONAMI Web Store Support';
+		breadcrumbLinksElement[0].textContent = 'Web Store Support';
 		breadcrumbLinksElement.forEach(link => {
 			const linkText = link.textContent.toLowerCase();
-			if (linkText.includes('eFootball™') || linkText.includes('eBaseball™: MLB PRO SPIRIT') || linkText.includes('KONAMI Web Store Support')) {
+			if (linkText.includes('eFootball™') || linkText.includes('eBaseball™: MLB PRO SPIRIT') || linkText.includes('Web Store Support')) {
 				link.classList.add('notranslate');
 			}
 		});
