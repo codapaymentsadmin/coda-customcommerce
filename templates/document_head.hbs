@@ -10,3 +10,39 @@
 <link rel="manifest" href="/site.webmanifest">
 <script>window.gtranslateSettings = { "default_language": "en", "native_language_names": false, "detect_browser_language": true, "languages": ["en", "pt", "id", "ms", "ko", "th", "tr", "es", "de", "fr", "cs", "da", "hu", "it", "nl", "pl", "sv", "hi", "ar"], "wrapper_selector": ".gtranslate_wrapper", "flag_style": "3d", "alt_flags": { "en": "usa" } }</script>
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+<script>
+	window.zendeskThemeSettings = {
+		efootball: {
+			logo: '{{settings.efootball_logo}}',
+			bannerImage: '{{settings.efootball_banner_image}}',
+			bannerMobile: '{{settings.efootball_banner_mobile}}',
+			primary: '{{settings.efootball_primary_color}}',
+			secondary: '{{settings.efootball_secondary_color}}'
+		},
+		blockman: {
+			logo: '{{settings.blockman_logo}}',
+			bannerImage: '{{settings.blockman_banner_image}}',
+			bannerMobile: '{{settings.blockman_banner_mobile}}',
+			primary: '{{settings.blockman_primary_color}}',
+			secondary: '{{settings.blockman_secondary_color}}'
+		},
+		moba: {
+			logo: '{{settings.moba_logo}}',
+			bannerImage: '{{settings.moba_banner_image}}',
+			bannerMobile: '{{settings.moba_banner_mobile}}',
+			primary: '{{settings.moba_primary_color}}',
+			secondary: '{{settings.moba_secondary_color}}'
+		},
+		default: {
+			logo: '',
+			bannerImage: '',
+			bannerMobile: '',
+			primary: '{{settings.default_primary_color}}',
+			secondary: '{{settings.default_secondary_color}}'
+		}
+	};
+
+	if (!sessionStorage.getItem('currentGameTitle')) {
+		sessionStorage.setItem('currentGameTitle', 'default');
+	}
+</script>

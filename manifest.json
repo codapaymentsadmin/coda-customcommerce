@@ -372,45 +372,64 @@
 			]
 		},
 		{
-			"label": "game_group_label",
+			"label": "Default Game Sections Styling",
+			"variables": [
+				{
+					"identifier": "default_primary_color",
+					"type": "color",
+					"description": "",
+					"label": "Default primary color",
+					"value": "#1E40AF"
+				},
+				{
+					"identifier": "default_secondary_color",
+					"type": "color",
+					"description": "",
+					"label": "Default secondary color",
+					"value": "#3B82F6"
+				}
+			]
+		},
+		{
+			"label": "Specific Game Sections Styling",
 			"variables": [
 				{
 					"identifier": "efootball_logo",
 					"type": "file",
-					"description": "efootball_logo_description",
-					"label": "efootball_logo_label"
+					"description": "eFootball logo format in .webp",
+					"label": "eFootball Logo (Tile)"
 				},
 				{
 					"identifier": "efootball_banner_image",
 					"type": "file",
-					"description": "efootball_banner_image_description",
-					"label": "efootball_banner_image_label"
+					"description": "eFootball banner image format in .webp",
+					"label": "eFootball Banner Image"
 				},
 				{
 					"identifier": "efootball_banner_mobile",
 					"type": "file",
-					"description": "efootball_banner_mobile_description",
-					"label": "efootball_banner_mobile_label"
+					"description": "eFootball banner mobile image format in .webp",
+					"label": "eFootball Banner Image (for mobile)"
 				},
 				{
 					"identifier": "show_efootball_section",
 					"type": "checkbox",
-					"description": "show_efootball_section_description",
-					"label": "show_efootball_section_label",
+					"description": "Show eFootball section on homepage",
+					"label": "Show eFootball Section?",
 					"value": true
 				},
 				{
 					"identifier": "efootball_primary_color",
 					"type": "color",
-					"description": "efootball_primary_color_description",
-					"label": "efootball_primary_color_label",
+					"description": "",
+					"label": "eFootball primary color",
 					"value": "#1E40AF"
 				},
 				{
 					"identifier": "efootball_secondary_color",
 					"type": "color",
-					"description": "efootball_secondary_color_description",
-					"label": "efootball_secondary_color_label",
+					"description": "",
+					"label": "eFootball secondary color",
 					"value": "#3B82F6"
 				},
 				
@@ -429,57 +448,111 @@
 					"value": "eFootball Help Center"
 				},
 				{
-					"identifier": "ebaseball_logo",
+					"identifier": "blockman_logo",
 					"type": "file",
-					"description": "ebaseball_logo_description",
-					"label": "ebaseball_logo_label"
+					"description": "Blockman Go logo in .png/.webp",
+					"label": "Blockman Go Logo"
 				},
 				{
-					"identifier": "ebaseball_banner_image",
+					"identifier": "blockman_banner_image",
 					"type": "file",
-					"description": "ebaseball_banner_image_description",
-					"label": "ebaseball_banner_image_label"
+					"description": "Blockman banner image in .webp",
+					"label": "Blockman Banner Image"
 				},
 				{
-					"identifier": "ebaseball_banner_mobile",
+					"identifier": "blockman_banner_mobile",
 					"type": "file",
-					"description": "ebaseball_banner_mobile_description",
-					"label": "ebaseball_banner_mobile_label"
+					"description": "Blockman banner mobile image in .webp",
+					"label": "Blockman Banner Mobile"
 				},
 				{
-					"identifier": "show_ebaseball_section",
+					"identifier": "show_blockman_section",
 					"type": "checkbox",
-					"description": "show_ebaseball_section_description",
-					"label": "show_ebaseball_section_label",
+					"description": "Show blockman section on homepage",
+					"label": "Show Blockman Section?",
 					"value": true
 				},
 				{
-					"identifier": "ebaseball_primary_color",
+					"identifier": "blockman_primary_color",
 					"type": "color",
-					"description": "ebaseball_primary_color_description",
-					"label": "ebaseball_primary_color_label",
+					"description": "",
+					"label": "Blockman primary color",
+					"value": "#fc8f21"
+				},
+				{
+					"identifier": "blockman_secondary_color",
+					"type": "color",
+					"description": "",
+					"label": "Blockman secondary color",
+					"value": "#d99d36"
+				},
+				{
+					"identifier": "blockman_helpcenter_link",
+					"type": "text",
+					"description": "To put in new request page",
+					"label": "Blockman Go Help Center Link",
+					"value": "https://google.com/"
+				},
+				{
+					"identifier": "blockman_helpcenter_link_text",
+					"type": "text",
+					"description": "",
+					"label": "Blockman HC Link Text",
+					"value": "Blockman Go Help Center"
+				},
+				{
+					"identifier": "moba_logo",
+					"type": "file",
+					"description": "Moba 5v5 logo format in .png/.webp",
+					"label": "Moba 5v5 Logo"
+				},
+				{
+					"identifier": "moba_banner_image",
+					"type": "file",
+					"description": "Moba 5v5 banner image format in .webp",
+					"label": "Moba 5v5 Banner Image"
+				},
+				{
+					"identifier": "moba_banner_mobile",
+					"type": "file",
+					"description": "Moba 5v5 banner mobile image format in .webp",
+					"label": "Moba 5v5 Banner Mobile"
+				},
+				{
+					"identifier": "show_moba_section",
+					"type": "checkbox",
+					"description": "Show Moba 5v5 section on homepage",
+					"label": "Show Moba 5v5 Section?",
+					"value": true
+				},
+				{
+					"identifier": "moba_primary_color",
+					"type": "color",
+					"description": "",
+					"label": "Moba 5v5 Primary Color",
 					"value": "#1E40AF"
 				},
 				{
-					"identifier": "ebaseball_secondary_color",
+					"identifier": "moba_secondary_color",
 					"type": "color",
-					"description": "ebaseball_secondary_color_description",
-					"label": "ebaseball_secondary_color_label",
+					"description": "",
+					"label": "Moba 5v5 Secondary Color",
 					"value": "#3B82F6"
 				},
+				
 				{
-					"identifier": "ebaseball_helpcenter_link",
+					"identifier": "moba_helpcenter_link",
 					"type": "text",
-					"description": "eBaseball Help Center Link to be put in New Request Page",
-					"label": "eBaseball Help Center Link",
-					"value": "https://www.konami.com/help"
+					"description": "Moba 5v5 Help Center Link to be put in New Request Page",
+					"label": "Moba 5v5 Help Center Link",
+					"value": "https://google.com/"
 				},
 				{
-					"identifier": "ebaseball_helpcenter_link_text",
+					"identifier": "moba_helpcenter_link_text",
 					"type": "text",
-					"description": "webstore_helpcenter_link_text_description",
-					"label": "webstore_helpcenter_link_text_label",
-					"value": "eBaseball Help Center"
+					"description": "Moba 5v5 Help Center Link Caption",
+					"label": "Moba 5v5 Help Center Link Caption",
+					"value": "Moba 5v5 Help Center"
 				}
 			]
 		},

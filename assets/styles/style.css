@@ -35,8 +35,12 @@
 	--color-cta: $cta_color;
 	--color-efootball-primary: $efootball_primary_color;
 	--color-efootball-secondary: $efootball_secondary_color;
-	--color-ebaseball-primary: $ebaseball_primary_color;
-	--color-ebaseball-secondary: $ebaseball_secondary_color;
+	--color-blockman-primary: $blockman_primary_color;
+	--color-blockman-secondary: $blockman_secondary_color;
+	--color-moba-primary: $moba_primary_color;
+	--color-moba-secondary: $moba_secondary_color;
+	--color-default-primary: $default_primary_color;
+	--color-default-secondary: $default_secondary_color;
 	--font-heading: $heading_font;
 	--font-main-text: $text_font;
 }
@@ -102,14 +106,41 @@ main {
 }
 
 /* Category-specific button theming */
-#main-content .btn {
+/* #main-content .btn {
 	border-color: var(--color-cta);
-	color: var(--color-cta);
+	color: var(--color-cta-text);
 }
 
 #main-content .btn:hover {
 	background-color: var(--color-cta);
 	border-color: var(--color-cta);
+	color: white !important;
+} */
+
+/* Article button dynamic theming */
+.article-btn-themed:hover {
+	background-color: var(--hover-bg-color) !important;
+	color: white !important;
+}
+
+/* Subsection button dynamic theming */
+.subsection-btn-themed:hover {
+	opacity: var(--hover-opacity, 0.9) !important;
+}
+
+/* Contact button dynamic theming */
+.contact-btn-themed:hover {
+	opacity: 1 !important;
+}
+
+/* Support icon dynamic theming */
+.support-icon-themed:hover {
+	opacity: 1 !important;
+}
+
+/* View more button dynamic theming */
+.view-more-btn-themed:hover {
+	background-color: var(--hover-bg-color) !important;
 	color: white !important;
 }
 

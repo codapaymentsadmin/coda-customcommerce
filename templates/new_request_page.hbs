@@ -2,9 +2,9 @@
 
 <section id="contact-support" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 pt-16 pb-12">
 	<!-- Breadcrumbs using Zendesk helper -->
-	<nav class="custom-breadcrumbs text-sm mb-6">
+	<!-- <nav class="custom-breadcrumbs text-sm mb-6">
 		{{breadcrumbs}}
-	</nav>
+	</nav> -->
 
 	<div class="w-full">
 		<h2 class="text-2xl font-bold text-main-text mb-4">Contact Support</h2>
@@ -25,17 +25,3 @@
 		</p>
 	</div>
 </section>
-
-<script>
-	document.addEventListener('DOMContentLoaded', function () {
-		// Add 'notranslate' class to breadcrumb links containing game names
-		const breadcrumbLinks = document.querySelectorAll('.custom-breadcrumbs ol.breadcrumbs li a');
-		breadcrumbLinks[0].textContent = 'Web Store Support';
-		breadcrumbLinks.forEach(link => {
-			const linkText = link.textContent;
-			if (linkText.includes('eFootball™') || linkText.includes('eBaseball™: MLB PRO SPIRIT') || linkText.includes('Web Store Support')) {
-				link.classList.add('notranslate');
-			}
-		});
-	});
-</script>

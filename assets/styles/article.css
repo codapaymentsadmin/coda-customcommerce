@@ -107,6 +107,40 @@
 	color: var(--color-efootball-primary);
 	opacity: 0.8;
 }
+
+/* Game-specific article body link theming */
+.blockman-themed .article-body a {
+	color: var(--color-blockman-primary);
+}
+.blockman-themed .article-body a:hover,
+.blockman-themed .article-body a:active,
+.blockman-themed .article-body a:focus {
+	color: var(--color-efootball-primary);
+	opacity: 0.8;
+}
+
+/* Game-specific article body link theming */
+.moba-themed .article-body a {
+	color: var(--color-moba-primary);
+}
+.moba-themed .article-body a:hover,
+.moba-themed .article-body a:active,
+.moba-themed .article-body a:focus {
+	color: var(--color-moba-primary);
+	opacity: 0.8;
+}
+
+/* Default article body link theming */
+.default-themed .article-body a {
+	color: var(--color-default-primary);
+}
+.default-themed .article-body a:hover,
+.default-themed .article-body a:active,
+.default-themed .article-body a:focus {
+	color: var(--color-default-primary);
+	opacity: 0.8;
+}
+
 .article-body img {
 	height: auto;
 	max-width: 100%;
