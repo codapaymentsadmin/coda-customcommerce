@@ -7,12 +7,16 @@
       <div id="game-logo" class="mb-4" style="display: none;">
         <img id="game-logo-img" src="" alt="Game Logo" class="mx-auto max-h-20">
       </div>
-      <h1 id="section-title" class="section-title" class="mb-5 text-banner-text font-bold">
+      <h1 id="section-title" class="section-title mb-5 text-banner-text font-bold">
         {{section.name}}
       </h1>
       {{#if section.description}}
       <p class="text-banner-text mb-6">{{section.description}}</p>
       {{/if}}
+      {{search
+      instant=true
+      class="input max-md:w-full md:w-2/3 lg:w-full focus-within:outline-sky-500 !text-main-text rounded-lg h-12 py-1"
+      }}
     </div>
   </div>
 </section>
@@ -26,7 +30,69 @@
 
 
     <div class="w-full flex flex-col gap-4 mt-8">
-      {{#if section.sections}}
+      <ul class="w-full list mt-8 gap-4">
+        {{#if section.sections}}
+        {{#each section.sections}}
+        <div class="collapse collapse-arrow bg-accordion-bg border border-gray-200 shadow-sm">
+          <input type="checkbox" name="section-accordion-{{id}}" />
+          <div class="collapse-title font-semibold">
+            <h4 class="text-lg font-semibold text-accordion-text">
+              {{name}}
+            </h4>
+            {{#if description}}
+            <p class="text-accordion-text font-light">
+              {{description}}
+            </p>
+            {{/if}}
+          </div>
+          <div id="articles-{{id}}" class="collapse-content text-sm gap-2">
+            <div class="w-full flex flex-col gap-2">
+              {{#each articles}}
+              {{#if (compare @index "<" 3)}} <a href="{{url}}"
+                class="btn btn-md h-[50px] flex items-center justify-between border-2 border-cta bg-white text-cta hover:bg-cta hover:text-white transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm article-btn">
+                <div class="flex items-center gap-3">
+                  <span>{{title}}</span>
+                </div>
+                <i class="ph ph-arrow-right"></i>
+                </a>
+                {{/if}}
+                {{/each}}
+
+                {{#unless articles}}
+                <p class="text-accordion-text text-sm italic">No content available in this section yet.</p>
+                {{/unless}}
+            </div>
+
+            <div class="w-full flex justify-end mt-4">
+              <a href="{{url}}"
+                class="btn btn-sm bg-transparent border border-cta text-cta hover:bg-cta hover:text-cta-text transition-colors rounded-lg shadow-sm view-more-btn">
+                View More
+                <i class="ph ph-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+        {{/if}}
+        {{#unless section.sections}}
+        {{#each section.articles}}
+        {{#if (compare @index "<" 3)}} <a href="{{url}}"
+          class="btn btn-md h-[50px] flex items-center justify-between border-2 border-cta bg-white text-cta hover:bg-cta hover:text-white transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm article-btn">
+          <div class="flex items-center gap-3">
+            <span>{{title}}</span>
+          </div>
+          <i class="ph ph-arrow-right"></i>
+          </a>
+          {{/if}}
+          {{/each}}
+
+          {{#unless section.articles}}
+          <p class="text-accordion-text text-sm italic">No content available in this section yet.</p>
+          {{/unless}}
+          {{/unless}}
+      </ul>
+
+      <!-- LEGACY CODE {{#if section.sections}}
       <div class="w-full mb-4 border-b border-gray-300 pb-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           {{#each section.sections}}
@@ -63,7 +129,7 @@
       <div class="text-center py-8">
         <p class="text-main-text">No content available in this section yet.</p>
       </div>
-      {{/unless}}{{/unless}}
+      {{/unless}}{{/unless}} -->
     </div>
   </div>
 </section>

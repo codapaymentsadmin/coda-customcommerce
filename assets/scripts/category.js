@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		const pagePath = window.location.pathname.toLowerCase();
 		let theme;
 
-		console.log("categoryTitle:", categoryTitle);
-
 		switch(gameTitle){
 			case 'eFootball™':
 				theme = categoryThemes['eFootball™'];

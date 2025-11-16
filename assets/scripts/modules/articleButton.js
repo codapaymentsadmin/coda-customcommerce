@@ -20,8 +20,6 @@ export function setArticleButtonStyle(gameName, theme) {
     gameName = 'default';
   }
 
-  console.log("Game name for styling:", gameName);
-
   // Use CSS variable that matches the game
   const primaryColor = `var(--color-${gameName}-primary)`;
 

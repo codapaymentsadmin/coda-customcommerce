@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -585,7 +585,7 @@
 					"type": "text",
 					"description": "copyright_text_description",
 					"label": "copyright_text_label",
-					"value": "© 2025 Codashop. All rights reserved."
+					"value": "OTT Commerce Solutions Pte. Ltd. All rights reserved."
 				}
 			]
 		}
