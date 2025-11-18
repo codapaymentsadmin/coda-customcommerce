@@ -32,7 +32,7 @@ export function setBreadcrumbsStyle(theme) {
 }
 
 export function getGameFromBreadcrumbIndex() {
-  const breadcrumbItems = breadcrumbsNav.querySelectorAll('ol.breadcrumbs > li');
+  const breadcrumbItems = document.querySelectorAll('ol.breadcrumbs > li');
   return breadcrumbItems[2]?.textContent.trim() ?? '';
 }
 // Legacy

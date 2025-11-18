@@ -5,28 +5,9 @@ import { setArticleSidebarBtnStyle } from "./modules/articleSidebarBtn.js";
 
 document.addEventListener('DOMContentLoaded', function () {
   // Extract category name from breadcrumbs
-  const categoryTitle = document.getElementById('category-title')?.textContent?.trim();
   let gameName;
-  let theme;
+  let theme = categoryThemes['default'];
   const mainContent = document.querySelector('#main-content');
-
-  switch(categoryTitle){
-    case 'eFootball™':
-      gameName = 'efootball';
-      theme = categoryThemes['eFootball™'];
-      break;
-    case 'Blockman go':
-      gameName = 'blockman';
-      theme = categoryThemes['Blockman go'];
-      break;
-    case 'Moba 5v5':
-      gameName = 'moba';
-      theme = categoryThemes['Moba 5v5'];
-      break;
-    default:
-      gameName = 'default';
-      theme = categoryThemes['default'];
-  }
 
   // Apply dynamic theming to the main content section
   mainContent.style.setProperty('--color-cta', theme.primary);
@@ -34,17 +15,17 @@ document.addEventListener('DOMContentLoaded', function () {
   mainContent.style.setProperty('--category-theme-secondary', theme.secondary);
   
   // Apply eFootball theming to article buttons  
-  setArticleButtonStyle(categoryTitle, 'primary');
+  setArticleButtonStyle(theme);
   // Apply theming to hamburger button
   setHamburgerBtnStyle(theme);
   // Apply dynamic theming to sidebar buttons
   setArticleSidebarBtnStyle(theme);
 
   // Apply dynamic theming to article body links
-  const articleContainer = document.querySelector('.article');
-  if (articleContainer) {
-    articleContainer.classList.add(`${gameName}-themed`);
-  }
+  // const articleContainer = document.querySelector('.article');
+  // if (articleContainer) {
+  //   articleContainer.classList.add(`default-themed`);
+  // }
 
   // Handle window resize for responsive banner images
   // window.addEventListener('resize', function () {
