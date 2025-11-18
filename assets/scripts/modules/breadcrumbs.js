@@ -1,27 +1,42 @@
 /**
- * 
- * @param {*} theme 
+ *
+ * @param {*} theme
  * Get from categoryThemes in variables.js
+ * @param {boolean} removeFirstTwo - Whether to remove the first two breadcrumb items (default: false)
  */
-export function setBreadcrumbsStyle(theme) {
+export function setBreadcrumbsStyle(theme, removeFirstTwo = false) {
   const breadcrumbsNav = document.querySelector('.custom-breadcrumbs');
 
-  if (!breadcrumbsNav) return;
+  if (!breadcrumbsNav) {
+    console.warn('Breadcrumbs navigation not found');
+    return;
+  }
 
   // Get all breadcrumb list items (li elements)
   const breadcrumbItems = breadcrumbsNav.querySelectorAll('ol.breadcrumbs > li');
 
-  // Remove the first two breadcrumb items from the DOM
-  breadcrumbItems.forEach((item, index) => {
-    if (index < 2) {
-      item.remove();
-    }
-  });
+  // Check if breadcrumbs have rendered
+  if (breadcrumbItems.length === 0) {
+    console.warn('Breadcrumb items not found or not yet rendered');
+    return;
+  }
+
+  // Remove the first two breadcrumb items from the DOM if specified
+  if (removeFirstTwo) {
+    breadcrumbItems.forEach((item, index) => {
+      if (index < 2) {
+        item.remove();
+      }
+    });
+  }
 
   // Get remaining breadcrumb links after removal
   const remainingLinks = breadcrumbsNav.querySelectorAll('a');
+  console.log("remainingLinks:", remainingLinks);
 
-  sessionStorage.setItem('currentGameTitle', remainingLinks[0]?.textContent.trim() || '');
+  // Store game title - if removed first two, use index 0, otherwise use index 2
+  const gameTitleIndex = removeFirstTwo ? 0 : 2;
+  sessionStorage.setItem('currentGameTitle', remainingLinks[gameTitleIndex]?.textContent.trim() || '');
 
   // Style the remaining breadcrumb links
   remainingLinks.forEach((breadcrumb) => {

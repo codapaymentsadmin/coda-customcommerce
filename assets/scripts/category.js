@@ -1,5 +1,6 @@
 import categoryThemes from './variables.js';
 import { setArticleButtonStyle } from "./modules/articleButton.js";
+import { setBreadcrumbsStyle } from "./modules/breadcrumbs.js";
 import { setContactBtnStyle } from "./modules/contactBtn.js";
 import { setGameLogo } from "./modules/gameLogo.js";
 import { setHeroSection } from "./modules/heroSection.js";
@@ -9,11 +10,18 @@ import { setSupportIconStyle } from "./modules/supportIcon.js";
 import { setViewMoreBtnStyle } from "./modules/viewMoreBtn.js";
 
 document.addEventListener('DOMContentLoaded', function () {
+		// Only run on category pages (check URL path)
+		if (!window.location.pathname.includes('/categories/')) {
+			return;
+		}
+
 		// Get category name from the page title or breadcrumbs
 		let theme = categoryThemes['default'];
-		
+
 		// Set banner image with responsive handling
 		setHeroSection(theme);
+    // Style breadcrumbs (show all items for category page)
+    setBreadcrumbsStyle(theme, false);
     // Style search button
     setSearchBtnStyle(theme);
     // Apply eFootball theming to subsection buttons

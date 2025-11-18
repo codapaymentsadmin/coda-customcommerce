@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -423,14 +423,14 @@
 					"type": "color",
 					"description": "Insert primary color for eFootball section",
 					"label": "eFootball primary color",
-					"value": "#000"
+					"value": "#1E40AF"
 				},
 				{
 					"identifier": "efootball_secondary_color",
 					"type": "color",
 					"description": "Insert secondary color for eFootball section",
 					"label": "eFootball secondary color",
-					"value": "#fff"
+					"value": "#3B82F6"
 				},
 				
 				{

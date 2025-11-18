@@ -6,22 +6,33 @@ import { setHeroSection } from "./modules/heroSection.js";
 import { setHamburgerBtnStyle } from "./modules/hamburgerButton.js";
 import { setSubsectionBtnStyle } from "./modules/subsectionBtn.js";
 import { setSearchBtnStyle } from "./modules/searchButton.js";
+import { setSupportIconStyle } from "./modules/supportIcon.js";
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Get category name from the page title or breadcrumbs
+  // Only run on section pages (check URL path)
+  if (!window.location.pathname.includes('/sections/')) {
+    return;
+  }
+
+  // Get game name from breadcrumbs to apply proper theming
   const navbarBrandName = document.getElementById('brand-name');
   const footerBrandName = document.getElementById('footer-brand-name');
-  const sectionTitle = document.getElementById('section-title')?.textContent?.trim();
   const currentGameSection = getGameFromBreadcrumbIndex();
   let theme = categoryThemes['default'];
   const mainContent = document.querySelector('#main-content');
 
+  // Apply navbar/footer branding for eFootball (applies to all section pages)
   if (currentGameSection === "eFootball™") {
     navbarBrandName.textContent = 'Web Store Help Center';
     footerBrandName.textContent = 'Web Store Help Center';
+    const contactSupportSection = document.getElementById('contact-support-section');
+    if (contactSupportSection) {
+      contactSupportSection.classList.remove('hidden');
+    }
   }
 
-  switch(sectionTitle){
+  // Apply game-specific theming based on breadcrumb detection
+  switch(currentGameSection) {
     case 'eFootball™':
       theme = categoryThemes['eFootball™'];
       break;
@@ -41,18 +52,20 @@ document.addEventListener('DOMContentLoaded', function () {
   mainContent.style.setProperty('--category-theme-secondary', theme.secondary);
   
   setSearchBtnStyle(theme);
-  // Style the category link in breadcrumbs
-  setBreadcrumbsStyle(theme);
+  // Style the category link in breadcrumbs (remove first 2 items)
+  setBreadcrumbsStyle(theme, true);
   // Set banner image with responsive handling
   setHeroSection(theme);
   // Set logo
   setGameLogo(theme);
   // Apply eFootball theming to subsection buttons
   setSubsectionBtnStyle(theme);
-  // Apply eFootball theming to article buttons  
+  // Apply eFootball theming to article buttons
   setArticleButtonStyle(theme);
   // Apply theming to hamburger button
   setHamburgerBtnStyle(theme);
+  // Apply theming to support icon background
+  setSupportIconStyle(theme);
 
   // Handle window resize for responsive banner images
   // window.addEventListener('resize', function () {
