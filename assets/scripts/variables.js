@@ -22,8 +22,8 @@ const categoryThemes = {
     logo: window.zendeskThemeSettings?.moba?.logo || ''
   },
   'default': {
-    primary: window.zendeskThemeSettings?.default?.primary || '#1E40AF',
-    secondary: window.zendeskThemeSettings?.default?.secondary || '#3B82F6',
+    primary: window.zendeskThemeSettings?.default?.primary || '#000',
+    secondary: window.zendeskThemeSettings?.default?.secondary || '#fff',
     bannerImage: '',
     bannerMobile: '',
     logo: ''

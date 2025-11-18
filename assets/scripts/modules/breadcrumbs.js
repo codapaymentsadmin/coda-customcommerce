@@ -30,6 +30,11 @@ export function setBreadcrumbsStyle(theme) {
     breadcrumb.classList.add("notranslate");
   });
 }
+
+export function getGameFromBreadcrumbIndex() {
+  const breadcrumbItems = breadcrumbsNav.querySelectorAll('ol.breadcrumbs > li');
+  return breadcrumbItems[2]?.textContent.trim() ?? '';
+}
 // Legacy
 // const breadcrumbLinksElement = document.querySelectorAll('.custom-breadcrumbs ol.breadcrumbs li a');
 // breadcrumbLinksElement.forEach(link => {

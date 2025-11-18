@@ -10,43 +10,22 @@ import { setViewMoreBtnStyle } from "./modules/viewMoreBtn.js";
 
 document.addEventListener('DOMContentLoaded', function () {
 		// Get category name from the page title or breadcrumbs
-		const categoryTitle = document.getElementById('category-title')?.textContent?.trim();
-		const gameTitle = sessionStorage.getItem('currentGameTitle') || document.querySelectorAll('ol.breadcrumbs > li')[0]?.textContent?.trim();
-		const pagePath = window.location.pathname.toLowerCase();
-		let theme;
-
-		switch(gameTitle){
-			case 'eFootball™':
-				theme = categoryThemes['eFootball™'];
-				break;
-			case 'Blockman go':
-				theme = categoryThemes['Blockman go'];
-				break;
-			case 'Moba 5v5':
-				theme = categoryThemes['Moba 5v5'];
-				break;
-			default:
-				theme = categoryThemes['default'];
-		}
+		let theme = categoryThemes['default'];
 		
 		// Set banner image with responsive handling
 		setHeroSection(theme);
-		// Set game logo
-		if (categoryTitle === gameTitle) {
-			setGameLogo(theme);
-		}
-    // Apply eFootball theming to subsection buttons
-    setSubsectionBtnStyle(categoryTitle, 'primary');
-    // Apply game-specific theming to article buttons
-    setArticleButtonStyle(categoryTitle, 'primary');
-    // Apply game-specific theming to view more buttons
-    setViewMoreBtnStyle(categoryTitle, 'primary');
-    // Apply game-specific theming to contact support button
-    setContactBtnStyle(categoryTitle, 'primary');
-    // Apply game-specific theming to support icon background
-    setSupportIconStyle(categoryTitle, 'primary');
     // Style search button
     setSearchBtnStyle(theme);
+    // Apply eFootball theming to subsection buttons
+    setSubsectionBtnStyle(theme);
+    // Apply game-specific theming to article buttons
+    setArticleButtonStyle(theme);
+    // Apply game-specific theming to view more buttons
+    setViewMoreBtnStyle(theme);
+    // Apply game-specific theming to contact support button
+    setContactBtnStyle(theme);
+    // Apply game-specific theming to support icon background
+    setSupportIconStyle(theme);
 
 		// Handle window resize for responsive banner images
 		// window.addEventListener('resize', function () {

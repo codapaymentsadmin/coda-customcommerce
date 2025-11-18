@@ -1,25 +1,32 @@
 import categoryThemes from './variables.js';
 import { setArticleButtonStyle } from "./modules/articleButton.js";
-import { setBreadcrumbsStyle } from "./modules/breadcrumbs.js";
+import { getGameFromBreadcrumbIndex, setBreadcrumbsStyle } from "./modules/breadcrumbs.js";
 import { setGameLogo } from "./modules/gameLogo.js";
 import { setHeroSection } from "./modules/heroSection.js";
 import { setHamburgerBtnStyle } from "./modules/hamburgerButton.js";
 import { setSubsectionBtnStyle } from "./modules/subsectionBtn.js";
+import { setSearchBtnStyle } from "./modules/searchButton.js";
 
 document.addEventListener('DOMContentLoaded', function () {
   // Get category name from the page title or breadcrumbs
-  // const categoryTitle = document.getElementById('section-title')?.textContent?.trim();
+  const navbarBrandName = document.getElementById('brand-name');
+  const footerBrandName = document.getElementById('footer-brand-name');
   const sectionTitle = document.getElementById('section-title')?.textContent?.trim();
-  const gameTitle = sessionStorage.getItem('currentGameTitle') || document.querySelectorAll('ol.breadcrumbs > li')[0]?.textContent?.trim();
-  let theme;
+  const currentGameSection = getGameFromBreadcrumbIndex();
+  let theme = categoryThemes['default'];
   const mainContent = document.querySelector('#main-content');
 
-  switch(gameTitle){
+  if (currentGameSection === "eFootball™") {
+    navbarBrandName.textContent = 'Web Store Help Center';
+    footerBrandName.textContent = 'Web Store Help Center';
+  }
+
+  switch(sectionTitle){
     case 'eFootball™':
       theme = categoryThemes['eFootball™'];
       break;
-    case 'Blockman go':
-      theme = categoryThemes['Blockman go'];
+    case 'Blockman Go':
+      theme = categoryThemes['Blockman Go'];
       break;
     case 'Moba 5v5':
       theme = categoryThemes['Moba 5v5'];
@@ -33,18 +40,17 @@ document.addEventListener('DOMContentLoaded', function () {
   mainContent.style.setProperty('--category-theme-primary', theme.primary);
   mainContent.style.setProperty('--category-theme-secondary', theme.secondary);
   
+  setSearchBtnStyle(theme);
   // Style the category link in breadcrumbs
   setBreadcrumbsStyle(theme);
   // Set banner image with responsive handling
   setHeroSection(theme);
   // Set logo
-  if (sectionTitle === gameTitle) {
-    setGameLogo(theme);
-  }
+  setGameLogo(theme);
   // Apply eFootball theming to subsection buttons
-  setSubsectionBtnStyle(gameTitle, 'primary');
+  setSubsectionBtnStyle(theme);
   // Apply eFootball theming to article buttons  
-  setArticleButtonStyle(gameTitle, 'primary');
+  setArticleButtonStyle(theme);
   // Apply theming to hamburger button
   setHamburgerBtnStyle(theme);
 
