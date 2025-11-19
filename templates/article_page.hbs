@@ -2,9 +2,9 @@
 <div class="gtranslate_wrapper"></div>
 {{/unless}}
 
-<section class="max-w-6xl max-md:w-full lg:w-full mx-auto px-4 py-12 notranslate">
+<section class="max-w-6xl max-md:w-full lg:w-full mx-auto px-4 py-12">
   <!-- Breadcrumbs using Zendesk helper -->
-  <nav class="custom-breadcrumbs text-sm mb-6">
+  <nav class="custom-breadcrumbs text-sm mb-6 notranslate">
     {{breadcrumbs}}
   </nav>
 
@@ -37,7 +37,7 @@
       {{/if}}
 
       <section class="article-info">
-        <div class="article-content">
+        <div class="article-content {{#if (compare section.name '==' 'Legal')}}notranslate{{/if}}">
           <header class="article-title-header mb-6">
             <h1 class="text-3xl font-bold text-main-text">
               {{article.title}}

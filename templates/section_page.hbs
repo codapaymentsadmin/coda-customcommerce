@@ -28,7 +28,30 @@
       {{breadcrumbs}}
     </nav>
 
-
+    {{#is section.name 'eFootball™'}}
+    <h2 class="!text-3xl text-main-text text-center font-bold">
+      <span>{{section.name}}</span>
+      Support
+    </h2>
+    <p class="text-center text-main-text mt-2">Browse through sections and articles for <span>{{section.name}}</span>
+    </p>
+    {{/is}}
+    {{#is section.name 'Blockman Go'}}
+    <h2 class="!text-3xl text-main-text text-center font-bold">
+      <span>{{section.name}}</span>
+      Support
+    </h2>
+    <p class="text-center text-main-text mt-2">Browse through sections and articles for <span>{{section.name}}</span>
+    </p>
+    {{/is}}
+    {{#is section.name 'Moba 5v5'}}
+    <h2 class="!text-3xl text-main-text text-center font-bold">
+      <span>{{section.name}}</span>
+      Support
+    </h2>
+    <p class="text-center text-main-text mt-2">Browse through sections and articles for <span>{{section.name}}</span>
+    </p>
+    {{/is}}
     <div class="w-full flex flex-col gap-4 mt-8">
       <ul class="w-full list mt-8 gap-4">
         {{#if section.sections}}
