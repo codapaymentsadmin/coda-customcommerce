@@ -6,7 +6,7 @@ export function setSupportIconStyle(theme) {
 
   // Set inline styles using CSS variables
   supportIconBg.style.backgroundColor = theme.primary;
-  supportIconBg.style.opacity = '0.85';
+  supportIconBg.style.opacity = '1';
 
   // Add CSS variable for hover effect
   supportIconBg.style.setProperty('--hover-bg-color', theme.primary);
