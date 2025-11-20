@@ -1,10 +1,12 @@
+<div class="gtranslate_wrapper"></div>
+
 <!-- Hero Section -->
 <!-- <section id="cc-hero-section" class="hero min-h-[30dvh] sm:min-h-[40dvh]" data-hero-section> -->
 <!-- <section id="cc-hero-section" class="hero min-h-[30dvh] sm:min-h-[40dvh]" style="background-color: #242424;">
   <div class="hero-overlay"></div>
 </section> -->
 
-<section class="max-w-6xl max-md:w-full lg:w-full mx-auto px-4 py-12 notranslate">
+<section class="max-w-6xl max-md:w-full lg:w-full mx-auto px-4 py-12">
   <!-- Breadcrumbs using Zendesk helper -->
   <nav class="custom-breadcrumbs text-sm mb-6">
     {{breadcrumbs}}
@@ -101,6 +103,24 @@
     const breadcrumbsNav = document.querySelector('.custom-breadcrumbs');
     const breadcrumbLinks = breadcrumbsNav?.querySelectorAll('a');
     let categoryName = null;
+
+    // Add 'notranslate' to second breadcrumb item (game title) BEFORE any processing
+    if (breadcrumbLinks && breadcrumbLinks[1]) {
+      breadcrumbLinks[1].classList.add('notranslate');
+    }
+
+    // Check if this is a Legal article by looking for "Legal" in breadcrumbs
+    const isLegalArticle = breadcrumbLinks && Array.from(breadcrumbLinks).some(link =>
+      link.textContent.trim() === 'Legal'
+    );
+
+    // If Legal article, add notranslate to content
+    if (isLegalArticle) {
+      const articleInfo = document.querySelector('.article-info');
+      if (articleInfo) {
+        articleInfo.classList.add('notranslate');
+      }
+    }
 
     breadcrumbLinks[0].textContent = 'Web Store Support';
     // The category is typically the second-to-last link in breadcrumbs
@@ -204,15 +224,6 @@
         hamburgerBtn.style.borderColor = theme.primary;
       }
     }
-
-    // Add 'notranslate' class to breadcrumb links containing game names
-    const breadcrumbLinksElement = document.querySelectorAll('.custom-breadcrumbs ol.breadcrumbs li a');
-    breadcrumbLinksElement.forEach(link => {
-      const linkText = link.textContent.toLowerCase();
-      if (linkText.includes('eFootball™') || linkText.includes('eBaseball™: MLB PRO SPIRIT') || linkText.includes('Web Store Support')) {
-        link.classList.add('notranslate');
-      }
-    });
 
     // Handle window resize for responsive banner images
     window.addEventListener('resize', function () {

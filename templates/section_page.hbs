@@ -76,6 +76,11 @@
     const breadcrumbLinks = breadcrumbsNav?.querySelectorAll('a');
     let categoryName = null;
 
+    // Add 'notranslate' to second breadcrumb item (game title) BEFORE any processing
+    if (breadcrumbLinks && breadcrumbLinks[1]) {
+      breadcrumbLinks[1].classList.add('notranslate');
+    }
+
     breadcrumbLinks[0].textContent = 'Web Store Support';
     // The category is typically the second-to-last link in breadcrumbs
     if (breadcrumbLinks && breadcrumbLinks.length >= 2) {
@@ -195,15 +200,6 @@
         hamburgerBtn.style.borderColor = theme.primary;
       }
     }
-
-    // Add 'notranslate' class to breadcrumb links containing game names
-    const breadcrumbLinksElement = document.querySelectorAll('.custom-breadcrumbs ol.breadcrumbs li a');
-    breadcrumbLinksElement.forEach(link => {
-      const linkText = link.textContent;
-      if (linkText.includes('eFootball™') || linkText.includes('eBaseball™: MLB PRO SPIRIT') || linkText.includes('Web Store Support')) {
-        link.classList.add('notranslate');
-      }
-    });
 
     // Handle window resize for responsive banner images
     window.addEventListener('resize', function () {
