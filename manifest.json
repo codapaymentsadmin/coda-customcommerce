@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -553,59 +553,6 @@
 					"description": "Moba 5v5 Help Center Link Caption",
 					"label": "Moba 5v5 Help Center Link Caption",
 					"value": "Moba 5v5 Help Center"
-				},
-				{
-					"identifier": "obeyme_logo",
-					"type": "file",
-					"description": "Obey Me! logo format in .png/.webp",
-					"label": "Obey Me! Logo"
-				},
-				{
-					"identifier": "obeyme_banner_image",
-					"type": "file",
-					"description": "Obey Me! banner image format in .webp",
-					"label": "Obey Me! Banner Image"
-				},
-				{
-					"identifier": "obeyme_banner_mobile",
-					"type": "file",
-					"description": "Obey Me! banner mobile image format in .webp",
-					"label": "Obey Me! Banner Mobile"
-				},
-				{
-					"identifier": "show_obeyme_section",
-					"type": "checkbox",
-					"description": "Show Obey Me! section on homepage",
-					"label": "Show Obey Me! Section?",
-					"value": true
-				},
-				{
-					"identifier": "obeyme_primary_color",
-					"type": "color",
-					"description": "Insert primary color for Obey Me! section",
-					"label": "Obey Me! Primary Color",
-					"value": "#000"
-				},
-				{
-					"identifier": "obeyme_secondary_color",
-					"type": "color",
-					"description": "Insert secondary color for Obey Me! section",
-					"label": "Obey Me! Secondary Color",
-					"value": "#fff"
-				},
-				{
-					"identifier": "obeyme_helpcenter_link",
-					"type": "text",
-					"description": "Obey Me! Help Center Link to be put in New Request Page",
-					"label": "Obey Me! Help Center Link",
-					"value": "https://google.com/"
-				},
-				{
-					"identifier": "obeyme_helpcenter_link_text",
-					"type": "text",
-					"description": "Obey Me! Help Center Link Caption",
-					"label": "Obey Me! HC Link Text",
-					"value": "Obey Me! Help Center"
 				}
 			]
 		},

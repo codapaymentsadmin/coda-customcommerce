@@ -21,13 +21,6 @@ const categoryThemes = {
     bannerMobile: window.zendeskThemeSettings?.moba?.bannerMobile || '',
     logo: window.zendeskThemeSettings?.moba?.logo || ''
   },
-  'Obey Me!': {
-    primary: window.zendeskThemeSettings?.obeyme?.primary || '#000',
-    secondary: window.zendeskThemeSettings?.obeyme?.secondary || '#fff',
-    bannerImage: window.zendeskThemeSettings?.obeyme?.bannerImage || '',
-    bannerMobile: window.zendeskThemeSettings?.obeyme?.bannerMobile || '',
-    logo: window.zendeskThemeSettings?.obeyme?.logo || ''
-  },
   'default': {
     primary: window.zendeskThemeSettings?.default?.primary || '#000',
     secondary: window.zendeskThemeSettings?.default?.secondary || '#fff',
