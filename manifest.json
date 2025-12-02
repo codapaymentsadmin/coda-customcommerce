@@ -432,52 +432,52 @@
 					"identifier": "ebaseball_logo",
 					"type": "file",
 					"description": "eBaseball™: MLB PRO SPIRIT logo format in .png/.webp",
-					"label": "eBaseball™: MLB PRO SPIRIT Logo"
+					"label": "eBaseball Logo"
 				},
 				{
 					"identifier": "ebaseball_banner_image",
 					"type": "file",
 					"description": "eBaseball™: MLB PRO SPIRIT banner image format in .webp",
-					"label": "eBaseball™: MLB PRO SPIRIT Banner Image"
+					"label": "eBaseball Banner Image"
 				},
 				{
 					"identifier": "ebaseball_banner_mobile",
 					"type": "file",
 					"description": "eBaseball™: MLB PRO SPIRIT banner mobile image format in .webp",
-					"label": "eBaseball™: MLB PRO SPIRIT Banner Mobile"
+					"label": "eBaseball Banner Mobile"
 				},
 				{
 					"identifier": "show_ebaseball_section",
 					"type": "checkbox",
-					"description": "Show eBaseball™: MLB PRO SPIRIT section on homepage",
-					"label": "Show eBaseball™: MLB PRO SPIRIT Section?",
+					"description": "Show eBaseball section on homepage",
+					"label": "Show eBaseball Section?",
 					"value": true
 				},
 				{
 					"identifier": "ebaseball_primary_color",
 					"type": "color",
-					"description": "Primary color for eBaseball™: MLB PRO SPIRIT section",
-					"label": "eBaseball™: MLB PRO SPIRIT Primary Color",
+					"description": "Primary color for eBaseball section",
+					"label": "eBaseball Primary Color",
 					"value": "#1E40AF"
 				},
 				{
 					"identifier": "ebaseball_secondary_color",
 					"type": "color",
-					"description": "Secondary color for eBaseball™: MLB PRO SPIRIT section",
-					"label": "eBaseball™: MLB PRO SPIRIT Secondary Color",
+					"description": "Secondary color for eBaseball section",
+					"label": "eBaseball Secondary Color",
 					"value": "#3B82F6"
 				},
 				{
 					"identifier": "ebaseball_helpcenter_link",
 					"type": "text",
-					"description": "eBaseball™: MLB PRO SPIRIT Help Center Link to be put in New Request Page",
-					"label": "eBaseball™: MLB PRO SPIRIT Help Center Link",
+					"description": "eBaseball Help Center Link to be put in New Request Page",
+					"label": "eBaseball Help Center Link",
 					"value": "https://www.konami.com/help"
 				},
 				{
 					"identifier": "ebaseball_helpcenter_link_text",
 					"type": "text",
-					"description": "eBaseball™: MLB PRO SPIRIT Help Center Link Caption",
+					"description": "eBaseball Help Center Link Caption",
 					"label": "eBaseball™: MLB PRO SPIRIT Help Center Link Caption",
 					"value": "eBaseball Help Center"
 				},
