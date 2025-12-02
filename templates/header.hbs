@@ -134,6 +134,10 @@
 			'ebaseball': {
 				primary: '{{settings.ebaseball_primary_color}}',
 				secondary: '{{settings.ebaseball_secondary_color}}'
+			},
+			'master_duel': {
+				primary: '{{settings.master_duel_primary_color}}',
+				secondary: '{{settings.master_duel_secondary_color}}'
 			}
 		};
 
@@ -148,6 +152,8 @@
 			detectedCategory = 'efootball';
 		} else if (pagePath.includes('ebaseball')) {
 			detectedCategory = 'ebaseball';
+		} else if (pagePath.includes('master-duel')) {
+			detectedCategory = 'master_duel';
 		}
 
 		// If not found in path, check page title
@@ -156,6 +162,8 @@
 				detectedCategory = 'efootball';
 			} else if (pageTitle.includes('ebaseball')) {
 				detectedCategory = 'ebaseball';
+			} else if (pageTitle.includes('master duel')) {
+				detectedCategory = 'master_duel';
 			}
 		}
 
