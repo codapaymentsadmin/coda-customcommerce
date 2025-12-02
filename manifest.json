@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.2.4",
+	"version": "1.2.5",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -480,6 +480,59 @@
 					"description": "webstore_helpcenter_link_text_description",
 					"label": "webstore_helpcenter_link_text_label",
 					"value": "eBaseball Help Center"
+				},
+				{
+					"identifier": "master_duel_logo",
+					"type": "file",
+					"description": "Yu-Gi-Oh! Master Duel logo format in .png/.webp",
+					"label": "Yu-Gi-Oh! Master Duel Logo"
+				},
+				{
+					"identifier": "master_duel_banner_image",
+					"type": "file",
+					"description": "Yu-Gi-Oh! Master Duel banner image format in .webp",
+					"label": "Yu-Gi-Oh! Master Duel Banner Image"
+				},
+				{
+					"identifier": "master_duel_banner_mobile",
+					"type": "file",
+					"description": "Yu-Gi-Oh! Master Duel banner mobile image format in .webp",
+					"label": "Yu-Gi-Oh! Master Duel Banner Mobile"
+				},
+				{
+					"identifier": "show_master_duel_section",
+					"type": "checkbox",
+					"description": "Show Yu-Gi-Oh! Master Duel section on homepage",
+					"label": "Show Yu-Gi-Oh! Master Duel Section?",
+					"value": true
+				},
+				{
+					"identifier": "master_duel_primary_color",
+					"type": "color",
+					"description": "Primary color for Yu-Gi-Oh! Master Duel section",
+					"label": "Yu-Gi-Oh! Master Duel Primary Color",
+					"value": "#1E40AF"
+				},
+				{
+					"identifier": "master_duel_secondary_color",
+					"type": "color",
+					"description": "Secondary color for Yu-Gi-Oh! Master Duel section",
+					"label": "Yu-Gi-Oh! Master Duel Secondary Color",
+					"value": "#3B82F6"
+				},
+				{
+					"identifier": "master_duel_helpcenter_link",
+					"type": "text",
+					"description": "Yu-Gi-Oh! Master Duel Help Center Link to be put in New Request Page",
+					"label": "Yu-Gi-Oh! Master Duel Help Center Link",
+					"value": "https://www.konami.com/help"
+				},
+				{
+					"identifier": "master_duel_helpcenter_link_text",
+					"type": "text",
+					"description": "Yu-Gi-Oh! Master Duel Help Center Link Caption",
+					"label": "Yu-Gi-Oh! Master Duel Help Center Link Caption",
+					"value": "Yu-Gi-Oh! Master Duel Help Center"
 				}
 			]
 		},
