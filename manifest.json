@@ -528,7 +528,7 @@
 					"value": "https://www.konami.com/help"
 				},
 				{
-					"identifier": "master_duel_helpcenter_link_text",
+					"identifier": "master_duel_helpcenter_text",
 					"type": "text",
 					"description": "Yu-Gi-Oh! Master Duel Help Center Link Caption",
 					"label": "Yu-Gi-Oh! Master Duel Help Center Link Caption",
