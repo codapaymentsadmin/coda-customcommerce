@@ -107,6 +107,26 @@
 	color: var(--color-efootball-primary);
 	opacity: 0.8;
 }
+
+.ebaseball-themed .article-body a {
+	color: var(--color-efootball-primary);
+}
+.ebaseball-themed .article-body a:hover,
+.ebaseball-themed .article-body a:active,
+.ebaseball-themed .article-body a:focus {
+	color: var(--color-ebaseball-primary);
+	opacity: 0.8;
+}
+
+.master-duel-themed .article-body a {
+	color: var(--color-master-duel-primary);
+}
+.master-duel-themed .article-body a:hover,
+.master-duel-themed .article-body a:active,
+.master-duel-themed .article-body a:focus {
+	color: var(--color-master-duel-primary);
+	opacity: 0.8;
+}
 .article-body img {
 	height: auto;
 	max-width: 100%;

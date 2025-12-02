@@ -141,6 +141,16 @@
             heroSection.style.backgroundRepeat = 'no-repeat';
             heroSection.style.backgroundColor = '#121b28';
           }
+        } else if (categoryName === 'Yu-Gi-Oh! Master Duel') {
+          bannerImage = isMobile ? '{{settings.master_duel_banner_mobile}}' : theme.bannerImage;
+
+          if (bannerImage) {
+            heroSection.style.backgroundImage = `url(${bannerImage})`;
+            heroSection.style.backgroundSize = 'cover';
+            heroSection.style.backgroundPosition = 'center center';
+            heroSection.style.backgroundRepeat = 'no-repeat';
+            heroSection.style.backgroundColor = '#121b28';
+          }
         } else {
           bannerImage = theme.bannerImage;
         }
@@ -221,6 +231,8 @@
             bannerImage = isMobile ? '{{settings.efootball_banner_mobile}}' : theme.bannerImage;
           } else if (categoryName === 'eBaseball™: MLB PRO SPIRIT') {
             bannerImage = isMobile ? '{{settings.ebaseball_banner_mobile}}' : theme.bannerImage;
+          } else if (categoryName === 'Yu-Gi-Oh! Master Duel') {
+            bannerImage = isMobile ? '{{settings.master_duel_banner_mobile}}' : theme.bannerImage;
           } else {
             bannerImage = theme.bannerImage;
           }
