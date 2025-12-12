@@ -142,7 +142,7 @@
 				bannerImage: '{{settings.ebaseball_banner_image}}',
 				logo: '{{settings.ebaseball_logo}}'
 			},
-			'Yu-Gi-Oh! Master Duel': {
+			'Yu-Gi-Oh! MASTER DUEL': {
 				primary: '{{settings.master_duel_primary_color}}',
 				secondary: '{{settings.master_duel_secondary_color}}',
 				bannerImage: '{{settings.master_duel_banner_image}}',
@@ -311,8 +311,8 @@
 		}
 
 		// Check if we're on Yu-Gi-Oh! Master Duel category page
-		if (categoryTitle?.includes('Yu-Gi-Oh! Master Duel') || pagePath.includes('master-duel') || pagePath.includes('masterduel')) {
-			const theme = categoryThemes['Yu-Gi-Oh! Master Duel'];
+		if (categoryTitle?.includes('Yu-Gi-Oh! MASTER DUEL') || pagePath.includes('master-duel') || pagePath.includes('masterduel')) {
+			const theme = categoryThemes['Yu-Gi-Oh! MASTER DUEL'];
 
 			// Set banner image with responsive handling
 			const heroSection = document.querySelector('[data-hero-section]');
@@ -424,8 +424,8 @@
 				}
 			}
 
-			if (categoryTitle?.includes('Yu-Gi-Oh! Master Duel') || pagePath.includes('master-duel') || pagePath.includes('masterduel')) {
-				const theme = categoryThemes['Yu-Gi-Oh! Master Duel'];
+			if (categoryTitle?.includes('Yu-Gi-Oh! MASTER DUEL') || pagePath.includes('master-duel') || pagePath.includes('masterduel')) {
+				const theme = categoryThemes['Yu-Gi-Oh! MASTER DUEL'];
 				const bannerImage = isMobile ? '{{settings.master_duel_banner_mobile}}' : theme.bannerImage;
 				if (bannerImage) {
 					heroSection.style.backgroundImage = `url(${bannerImage})`;

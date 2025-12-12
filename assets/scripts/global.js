@@ -18,6 +18,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	if (gtElement) {
 		gtElement.style.bottom = "40px";
+		// gtElement.style.position = "sticky";
+		// if (window.innerWidth <= 640) {
+		// 	gtElement.style.bottom = "90px";
+		// } else {
+		// 	gtElement.style.bottom = "40px";
+		// }
+
+		// Make widget sticky but stop above footer to prevent overlap
+		function adjustGTranslateWidget() {
+			const footer = document.querySelector('.footer');
+			const gtWidget = document.querySelector('.gt_float_switcher');
+
+			if (!footer || !gtWidget) return;
+
+			const footerRect = footer.getBoundingClientRect();
+			const windowHeight = window.innerHeight;
+			const widgetHeight = gtWidget.offsetHeight || 50; // Approximate widget height
+
+			// Calculate the position where widget would be with default bottom: 40px
+			const widgetBottomPosition = windowHeight - 40 - widgetHeight;
+
+			// Check if widget would overlap with footer
+			if (footerRect.top < widgetBottomPosition + widgetHeight) {
+				// Position widget just above the footer with 10px gap
+				const offset = windowHeight - footerRect.top + 10;
+				gtElement.style.bottom = offset + 'px';
+			} else {
+				// Reset to default position when footer is not visible
+				gtElement.style.bottom = '40px';
+			}
+		}
+
+		// Run on scroll and resize
+		window.addEventListener('scroll', adjustGTranslateWidget);
+		window.addEventListener('resize', adjustGTranslateWidget);
+
+		// Run after gtranslate widget loads (with delay to ensure it's rendered)
+		setTimeout(adjustGTranslateWidget, 1000);
 	}
 
 	hamburgBtn.addEventListener("click", () => {
