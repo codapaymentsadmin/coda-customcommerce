@@ -21,6 +21,15 @@ export default defineConfig({
 				entryFileNames: "script.js",
 				assetFileNames: "style.css",
 			},
+			watch: {
+				exclude: ["script.js", "style.css", "node_modules/**"],
+				skipWrite: false,
+			},
+		},
+	},
+	server: {
+		watch: {
+			ignored: ["**/script.js", "**/style.css", "**/node_modules/**"],
 		},
 	},
 });

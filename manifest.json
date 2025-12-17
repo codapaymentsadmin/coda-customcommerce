@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.2.7",
+	"version": "1.0",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -26,7 +26,7 @@
 					"type": "text",
 					"description": "brand_name_description",
 					"label": "brand_name_label",
-					"value": "Rainbow Six Mobile Web Store Help Center LATAM"
+					"value": "Web Store Help Center"
 				},
 				{
 					"identifier": "favicon",
@@ -39,21 +39,21 @@
 					"type": "text",
 					"description": "webstore_link_description",
 					"label": "webstore_link_label",
-					"value": "https://www.ubisoft.com/es-ar/game/rainbow-six/mobile/store"
+					"value": "https://store.fcm.ea.com/international"
 				},
 				{
 					"identifier": "webstore_helpcenter_link",
 					"type": "text",
 					"description": "webstore_helpcenter_link_description",
 					"label": "webstore_helpcenter_link_label",
-					"value": "https://ubisoft-mobile.helpshift.com/hc/app/45-rainbow-six-mobile/"
+					"value": "https://help.ea.com/en/help-top-issues/?product=fc-mobile"
 				},
 				{
 					"identifier": "webstore_helpcenter_link_text",
 					"type": "text",
 					"description": "webstore_helpcenter_link_text_description",
 					"label": "webstore_helpcenter_link_text_label",
-					"value": "Ubisoft Help Center"
+					"value": "EA FC Mobile Help Center"
 				}
 			]
 		},
@@ -112,42 +112,42 @@
 					"type": "color",
 					"description": "brand_color_description",
 					"label": "brand_color_label",
-					"value": "#76F3FF"
+					"value": "#07f468"
 				},
 				{
 					"identifier": "brand_text_color",
 					"type": "color",
 					"description": "brand_text_color_description",
 					"label": "brand_text_color_label",
-					"value": "#203E4E"
+					"value": "#000"
 				},
 				{
 					"identifier": "text_color",
 					"type": "color",
 					"description": "text_color_description",
 					"label": "text_color_label",
-					"value": "#203E4E"
+					"value": "#000"
 				},
 				{
 					"identifier": "link_color",
 					"type": "color",
 					"description": "link_color_description",
 					"label": "link_color_label",
-					"value": "#2b7fff"
+					"value": "#07f468"
 				},
 				{
 					"identifier": "hover_link_color",
 					"type": "color",
 					"description": "hover_link_color_description",
 					"label": "hover_link_color_label",
-					"value": "#1447e6"
+					"value": "#04953F"
 				},
 				{
 					"identifier": "visited_link_color",
 					"type": "color",
 					"description": "visited_link_color_description",
 					"label": "visited_link_color_label",
-					"value": "#1c398e"
+					"value": "#04953F"
 				},
 				{
 					"identifier": "background_color",
@@ -393,6 +393,13 @@
 					"description": "show_copyright_description",
 					"label": "show_copyright_label",
 					"value": true
+				},
+				{
+					"identifier": "copyright_text",
+					"type": "text",
+					"description": "To put on the footer",
+					"label": "Copyright text",
+					"value": "Coda. All rights reserved."
 				}
 			]
 		}
