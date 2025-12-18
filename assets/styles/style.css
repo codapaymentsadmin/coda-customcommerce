@@ -120,3 +120,59 @@ form[role="search"] {
 		@apply bg-brand !text-cta-text;
 	}
 }
+
+/* Custom breadcrumbs styling */
+.custom-breadcrumbs {
+	font-size: 0.875rem;
+}
+
+.custom-breadcrumbs ol,
+.custom-breadcrumbs ul {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.custom-breadcrumbs li {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.custom-breadcrumbs li:not(:last-child)::after {
+	content: "";
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%239ca3af' viewBox='0 0 256 256'%3E%3Cpath d='m181.66,133.66-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	opacity: 0.6;
+}
+
+.custom-breadcrumbs a {
+	color: #6b7280;
+	text-decoration: none;
+	transition: color 0.2s ease;
+	white-space: nowrap;
+}
+
+.custom-breadcrumbs a:hover {
+	color: var(--color-brand);
+}
+
+.custom-breadcrumbs .category-themed:hover {
+	color: var(--color-link-hover) !important;
+}
+
+/* Current page (last item) styling */
+.custom-breadcrumbs li:last-child {
+	color: #374151;
+	font-weight: 500;
+}

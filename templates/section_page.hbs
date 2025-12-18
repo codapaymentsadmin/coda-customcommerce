@@ -14,24 +14,53 @@
   </div>
 </section>
 
-<section id="main-content" class="flex-1 h-full min-h-[40dvh] py-12 bg-white">
+<section id="main-content" class="flex-1 min-h-[50dvh] py-12 bg-white">
   <div class="flex flex-col max-w-5xl mx-auto px-4 xl:px-0">
-    <h2 class="text-xl md:text-2xl text-start text-fc-dark font-semibold mt-4">
-      {{section.name}}
-    </h2>
-    <p class="text-md text-start text-fc-dark mt-2">
-      {{section.description}}
-    </p>
+    <!-- Breadcrumbs using Zendesk helper -->
+    <nav class="custom-breadcrumbs text-sm mb-6">
+      {{breadcrumbs}}
+    </nav>
 
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-      {{#each section.articles}}
-      <a id="article-{{id}}" href="{{url}}"
-        class="btn btn-md h-[50px] flex items-center justify-between border-2 border-brand bg-brand/90 hover:bg-brand transition-colors rounded-lg text-cta-text text-start text-sm line-clamp-1 leading-4 shadow-sm">
-        <span class="w-full line-clamp-1">
-          {{title}}
-        </span>
-      </a>
-      {{/each}}
+
+    <div class="w-full flex flex-col gap-4 mt-8">
+      {{#if section.sections}}
+      <div class="w-full mb-4 border-b border-gray-300 pb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {{#each section.sections}}
+          <a href="{{url}}"
+            class="btn btn-md h-[60px] flex items-center justify-between bg-brand text-brand-text hover:bg-brand/90 transition-colors rounded-lg text-start text-sm font-medium shadow-md subsection-btn">
+            <div class="flex items-center gap-3">
+              <i class="ph ph-folder text-lg"></i>
+              <span class="line-clamp-1">{{name}}</span>
+            </div>
+            <i class="ph ph-arrow-right"></i>
+          </a>
+          {{/each}}
+        </div>
+      </div>
+      {{/if}}
+
+      {{#if section.articles}}
+      <div class="w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {{#each section.articles}}
+          <a id="article-{{id}}" href="{{url}}"
+            class="btn btn-md h-[50px] flex items-center justify-between border-2 border-brand bg-transparent text-brand-text hover:bg-brand !hover:text-white transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm article-btn">
+            <span class="w-full line-clamp-1">
+              {{title}}
+            </span>
+            <i class="ph ph-arrow-right"></i>
+          </a>
+          {{/each}}
+        </div>
+      </div>
+      {{/if}}
+
+      {{#unless section.sections}}{{#unless section.articles}}
+      <div class="text-center py-8">
+        <p class="text-main-text">No content available in this section yet.</p>
+      </div>
+      {{/unless}}{{/unless}}
     </div>
   </div>
 </section>
