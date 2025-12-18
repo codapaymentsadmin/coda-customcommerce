@@ -62,12 +62,23 @@
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 					{{#each sections}}
 					{{#if (compare @index "<" 4)}} <a href="{{url}}"
-						class="btn btn-md h-[60px] flex items-center justify-between border-2 border-brand bg-white text-brand-text hover:bg-brand hover:text-brand-text transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm p-4">
-						<span class="text-left">{{name}}</span>
-						<i class="ph ph-arrow-right flex-shrink-0"></i>
+						class="btn btn-md h-[60px] flex items-center justify-between bg-brand text-brand-text hover:bg-brand/90 transition-colors rounded-lg text-start text-sm font-medium shadow-md subsection-btn">
+						<div class="flex items-center gap-3">
+							<i class="ph ph-folder text-lg"></i>
+							<span class="line-clamp-1">{{name}}</span>
+						</div>
+						<i class="ph ph-arrow-right"></i>
 						</a>
 						{{/if}}
 						{{/each}}
+						{{#each articles}}
+						{{#if (compare @index "<" 4)}} <a href="{{url}}"
+							class="btn btn-md h-[60px] flex items-center justify-between border-2 border-brand bg-white text-brand-text hover:bg-brand hover:text-brand-text transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm p-4">
+							<span class="text-left">{{title}}</span>
+							<i class="ph ph-arrow-right flex-shrink-0"></i>
+							</a>
+							{{/if}}
+							{{/each}}
 				</div>
 			</div>
 			{{/each}}
