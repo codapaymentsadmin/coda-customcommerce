@@ -16,7 +16,7 @@
 </section>
 
 
-<section id="popular-resource-section" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12">
+<section id="popular-resource-section" class="max-w-5xl max-md:w-full lg:w-full mx-auto px-4 md:px-10 py-12">
 	<div class="flex flex-col items-center">
 		{{dc 'hc_-_popular_resources'}}
 		{{#if (compare promoted_articles.length ">" 0)}}
@@ -36,7 +36,7 @@
 </section>
 
 
-<section id="self-service-articles-section" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12">
+<section id="self-service-articles-section" class="max-w-5xl max-md:w-full lg:w-full mx-auto px-4 md:px-10 py-12">
 	<div class="flex flex-col items-center">
 		{{dc 'hc_-_self_service_support'}}
 		<div class="w-full mt-8 space-y-8">
@@ -54,6 +54,13 @@
 						</p>
 						{{/if}}
 					</div>
+					{{#if (compare article_count ">" 5)}}
+					<a href="{{url}}"
+						class="btn btn-sm border text-brand-text transition-colors rounded-lg shadow-sm view-more-btn">
+						View More
+						<i class="ph ph-arrow-right text-xs"></i>
+					</a>
+					{{/if}}
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 					{{#each sections}}
@@ -76,15 +83,6 @@
 							{{/if}}
 							{{/each}}
 				</div>
-				{{#if (compare article_count ">" 5)}}
-				<div class="w-full flex justify-end mt-4">
-					<a href="{{url}}"
-						class="btn btn-sm bg-transparent border border-brand text-brand-text hover:bg-brand transition-colors rounded-lg shadow-sm view-more-btn">
-						View More
-						<i class="ph ph-arrow-right text-xs"></i>
-					</a>
-				</div>
-				{{/if}}
 			</div>
 			{{/each}}
 			{{/each}}
