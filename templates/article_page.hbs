@@ -23,7 +23,7 @@
       <div class="flex-1 flex flex-col mt-2 gap-2">
         {{#each section.articles}}
         <a href="{{url}}"
-          class="btn btn-xl flex items-center justify-start {{#is id ../article.id}}bg-brand text-brand-text{{else}}border-2 border-brand text-brand{{/is}} hover:bg-brand hover:text-brand-text transition-colors rounded-lg text-start text-xs sm:text-sm leading-4 article-sidebar-btn">
+          class="btn btn-xl flex items-center justify-start {{#is id ../article.id}}bg-brand text-brand-text{{else}}border-2 bg-transparent border-black text-black{{/is}} hover:bg-brand hover:border-brand hover:text-brand-text transition-colors rounded-lg text-start text-xs sm:text-sm leading-4 article-sidebar-btn">
           {{title}}
         </a>
         {{/each}}

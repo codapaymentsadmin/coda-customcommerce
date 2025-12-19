@@ -46,11 +46,7 @@
 				<div class="flex flex-row justify-between items-center mb-6">
 					<div>
 						<h4 class="text-lg font-semibold text-accordion-text">
-							<a href="{{url}}" class="flex items-center gap-2 hover:text-brand transition-colors group notranslate">
-								{{name}}
-								<i
-									class="ph ph-arrow-right text-sm opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
-							</a>
+							{{name}}
 						</h4>
 						{{#if description}}
 						<p class="text-accordion-text font-light mt-1">
@@ -61,7 +57,7 @@
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 					{{#each sections}}
-					{{#if (compare @index "<" 4)}} <a href="{{url}}"
+					{{#if (compare @index "<" 5)}} <a href="{{url}}"
 						class="btn btn-md h-[60px] flex items-center justify-between bg-brand text-brand-text hover:bg-brand/90 transition-colors rounded-lg text-start text-sm font-medium shadow-md subsection-btn">
 						<div class="flex items-center gap-3">
 							<i class="ph ph-folder text-lg"></i>
@@ -72,7 +68,7 @@
 						{{/if}}
 						{{/each}}
 						{{#each articles}}
-						{{#if (compare @index "<" 4)}} <a href="{{url}}"
+						{{#if (compare @index "<" 5)}} <a href="{{url}}"
 							class="btn btn-md h-[60px] flex items-center justify-between border-2 border-brand bg-white text-brand-text hover:bg-brand hover:text-brand-text transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm p-4">
 							<span class="text-left">{{title}}</span>
 							<i class="ph ph-arrow-right flex-shrink-0"></i>
@@ -80,6 +76,15 @@
 							{{/if}}
 							{{/each}}
 				</div>
+				{{#if (compare article_count ">" 5)}}
+				<div class="w-full flex justify-end mt-4">
+					<a href="{{url}}"
+						class="btn btn-sm bg-transparent border border-brand text-brand-text hover:bg-brand transition-colors rounded-lg shadow-sm view-more-btn">
+						View More
+						<i class="ph ph-arrow-right text-xs"></i>
+					</a>
+				</div>
+				{{/if}}
 			</div>
 			{{/each}}
 			{{/each}}
