@@ -102,6 +102,10 @@ form.input {
 		background-color: var(--color-brand);
 		color: white;
 	}
+
+	input[type="submit"][value="検索"] {
+		@apply !text-brand-text;
+	}
 }
 
 .custom-line-clamp {
