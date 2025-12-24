@@ -23,6 +23,9 @@ importers:
       handlebars:
         specifier: ^4.7.8
         version: 4.7.8
+      zenselect:
+        specifier: ^0.1.7
+        version: 0.1.7
     devDependencies:
       autoprefixer:
         specifier: ^10.4.21
@@ -36,6 +39,9 @@ importers:
       postcss-nested:
         specifier: ^7.0.2
         version: 7.0.2(postcss@8.5.3)
+      prettier:
+        specifier: ^3.4.2
+        version: 3.7.4
       tailwindcss:
         specifier: ^4.1.4
         version: 4.1.4
@@ -1046,6 +1052,11 @@ packages:
     resolution: {integrity: sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==}
     engines: {node: ^10 || ^12 || >=14}
 
+  prettier@3.7.4:
+    resolution: {integrity: sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   read-pkg@3.0.0:
     resolution: {integrity: sha512-BLq/cCO9two+lBgiTYNqD6GdtK8s4NpaWrl6/rCO9w0TUS8oJl7cmToOZfRYllKTISY6nt1U7jQ53brmKqY6BA==}
     engines: {node: '>=4'}
@@ -1290,6 +1301,9 @@ packages:
 
   wordwrap@1.0.0:
     resolution: {integrity: sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==}
+
+  zenselect@0.1.7:
+    resolution: {integrity: sha512-FF4nJhCND6niTtEUAnyIc4oCprjzkaLNykjrisJbaC2874uJvBgPZg1ITp8f5ic23HnM5YnCY9SvL9coIYsV0w==}
 
 snapshots:
 
@@ -2215,6 +2229,8 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
+  prettier@3.7.4: {}
+
   read-pkg@3.0.0:
     dependencies:
       load-json-file: 4.0.0
@@ -2541,3 +2557,5 @@ snapshots:
       isexe: 2.0.0
 
   wordwrap@1.0.0: {}
+
+  zenselect@0.1.7: {}

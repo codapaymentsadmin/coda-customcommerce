@@ -9,3 +9,7 @@ import "./supportIcon.js";
 import "./viewMoreBtn.js";
 import "./contactBtn.js";
 import "./articleSidebarBtn.js";
+import { zenMultiSelect } from "./zenMultiSelect.js";
+
+// Export zenMultiSelect for use in templates
+window.zenMultiSelect = zenMultiSelect;

@@ -22,7 +22,6 @@
 		"postcss": "^8.5.3",
 		"postcss-nested": "^7.0.2",
 		"prettier": "^3.4.2",
-		"prettier-plugin-handlebars": "^2.1.0",
 		"tailwindcss": "^4.1.4",
 		"vite": "^6.3.2"
 	},
@@ -31,6 +30,7 @@
 		"@tailwindcss/postcss": "^4.1.4",
 		"@tailwindcss/vite": "^4.1.4",
 		"daisyui": "^5.0.28",
-		"handlebars": "^4.7.8"
+		"handlebars": "^4.7.8",
+		"zenselect": "^0.1.7"
 	}
 }
