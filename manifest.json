@@ -377,40 +377,40 @@
 				{
 					"identifier": "efootball_logo",
 					"type": "file",
-					"description": "efootball_logo_description",
-					"label": "efootball_logo_label"
+					"description": "eFootball logo format in .png/.webp",
+					"label": "eFootball Logo"
 				},
 				{
 					"identifier": "efootball_banner_image",
 					"type": "file",
-					"description": "efootball_banner_image_description",
-					"label": "efootball_banner_image_label"
+					"description": "eFootball banner image format in .webp",
+					"label": "eFootball Banner Image"
 				},
 				{
 					"identifier": "efootball_banner_mobile",
 					"type": "file",
-					"description": "efootball_banner_mobile_description",
-					"label": "efootball_banner_mobile_label"
+					"description": "eFootball banner mobile image format in .webp",
+					"label": "eFootball Banner Mobile"
 				},
 				{
 					"identifier": "show_efootball_section",
 					"type": "checkbox",
-					"description": "show_efootball_section_description",
-					"label": "show_efootball_section_label",
+					"description": "Show eFootball section on homepage",
+					"label": "Show eFootball Section?",
 					"value": true
 				},
 				{
 					"identifier": "efootball_primary_color",
 					"type": "color",
-					"description": "efootball_primary_color_description",
-					"label": "efootball_primary_color_label",
+					"description": "Primary color for eFootball section",
+					"label": "eFootball Primary Color",
 					"value": "#1E40AF"
 				},
 				{
 					"identifier": "efootball_secondary_color",
 					"type": "color",
-					"description": "efootball_secondary_color_description",
-					"label": "efootball_secondary_color_label",
+					"description": "Secondary color for eFootball section",
+					"label": "eFootball Secondary Color",
 					"value": "#3B82F6"
 				},
 				
@@ -431,40 +431,40 @@
 				{
 					"identifier": "ebaseball_logo",
 					"type": "file",
-					"description": "ebaseball_logo_description",
-					"label": "ebaseball_logo_label"
+					"description": "eBaseball™: MLB PRO SPIRIT logo format in .png/.webp",
+					"label": "eBaseball Logo"
 				},
 				{
 					"identifier": "ebaseball_banner_image",
 					"type": "file",
-					"description": "ebaseball_banner_image_description",
-					"label": "ebaseball_banner_image_label"
+					"description": "eBaseball™: MLB PRO SPIRIT banner image format in .webp",
+					"label": "eBaseball Banner Image"
 				},
 				{
 					"identifier": "ebaseball_banner_mobile",
 					"type": "file",
-					"description": "ebaseball_banner_mobile_description",
-					"label": "ebaseball_banner_mobile_label"
+					"description": "eBaseball™: MLB PRO SPIRIT banner mobile image format in .webp",
+					"label": "eBaseball Banner Mobile"
 				},
 				{
 					"identifier": "show_ebaseball_section",
 					"type": "checkbox",
-					"description": "show_ebaseball_section_description",
-					"label": "show_ebaseball_section_label",
+					"description": "Show eBaseball section on homepage",
+					"label": "Show eBaseball Section?",
 					"value": true
 				},
 				{
 					"identifier": "ebaseball_primary_color",
 					"type": "color",
-					"description": "ebaseball_primary_color_description",
-					"label": "ebaseball_primary_color_label",
+					"description": "Primary color for eBaseball section",
+					"label": "eBaseball Primary Color",
 					"value": "#1E40AF"
 				},
 				{
 					"identifier": "ebaseball_secondary_color",
 					"type": "color",
-					"description": "ebaseball_secondary_color_description",
-					"label": "ebaseball_secondary_color_label",
+					"description": "Secondary color for eBaseball section",
+					"label": "eBaseball Secondary Color",
 					"value": "#3B82F6"
 				},
 				{
@@ -477,9 +477,62 @@
 				{
 					"identifier": "ebaseball_helpcenter_link_text",
 					"type": "text",
-					"description": "webstore_helpcenter_link_text_description",
-					"label": "webstore_helpcenter_link_text_label",
+					"description": "eBaseball Help Center Link Caption",
+					"label": "eBaseball Help Center Link Caption",
 					"value": "eBaseball Help Center"
+				},
+				{
+					"identifier": "master_duel_logo",
+					"type": "file",
+					"description": "Master Duel logo format in .png/.webp",
+					"label": "Master Duel Logo"
+				},
+				{
+					"identifier": "master_duel_banner_image",
+					"type": "file",
+					"description": "Master Duel banner image format in .webp",
+					"label": "Master Duel Banner Image"
+				},
+				{
+					"identifier": "master_duel_banner_mobile",
+					"type": "file",
+					"description": "Master Duel banner mobile image format in .webp",
+					"label": "Master Duel Banner Mobile"
+				},
+				{
+					"identifier": "show_master_duel_section",
+					"type": "checkbox",
+					"description": "Show Master Duel section on homepage",
+					"label": "Show Master Duel Section?",
+					"value": true
+				},
+				{
+					"identifier": "master_duel_primary_color",
+					"type": "color",
+					"description": "Primary color for Master Duel section",
+					"label": "Master Duel Primary Color",
+					"value": "#1E40AF"
+				},
+				{
+					"identifier": "master_duel_secondary_color",
+					"type": "color",
+					"description": "Secondary color for Master Duel section",
+					"label": "Master Duel Secondary Color",
+					"value": "#3B82F6"
+				},
+				{
+					"identifier": "master_duel_helpcenter_link",
+					"type": "text",
+					"description": "Master Duel HC Link in New Request Page",
+					"label": "Master Duel Help Center Link",
+					"value": "https://www.konami.com/help"
+				},
+				{
+					"identifier": "master_duel_helpcenter_text",
+					"type": "text",
+					"description": "Master Duel Help Center Link Caption",
+					"label": "Master Duel Help Center Link Caption",
+					"value": "Yu-Gi-Oh! Master Duel Help Center"
 				}
 			]
 		},

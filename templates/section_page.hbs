@@ -76,6 +76,11 @@
     const breadcrumbLinks = breadcrumbsNav?.querySelectorAll('a');
     let categoryName = null;
 
+    // Add 'notranslate' to second breadcrumb item (game title) BEFORE any processing
+    if (breadcrumbLinks && breadcrumbLinks[1]) {
+      breadcrumbLinks[1].classList.add('notranslate');
+    }
+
     breadcrumbLinks[0].textContent = 'Web Store Support';
     // The category is typically the second-to-last link in breadcrumbs
     if (breadcrumbLinks && breadcrumbLinks.length >= 2) {
@@ -96,6 +101,12 @@
         secondary: '{{settings.ebaseball_secondary_color}}',
         bannerImage: '{{settings.ebaseball_banner_image}}',
         logo: '{{settings.ebaseball_logo}}'
+      },
+      'Yu-Gi-Oh! MASTER DUEL': {
+        primary: '{{settings.master_duel_primary_color}}',
+        secondary: '{{settings.master_duel_secondary_color}}',
+        bannerImage: '{{settings.master_duel_banner_image}}',
+        logo: '{{settings.master_duel_logo}}'
       }
       // Add more games here as needed
     };
@@ -122,6 +133,16 @@
           }
         } else if (categoryName === 'eBaseball™: MLB PRO SPIRIT') {
           bannerImage = isMobile ? '{{settings.ebaseball_banner_mobile}}' : theme.bannerImage;
+
+          if (bannerImage) {
+            heroSection.style.backgroundImage = `url(${bannerImage})`;
+            heroSection.style.backgroundSize = 'cover';
+            heroSection.style.backgroundPosition = 'center center';
+            heroSection.style.backgroundRepeat = 'no-repeat';
+            heroSection.style.backgroundColor = '#121b28';
+          }
+        } else if (categoryName === 'Yu-Gi-Oh! MASTER DUEL') {
+          bannerImage = isMobile ? '{{settings.master_duel_banner_mobile}}' : theme.bannerImage;
 
           if (bannerImage) {
             heroSection.style.backgroundImage = `url(${bannerImage})`;
@@ -196,15 +217,6 @@
       }
     }
 
-    // Add 'notranslate' class to breadcrumb links containing game names
-    const breadcrumbLinksElement = document.querySelectorAll('.custom-breadcrumbs ol.breadcrumbs li a');
-    breadcrumbLinksElement.forEach(link => {
-      const linkText = link.textContent;
-      if (linkText.includes('eFootball™') || linkText.includes('eBaseball™: MLB PRO SPIRIT') || linkText.includes('Web Store Support')) {
-        link.classList.add('notranslate');
-      }
-    });
-
     // Handle window resize for responsive banner images
     window.addEventListener('resize', function () {
       if (categoryName && categoryThemes[categoryName]) {
@@ -219,6 +231,8 @@
             bannerImage = isMobile ? '{{settings.efootball_banner_mobile}}' : theme.bannerImage;
           } else if (categoryName === 'eBaseball™: MLB PRO SPIRIT') {
             bannerImage = isMobile ? '{{settings.ebaseball_banner_mobile}}' : theme.bannerImage;
+          } else if (categoryName === 'Yu-Gi-Oh! MASTER DUEL') {
+            bannerImage = isMobile ? '{{settings.master_duel_banner_mobile}}' : theme.bannerImage;
           } else {
             bannerImage = theme.bannerImage;
           }
