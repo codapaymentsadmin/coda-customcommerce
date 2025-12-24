@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.2.7",
+	"version": "1.0.0",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -39,7 +39,7 @@
 					"type": "text",
 					"description": "webstore_link_description",
 					"label": "webstore_link_label",
-					"value": "https://www.konami.com/store"
+					"value": "https:/google.com"
 				}
 			]
 		},
