@@ -391,168 +391,96 @@
 			]
 		},
 		{
-			"label": "Specific Game Sections Styling",
+			"label": "Yalla Live Config",
 			"variables": [
 				{
-					"identifier": "efootball_logo",
+					"identifier": "yalla_live_logo",
 					"type": "file",
-					"description": "eFootball logo format in .webp",
-					"label": "eFootball Logo (Tile)"
+					"description": "Yalla Live logo format in .webp",
+					"label": "Yalla Live Logo (Tile)"
 				},
 				{
-					"identifier": "efootball_banner_image",
-					"type": "file",
-					"description": "eFootball banner image format in .webp",
-					"label": "eFootball Banner Image"
-				},
-				{
-					"identifier": "efootball_banner_mobile",
-					"type": "file",
-					"description": "eFootball banner mobile image format in .webp",
-					"label": "eFootball Banner Image (for mobile)"
-				},
-				{
-					"identifier": "show_efootball_section",
+					"identifier": "show_yalla_live_section",
 					"type": "checkbox",
-					"description": "Show eFootball section on homepage",
-					"label": "Show eFootball Section?",
+					"description": "Show Yalla Live section on homepage",
+					"label": "Show Yalla Live Section?",
 					"value": true
 				},
 				{
-					"identifier": "efootball_primary_color",
+					"identifier": "yalla_live_primary_color",
 					"type": "color",
-					"description": "Insert primary color for eFootball section",
-					"label": "eFootball primary color",
+					"description": "Insert primary color for Yalla Live section",
+					"label": "Yalla Live primary color",
 					"value": "#1E40AF"
 				},
 				{
-					"identifier": "efootball_secondary_color",
+					"identifier": "yalla_live_secondary_color",
 					"type": "color",
-					"description": "Insert secondary color for eFootball section",
-					"label": "eFootball secondary color",
+					"description": "Insert secondary color for Yalla Live section",
+					"label": "Yalla Live secondary color",
 					"value": "#3B82F6"
 				},
 				
 				{
-					"identifier": "efootball_helpcenter_link",
+					"identifier": "yalla_live_helpcenter_link",
 					"type": "text",
-					"description": "eFootball Help Center Link to be put in New Request Page",
-					"label": "eFootball Help Center Link",
+					"description": "Yalla Live Help Center Link to be put in New Request Page",
+					"label": "Yalla Live Help Center Link",
 					"value": "https://www.konami.com/efootball/faq/0/en-us/"
 				},
 				{
-					"identifier": "efootball_helpcenter_link_text",
+					"identifier": "yalla_live_helpcenter_link_text",
 					"type": "text",
-					"description": "eFootball Help Center Link Caption",
-					"label": "eFootball Help Center Link Caption",
-					"value": "eFootball Help Center"
-				},
+					"description": "Yalla Live Help Center Link Caption",
+					"label": "Yalla Live Help Center Link Caption",
+					"value": "Yalla Live Help Center"
+				}
+			]
+		},
+		{
+			"label": "Yalla Ludo Config",
+			"variables": [
 				{
-					"identifier": "blockman_logo",
+					"identifier": "yalla_ludo_logo",
 					"type": "file",
-					"description": "Blockman Go logo in .png/.webp",
-					"label": "Blockman Go Logo"
+					"description": "Yalla Ludo logo format in .webp",
+					"label": "Yalla Ludo Logo (Tile)"
 				},
 				{
-					"identifier": "blockman_banner_image",
-					"type": "file",
-					"description": "Blockman banner image in .webp",
-					"label": "Blockman Banner Image"
-				},
-				{
-					"identifier": "blockman_banner_mobile",
-					"type": "file",
-					"description": "Blockman banner mobile image in .webp",
-					"label": "Blockman Banner Mobile"
-				},
-				{
-					"identifier": "show_blockman_section",
+					"identifier": "show_yalla_ludo_section",
 					"type": "checkbox",
-					"description": "Show blockman section on homepage",
-					"label": "Show Blockman Section?",
+					"description": "Show Yalla Ludo section on homepage",
+					"label": "Show Yalla Ludo Section?",
 					"value": true
 				},
 				{
-					"identifier": "blockman_primary_color",
+					"identifier": "yalla_ludo_primary_color",
 					"type": "color",
-					"description": "Insert primary color for blockman section",
-					"label": "Blockman primary color",
-					"value": "#000"
+					"description": "Insert primary color for Yalla Ludo section",
+					"label": "Yalla Ludo primary color",
+					"value": "#1E40AF"
 				},
 				{
-					"identifier": "blockman_secondary_color",
+					"identifier": "yalla_ludo_secondary_color",
 					"type": "color",
-					"description": "Insert secondary color for blockman section",
-					"label": "Blockman secondary color",
-					"value": "#fff"
-				},
-				{
-					"identifier": "blockman_helpcenter_link",
-					"type": "text",
-					"description": "To put in new request page",
-					"label": "Blockman Go Help Center Link",
-					"value": "https://google.com/"
-				},
-				{
-					"identifier": "blockman_helpcenter_link_text",
-					"type": "text",
-					"description": "Blockman Go Help Center Link Caption",
-					"label": "Blockman HC Link Text",
-					"value": "Blockman Go Help Center"
-				},
-				{
-					"identifier": "moba_logo",
-					"type": "file",
-					"description": "Moba 5v5 logo format in .png/.webp",
-					"label": "Moba 5v5 Logo"
-				},
-				{
-					"identifier": "moba_banner_image",
-					"type": "file",
-					"description": "Moba 5v5 banner image format in .webp",
-					"label": "Moba 5v5 Banner Image"
-				},
-				{
-					"identifier": "moba_banner_mobile",
-					"type": "file",
-					"description": "Moba 5v5 banner mobile image format in .webp",
-					"label": "Moba 5v5 Banner Mobile"
-				},
-				{
-					"identifier": "show_moba_section",
-					"type": "checkbox",
-					"description": "Show Moba 5v5 section on homepage",
-					"label": "Show Moba 5v5 Section?",
-					"value": true
-				},
-				{
-					"identifier": "moba_primary_color",
-					"type": "color",
-					"description": "Insert primary color for Moba 5v5 section",
-					"label": "Moba 5v5 Primary Color",
-					"value": "#000"
-				},
-				{
-					"identifier": "moba_secondary_color",
-					"type": "color",
-					"description": "Insert secondary color for Moba 5v5 section",
-					"label": "Moba 5v5 Secondary Color",
-					"value": "#fff"
+					"description": "Insert secondary color for Yalla Ludo section",
+					"label": "Yalla Ludo secondary color",
+					"value": "#3B82F6"
 				},
 				
 				{
-					"identifier": "moba_helpcenter_link",
+					"identifier": "yalla_ludo_helpcenter_link",
 					"type": "text",
-					"description": "Moba 5v5 Help Center Link to be put in New Request Page",
-					"label": "Moba 5v5 Help Center Link",
-					"value": "https://google.com/"
+					"description": "Yalla Ludo Help Center Link to be put in New Request Page",
+					"label": "Yalla Ludo Help Center Link",
+					"value": "https://www.konami.com/efootball/faq/0/en-us/"
 				},
 				{
-					"identifier": "moba_helpcenter_link_text",
+					"identifier": "yalla_ludo_helpcenter_link_text",
 					"type": "text",
-					"description": "Moba 5v5 Help Center Link Caption",
-					"label": "Moba 5v5 Help Center Link Caption",
-					"value": "Moba 5v5 Help Center"
+					"description": "Yalla Ludo Help Center Link Caption",
+					"label": "Yalla Ludo Help Center Link Caption",
+					"value": "Yalla Ludo Help Center"
 				}
 			]
 		},
