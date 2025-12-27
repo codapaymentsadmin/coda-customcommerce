@@ -1,6 +1,7 @@
 <footer class="footer sm:footer-horizontal bg-footer-bg text-main-text items-center p-4 border-t border-gray-100">
 	<div class="w-full flex flex-wrap items-start sm:items-center justify-between gap-1">
-		<h4 id="footer-brand-name" class="font-semibold text-white text-lg sm:text-xl notranslate">{{settings.brand_name}}
+		<h4 id="footer-brand-name" class="font-semibold text-white text-lg sm:text-xl notranslate">
+			{{settings.brand_name}} {{dc 'hc_-_help_center'}}
 		</h4>
 		{{#if settings.show_copyright}}
 		<p class="!text-sm text-white notranslate">
