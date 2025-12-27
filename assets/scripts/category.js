@@ -15,13 +15,23 @@ document.addEventListener('DOMContentLoaded', function () {
 			return;
 		}
 
-		// Get category name from the page title or breadcrumbs
+		// Get category name from the page title
+		const categoryTitle = document.getElementById('category-title')?.textContent.trim();
 		let theme = categoryThemes['default'];
 
+		// Apply game-specific theming based on category name
+		if (categoryTitle === 'Yalla Live') {
+			theme = categoryThemes['Yalla Live'];
+		} else if (categoryTitle === 'Yalla Ludo') {
+			theme = categoryThemes['Yalla Ludo'];
+		}
+
+		// Set game logo
+		setGameLogo(theme)
 		// Set banner image with responsive handling
 		setHeroSection(theme);
-    // Style breadcrumbs (show all items for category page)
-    setBreadcrumbsStyle(theme, false);
+    // Style breadcrumbs
+    setBreadcrumbsStyle(theme);
     // Style search button
     setSearchBtnStyle(theme);
     // Apply eFootball theming to subsection buttons
@@ -34,28 +44,4 @@ document.addEventListener('DOMContentLoaded', function () {
     setContactBtnStyle(theme);
     // Apply game-specific theming to support icon background
     setSupportIconStyle(theme);
-
-		// Handle window resize for responsive banner images
-		// window.addEventListener('resize', function () {
-		// 	const heroSection = document.querySelector('[data-hero-section]');
-		// 	if (!heroSection) return;
-
-		// 	const isMobile = window.innerWidth <= 768;
-
-		// 	if (categoryTitle?.includes('eFootball™') || pagePath.includes('efootball')) {
-		// 		const theme = categoryThemes['eFootball™'];
-		// 		const bannerImage = isMobile ? '{{settings.efootball_banner_mobile}}' : theme.bannerImage;
-		// 		if (bannerImage) {
-		// 			heroSection.style.backgroundImage = `url(${bannerImage})`;
-		// 		}
-		// 	}
-
-		// 	if (categoryTitle?.includes('eBaseball™: MLB PRO SPIRIT') || pagePath.includes('ebaseball')) {
-		// 		const theme = categoryThemes['eBaseball™: MLB PRO SPIRIT'];
-		// 		const bannerImage = isMobile ? '{{settings.blockman_banner_mobile}}' : theme.bannerImage;
-		// 		if (bannerImage) {
-		// 			heroSection.style.backgroundImage = `url(${bannerImage})`;
-		// 		}
-		// 	}
-		// });
 	});

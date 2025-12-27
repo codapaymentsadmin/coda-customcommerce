@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.1.1",
+	"version": "1.0",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -26,7 +26,7 @@
 					"type": "text",
 					"description": "brand_name_description",
 					"label": "brand_name_label",
-					"value": "OTT Commerce Help Center"
+					"value": "Web Store Help Center"
 				},
 				{
 					"identifier": "favicon",
@@ -98,7 +98,7 @@
 					"type": "color",
 					"description": "brand_color_description",
 					"label": "brand_color_label",
-					"value": "#BF0019"
+					"value": "#000"
 				},
 				{
 					"identifier": "brand_text_color",
@@ -379,7 +379,7 @@
 					"type": "color",
 					"description": "Insert primary color for default game sections",
 					"label": "Default primary color",
-					"value": "#000"
+					"value": "#00eac4"
 				},
 				{
 					"identifier": "default_secondary_color",
@@ -411,14 +411,14 @@
 					"type": "color",
 					"description": "Insert primary color for Yalla Live section",
 					"label": "Yalla Live primary color",
-					"value": "#1E40AF"
+					"value": "#00d8c9"
 				},
 				{
 					"identifier": "yalla_live_secondary_color",
 					"type": "color",
 					"description": "Insert secondary color for Yalla Live section",
 					"label": "Yalla Live secondary color",
-					"value": "#3B82F6"
+					"value": "#e5fe8f"
 				},
 				
 				{
@@ -458,14 +458,14 @@
 					"type": "color",
 					"description": "Insert primary color for Yalla Ludo section",
 					"label": "Yalla Ludo primary color",
-					"value": "#1E40AF"
+					"value": "#00eac4"
 				},
 				{
 					"identifier": "yalla_ludo_secondary_color",
 					"type": "color",
 					"description": "Insert secondary color for Yalla Ludo section",
 					"label": "Yalla Ludo secondary color",
-					"value": "#3B82F6"
+					"value": "#e5fe8f"
 				},
 				
 				{
@@ -513,7 +513,7 @@
 					"type": "text",
 					"description": "copyright_text_description",
 					"label": "copyright_text_label",
-					"value": "OTT Commerce Solutions Pte. Ltd. All rights reserved."
+					"value": "Coda. All rights reserved."
 				}
 			]
 		}

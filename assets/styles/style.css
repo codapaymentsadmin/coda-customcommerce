@@ -33,12 +33,10 @@
 	--color-cta-text: $cta_text_color;
 	--color-banner-text: $banner_text_color;
 	--color-cta: $cta_color;
-	--color-efootball-primary: $efootball_primary_color;
-	--color-efootball-secondary: $efootball_secondary_color;
-	--color-blockman-primary: $blockman_primary_color;
-	--color-blockman-secondary: $blockman_secondary_color;
-	--color-moba-primary: $moba_primary_color;
-	--color-moba-secondary: $moba_secondary_color;
+	--color-yalla-live-primary: $yalla_live_primary_color;
+	--color-yalla-live-secondary: $yalla_live_secondary_color;
+	--color-yalla-ludo-primary: $yalla_ludo_primary_color;
+	--color-yalla-ludo-secondary: $yalla_ludo_secondary_color;
 	--color-default-primary: $default_primary_color;
 	--color-default-secondary: $default_secondary_color;
 	--font-heading: $heading_font;
@@ -120,7 +118,7 @@ main {
 /* Article button dynamic theming */
 .article-btn-themed:hover {
 	background-color: var(--hover-bg-color) !important;
-	color: white !important;
+	color: black !important;
 }
 
 /* Subsection button dynamic theming */
@@ -141,7 +139,7 @@ main {
 /* View more button dynamic theming */
 .view-more-btn-themed:hover {
 	background-color: var(--hover-bg-color) !important;
-	color: white !important;
+	color: black !important;
 }
 
 @import "./article.css";
@@ -225,7 +223,7 @@ form.input {
 
 form[role="search"] {
 	input[type="submit"][value="Search"] {
-		@apply bg-brand !text-cta-text;
+		@apply bg-brand !text-white;
 	}
 
 	input[type="search"][name="query"] {

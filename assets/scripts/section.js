@@ -15,16 +15,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Get game name from breadcrumbs to apply proper theming
-  const navbarBrandName = document.getElementById('brand-name');
-  const footerBrandName = document.getElementById('footer-brand-name');
   const currentGameSection = getGameFromBreadcrumbIndex();
   let theme = categoryThemes['default'];
   const mainContent = document.querySelector('#main-content');
 
-  // Apply navbar/footer branding for eFootball (applies to all section pages)
-  if (currentGameSection === "eFootball™") {
-    navbarBrandName.textContent = 'Web Store Help Center';
-    footerBrandName.textContent = 'Web Store Help Center';
+  // Apply navbar/footer branding for Yalla Live (applies to all section pages)
+  if (currentGameSection === "Yalla Live") {
     const contactSupportSection = document.getElementById('contact-support-section');
     if (contactSupportSection) {
       contactSupportSection.classList.remove('hidden');
@@ -33,14 +29,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Apply game-specific theming based on breadcrumb detection
   switch(currentGameSection) {
-    case 'eFootball™':
-      theme = categoryThemes['eFootball™'];
+    case 'Yalla Live':
+      theme = categoryThemes['Yalla Live'];
       break;
-    case 'Blockman Go':
-      theme = categoryThemes['Blockman Go'];
-      break;
-    case 'Moba 5v5':
-      theme = categoryThemes['Moba 5v5'];
+    case 'Yalla Ludo':
+      theme = categoryThemes['Yalla Ludo'];
       break;
     default:
       theme = categoryThemes['default'];
@@ -52,8 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
   mainContent.style.setProperty('--category-theme-secondary', theme.secondary);
   
   setSearchBtnStyle(theme);
-  // Style the category link in breadcrumbs (remove first 2 items)
-  setBreadcrumbsStyle(theme, true);
+  // Style the breadcrumbs
+  setBreadcrumbsStyle(theme);
   // Set banner image with responsive handling
   setHeroSection(theme);
   // Set logo
@@ -66,29 +59,4 @@ document.addEventListener('DOMContentLoaded', function () {
   setHamburgerBtnStyle(theme);
   // Apply theming to support icon background
   setSupportIconStyle(theme);
-
-  // Handle window resize for responsive banner images
-  // window.addEventListener('resize', function () {
-  //   if (categoryName && categoryThemes[categoryName]) {
-  //     const theme = categoryThemes[categoryName];
-  //     const heroSection = document.querySelector('[data-hero-section]');
-
-  //     if (heroSection && theme.bannerImage) {
-  //       const isMobile = window.innerWidth <= 768;
-  //       let bannerImage;
-
-  //       if (categoryName === 'eFootball™') {
-  //         bannerImage = isMobile ? '{{settings.efootball_banner_mobile}}' : theme.bannerImage;
-  //       } else if (categoryName === 'eBaseball™: MLB PRO SPIRIT') {
-  //         bannerImage = isMobile ? '{{settings.blockman_banner_mobile}}' : theme.bannerImage;
-  //       } else {
-  //         bannerImage = theme.bannerImage;
-  //       }
-
-  //       if (bannerImage) {
-  //         heroSection.style.backgroundImage = `url(${bannerImage})`;
-  //       }
-  //     }
-  //   }
-  // });
 });

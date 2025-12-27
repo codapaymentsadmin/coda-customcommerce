@@ -9,7 +9,6 @@ export function setContactBtnStyle(theme) {
     // Set inline styles using CSS variables
     btn.style.backgroundColor = theme.primary;
     btn.style.opacity = '0.8';
-    btn.style.color = 'white';
 
     // Add CSS variable for hover effect
     btn.style.setProperty('--hover-bg-color', theme.primary);

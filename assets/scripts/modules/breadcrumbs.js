@@ -1,10 +1,8 @@
 /**
- *
- * @param {*} theme
- * Get from categoryThemes in variables.js
- * @param {boolean} removeFirstTwo - Whether to remove the first two breadcrumb items (default: false)
+ * Apply theme styling to breadcrumbs
+ * @param {*} theme - Theme object from categoryThemes in variables.js
  */
-export function setBreadcrumbsStyle(theme, removeFirstTwo = false) {
+export function setBreadcrumbsStyle(theme) {
   const breadcrumbsNav = document.querySelector('.custom-breadcrumbs');
 
   if (!breadcrumbsNav) {
@@ -12,34 +10,24 @@ export function setBreadcrumbsStyle(theme, removeFirstTwo = false) {
     return;
   }
 
-  // Get all breadcrumb list items (li elements)
-  const breadcrumbItems = breadcrumbsNav.querySelectorAll('ol.breadcrumbs > li');
+  // Get all breadcrumb items (li elements)
+  //const breadcrumbItems = breadcrumbsNav.querySelectorAll('ol.breadcrumbs > li');
+
+  // Get all breadcrumb links
+  const breadcrumbLinks = breadcrumbsNav.querySelectorAll('a');
 
   // Check if breadcrumbs have rendered
-  if (breadcrumbItems.length === 0) {
-    console.warn('Breadcrumb items not found or not yet rendered');
+  if (breadcrumbLinks.length === 0) {
     return;
   }
 
-  // Remove the first two breadcrumb items from the DOM if specified
-  if (removeFirstTwo) {
-    breadcrumbItems.forEach((item, index) => {
-      if (index < 2) {
-        item.remove();
-      }
-    });
-  }
+  // Debug: Log breadcrumb links
+  // breadcrumbLinks.forEach((link, index) => {
+  //   console.log(`Link ${index}:`, link.textContent.trim(), '- href:', link.href);
+  // });
 
-  // Get remaining breadcrumb links after removal
-  const remainingLinks = breadcrumbsNav.querySelectorAll('a');
-  console.log("remainingLinks:", remainingLinks);
-
-  // Store game title - if removed first two, use index 0, otherwise use index 2
-  const gameTitleIndex = removeFirstTwo ? 0 : 2;
-  sessionStorage.setItem('currentGameTitle', remainingLinks[gameTitleIndex]?.textContent.trim() || '');
-
-  // Style the remaining breadcrumb links
-  remainingLinks.forEach((breadcrumb) => {
+  // Style all breadcrumb links
+  breadcrumbLinks.forEach((breadcrumb) => {
     breadcrumb.style.setProperty("--hover-color", theme.primary);
     breadcrumb.classList.add("category-themed");
     breadcrumb.classList.add("notranslate");

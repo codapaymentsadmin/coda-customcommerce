@@ -49,9 +49,13 @@
 <header class="w-full bg-navbar-bg shadow-lg">
 	<div class="navbar max-w-7xl mx-auto">
 		<div class="flex-1">
-			<a id="brand-name" href="{{page_path 'help_center'}}"
-				class="link no-underline text-base sm:text-md text-brand-text tracking-tight notranslate">
-				{{settings.brand_name}}
+			<a href="{{page_path 'help_center'}}" class="w-max flex items-center text-sm text-white gap-2">
+				<img src="{{settings.logo}}" alt="{{settings.brand_name}}" class="w-14 h-auto pr-3 border-r-2 border-white" />
+				<span>
+					Web Store {{dc 'hc_-_help_center'}}
+					<br>
+					<small>Powered by Coda</small>
+				</span>
 			</a>
 		</div>
 		<div class="flex-none">
@@ -126,13 +130,13 @@
 	document.addEventListener('DOMContentLoaded', function () {
 		// Category-specific theme colors and assets (map category names to manifest settings)
 		const categoryThemes = {
-			'efootball': {
-				primary: '{{settings.efootball_primary_color}}',
-				secondary: '{{settings.efootball_secondary_color}}'
+			'yalla_live': {
+				primary: '{{settings.yalla_live_primary_color}}',
+				secondary: '{{settings.yalla_live_secondary_color}}'
 			},
-			'ebaseball': {
-				primary: '{{settings.blockman_primary_color}}',
-				secondary: '{{settings.blockman_secondary_color}}'
+			'yalla_ludo': {
+				primary: '{{settings.yalla_ludo_primary_color}}',
+				secondary: '{{settings.yalla_ludo_secondary_color}}'
 			}
 		};
 
@@ -143,18 +147,18 @@
 		let detectedCategory = null;
 
 		// Check URL path first
-		if (pagePath.includes('efootball')) {
-			detectedCategory = 'efootball';
-		} else if (pagePath.includes('ebaseball')) {
-			detectedCategory = 'ebaseball';
+		if (pagePath.includes('yalla-live') || pagePath.includes('yalla_live')) {
+			detectedCategory = 'yalla_live';
+		} else if (pagePath.includes('yalla-ludo') || pagePath.includes('yalla_ludo')) {
+			detectedCategory = 'yalla_ludo';
 		}
 
 		// If not found in path, check page title
 		if (!detectedCategory && pageTitle) {
-			if (pageTitle.includes('efootball')) {
-				detectedCategory = 'efootball';
-			} else if (pageTitle.includes('ebaseball')) {
-				detectedCategory = 'ebaseball';
+			if (pageTitle.includes('yalla live')) {
+				detectedCategory = 'yalla_live';
+			} else if (pageTitle.includes('yalla ludo')) {
+				detectedCategory = 'yalla_ludo';
 			}
 		}
 

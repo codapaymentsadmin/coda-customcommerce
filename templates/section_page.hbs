@@ -28,30 +28,6 @@
       {{breadcrumbs}}
     </nav>
 
-    {{#is section.name 'eFootball™'}}
-    <h2 class="!text-3xl text-main-text text-center font-bold">
-      <span>{{section.name}}</span>
-      Support
-    </h2>
-    <p class="text-center text-main-text mt-2">Browse through sections and articles for <span>{{section.name}}</span>
-    </p>
-    {{/is}}
-    {{#is section.name 'Blockman Go'}}
-    <h2 class="!text-3xl text-main-text text-center font-bold">
-      <span>{{section.name}}</span>
-      Support
-    </h2>
-    <p class="text-center text-main-text mt-2">Browse through sections and articles for <span>{{section.name}}</span>
-    </p>
-    {{/is}}
-    {{#is section.name 'Moba 5v5'}}
-    <h2 class="!text-3xl text-main-text text-center font-bold">
-      <span>{{section.name}}</span>
-      Support
-    </h2>
-    <p class="text-center text-main-text mt-2">Browse through sections and articles for <span>{{section.name}}</span>
-    </p>
-    {{/is}}
     <div class="w-full flex flex-col gap-4 mt-8">
       <ul class="w-full list mt-8 gap-4">
         {{#if section.sections}}
@@ -72,7 +48,7 @@
             <div class="w-full flex flex-col gap-2">
               {{#each articles}}
               {{#if (compare @index "<" 3)}} <a href="{{url}}"
-                class="btn btn-md h-[50px] flex items-center justify-between border-2 border-cta bg-white text-cta hover:bg-cta hover:text-white transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm article-btn">
+                class="btn btn-md h-[50px] flex items-center justify-between border-2 border-cta bg-white text-black hover:bg-cta transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm article-btn">
                 <div class="flex items-center gap-3">
                   <span>{{title}}</span>
                 </div>
@@ -89,7 +65,7 @@
             {{#if (compare articles.length ">" 5)}}
             <div class="w-full flex justify-end mt-4">
               <a href="{{url}}"
-                class="btn btn-sm bg-transparent border border-cta text-cta hover:bg-cta hover:text-cta-text transition-colors rounded-lg shadow-sm view-more-btn">
+                class="btn btn-sm bg-transparent border border-cta text-black hover:bg-cta hover:text-cta-text transition-colors rounded-lg shadow-sm view-more-btn">
                 View More
                 <i class="ph ph-arrow-right text-xs"></i>
               </a>
@@ -102,7 +78,7 @@
         {{#unless section.sections}}
         {{#each section.articles}}
         {{#if (compare @index "<" 3)}} <a href="{{url}}"
-          class="btn btn-md h-[50px] flex items-center justify-between border-2 border-cta bg-white text-cta hover:bg-cta hover:text-white transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm article-btn">
+          class="btn btn-md h-[50px] flex items-center justify-between border-2 border-cta bg-white text-black hover:bg-cta transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm article-btn">
           <div class="flex items-center gap-3">
             <span>{{title}}</span>
           </div>
@@ -116,45 +92,6 @@
           {{/unless}}
           {{/unless}}
       </ul>
-
-      <!-- LEGACY CODE {{#if section.sections}}
-      <div class="w-full mb-4 border-b border-gray-300 pb-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {{#each section.sections}}
-          <a href="{{url}}"
-            class="btn btn-md h-[60px] flex items-center justify-between bg-cta text-cta-text hover:bg-cta/90 transition-colors rounded-lg text-start text-sm font-medium shadow-md subsection-btn">
-            <div class="flex items-center gap-3">
-              <i class="ph ph-folder text-lg"></i>
-              <span class="line-clamp-1">{{name}}</span>
-            </div>
-            <i class="ph ph-arrow-right"></i>
-          </a>
-          {{/each}}
-        </div>
-      </div>
-      {{/if}}
-
-      {{#if section.articles}}
-      <div class="w-full">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {{#each section.articles}}
-          <a id="article-{{id}}" href="{{url}}"
-            class="btn btn-md h-[50px] flex items-center justify-between border-2 border-cta bg-transparent transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm article-btn">
-            <span class="w-full line-clamp-1">
-              {{title}}
-            </span>
-            <i class="ph ph-arrow-right"></i>
-          </a>
-          {{/each}}
-        </div>
-      </div>
-      {{/if}}
-
-      {{#unless section.sections}}{{#unless section.articles}}
-      <div class="text-center py-8">
-        <p class="text-main-text">No content available in this section yet.</p>
-      </div>
-      {{/unless}}{{/unless}} -->
     </div>
   </div>
 

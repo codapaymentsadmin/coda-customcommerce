@@ -14,25 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const currentGameSection = getGameFromBreadcrumbIndex();
   let theme = categoryThemes['default'];
   const mainContent = document.querySelector('#main-content');
-  const navbarBrandName = document.getElementById('brand-name');
-  const footerBrandName = document.getElementById('footer-brand-name');
-
-  // Apply navbar/footer branding for eFootball (applies to all article pages)
-  if (currentGameSection === "eFootball™") {
-    navbarBrandName.textContent = 'Web Store Help Center';
-    footerBrandName.textContent = 'Web Store Help Center';
-  }
 
   // Apply game-specific theming based on breadcrumb detection
   switch(currentGameSection) {
-    case 'eFootball™':
-      theme = categoryThemes['eFootball™'];
+    case 'Yalla Live':
+      theme = categoryThemes['Yalla Live'];
       break;
-    case 'Blockman Go':
-      theme = categoryThemes['Blockman Go'];
-      break;
-    case 'Moba 5v5':
-      theme = categoryThemes['Moba 5v5'];
+    case 'Yalla Ludo':
+      theme = categoryThemes['Yalla Ludo'];
       break;
     default:
       theme = categoryThemes['default'];
@@ -43,8 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
   mainContent.style.setProperty('--category-theme-primary', theme.primary);
   mainContent.style.setProperty('--category-theme-secondary', theme.secondary);
 
-  // Style breadcrumbs (remove first 2 items)
-  setBreadcrumbsStyle(theme, true);
+  // Style breadcrumbs
+  setBreadcrumbsStyle(theme);
   // Apply eFootball theming to article buttons  
   setArticleButtonStyle(theme);
   // Apply theming to hamburger button
