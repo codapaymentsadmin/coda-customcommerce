@@ -76,7 +76,7 @@
 								<p class="text-accordion-text text-sm italic">No content available in this section yet.</p>
 								{{/unless}}{{/unless}}
 					</div>
-
+					{{#if (compare articles.length ">" 5)}}
 					<div class="w-full flex justify-end mt-4">
 						<a href="{{url}}"
 							class="btn btn-sm bg-transparent border border-cta text-black hover:bg-cta hover:text-cta-text transition-colors rounded-lg shadow-sm view-more-btn">
@@ -84,6 +84,7 @@
 							<i class="ph ph-arrow-right text-xs"></i>
 						</a>
 					</div>
+					{{/if}}
 				</div>
 			</div>
 			{{/each}}
