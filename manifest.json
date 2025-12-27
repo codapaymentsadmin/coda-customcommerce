@@ -422,14 +422,14 @@
 				},
 				
 				{
-					"identifier": "yalla_live_helpcenter_link",
+					"identifier": "yalla_live_hc_link",
 					"type": "text",
-					"description": "Yalla Live Help Center Link to be put in New Request Page",
+					"description": "Yalla Live HC Link to be put in New Request Page",
 					"label": "Yalla Live Help Center Link",
 					"value": "https://www.konami.com/efootball/faq/0/en-us/"
 				},
 				{
-					"identifier": "yalla_live_helpcenter_link_text",
+					"identifier": "yalla_live_hc_link_text",
 					"type": "text",
 					"description": "Yalla Live Help Center Link Caption",
 					"label": "Yalla Live Help Center Link Caption",
@@ -469,14 +469,14 @@
 				},
 				
 				{
-					"identifier": "yalla_ludo_helpcenter_link",
+					"identifier": "yalla_ludo_hc_link",
 					"type": "text",
 					"description": "Yalla Ludo Help Center Link to be put in New Request Page",
 					"label": "Yalla Ludo Help Center Link",
 					"value": "https://www.konami.com/efootball/faq/0/en-us/"
 				},
 				{
-					"identifier": "yalla_ludo_helpcenter_link_text",
+					"identifier": "yalla_ludo_hc_link_text",
 					"type": "text",
 					"description": "Yalla Ludo Help Center Link Caption",
 					"label": "Yalla Ludo Help Center Link Caption",
