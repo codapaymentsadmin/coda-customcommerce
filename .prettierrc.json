@@ -10,7 +10,7 @@
     {
       "files": ["*.hbs", "*.handlebars"],
       "options": {
-        "parser": "glimmer"
+        "parser": "html"
       }
     }
   ]
