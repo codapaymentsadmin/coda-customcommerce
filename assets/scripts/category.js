@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Style breadcrumbs (show all items for category page)
     setBreadcrumbsStyle(theme, false);
     // Style search button
-    setSearchBtnStyle(theme);
+    setSearchBtnStyle(theme, false);
     // Apply eFootball theming to subsection buttons
     setSubsectionBtnStyle(theme);
     // Apply game-specific theming to article buttons
