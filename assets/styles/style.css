@@ -223,7 +223,7 @@ form.input {
 
 form[role="search"] {
 	input[type="submit"][value="Search"] {
-		@apply bg-brand !text-white;
+		@apply bg-brand text-white;
 	}
 
 	input[type="search"][name="query"] {
