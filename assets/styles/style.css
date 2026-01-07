@@ -39,6 +39,8 @@
 	--color-ebaseball-secondary: $ebaseball_secondary_color;
 	--color-master-duel-primary: $master_duel_primary_color;
 	--color-master-duel-secondary: $master_duel_secondary_color;
+	--color-duel-links-primary: $duel_links_primary_color;
+	--color-duel-links-secondary: $duel_links_secondary_color;
 	--font-heading: $heading_font;
 	--font-main-text: $text_font;
 }

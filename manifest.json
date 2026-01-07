@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.2.8",
+	"version": "1.3",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -372,167 +372,130 @@
 			]
 		},
 		{
-			"label": "game_group_label",
+			"label": "eFootball Config",
 			"variables": [
 				{
 					"identifier": "efootball_logo",
 					"type": "file",
-					"description": "eFootball logo format in .png/.webp",
+					"description": "Format in .png/.webp",
 					"label": "eFootball Logo"
-				},
-				{
-					"identifier": "efootball_banner_image",
-					"type": "file",
-					"description": "eFootball banner image format in .webp",
-					"label": "eFootball Banner Image"
-				},
-				{
-					"identifier": "efootball_banner_mobile",
-					"type": "file",
-					"description": "eFootball banner mobile image format in .webp",
-					"label": "eFootball Banner Mobile"
 				},
 				{
 					"identifier": "show_efootball_section",
 					"type": "checkbox",
-					"description": "Show eFootball section on homepage",
+					"description": "",
 					"label": "Show eFootball Section?",
 					"value": true
 				},
 				{
 					"identifier": "efootball_primary_color",
 					"type": "color",
-					"description": "Primary color for eFootball section",
+					"description": "",
 					"label": "eFootball Primary Color",
 					"value": "#1E40AF"
 				},
 				{
 					"identifier": "efootball_secondary_color",
 					"type": "color",
-					"description": "Secondary color for eFootball section",
+					"description": "",
 					"label": "eFootball Secondary Color",
 					"value": "#3B82F6"
-				},
-				
-				{
-					"identifier": "efootball_helpcenter_link",
-					"type": "text",
-					"description": "eFootball Help Center Link to be put in New Request Page",
-					"label": "eFootball Help Center Link",
-					"value": "https://www.konami.com/efootball/faq/0/en-us/"
-				},
-				{
-					"identifier": "efootball_helpcenter_link_text",
-					"type": "text",
-					"description": "eFootball Help Center Link Caption",
-					"label": "eFootball Help Center Link Caption",
-					"value": "eFootball Help Center"
-				},
+				}
+			]
+		},
+		{
+			"label": "eBaseball Config",
+			"variables": [
 				{
 					"identifier": "ebaseball_logo",
 					"type": "file",
-					"description": "eBaseball™: MLB PRO SPIRIT logo format in .png/.webp",
+					"description": "Format in .png/.webp",
 					"label": "eBaseball Logo"
-				},
-				{
-					"identifier": "ebaseball_banner_image",
-					"type": "file",
-					"description": "eBaseball™: MLB PRO SPIRIT banner image format in .webp",
-					"label": "eBaseball Banner Image"
-				},
-				{
-					"identifier": "ebaseball_banner_mobile",
-					"type": "file",
-					"description": "eBaseball™: MLB PRO SPIRIT banner mobile image format in .webp",
-					"label": "eBaseball Banner Mobile"
 				},
 				{
 					"identifier": "show_ebaseball_section",
 					"type": "checkbox",
-					"description": "Show eBaseball section on homepage",
+					"description": "",
 					"label": "Show eBaseball Section?",
 					"value": true
 				},
 				{
 					"identifier": "ebaseball_primary_color",
 					"type": "color",
-					"description": "Primary color for eBaseball section",
+					"description": "",
 					"label": "eBaseball Primary Color",
 					"value": "#1E40AF"
 				},
 				{
 					"identifier": "ebaseball_secondary_color",
 					"type": "color",
-					"description": "Secondary color for eBaseball section",
+					"description": "",
 					"label": "eBaseball Secondary Color",
 					"value": "#3B82F6"
-				},
-				{
-					"identifier": "ebaseball_helpcenter_link",
-					"type": "text",
-					"description": "eBaseball Help Center Link to be put in New Request Page",
-					"label": "eBaseball Help Center Link",
-					"value": "https://www.konami.com/help"
-				},
-				{
-					"identifier": "ebaseball_helpcenter_link_text",
-					"type": "text",
-					"description": "eBaseball Help Center Link Caption",
-					"label": "eBaseball Help Center Link Caption",
-					"value": "eBaseball Help Center"
-				},
+				}
+			]
+		},
+		{
+			"label": "Master Duel Config",
+			"variables": [
 				{
 					"identifier": "master_duel_logo",
 					"type": "file",
-					"description": "Master Duel logo format in .png/.webp",
+					"description": "Format in .png/.webp",
 					"label": "Master Duel Logo"
-				},
-				{
-					"identifier": "master_duel_banner_image",
-					"type": "file",
-					"description": "Master Duel banner image format in .webp",
-					"label": "Master Duel Banner Image"
-				},
-				{
-					"identifier": "master_duel_banner_mobile",
-					"type": "file",
-					"description": "Master Duel banner mobile image format in .webp",
-					"label": "Master Duel Banner Mobile"
 				},
 				{
 					"identifier": "show_master_duel_section",
 					"type": "checkbox",
-					"description": "Show Master Duel section on homepage",
+					"description": "",
 					"label": "Show Master Duel Section?",
 					"value": true
 				},
 				{
 					"identifier": "master_duel_primary_color",
 					"type": "color",
-					"description": "Primary color for Master Duel section",
+					"description": "",
 					"label": "Master Duel Primary Color",
 					"value": "#1E40AF"
 				},
 				{
 					"identifier": "master_duel_secondary_color",
 					"type": "color",
-					"description": "Secondary color for Master Duel section",
+					"description": "",
 					"label": "Master Duel Secondary Color",
 					"value": "#3B82F6"
+				}
+			]
+		},
+		{
+			"label": "Duel Links Config",
+			"variables": [
+				{
+					"identifier": "duel_links_logo",
+					"type": "file",
+					"description": "Format in .png/.webp",
+					"label": "Master Duel Logo"
 				},
 				{
-					"identifier": "master_duel_helpcenter_link",
-					"type": "text",
-					"description": "Master Duel HC Link in New Request Page",
-					"label": "Master Duel Help Center Link",
-					"value": "https://www.konami.com/help"
+					"identifier": "show_duel_links_section",
+					"type": "checkbox",
+					"description": "",
+					"label": "Show Master Duel Section?",
+					"value": true
 				},
 				{
-					"identifier": "master_duel_helpcenter_text",
-					"type": "text",
-					"description": "Master Duel Help Center Link Caption",
-					"label": "Master Duel Help Center Link Caption",
-					"value": "Yu-Gi-Oh! Master Duel Help Center"
+					"identifier": "duel_links_primary_color",
+					"type": "color",
+					"description": "",
+					"label": "Master Duel Primary Color",
+					"value": "#1E40AF"
+				},
+				{
+					"identifier": "duel_links_secondary_color",
+					"type": "color",
+					"description": "",
+					"label": "Master Duel Secondary Color",
+					"value": "#3B82F6"
 				}
 			]
 		},

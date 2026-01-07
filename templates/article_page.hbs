@@ -135,70 +135,32 @@
       'eFootball™': {
         primary: '{{settings.efootball_primary_color}}',
         secondary: '{{settings.efootball_secondary_color}}',
-        bannerImage: '{{settings.efootball_banner_image}}',
         logo: '{{settings.efootball_logo}}',
         identifier: 'efootball'
       },
       'eBaseball™: MLB PRO SPIRIT': {
         primary: '{{settings.ebaseball_primary_color}}',
         secondary: '{{settings.ebaseball_secondary_color}}',
-        bannerImage: '{{settings.ebaseball_banner_image}}',
         logo: '{{settings.ebaseball_logo}}',
         identifier: 'ebaseball'
       },
       'Yu-Gi-Oh! MASTER DUEL': {
         primary: '{{settings.master_duel_primary_color}}',
         secondary: '{{settings.master_duel_secondary_color}}',
-        bannerImage: '{{settings.master_duel_banner_image}}',
         logo: '{{settings.master_duel_logo}}',
         identifier: 'master-duel'
+      },
+      'Yu-Gi-Oh! DUEL LINKS': {
+        primary: '{{settings.duel_links_primary_color}}',
+        secondary: '{{settings.duel_links_secondary_color}}',
+        logo: '{{settings.duel_links_logo}}',
+        identifier: 'duel-links'
       }
       // Add more games here as needed
     };
 
     if (categoryName && categoryThemes[categoryName]) {
       const theme = categoryThemes[categoryName];
-
-      // Set banner image with responsive handling
-      const heroSection = document.querySelector('[data-hero-section]');
-      if (heroSection && theme.bannerImage) {
-        const isMobile = window.innerWidth <= 768;
-        let bannerImage;
-
-        if (categoryName === 'eFootball™') {
-          bannerImage = isMobile ? '{{settings.efootball_banner_mobile}}' : theme.bannerImage;
-
-          if (bannerImage) {
-            heroSection.style.backgroundImage = `url(${bannerImage})`;
-            heroSection.style.backgroundSize = 'cover';
-            heroSection.style.backgroundPosition = 'center center';
-            heroSection.style.backgroundRepeat = 'no-repeat';
-            heroSection.style.backgroundColor = '#00009d';
-          }
-        } else if (categoryName === 'eBaseball™: MLB PRO SPIRIT') {
-          bannerImage = isMobile ? '{{settings.ebaseball_banner_mobile}}' : theme.bannerImage;
-
-          if (bannerImage) {
-            heroSection.style.backgroundImage = `url(${bannerImage})`;
-            heroSection.style.backgroundSize = 'cover';
-            heroSection.style.backgroundPosition = 'center center';
-            heroSection.style.backgroundRepeat = 'no-repeat';
-            heroSection.style.backgroundColor = '#121b28';
-          }
-        } else if (categoryName === 'Yu-Gi-Oh! MASTER DUEL') {
-          bannerImage = isMobile ? '{{settings.master_duel_banner_mobile}}' : theme.bannerImage;
-
-          if (bannerImage) {
-            heroSection.style.backgroundImage = `url(${bannerImage})`;
-            heroSection.style.backgroundSize = 'cover';
-            heroSection.style.backgroundPosition = 'center center';
-            heroSection.style.backgroundRepeat = 'no-repeat';
-            heroSection.style.backgroundColor = '#121b28';
-          }
-        } else {
-          bannerImage = theme.bannerImage;
-        }
-      }
 
       // Apply dynamic theming to sidebar buttons
       const sidebarBtns = document.querySelectorAll('.article-sidebar-btn');
@@ -245,32 +207,5 @@
         hamburgerBtn.style.borderColor = theme.primary;
       }
     }
-
-    // Handle window resize for responsive banner images
-    window.addEventListener('resize', function () {
-      if (categoryName && categoryThemes[categoryName]) {
-        const theme = categoryThemes[categoryName];
-        const heroSection = document.querySelector('[data-hero-section]');
-
-        if (heroSection && theme.bannerImage) {
-          const isMobile = window.innerWidth <= 768;
-          let bannerImage;
-
-          if (categoryName === 'eFootball™') {
-            bannerImage = isMobile ? '{{settings.efootball_banner_mobile}}' : theme.bannerImage;
-          } else if (categoryName === 'eBaseball™: MLB PRO SPIRIT') {
-            bannerImage = isMobile ? '{{settings.ebaseball_banner_mobile}}' : theme.bannerImage;
-          } else if (categoryName === 'Yu-Gi-Oh! MASTER DUEL') {
-            bannerImage = isMobile ? '{{settings.master_duel_banner_mobile}}' : theme.bannerImage;
-          } else {
-            bannerImage = theme.bannerImage;
-          }
-
-          if (bannerImage) {
-            heroSection.style.backgroundImage = `url(${bannerImage})`;
-          }
-        }
-      }
-    });
   });
 </script>
