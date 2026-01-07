@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
   mainContent.style.setProperty('--category-theme-primary', theme.primary);
   mainContent.style.setProperty('--category-theme-secondary', theme.secondary);
   
-  setSearchBtnStyle(theme);
+  setSearchBtnStyle(theme, false);
   // Style the breadcrumbs
   setBreadcrumbsStyle(theme);
   // Set banner image with responsive handling
