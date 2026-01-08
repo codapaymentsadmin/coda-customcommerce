@@ -383,21 +383,18 @@
 				{
 					"identifier": "show_efootball_section",
 					"type": "checkbox",
-					"description": "",
 					"label": "Show eFootball Section?",
 					"value": true
 				},
 				{
 					"identifier": "efootball_primary_color",
 					"type": "color",
-					"description": "",
 					"label": "eFootball Primary Color",
 					"value": "#1E40AF"
 				},
 				{
 					"identifier": "efootball_secondary_color",
 					"type": "color",
-					"description": "",
 					"label": "eFootball Secondary Color",
 					"value": "#3B82F6"
 				}
@@ -415,21 +412,18 @@
 				{
 					"identifier": "show_ebaseball_section",
 					"type": "checkbox",
-					"description": "",
 					"label": "Show eBaseball Section?",
 					"value": true
 				},
 				{
 					"identifier": "ebaseball_primary_color",
 					"type": "color",
-					"description": "",
 					"label": "eBaseball Primary Color",
 					"value": "#1E40AF"
 				},
 				{
 					"identifier": "ebaseball_secondary_color",
 					"type": "color",
-					"description": "",
 					"label": "eBaseball Secondary Color",
 					"value": "#3B82F6"
 				}
@@ -447,21 +441,18 @@
 				{
 					"identifier": "show_master_duel_section",
 					"type": "checkbox",
-					"description": "",
 					"label": "Show Master Duel Section?",
 					"value": true
 				},
 				{
 					"identifier": "master_duel_primary_color",
 					"type": "color",
-					"description": "",
 					"label": "Master Duel Primary Color",
 					"value": "#1E40AF"
 				},
 				{
 					"identifier": "master_duel_secondary_color",
 					"type": "color",
-					"description": "",
 					"label": "Master Duel Secondary Color",
 					"value": "#3B82F6"
 				}
@@ -479,21 +470,18 @@
 				{
 					"identifier": "show_duel_links_section",
 					"type": "checkbox",
-					"description": "",
 					"label": "Show Master Duel Section?",
 					"value": true
 				},
 				{
 					"identifier": "duel_links_primary_color",
 					"type": "color",
-					"description": "",
 					"label": "Master Duel Primary Color",
 					"value": "#1E40AF"
 				},
 				{
 					"identifier": "duel_links_secondary_color",
 					"type": "color",
-					"description": "",
 					"label": "Master Duel Secondary Color",
 					"value": "#3B82F6"
 				}
