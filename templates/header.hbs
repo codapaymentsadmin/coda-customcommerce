@@ -49,11 +49,12 @@
 <header class="w-full bg-navbar-bg shadow-lg">
 	<div class="navbar max-w-7xl mx-auto">
 		<div class="flex-1">
-			<!-- 
-				href="{{page_path 'help_center'}}"
-				class="link no-underline text-xl"
-			>{{settings.brand_name}}</a> -->
 			<a href="{{page_path 'help_center'}}" class="w-max flex items-center text-sm text-white gap-2">
+				{{#if settings.show_brand_name}}
+				<span>
+					{{settings.brand_name}}
+				</span>
+				{{/if}}
 				<img src="{{settings.logo}}" alt="{{settings.brand_name}}" class="w-24 h-auto pr-3 border-r-2 border-white" />
 				Web Store {{dc 'hc_-_help_center'}}
 			</a>
