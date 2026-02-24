@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -53,7 +53,7 @@
 					"type": "text",
 					"description": "webstore_helpcenter_link_text_description",
 					"label": "webstore_helpcenter_link_text_label",
-					"value": "EA FC Mobile Help Center"
+					"value": "Rainbow Six Mobile Help Center"
 				}
 			]
 		},
