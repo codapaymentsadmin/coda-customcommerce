@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.0.1",
+	"version": "1.0.0",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -26,7 +26,7 @@
 					"type": "text",
 					"description": "brand_name_description",
 					"label": "brand_name_label",
-					"value": "Rainbow Six Mobile Global "
+					"value": "COD:M Global "
 				},
 				{
 					"identifier": "favicon",
@@ -53,7 +53,7 @@
 					"type": "text",
 					"description": "webstore_helpcenter_link_text_description",
 					"label": "webstore_helpcenter_link_text_label",
-					"value": "EA FC Mobile Help Center"
+					"value": "COD:M Help Center"
 				}
 			]
 		},
@@ -112,7 +112,7 @@
 					"type": "color",
 					"description": "brand_color_description",
 					"label": "brand_color_label",
-					"value": "#76F3FF"
+					"value": "#ffe93b"
 				},
 				{
 					"identifier": "brand_text_color",
@@ -133,21 +133,21 @@
 					"type": "color",
 					"description": "link_color_description",
 					"label": "link_color_label",
-					"value": "#76F3FF"
+					"value": "#60a5fa"
 				},
 				{
 					"identifier": "hover_link_color",
 					"type": "color",
 					"description": "hover_link_color_description",
 					"label": "hover_link_color_label",
-					"value": "#61cad4"
+					"value": "#2563eb"
 				},
 				{
 					"identifier": "visited_link_color",
 					"type": "color",
 					"description": "visited_link_color_description",
 					"label": "visited_link_color_label",
-					"value": "#203E4E"
+					"value": "#2563eb"
 				},
 				{
 					"identifier": "background_color",
@@ -189,7 +189,7 @@
 					"type": "color",
 					"description": "cta_text_color_description",
 					"label": "cta_text_color_label",
-					"value": "#203E4E"
+					"value": "#000"
 				},
 				{
 					"identifier": "banner_text_color",
