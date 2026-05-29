@@ -42,17 +42,17 @@
 					"value": "https://store.fcm.ea.com/international"
 				},
 				{
-					"identifier": "webstore_helpcenter_link",
+					"identifier": "ws_hc_link_url",
 					"type": "text",
-					"description": "webstore_helpcenter_link_description",
-					"label": "webstore_helpcenter_link_label",
+					"description": "",
+					"label": "Webstore Help Center URL",
 					"value": "https://help.ea.com/en/help-top-issues/?product=fc-mobile"
 				},
 				{
-					"identifier": "webstore_helpcenter_link_text",
+					"identifier": "ws_hc_link_label",
 					"type": "text",
-					"description": "webstore_helpcenter_link_text_description",
-					"label": "webstore_helpcenter_link_text_label",
+					"description": "",
+					"label": "Webstore Help Center Label",
 					"value": "COD:M Help Center"
 				}
 			]
