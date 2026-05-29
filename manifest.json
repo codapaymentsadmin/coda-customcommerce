@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.0.1",
+	"version": "1.0.0",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -42,17 +42,17 @@
 					"value": "https://store.fcm.ea.com/international"
 				},
 				{
-					"identifier": "webstore_helpcenter_link",
+					"identifier": "ws_hc_link_url",
 					"type": "text",
 					"description": "webstore_helpcenter_link_description",
 					"label": "webstore_helpcenter_link_label",
 					"value": "https://help.ea.com/en/help-top-issues/?product=fc-mobile"
 				},
 				{
-					"identifier": "webstore_helpcenter_link_text",
+					"identifier": "ws_hc_link_label",
 					"type": "text",
 					"description": "webstore_helpcenter_link_text_description",
-					"label": "webstore_helpcenter_link_text_label",
+					"label": "helpcenter_link_text_label",
 					"value": "EA FC Mobile Help Center"
 				}
 			]
