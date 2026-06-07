@@ -374,11 +374,26 @@
 			"label": "footer_group_label",
 			"variables": [
 				{
+					"identifier": "show_terms_link",
+					"type": "checkbox",
+					"description": "-",
+					"label": "Show terms link?",
+					"value": true
+				},
+				{
 					"identifier": "terms_link",
 					"type": "text",
 					"description": "terms_link_description",
 					"label": "terms_link_label",
 					"value": "https://codashop.com/"
+				},
+
+				{
+					"identifier": "show_pp_link",
+					"type": "checkbox",
+					"description": "-",
+					"label": "Show privacy link?",
+					"value": true
 				},
 				{
 					"identifier": "privacy_link",
