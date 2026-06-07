@@ -14,9 +14,13 @@
 		{{/if}}
 	</aside>
 	<nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+		{{#if settings.show_terms_link}}
 		<a href="{{settings.privacy_link}}" class="link link-hover text-white"> {{dc 'hc_-_privacy_policy'}} </a>
+		{{/if}}
+		{{#if settings.show_pp_link}}
 		<a href="{{settings.terms_link}}" class="link link-hover text-white">
 			{{dc 'hc_-_terms_and_conditions'}}
 		</a>
+		{{/if}}
 	</nav>
 </footer>
