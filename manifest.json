@@ -371,14 +371,14 @@
 					"type": "text",
 					"description": "terms_link_description",
 					"label": "terms_link_label",
-					"value": "https://codashop.com/"
+					"value": "https://www.coda.co/terms-conditions/"
 				},
 				{
 					"identifier": "privacy_link",
 					"type": "text",
 					"description": "privacy_link_description",
 					"label": "privacy_link_label",
-					"value": "https://codashop.com/"
+					"value": "https://www.coda.co/privacy-policy/"
 				},
 				{
 					"identifier": "show_copyright",
