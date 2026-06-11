@@ -19,7 +19,7 @@
 					"type": "text",
 					"description": "brand_name_description",
 					"label": "brand_name_label",
-					"value": "Web Store Help Center"
+					"value": "Rainbow Six Mobile Global "
 				},
 				{
 					"identifier": "favicon",
@@ -35,17 +35,17 @@
 					"value": "https://store.fcm.ea.com/international"
 				},
 				{
-					"identifier": "webstore_helpcenter_link",
+					"identifier": "ws_hc_link_url",
 					"type": "text",
 					"description": "webstore_helpcenter_link_description",
 					"label": "webstore_helpcenter_link_label",
 					"value": "https://help.ea.com/en/help-top-issues/?product=fc-mobile"
 				},
 				{
-					"identifier": "webstore_helpcenter_link_text",
+					"identifier": "ws_hc_link_label",
 					"type": "text",
 					"description": "webstore_helpcenter_link_text_description",
-					"label": "webstore_helpcenter_link_text_label",
+					"label": "helpcenter_link_text_label",
 					"value": "EA FC Mobile Help Center"
 				}
 			]
@@ -105,7 +105,7 @@
 					"type": "color",
 					"description": "brand_color_description",
 					"label": "brand_color_label",
-					"value": "#07f468"
+					"value": "#76F3FF"
 				},
 				{
 					"identifier": "brand_text_color",
@@ -126,21 +126,21 @@
 					"type": "color",
 					"description": "link_color_description",
 					"label": "link_color_label",
-					"value": "#07f468"
+					"value": "#76F3FF"
 				},
 				{
 					"identifier": "hover_link_color",
 					"type": "color",
 					"description": "hover_link_color_description",
 					"label": "hover_link_color_label",
-					"value": "#04953F"
+					"value": "#61cad4"
 				},
 				{
 					"identifier": "visited_link_color",
 					"type": "color",
 					"description": "visited_link_color_description",
 					"label": "visited_link_color_label",
-					"value": "#04953F"
+					"value": "#203E4E"
 				},
 				{
 					"identifier": "background_color",
