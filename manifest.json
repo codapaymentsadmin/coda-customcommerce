@@ -420,7 +420,13 @@
 					"label": "Show popular section?",
 					"value": false
 				},
-
+				{
+					"identifier": "show_contact_link",
+					"type": "checkbox",
+					"description": "-",
+					"label": "Contact button link in the navbar",
+					"value": false
+				},
 				{
 					"identifier": "show_brand_name",
 					"type": "checkbox",
