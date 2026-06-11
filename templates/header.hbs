@@ -61,11 +61,13 @@
 		</div>
 		<div class="flex-none">
 			<ul class="menu menu-horizontal hidden sm:flex items-center px-1">
+				{{#if settings.show_contact_link}}
 				<li>
 					<a id="dynamic-link" href="" data-help-center="{{dc 'hc_-_help_center'}}"
 						data-contact-text="{{dc 'hc_-_contact_support'}}"
 						class="text-white hover:bg-brand hover:text-cta-text mr-2"></a>
 				</li>
+				{{/if}}
 				<li><a href="{{settings.webstore_link}}" class="text-white hover:bg-brand hover:text-cta-text">{{dc
 						'hc_-_visit_webstore'}}</a></li>
 				{{#if alternative_locales}}
@@ -96,10 +98,12 @@
 	</div>
 	<!-- Menu drawer on mobile -->
 	<ul id="mobile-drawer" class="menu bg-base-200 rounded-box w-full hidden sm:hidden">
+		{{#if settings.show_contact_link}}
 		<li>
 			<a id="dynamic-link-mobile" href="" data-contact-text="{{dc 'hc_-_contact_support'}}"
 				data-help-center="{{dc 'hc_-_help_center'}}"></a>
 		</li>
+		{{/if}}
 		<li><a href="{{settings.webstore_link}}">{{dc
 				'hc_-_visit_webstore'}}</a></li>
 		{{#if alternative_locales}}
