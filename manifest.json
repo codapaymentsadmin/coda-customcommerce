@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.3.4",
+	"version": "1.3.5",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -19,7 +19,7 @@
 					"type": "text",
 					"description": "brand_name_description",
 					"label": "brand_name_label",
-					"value": "Rainbow Six Mobile Global "
+					"value": "EA Sports FC™ Mobile "
 				},
 				{
 					"identifier": "favicon",
@@ -105,14 +105,14 @@
 					"type": "color",
 					"description": "brand_color_description",
 					"label": "brand_color_label",
-					"value": "#76F3FF"
+					"value": "#2cf67f"
 				},
 				{
 					"identifier": "brand_text_color",
 					"type": "color",
 					"description": "brand_text_color_description",
 					"label": "brand_text_color_label",
-					"value": "#000"
+					"value": "#fff"
 				},
 				{
 					"identifier": "text_color",
@@ -126,21 +126,21 @@
 					"type": "color",
 					"description": "link_color_description",
 					"label": "link_color_label",
-					"value": "#76F3FF"
+					"value": "#2cf67f"
 				},
 				{
 					"identifier": "hover_link_color",
 					"type": "color",
 					"description": "hover_link_color_description",
 					"label": "hover_link_color_label",
-					"value": "#61cad4"
+					"value": "#22c364"
 				},
 				{
 					"identifier": "visited_link_color",
 					"type": "color",
 					"description": "visited_link_color_description",
 					"label": "visited_link_color_label",
-					"value": "#203E4E"
+					"value": "#22c364"
 				},
 				{
 					"identifier": "background_color",
@@ -182,7 +182,7 @@
 					"type": "color",
 					"description": "cta_text_color_description",
 					"label": "cta_text_color_label",
-					"value": "#203E4E"
+					"value": "#22c364"
 				},
 				{
 					"identifier": "banner_text_color",
