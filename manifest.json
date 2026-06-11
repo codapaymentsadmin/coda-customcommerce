@@ -417,7 +417,7 @@
 					"identifier": "show_popular_section",
 					"type": "checkbox",
 					"description": "-",
-					"label": "Show privacy link?",
+					"label": "Show popular section?",
 					"value": false
 				},
 
