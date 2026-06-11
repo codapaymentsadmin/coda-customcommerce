@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.3.3",
+	"version": "1.3.4",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -13,13 +13,6 @@
 					"type": "file",
 					"description": "logo_description",
 					"label": "logo_label"
-				},
-				{
-					"identifier": "show_brand_name",
-					"type": "checkbox",
-					"description": "show_brand_name_description",
-					"label": "show_brand_name_label",
-					"value": true
 				},
 				{
 					"identifier": "brand_name",
@@ -400,6 +393,40 @@
 					"description": "To put on the footer",
 					"label": "Copyright text",
 					"value": "Coda. All rights reserved."
+				}
+			]
+		},
+		{
+			"label": "Element properties",
+			"variables": [
+				{
+					"identifier": "show_terms_link",
+					"type": "checkbox",
+					"description": "-",
+					"label": "Show terms link?",
+					"value": false
+				},
+				{
+					"identifier": "show_pp_link",
+					"type": "checkbox",
+					"description": "-",
+					"label": "Show privacy link?",
+					"value": false
+				},
+				{
+					"identifier": "show_popular_section",
+					"type": "checkbox",
+					"description": "-",
+					"label": "Show privacy link?",
+					"value": false
+				},
+
+				{
+					"identifier": "show_brand_name",
+					"type": "checkbox",
+					"description": "show_brand_name_description",
+					"label": "Show brand name in the Navbar?",
+					"value": false
 				}
 			]
 		}
