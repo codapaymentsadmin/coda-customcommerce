@@ -15,13 +15,6 @@
 					"label": "logo_label"
 				},
 				{
-					"identifier": "show_brand_name",
-					"type": "checkbox",
-					"description": "show_brand_name_description",
-					"label": "Show brand name in the Navbar?",
-					"value": false
-				},
-				{
 					"identifier": "brand_name",
 					"type": "text",
 					"description": "brand_name_description",
@@ -374,26 +367,11 @@
 			"label": "footer_group_label",
 			"variables": [
 				{
-					"identifier": "show_terms_link",
-					"type": "checkbox",
-					"description": "-",
-					"label": "Show terms link?",
-					"value": true
-				},
-				{
 					"identifier": "terms_link",
 					"type": "text",
 					"description": "terms_link_description",
 					"label": "terms_link_label",
 					"value": "https://codashop.com/"
-				},
-
-				{
-					"identifier": "show_pp_link",
-					"type": "checkbox",
-					"description": "-",
-					"label": "Show privacy link?",
-					"value": true
 				},
 				{
 					"identifier": "privacy_link",
@@ -415,6 +393,40 @@
 					"description": "To put on the footer",
 					"label": "Copyright text",
 					"value": "Coda. All rights reserved."
+				}
+			]
+		},
+		{
+			"label": "Element properties",
+			"variables": [
+				{
+					"identifier": "show_terms_link",
+					"type": "checkbox",
+					"description": "-",
+					"label": "Show terms link?",
+					"value": false
+				},
+				{
+					"identifier": "show_pp_link",
+					"type": "checkbox",
+					"description": "-",
+					"label": "Show privacy link?",
+					"value": false
+				},
+				{
+					"identifier": "show_popular_section",
+					"type": "checkbox",
+					"description": "-",
+					"label": "Show privacy link?",
+					"value": false
+				},
+
+				{
+					"identifier": "show_brand_name",
+					"type": "checkbox",
+					"description": "show_brand_name_description",
+					"label": "Show brand name in the Navbar?",
+					"value": false
 				}
 			]
 		}
