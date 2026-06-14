@@ -18,12 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	if (gtElement) {
 		gtElement.style.bottom = "40px";
-		// gtElement.style.position = "sticky";
-		// if (window.innerWidth <= 640) {
-		// 	gtElement.style.bottom = "90px";
-		// } else {
-		// 	gtElement.style.bottom = "40px";
-		// }
 
 		// Make widget sticky but stop above footer to prevent overlap
 		function adjustGTranslateWidget() {
@@ -92,6 +86,14 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	if (dynamicLink && dynamicLinkMobile) {
+		if (currentPath.includes("/categories/13549616536975-eFootball")) {
+			dynamicLink.classList.add("hidden")
+			dynamicLinkMobile.classList.add("hidden")
+		} else {
+			dynamicLink.classList.remove("hidden")
+			dynamicLinkMobile.classList.remove("hidden")
+		}
+
 		if (currentPath.includes("/requests/new")) {
 			dynamicLink.href = `/hc/${currentLocale}`;
 			dynamicLinkMobile.href = `/hc/${currentLocale}`;
