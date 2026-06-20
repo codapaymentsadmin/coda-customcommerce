@@ -1,0 +1,165 @@
+<a class="skip-navigation" tabindex="1" href="#main-content">{{t 'skip_navigation' }}</a>
+
+<div class="critical-infobar infobar-component infobar-hidden">
+	<div class="infobar-content">
+    <img src="{{asset 'alert_yellow.svg'}}" alt="exclamation_mark" width="25" height="25" />
+        <p>
+    	Codashop is currently unavailable. Service is expected to be back within the next few hours. We apologize for the inconvenience.
+    </p>
+  </div>
+</div>
+
+<div class="general-infobar infobar-component coda-dark-purple infobar-hidden">
+	<div class="infobar-content">
+        <p>
+    	Codacash, MAE, and MAXIS are unavailable on Valorant and Legend of Runeterra till further notice.
+      <span>
+        <a href="https://google.com" target="_blank">
+          Link here
+        </a>
+      </span>
+    </p>
+  </div>
+  <span class="infobar-dismiss">
+  	<img src="{{asset 'x_icon.svg'}}" alt="dismiss_button" width="10" height="10" />
+  </span>
+</div>
+
+<div class="general-infobar infobar-component coda-light-purple infobar-hidden">
+	<div class="infobar-content">
+        <p>
+    	Codacash, MAE, and MAXIS are unavailable on Valorant and Legend of Runeterra till further notice.
+    </p>
+  </div>
+  <span class="infobar-dismiss">
+  	<img src="{{asset 'x_icon.svg'}}" alt="dismiss_button" width="10" height="10" />
+  </span>
+</div>
+
+<span>
+  <a href="https://google.com" target="_blank" class="hidden">
+    Link here
+  </a>
+</span>
+
+<header class="header">
+  
+  
+  <script>
+function myFunction() {
+  var x = document.getElementById("alert");
+    var y = document.getElementById("button");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>  
+  
+<script>
+// 1. Automatically grab the current Help Center's name (e.g., "Codashop Timor Leste")
+var currentHC = "{{help_center.name}}";
+
+// 2. Change "Codashop" to "Coda Payments Support" to match your Chat Department exactly
+var targetDept = currentHC.replace("Codashop", "Coda Payments Support");
+
+// 3. Run the widget using the new automatic targetDept variable
+zE('webWidget:on', 'chat:departmentStatus', function(dept) {
+  if (dept.name === targetDept && dept.status === 'online') {
+    console.log(dept.name + ' is ' + dept.status);      //optional logging
+    zE('webWidget', 'updateSettings', {
+      webWidget: {
+        chat: {
+          departments: {
+            enabled: [''],
+            select: targetDept
+          },
+          suppress: false
+        }
+      }
+    });
+  } else if (dept.name === targetDept && dept.status !== 'online') {
+    console.log(dept.name + ' is ' + dept.status);      //optional logging
+    zE('webWidget', 'updateSettings', {
+      webWidget: {
+        chat: {
+          suppress: true
+        }
+      }
+    });
+  }
+});
+</script>
+<script type="text/javascript">
+  zE(function() {
+    zE.setHelpCenterSuggestions({ search: 'how' });
+  });
+</script>
+
+<script>
+window.addEventListener('resize', function() {
+         if (window.innerWidth <= 450) {
+         	var x = document.getElementById("desk-table");
+            var y = document.getElementById("phone-table");
+            x.style.display = "none";
+            y.style.display = "table-cell";
+            
+         } else {
+         	var x = document.getElementById("desk-table");
+            var y = document.getElementById("phone-table");
+            x.style.display = "table-cell";
+            y.style.display = "none";
+         }
+         }, true);
+         
+         function loadMode() {
+            if (window.innerWidth <= 450) {
+                  var x = document.getElementById("desk-table");
+                  var y = document.getElementById("phone-table");
+                  x.style.display = "none";
+                  y.style.display = "table-cell";
+
+              } else {
+                  var x = document.getElementById("desk-table");
+                  var y = document.getElementById("phone-table");
+                  x.style.display = "table-cell";
+                  y.style.display = "none";
+
+              }
+		    }
+</script>
+
+  
+  <div class="logo">
+    <a href="https://www.codashop.com/en-tl/">
+      <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}">
+    </a>
+  </div>
+  <div class="nav-wrapper">
+    <button class="menu-button" aria-controls="user-nav" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-menu">
+        <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13"/>
+      </svg>
+    </button>
+    <nav class="user-nav" id="user-nav">
+      <a href="/hc/en-us/requests/new" class="submit-a-request-header-btn">Submit a request</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Break the URL path into parts and ignore any trailing slashes
+    var pathParts = window.location.pathname.split('/').filter(Boolean);
+    
+    // If the path has more than 2 parts, it means the user is viewing an article, category, form, etc.
+    if (pathParts.length > 2) {
+      var headerSubmitBtn = document.querySelector('.submit-a-request-header-btn');
+      if (headerSubmitBtn) {
+        // Hides the button using the 'important' override so it beats the CSS
+        headerSubmitBtn.style.setProperty("display", "none", "important"); 
+      }
+    }
+  });
+</script>
