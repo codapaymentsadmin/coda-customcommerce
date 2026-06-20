@@ -132,7 +132,7 @@ window.addEventListener('resize', function() {
 
   
   <div class="logo">
-    <a href="https://www.codashop.com/en-tl/">
+    <a href="https://www.codashop.com/{{help_center.locale}}/">
       <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}">
     </a>
   </div>
@@ -143,7 +143,7 @@ window.addEventListener('resize', function() {
       </svg>
     </button>
     <nav class="user-nav" id="user-nav">
-      <a href="/hc/en-us/requests/new" class="submit-a-request-header-btn">Submit a request</a>
+      <a href="{{page_path 'new_request'}}" class="submit-a-request-header-btn">Submit a request</a>
     </nav>
   </div>
 </header>
