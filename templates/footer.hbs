@@ -1,9 +1,11 @@
 <footer class="footer">
   <div class="footer-inner">
     
-    {{#if settings.use_custom_legal_footer}}
+    <!-- Add ../ to step out of the loop and read global settings -->
+    {{#if ../settings.use_custom_legal_footer}}
       <a href="{{dc 'footer_terms_link'}}"><b>{{dc 'footer_terms_text'}}</b></a>
     {{else}}
+      <!-- Default fallback for all 60+ countries out of the box -->
       <a href="https://www.coda.co/terms-conditions/"><b>{{t 'terms_of_use'}}</b></a>
     {{/if}}
 
