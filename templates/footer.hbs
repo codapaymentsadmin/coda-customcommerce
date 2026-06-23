@@ -1,7 +1,7 @@
 <footer class="footer">
   <div class="footer-inner">
     
-    <a href="https://www.coda.co/terms-conditions/"><b>{{t 'terms_of_use'}}</b></a>
+    <a href="https://www.coda.co/terms-conditions/" id="dynamic-legal-link"><b>Terms & Conditions</b></a>
 
     <div class="footer-language-selector">
       {{#if alternative_locales}}
@@ -24,3 +24,29 @@
     </div>
   </div>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // 1. Grab the current Help Center's locale (e.g., 'es', 'pt-br', 'id')
+    var currentLocale = "{{help_center.locale}}".toLowerCase();
+    var legalLink = document.getElementById("dynamic-legal-link");
+
+    // 2. Your Master Dictionary (Manage this entirely in GitHub!)
+    var localizedLegal = {
+      "es": { text: "Términos y Condiciones", url: "https://www.coda.co/terms-conditions/spain" },
+      "pt-br": { text: "Termos e Condições", url: "https://www.coda.co/terms-conditions/brazil" },
+      "id": { text: "Syarat & Ketentuan", url: "https://www.coda.co/terms-conditions/indonesia" },
+      "ms": { text: "Terma & Syarat", url: "https://www.coda.co/terms-conditions/malaysia" }
+      // Just keep adding lines here for other languages in GitHub
+    };
+
+    // 3. Try to find an exact match (like 'pt-br') or a base match (like 'es')
+    var config = localizedLegal[currentLocale] || localizedLegal[currentLocale.split('-')[0]];
+
+    // 4. If a match is found, swap the text and URL automatically!
+    if (config && legalLink) {
+      legalLink.href = config.url;
+      legalLink.innerHTML = "<b>" + config.text + "</b>";
+    }
+  });
+</script>
