@@ -5089,3 +5089,19 @@ a.cta-btn:hover {
 .hero {
     padding-bottom: 20px !important;
 }
+
+/* Sticky Footer Fix */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main, 
+[role="main"] {
+  flex-grow: 1;
+}
+
+.footer {
+  margin-top: auto;
+}
