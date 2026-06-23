@@ -1,6 +1,7 @@
 <footer class="footer">
   <div class="footer-inner">
     
+    <!-- The default link (English) with an ID so our script can find it -->
     <a href="https://www.coda.co/terms-conditions/" id="dynamic-legal-link"><b>Terms & Conditions</b></a>
 
     <div class="footer-language-selector">
@@ -27,23 +28,103 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // 1. Grab the current Help Center's locale (e.g., 'es', 'pt-br', 'id')
+    // Grab the current Help Center's locale (e.g., 'es-mx', 'pt-br', 'id')
     var currentLocale = "{{help_center.locale}}".toLowerCase();
     var legalLink = document.getElementById("dynamic-legal-link");
 
-    // 2. Your Master Dictionary (Manage this entirely in GitHub!)
+    // Master Global Dictionary for all 65 Countries
     var localizedLegal = {
-      "es": { text: "Términos y Condiciones", url: "https://www.coda.co/terms-conditions/spain" },
+      // Americas
+      "en-us": { text: "Terms & Conditions", url: "https://www.coda.co/terms-conditions/united-states" },
+      "en-ca": { text: "Terms & Conditions", url: "https://www.coda.co/terms-conditions/canada" },
+      "fr-ca": { text: "Conditions générales", url: "https://www.coda.co/terms-conditions/canada" },
+      "es-ar": { text: "Términos y Condiciones", url: "https://www.coda.co/terms-conditions/argentina" },
+      "es-bo": { text: "Términos y Condiciones", url: "https://www.coda.co/terms-conditions/bolivia" },
       "pt-br": { text: "Termos e Condições", url: "https://www.coda.co/terms-conditions/brazil" },
+      "es-cl": { text: "Términos y Condiciones", url: "https://www.coda.co/terms-conditions/chile" },
+      "es-co": { text: "Términos y Condiciones", url: "https://www.coda.co/terms-conditions/colombia" },
+      "es-ec": { text: "Términos y Condiciones", url: "https://www.coda.co/terms-conditions/ecuador" },
+      "es-mx": { text: "Términos y Condiciones", url: "https://www.coda.co/terms-conditions/mexico" },
+      "es-pe": { text: "Términos y Condiciones", url: "https://www.coda.co/terms-conditions/peru" },
+      "es-py": { text: "Términos y Condiciones", url: "https://www.coda.co/terms-conditions/paraguay" },
+      "es-uy": { text: "Términos y Condiciones", url: "https://www.coda.co/terms-conditions/uruguay" },
+
+      // Europe
+      "es-es": { text: "Términos y Condiciones", url: "https://www.coda.co/terms-conditions/spain" },
+      "pt-pt": { text: "Termos e Condições", url: "https://www.coda.co/terms-conditions/portugal" },
+      "de-at": { text: "Allgemeine Geschäftsbedingungen", url: "https://www.coda.co/terms-conditions/austria" },
+      "nl-be": { text: "Algemene Voorwaarden", url: "https://www.coda.co/terms-conditions/belgium" },
+      "fr-be": { text: "Conditions générales", url: "https://www.coda.co/terms-conditions/belgium" },
+      "de-ch": { text: "Allgemeine Geschäftsbedingungen", url: "https://www.coda.co/terms-conditions/switzerland" },
+      "fr-ch": { text: "Conditions générales", url: "https://www.coda.co/terms-conditions/switzerland" },
+      "cs": { text: "Obchodní podmínky", url: "https://www.coda.co/terms-conditions/czech-republic" },
+      "de": { text: "Allgemeine Geschäftsbedingungen", url: "https://www.coda.co/terms-conditions/germany" },
+      "da": { text: "Vilkår og betingelser", url: "https://www.coda.co/terms-conditions/denmark" },
+      "fr": { text: "Conditions générales", url: "https://www.coda.co/terms-conditions/france" },
+      "el": { text: "Όροι και Προϋποθέσεις", url: "https://www.coda.co/terms-conditions/greece" },
+      "hu": { text: "Felhasználási feltételek", url: "https://www.coda.co/terms-conditions/hungary" },
+      "it": { text: "Termini e Condizioni", url: "https://www.coda.co/terms-conditions/italy" },
+      "nl": { text: "Algemene Voorwaarden", url: "https://www.coda.co/terms-conditions/netherlands" },
+      "no": { text: "Vilkår og betingelser", url: "https://www.coda.co/terms-conditions/norway" },
+      "pl": { text: "Regulamin", url: "https://www.coda.co/terms-conditions/poland" },
+      "ro": { text: "Termeni și Condiții", url: "https://www.coda.co/terms-conditions/romania" },
+      "sv": { text: "Användarvillkor", url: "https://www.coda.co/terms-conditions/sweden" },
+      "en-gb": { text: "Terms & Conditions", url: "https://www.coda.co/terms-conditions/united-kingdom" },
+
+      // APAC
+      "en-au": { text: "Terms & Conditions", url: "https://www.coda.co/terms-conditions/australia" },
+      "en-nz": { text: "Terms & Conditions", url: "https://www.coda.co/terms-conditions/new-zealand" },
+      "km": { text: "លក្ខខណ្ឌ", url: "https://www.coda.co/terms-conditions/cambodia" },
       "id": { text: "Syarat & Ketentuan", url: "https://www.coda.co/terms-conditions/indonesia" },
-      "ms": { text: "Terma & Syarat", url: "https://www.coda.co/terms-conditions/malaysia" }
-      // Just keep adding lines here for other languages in GitHub
+      "ja": { text: "利用規約", url: "https://www.coda.co/terms-conditions/japan" },
+      "ko": { text: "이용약관", url: "https://www.coda.co/terms-conditions/south-korea" },
+      "lo": { text: "ຂໍ້ກຳນົດ ແລະ ເງື່ອນໄຂ", url: "https://www.coda.co/terms-conditions/laos" },
+      "vi": { text: "Điều khoản và Điều kiện", url: "https://www.coda.co/terms-conditions/vietnam" },
+      "ms": { text: "Terma & Syarat", url: "https://www.coda.co/terms-conditions/malaysia" },
+      "zh-hk": { text: "條款及細則", url: "https://www.coda.co/terms-conditions/hong-kong" },
+      "zh-tw": { text: "條款及細則", url: "https://www.coda.co/terms-conditions/taiwan" },
+      "en-sg": { text: "Terms & Conditions", url: "https://www.coda.co/terms-conditions/singapore" },
+      "my": { text: "စည်းကမ်းချက်များ", url: "https://www.coda.co/terms-conditions/myanmar" },
+      "en-ph": { text: "Terms & Conditions", url: "https://www.coda.co/terms-conditions/philippines" },
+      "fil": { text: "Mga Tuntunin at Kundisyon", url: "https://www.coda.co/terms-conditions/philippines" },
+      "bn": { text: "শর্তাবলী", url: "https://www.coda.co/terms-conditions/bangladesh" },
+      "en-in": { text: "Terms & Conditions", url: "https://www.coda.co/terms-conditions/india" },
+      "hi": { text: "नियम और शर्तें", url: "https://www.coda.co/terms-conditions/india" },
+      "si": { text: "නියම සහ කොන්දේසි", url: "https://www.coda.co/terms-conditions/sri-lanka" },
+      "ne": { text: "नियम तथा सर्तहरू", url: "https://www.coda.co/terms-conditions/nepal" },
+      "ur": { text: "شرائط و ضوابط", url: "https://www.coda.co/terms-conditions/pakistan" },
+      "th": { text: "ข้อกำหนดและเงื่อนไข", url: "https://www.coda.co/terms-conditions/thailand" },
+      "mn": { text: "Үйлчилгээний нөхцөл", url: "https://www.coda.co/terms-conditions/mongolia" },
+      "kk": { text: "Шарттар мен ережелер", url: "https://www.coda.co/terms-conditions/kazakhstan" },
+      "ru": { text: "Условия и положения", url: "https://www.coda.co/terms-conditions/russia" },
+
+      // Middle East & Africa
+      "ar-bh": { text: "الشروط والأحكام", url: "https://www.coda.co/terms-conditions/bahrain" },
+      "ar-eg": { text: "الشروط والأحكام", url: "https://www.coda.co/terms-conditions/egypt" },
+      "ar-iq": { text: "الشروط والأحكام", url: "https://www.coda.co/terms-conditions/iraq" },
+      "ar-kw": { text: "الشروط والأحكام", url: "https://www.coda.co/terms-conditions/kuwait" },
+      "ar-ma": { text: "الشروط والأحكام", url: "https://www.coda.co/terms-conditions/morocco" },
+      "ar-qa": { text: "الشروط والأحكام", url: "https://www.coda.co/terms-conditions/qatar" },
+      "ar-sa": { text: "الشروط والأحكام", url: "https://www.coda.co/terms-conditions/saudi-arabia" },
+      "ar-ae": { text: "الشروط والأحكام", url: "https://www.coda.co/terms-conditions/uae" },
+      "en-ke": { text: "Terms & Conditions", url: "https://www.coda.co/terms-conditions/kenya" },
+      "en-ng": { text: "Terms & Conditions", url: "https://www.coda.co/terms-conditions/nigeria" },
+      "en-za": { text: "Terms & Conditions", url: "https://www.coda.co/terms-conditions/south-africa" },
+      "tr": { text: "Şartlar ve Koşullar", url: "https://www.coda.co/terms-conditions/turkey" },
+      
+      // Timor Leste
+      "pt-tl": { text: "Termos e Condições", url: "https://www.coda.co/terms-conditions/timor-leste" },
+
+      // Base language fallbacks (Just in case Zendesk doesn't pass the region code)
+      "es": { text: "Términos y Condiciones", url: "https://www.coda.co/terms-conditions/spain" },
+      "pt": { text: "Termos e Condições", url: "https://www.coda.co/terms-conditions/portugal" },
+      "ar": { text: "الشروط والأحكام", url: "https://www.coda.co/terms-conditions/uae" }
     };
 
-    // 3. Try to find an exact match (like 'pt-br') or a base match (like 'es')
+    // Find the exact locale match, or fall back to the generic language code (like "es" instead of "es-mx")
     var config = localizedLegal[currentLocale] || localizedLegal[currentLocale.split('-')[0]];
 
-    // 4. If a match is found, swap the text and URL automatically!
+    // If a match is found in the dictionary, instantly swap the text and URL
     if (config && legalLink) {
       legalLink.href = config.url;
       legalLink.innerHTML = "<b>" + config.text + "</b>";
