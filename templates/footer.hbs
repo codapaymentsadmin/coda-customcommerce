@@ -1,6 +1,11 @@
 <footer class="footer">
   <div class="footer-inner">
-    <a href="{{dc 'footer_terms_link'}}"><b>{{dc 'footer_terms_text'}}</b></a>
+    
+    {{#if (dc 'footer_terms_text')}}
+      <a href="{{dc 'footer_terms_link'}}"><b>{{dc 'footer_terms_text'}}</b></a>
+    {{else}}
+      <a href="https://www.coda.co/terms-conditions/"><b>{{t 'terms_of_use'}}</b></a>
+    {{/if}}
 
     <div class="footer-language-selector">
       {{#if alternative_locales}}
