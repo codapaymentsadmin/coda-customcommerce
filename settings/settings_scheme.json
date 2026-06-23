@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Custom Legal Links",
+    "settings": [
+      {
+        "identifier": "use_custom_legal_footer",
+        "type": "boolean",
+        "title": "Use Custom Legal Footer",
+        "description": "Enable this ONLY if you have created the 'footer_terms_text' and 'footer_terms_link' placeholders in Dynamic Content.",
+        "value": false
+      }
+    ]
+  }
+]
