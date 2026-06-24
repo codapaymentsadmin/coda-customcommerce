@@ -5123,7 +5123,7 @@ main,
 /* 3. Bring the Support Hours text back up into the middle of the black section */
 .custop {
     padding-top: 45px !important;    /* Pulled up drastically to center it in the valley */
-    padding-bottom: 75px !important; /* Balanced padding to frame the text nicely */
+    padding-bottom: 95px !important; /* Balanced padding to frame the text nicely */
     margin-bottom: 0px !important;
 }
 
