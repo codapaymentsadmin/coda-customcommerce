@@ -5129,45 +5129,45 @@ main,
 
 
 /* ==========================================
-   2. MOBILE VIEW OVERRIDES (768px and below)
+   MOBILE HEADER FIX (768px and below)
    ========================================== */
 @media (max-width: 768px) {
-    /* Hard stop for the horizontal whitespace / page layout breaking edge */
+    /* Stop the layout from bleeding out to the right */
     html, body {
         overflow-x: hidden !important;
         width: 100% !important;
     }
 
-    /* Target header container: force stack layout components vertically */
-    header, .header, [class*="header"] {
-        display: flex !important;
-        flex-direction: column !important; 
-        align-items: center !important;
-        justify-content: center !important;
-        height: auto !important;
-        padding: 15px 10px !important;
-    }
-
-    /* Center the Codashop branding image core */
-    .logo, [class*="logo"] {
-        margin: 0 auto 5px auto !important;
-        display: inline-block !important;
-    }
-
-    /* Safely stack and drop the Submit Request button below the logo line */
-    a[href*="new_request"], .submit-a-request, [class*="submit"] {
-        position: static !important;
+    /* Target the exact header wrapper container */
+    .header, header, [class*="header-inner"] {
         display: block !important;
-        margin: 12px auto 5px auto !important;
-        float: none !important;
-        clear: both !important;
-        width: 90% !important;
-        max-width: 260px;
+        height: auto !important; /* Removes hardcoded desktop heights */
+        padding: 15px 10px !important;
         text-align: center !important;
     }
 
-    /* Hide the conflicting mobile slide menu line toggles seen in image_7ca122.jpg */
-    nav [class*="toggle"], button[class*="toggle"], .icon-menu {
-        display: none !important;
+    /* Force the logo to stay centered and clear of float styling */
+    .logo, [class*="logo"] {
+        display: block !important;
+        float: none !important;
+        margin: 0 auto 15px auto !important;
+        text-align: center !important;
+    }
+    .logo img, [class*="logo"] img {
+        margin: 0 auto !important;
+    }
+
+    /* Strip absolute positions so the button drops cleanly under the logo */
+    a[href*="new_request"], 
+    .submit-a-request, 
+    [class*="submit-a-request"] {
+        position: static !important; /* Destroys the layout bug seen in image_7da4c1.jpg */
+        display: inline-block !important;
+        float: none !important;
+        clear: both !important;
+        margin: 5px auto 10px auto !important;
+        padding: 8px 16px !important;
+        width: auto !important;
+        text-align: center !important;
     }
 }
