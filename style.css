@@ -5095,24 +5095,40 @@ main,
   margin-top: auto;
 }
 /* ==========================================
-   1. DESKTOP HERO & SUPPORT HOURS CORRECTIONS
+   DESKTOP HERO & SEARCH OVERLAP FIX
    ========================================== */
 
+/* 1. Expand the main background container to breathe */
 .hero {
-    padding-bottom: 30px !important; /* Prevents the container from over-stretching */
+    padding: 60px 0 40px 0 !important; 
+    height: auto !important;
+    min-height: 380px !important; /* Force structural room for Welcome, Search, and Legends */
 }
 
-/* Force clean spacing between WELCOME text and the Search Bar */
-.search, .search-box, [class*="search"] {
-    margin-top: 25px !important;
-    margin-bottom: 25px !important;
+/* 2. Target the inner wrapper to separate the elements */
+.hero-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: 30px !important; /* Forces massive physical space between your text lines and the search bar */
+    height: 100% !important;
+}
+
+/* 3. Force the search form itself to sit perfectly in the gap */
+.hero .search, 
+.hero-inner form[role="search"],
+.search-box {
     position: relative !important;
+    margin: 35px auto !important; /* Generates massive clear margins above and below the bar */
+    z-index: 10 !important;
+    max-width: 610px !important;
+    width: 100% !important;
 }
 
-/* Perfect alignment for the Support Hours text inside the dark section */
+/* 4. Fix the Support Hours placement in the dark section */
 .custop {
-    padding-top: 90px !important;   /* Pushes the text down away from the top mountain peak */
-    padding-bottom: 50px !important; /* Leaves breathing room above the content blocks below */
+    padding-top: 130px !important;  /* Heavily increased to push text deep into the wide black section */
+    padding-bottom: 70px !important; /* Safe breathing room over the grid navigation blocks below */
     margin-bottom: 0px !important;
 }
 
