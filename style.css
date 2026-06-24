@@ -5129,10 +5129,10 @@ main,
 
 
 /* ==========================================
-MOBILE RESPONSIVE Fix
+   Mobile Fix
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* 1. Header layout: Side-by-side, perfectly spaced */
+    /* 1. Header: Lock to screen width, stop overflow */
     header, 
     .header, 
     [class*="header"],
@@ -5142,49 +5142,49 @@ MOBILE RESPONSIVE Fix
         flex-wrap: nowrap !important;        
         align-items: center !important;       
         justify-content: space-between !important; 
+        width: 100% !important;
         height: auto !important;
-        min-height: 65px !important;
-        padding: 10px 15px !important;            
+        padding: 10px 5px !important; /* Tight edge padding */          
         box-sizing: border-box !important;
     }
 
-    /* 2. Fix the Logo: Let it scale naturally by a set height */
+    /* 2. Logo: Restrict to left half */
     .logo, [class*="logo"], .logo a {
-        display: flex !important;
-        align-items: center !important;
+        flex: 0 0 auto !important;
+        max-width: 45% !important;
         margin: 0 !important;
-        float: none !important;
-        width: auto !important;
+        display: block !important;
     }
     .logo img, [class*="logo"] img {
-        width: auto !important;
-        height: 32px !important;             /* Sets a highly readable, standard mobile size */
-        max-height: none !important;         /* Removes the trap that squished it */
+        width: 100% !important;
+        height: auto !important;
+        max-height: 28px !important;
+        object-fit: contain !important;
         margin: 0 !important;
     }
 
-    /* 3. Fix the Button: Let the box expand to fit the text perfectly */
+    /* 3. Button: Kill Zendesk defaults, force it to fit inside the right half */
     a[href*="new_request"], 
     a[href*="requests/new"],
     .submit-a-request,
     [class*="nav-wrapper"] a {
         position: static !important;         
-        display: inline-flex !important;     /* Flex keeps the text perfectly centered inside */
-        align-items: center !important;
-        justify-content: center !important;
-        float: none !important;
+        flex: 0 1 auto !important;
+        max-width: 50% !important;           /* Cannot exceed half the screen */
+        min-width: 0 !important;             /* Kills Zendesk's hidden button width lock */
+        width: auto !important;
         margin: 0 !important;
-        padding: 8px 14px !important;        /* Restores healthy breathing room around the text */
+        padding: 6px 8px !important;
         font-size: 12px !important;          
-        white-space: nowrap !important;      /* Forces text to stay on one line */
-        width: auto !important;              /* Allows the box to stretch with the text */
-        max-width: none !important;          /* Removes the trap that clipped the box */
-        height: auto !important;
-        line-height: normal !important;      /* Prevents the text from vertically breaking the box */
+        line-height: 1.2 !important;
+        white-space: normal !important;      /* CRITICAL: Allows text to wrap if screen is tiny */
+        word-wrap: break-word !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
         transform: none !important;
     }
 
-    /* 4. Permanently hide conflicting slide menu components */
+    /* 4. Hide menu */
     .icon-menu,
     [class*="menu-button"],
     button[aria-expanded],
