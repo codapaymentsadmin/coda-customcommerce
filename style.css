@@ -5129,7 +5129,7 @@ main,
 
 
 /* ==========================================
-   FORCE MOBILE RESPONSIVE WRAPPER 
+MOBILE RESPONSIVE
    ========================================== */
 @media screen and (max-width: 768px) {
     /* 1. Reset the entire header to stack elements vertically */
@@ -5142,20 +5142,25 @@ main,
         align-items: center !important;
         justify-content: center !important;
         height: auto !important;
-        padding: 15px 0 !important;
+        padding-top: 20px !important;
+        padding-bottom: 25px !important;
     }
 
-    /* 2. Disarm any absolute floats on the button link */
+    /* 2. Disarm absolute floats and force a clean gap below the logo */
     a[href*="new_request"], 
     a[href*="requests/new"],
     .submit-a-request,
     [class*="nav-wrapper"] a {
-        position: static !important; /* Destroys absolute position layout locks */
-        display: inline-block !important;
+        position: static !important;   /* Destroys absolute position layout locks */
+        display: block !important;
         float: none !important;
         clear: both !important;
-        margin: 12px auto 5px auto !important;
+        margin-top: 18px !important;   /* Forces the button down into clean space away from logo */
+        margin-bottom: 5px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
         transform: none !important;
+        width: max-content !important; /* Locks button container tightly around the text */
     }
 
     /* 3. Ensure the logo is perfectly centered alone */
