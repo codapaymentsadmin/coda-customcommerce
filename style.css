@@ -5212,10 +5212,9 @@ main,
    DESKTOP CATEGORY CONTAINER ALIGNMENT 
    ========================================== */
 @media (min-width: 769px) {
-    .section,
-    main .section,
+    main .blocks-list,
     .blocks-list {
-        margin-top: 60px !important;    /* Pushes the blocks down away from the mountains */
-        margin-bottom: 60px !important; /* Keeps them balanced from the footer */
+        margin-top: 80px !important;   
+        margin-bottom: 80px !important; 
     }
 }
