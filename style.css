@@ -5129,50 +5129,47 @@ main,
 
 
 /* ==========================================
-   UNIVERSAL HEADER ELEMENT STACKING OVERRIDE
+   FORCE MOBILE RESPONSIVE WRAPPER 
    ========================================== */
+@media screen and (max-width: 768px) {
+    /* 1. Reset the entire header to stack elements vertically */
+    header, 
+    .header, 
+    [class*="header"],
+    .nav-wrapper {
+        display: flex !important;
+        flex-direction: column !important; /* Forces logo on top, button below */
+        align-items: center !important;
+        justify-content: center !important;
+        height: auto !important;
+        padding: 15px 0 !important;
+    }
 
-/* 1. Reset layout heights and eliminate floats */
-header, .header, [class*="header"], .nav-wrapper, nav {
-    display: flex !important;
-    flex-direction: column !important; /* Forces vertical stacking */
-    align-items: center !important;    /* Centers everything on the screen */
-    justify-content: center !important;
-    height: auto !important;           /* Unlocks fixed container heights */
-    padding: 15px 10px !important;
-    gap: 12px !important;              /* Clean spacing between logo and button */
-}
+    /* 2. Disarm any absolute floats on the button link */
+    a[href*="new_request"], 
+    a[href*="requests/new"],
+    .submit-a-request,
+    [class*="nav-wrapper"] a {
+        position: static !important; /* Destroys absolute position layout locks */
+        display: inline-block !important;
+        float: none !important;
+        clear: both !important;
+        margin: 12px auto 5px auto !important;
+        transform: none !important;
+    }
 
-/* 2. Force the branding image to center perfectly */
-.logo, [class*="logo"], .logo a {
-    display: block !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-    float: none !important;
-}
-.logo img {
-    margin: 0 auto !important;
-}
+    /* 3. Ensure the logo is perfectly centered alone */
+    .logo, [class*="logo"] {
+        display: block !important;
+        margin: 0 auto !important;
+        float: none !important;
+    }
 
-/* 3. Drop the Submit Request button to its own row below the logo */
-.submit-a-request, 
-a[href*="new_request"], 
-[class*="submit-a-request"],
-.nav-wrapper a {
-    position: static !important; 
-    display: inline-block !important;
-    float: none !important;
-    clear: both !important;
-    margin: 5px auto !important;
-    width: auto !important;
-    max-width: 240px !important;
-    text-align: center !important;
-}
-
-/* 4. Hide conflicting hamburger menu buttons that warp layout widths */
-button[class*="toggle"], 
-.icon-menu, 
-[class*="menu-button"],
-nav button {
-    display: none !important;
+    /* 4. Permanently hide the conflicting menu button toggle bars */
+    .icon-menu,
+    [class*="menu-button"],
+    button[aria-expanded],
+    header [class*="toggle"] {
+        display: none !important;
+    }
 }
