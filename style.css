@@ -5129,11 +5129,11 @@ main,
 
 
 /* ==========================================
-   Mobile Fix
+   THE ULTIMATE MOBILE HEADER FIX
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* 1. Reset ONLY the main navigation header */
-    .header, header.header {
+    /* 1. Reset Header to a simple Flex container */
+    .header, header, [class*="header"] {
         display: flex !important;
         flex-direction: row !important;
         justify-content: space-between !important;
@@ -5144,13 +5144,13 @@ main,
     }
 
     /* 2. Logo stays naturally on the left */
-    .logo {
+    .logo, [class*="logo"] {
         position: static !important;
         margin: 0 !important;
         display: flex !important;
         align-items: center !important;
     }
-    .logo img {
+    .logo img, [class*="logo"] img {
         max-height: 26px !important;
         width: auto !important;
         margin: 0 !important;
@@ -5191,12 +5191,12 @@ main,
         align-items: center !important;
         justify-content: center !important;
         position: static !important;
-        height: 36px !important;          
+        height: 36px !important;          /* Hard-locked box height */
         min-height: 36px !important;
         max-height: 36px !important;
-        line-height: normal !important;   
-        padding: 0 12px !important;       
-        margin: 0 !important;             
+        line-height: normal !important;   /* Let flex center the text */
+        padding: 0 12px !important;       /* Horizontal padding only */
+        margin: 0 !important;             /* Kills the 20px dropdown margin from Zendesk JS */
         border: 1px solid #1A1A1A !important;
         border-radius: 4px !important;
         background: transparent !important;
@@ -5205,39 +5205,5 @@ main,
         font-weight: 500 !important;
         white-space: nowrap !important;
         box-sizing: border-box !important;
-    }
-
-    /* 6. FORCE CATEGORY BLOCKS TO RENDER ON PHYSICAL PHONES */
-    ul.blocks-list, 
-    .blocks-list {
-        display: block !important;       /* KILLS the broken mobile flexbox math */
-        width: 100% !important;
-        margin: 0 auto !important;
-        padding: 20px 5% !important;     /* Ensures they don't bleed off screen edges */
-        position: relative !important;
-        z-index: 50 !important;          /* Pulls the entire grid in front of the mountain background */
-        overflow: visible !important;
-    }
-
-    li.blocks-item,
-    .blocks-item {
-        display: block !important;       /* Forces them to stack as standard rigid blocks */
-        width: 100% !important;
-        max-width: 100% !important;
-        min-height: 100px !important;    /* Physically prevents Safari from collapsing them to 0 height */
-        height: auto !important;
-        margin: 0 0 20px 0 !important;   /* Clean spacing between each box */
-        position: relative !important;
-        z-index: 51 !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        box-sizing: border-box !important;
-        transform: translateZ(0) !important; /* Forces hardware acceleration to render the box */
-    }
-
-    .blocks-item-link {
-        display: flex !important;
-        height: 100% !important;
-        width: 100% !important;
     }
 }
