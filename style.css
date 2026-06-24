@@ -5132,59 +5132,56 @@ main,
    Mobile Fix
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* 1. Header: Lock to screen width, stop overflow */
-    header, 
-    .header, 
-    [class*="header"],
-    .nav-wrapper {
-        display: flex !important;
-        flex-direction: row !important;      
-        flex-wrap: nowrap !important;        
-        align-items: center !important;       
-        justify-content: space-between !important; 
+    /* 1. Create a rigid, fixed-height boundary for the header */
+    header, .header, [class*="header"] {
+        position: relative !important;
+        display: block !important;
         width: 100% !important;
-        height: auto !important;
-        padding: 10px 5px !important; /* Tight edge padding */          
-        box-sizing: border-box !important;
+        height: 70px !important;
+        min-height: 70px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
     }
 
-    /* 2. Logo: Restrict to left half */
-    .logo, [class*="logo"], .logo a {
-        flex: 0 0 auto !important;
-        max-width: 45% !important;
+    /* 2. Pin the Logo perfectly to the left */
+    .logo, [class*="logo"] {
+        position: absolute !important;
+        left: 15px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        margin: 0 !important;
+        display: block !important;
+        z-index: 10 !important;
+    }
+    .logo img, [class*="logo"] img {
+        height: 26px !important;
+        width: auto !important;
         margin: 0 !important;
         display: block !important;
     }
-    .logo img, [class*="logo"] img {
-        width: 100% !important;
-        height: auto !important;
-        max-height: 28px !important;
-        object-fit: contain !important;
-        margin: 0 !important;
-    }
 
-    /* 3. Button: Kill Zendesk defaults, force it to fit inside the right half */
+    /* 3. Pin the Button perfectly to the right and STOP text wrapping */
     a[href*="new_request"], 
-    a[href*="requests/new"],
     .submit-a-request,
     [class*="nav-wrapper"] a {
-        position: static !important;         
-        flex: 0 1 auto !important;
-        max-width: 50% !important;           /* Cannot exceed half the screen */
-        min-width: 0 !important;             /* Kills Zendesk's hidden button width lock */
-        width: auto !important;
+        position: absolute !important;
+        right: 15px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
         margin: 0 !important;
-        padding: 6px 8px !important;
-        font-size: 12px !important;          
-        line-height: 1.2 !important;
-        white-space: normal !important;      /* CRITICAL: Allows text to wrap if screen is tiny */
-        word-wrap: break-word !important;
-        text-align: center !important;
-        box-sizing: border-box !important;
-        transform: none !important;
+        padding: 8px 12px !important;
+        width: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        font-size: 13px !important;
+        white-space: nowrap !important; /* Forces text to stay flat on one line */
+        display: inline-block !important;
+        line-height: normal !important;
+        z-index: 10 !important;
     }
 
-    /* 4. Hide menu */
+    /* 4. Kill the hamburger menu icons */
     .icon-menu,
     [class*="menu-button"],
     button[aria-expanded],
