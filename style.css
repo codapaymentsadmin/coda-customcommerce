@@ -5129,7 +5129,7 @@ main,
 
 
 /* ==========================================
-   Mobile Fix
+Mobile Fix
    ========================================== */
 @media screen and (max-width: 768px) {
     /* 1. Create a rigid, fixed-height boundary for the header */
@@ -5161,39 +5161,40 @@ main,
         display: block !important;
     }
 
-    /* 3. HARDCODE EXACT PIXEL HEIGHTS TO KILL THE STRETCHING */
+    /* 3. STRIP THE BORDER FROM THE WRAPPER AND PIN IT */
     .nav-wrapper, 
     .user-nav,
-    #user-nav,
-    [class*="nav-wrapper"] {
+    #user-nav {
         position: absolute !important;
         right: 15px !important;
         top: 50% !important;
-        bottom: auto !important;     /* Severs the invisible anchor pulling it down */
         transform: translateY(-50%) !important;
         display: block !important;
-        height: 36px !important;     /* Hard-locked height */
-        max-height: 36px !important; 
-        margin: 0 !important;
+        border: none !important;        /* KILLS THE MASSIVE STRETCHED BORDER */
+        background: transparent !important;
+        height: auto !important;
+        min-height: 0 !important;
         padding: 0 !important;
+        margin: 0 !important;
         z-index: 999 !important;
     }
 
-    a[href*="new_request"], 
-    .submit-a-request {
-        position: relative !important;
-        display: inline-block !important;
+    /* Draw the border TIGHTLY around the text itself */
+    .nav-wrapper a.submit-a-request,
+    a.submit-a-request,
+    a[href*="new_request"] {
+        display: block !important;
+        padding: 8px 12px !important;
         margin: 0 !important;
-        padding: 0 12px !important;   /* Horizontal padding only */
-        height: 36px !important;      /* Forces the box to be exactly 36px tall */
-        max-height: 36px !important;  
-        line-height: 36px !important; /* Perfectly centers the text vertically inside the 36px box */
+        height: auto !important; 
+        min-height: 0 !important;
+        line-height: normal !important;
         font-size: 13px !important;
-        white-space: nowrap !important; 
-        visibility: visible !important;
-        opacity: 1 !important;
+        white-space: nowrap !important;
+        border: 1px solid #000 !important; /* FORCES THE BORDER ONTO THE SMALL TEXT BOX */
+        border-radius: 4px !important;     /* Optional: adds standard button rounding */
         box-sizing: border-box !important;
-        bottom: auto !important;      /* Severs the stretch */
+        visibility: visible !important;
     }
 
     /* 4. Kill the hamburger menu icons */
