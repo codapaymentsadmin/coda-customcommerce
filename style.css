@@ -5079,17 +5079,6 @@ a.cta-btn:hover {
     text-decoration: none !important;
 }
 
-/* Shrink the dark background area around the Support Hours */
-.custop {
-    padding-top: 55px !important;
-    padding-bottom: 55px !important; 
-    margin-bottom: 0px !important;
-}
-
-.hero {
-    padding-bottom: 80px !important;
-}
-
 /* Sticky Footer Fix */
 body {
   display: flex;
@@ -5105,37 +5094,69 @@ main,
 .footer {
   margin-top: auto;
 }
+/* ==========================================
+   1. DESKTOP HERO & SUPPORT HOURS CORRECTIONS
+   ========================================== */
 
-/* Aggressive Mobile Layout Override (Devices 768px and down) */
+.hero {
+    padding-bottom: 30px !important; /* Prevents the container from over-stretching */
+}
+
+/* Force clean spacing between WELCOME text and the Search Bar */
+.search, .search-box, [class*="search"] {
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+    position: relative !important;
+}
+
+/* Perfect alignment for the Support Hours text inside the dark section */
+.custop {
+    padding-top: 90px !important;   /* Pushes the text down away from the top mountain peak */
+    padding-bottom: 50px !important; /* Leaves breathing room above the content blocks below */
+    margin-bottom: 0px !important;
+}
+
+
+/* ==========================================
+   2. MOBILE VIEW OVERRIDES (768px and below)
+   ========================================== */
 @media (max-width: 768px) {
-    /* Force lock the page width to stop horizontal scrolling/white space */
+    /* Hard stop for the horizontal whitespace / page layout breaking edge */
     html, body {
         overflow-x: hidden !important;
         width: 100% !important;
     }
 
-    /* Target the navigation parent wrapper directly */
-    .my-activities-nav, 
-    nav.collapsible-nav,
-    div[class*="header"] {
+    /* Target header container: force stack layout components vertically */
+    header, .header, [class*="header"] {
         display: flex !important;
-        flex-direction: column !important; /* Stack them vertically */
-        align-items: center !important;    /* Center logo and button */
+        flex-direction: column !important; 
+        align-items: center !important;
+        justify-content: center !important;
         height: auto !important;
         padding: 15px 10px !important;
-        gap: 12px !important;
     }
 
-    /* Force the button to drop below the logo and stop float behaviors */
-    a[href*="new_request"], 
-    a.submit-a-request,
-    button[type="button"].collapsible-nav-toggle {
-        position: static !important;
+    /* Center the Codashop branding image core */
+    .logo, [class*="logo"] {
+        margin: 0 auto 5px auto !important;
         display: inline-block !important;
-        margin: 5px auto !important;
+    }
+
+    /* Safely stack and drop the Submit Request button below the logo line */
+    a[href*="new_request"], .submit-a-request, [class*="submit"] {
+        position: static !important;
+        display: block !important;
+        margin: 12px auto 5px auto !important;
         float: none !important;
         clear: both !important;
-        width: auto !important;
+        width: 90% !important;
+        max-width: 260px;
         text-align: center !important;
+    }
+
+    /* Hide the conflicting mobile slide menu line toggles seen in image_7ca122.jpg */
+    nav [class*="toggle"], button[class*="toggle"], .icon-menu {
+        display: none !important;
     }
 }
