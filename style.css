@@ -5129,107 +5129,81 @@ main,
 
 
 /* ==========================================
-   Mobile Fix
+  Mobile Fix
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* 1. Create a rigid, fixed-height boundary for the header */
-    header, .header, [class*="header"] {
-        position: relative !important;
-        display: block !important;
-        width: 100% !important;
+    /* 1. Reset Header to a simple Flex container */
+    .header, header, [class*="header"] {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
         height: 70px !important;
-        min-height: 70px !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        overflow: visible !important;
+        padding: 0 15px !important;
+        width: 100% !important;
     }
 
-    /* 2. Pin the Logo perfectly to the left */
+    /* 2. Logo stays naturally on the left */
     .logo, [class*="logo"] {
-        position: absolute !important;
-        left: 15px !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
+        position: static !important;
         margin: 0 !important;
-        display: block !important;
-        z-index: 10 !important;
+        display: flex !important;
+        align-items: center !important;
     }
     .logo img, [class*="logo"] img {
-        height: 26px !important;
+        max-height: 26px !important;
         width: auto !important;
         margin: 0 !important;
-        display: block !important;
     }
 
-    /* 3. COUNTERMEASURE A: Nuke the wrapper AND any hidden Zendesk lists */
-    .nav-wrapper, 
-    .user-nav,
-    #user-nav {
-        position: absolute !important;
-        right: 15px !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-        display: block !important;
-        z-index: 999 !important;
-    }
-
-    /* Strip all borders, heights, and shadows from the invisible list layers */
+    /* 3. DISABLE ZENDESK'S BROKEN JAVASCRIPT DROPDOWN LOGIC */
     .nav-wrapper,
-    .nav-wrapper ul,
-    .nav-wrapper li,
-    .user-nav ul,
-    .user-nav li {
-        border: none !important;        
+    .user-nav,
+    .user-nav[aria-expanded="true"],
+    .user-nav[aria-expanded="false"] {
+        position: static !important;
+        display: flex !important;
+        align-items: center !important;
         background: transparent !important;
         box-shadow: none !important;
-        outline: none !important;
-        height: auto !important;
-        min-height: 0 !important;
+        border: none !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        margin: 0 !important;
         padding: 0 !important;
-        margin: 0 !important;
-        display: inline-block !important; /* Forces lists to stop stretching vertically */
+        height: auto !important;
+        width: auto !important;
     }
 
-    /* 4. COUNTERMEASURE B: Ironclad Button Rebuild */
-    .nav-wrapper a.submit-a-request,
-    a.submit-a-request,
-    a[href*="new_request"],
-    .nav-wrapper li a {
-        display: inline-flex !important; 
-        align-items: center !important; 
-        justify-content: center !important;
-        padding: 0 12px !important;
-        margin: 0 !important;
-        height: 36px !important;          /* Hard-locked height */
-        max-height: 36px !important;
-        min-height: 36px !important; 
-        font-size: 13px !important;
-        line-height: normal !important;
-        white-space: nowrap !important;
-        border: 1px solid #000 !important; /* The ONLY border allowed to exist */
-        border-radius: 4px !important;     
-        box-sizing: border-box !important;
-        background: transparent !important;
-        box-shadow: none !important;
-        outline: none !important;
-        vertical-align: middle !important;
-        visibility: visible !important;
-    }
-
-    /* 5. COUNTERMEASURE C: Kill Zendesk's hidden click-area hacks */
-    a.submit-a-request::after,
-    a.submit-a-request::before,
-    .nav-wrapper li::after,
-    .nav-wrapper li::before {
-        display: none !important;
-        content: none !important;
-    }
-
-    /* 6. Kill the hamburger menu icons */
+    /* 4. Kill the hamburger menu */
+    .menu-button,
     .icon-menu,
-    [class*="menu-button"],
-    button[aria-expanded],
-    header [class*="toggle"] {
+    [class*="toggle"] {
         display: none !important;
+    }
+
+    /* 5. PERFECTLY FORMAT THE CUSTOM BUTTON CLASS */
+    .user-nav > a,
+    .nav-wrapper a.submit-a-request,
+    .user-nav .submit-a-request-header-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: static !important;
+        height: 36px !important;          /* Hard-locked box height */
+        min-height: 36px !important;
+        max-height: 36px !important;
+        line-height: normal !important;   /* Let flex center the text */
+        padding: 0 12px !important;       /* Horizontal padding only */
+        margin: 0 !important;             /* Kills the 20px dropdown margin from Zendesk JS */
+        border: 1px solid #1A1A1A !important;
+        border-radius: 4px !important;
+        background: transparent !important;
+        color: #1A1A1A !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        white-space: nowrap !important;
+        box-sizing: border-box !important;
     }
 }
