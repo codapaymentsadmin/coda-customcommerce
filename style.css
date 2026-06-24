@@ -5132,7 +5132,7 @@ main,
    Mobile Fix
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* 1. Reset ONLY the main navigation header (Removed destructive global selector) */
+    /* 1. Reset ONLY the main navigation header */
     .header, header.header {
         display: flex !important;
         flex-direction: row !important;
@@ -5207,18 +5207,37 @@ main,
         box-sizing: border-box !important;
     }
 
-    /* 6. RESTORE MISSING CATEGORY LINKS ON PHYSICAL PHONES */
+    /* 6. FORCE CATEGORY BLOCKS TO RENDER ON PHYSICAL PHONES */
+    ul.blocks-list, 
     .blocks-list {
-        display: flex !important;
-        flex-direction: column !important; /* Force them to stack cleanly in a single vertical column */
+        display: block !important;       /* KILLS the broken mobile flexbox math */
         width: 100% !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
+        padding: 20px 5% !important;     /* Ensures they don't bleed off screen edges */
+        position: relative !important;
+        z-index: 50 !important;          /* Pulls the entire grid in front of the mountain background */
+        overflow: visible !important;
     }
+
+    li.blocks-item,
     .blocks-item {
-        flex: 1 1 100% !important; /* Allows the blocks to naturally shrink to fit narrow screens */
-        max-width: 100% !important;
+        display: block !important;       /* Forces them to stack as standard rigid blocks */
         width: 100% !important;
-        margin: 0 0 15px 0 !important;
+        max-width: 100% !important;
+        min-height: 100px !important;    /* Physically prevents Safari from collapsing them to 0 height */
         height: auto !important;
+        margin: 0 0 20px 0 !important;   /* Clean spacing between each box */
+        position: relative !important;
+        z-index: 51 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        box-sizing: border-box !important;
+        transform: translateZ(0) !important; /* Forces hardware acceleration to render the box */
+    }
+
+    .blocks-item-link {
+        display: flex !important;
+        height: 100% !important;
+        width: 100% !important;
     }
 }
