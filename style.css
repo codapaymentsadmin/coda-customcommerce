@@ -5106,30 +5106,36 @@ main,
   margin-top: auto;
 }
 
-/* Responsive Mobile Fixes (Devices 768px and down) */
+/* Aggressive Mobile Layout Override (Devices 768px and down) */
 @media (max-width: 768px) {
-    /* 1. Prevent the page from overflowing horizontally and eliminate the white gap */
+    /* Force lock the page width to stop horizontal scrolling/white space */
     html, body {
-        overflow-x: hidden;
-        width: 100%;
+        overflow-x: hidden !important;
+        width: 100% !important;
     }
 
-    /* 2. Re-arrange header elements cleanly */
-    .header {
-        display: flex;
-        flex-direction: column; /* Stack logo on top, button underneath */
-        align-items: center;    /* Center them both perfectly */
-        gap: 12px;              /* Comfortable spacing between items */
+    /* Target the navigation parent wrapper directly */
+    .my-activities-nav, 
+    nav.collapsible-nav,
+    div[class*="header"] {
+        display: flex !important;
+        flex-direction: column !important; /* Stack them vertically */
+        align-items: center !important;    /* Center logo and button */
+        height: auto !important;
         padding: 15px 10px !important;
+        gap: 12px !important;
     }
 
-    /* 3. Normalize the Submit button for thumbs on mobile */
-    .header a.submit-a-request, 
-    .header .nav-wrapper a {
-        position: static !important; /* Drop any absolute positioning hacks */
-        margin: 0 auto !important;
-        width: auto !important;
+    /* Force the button to drop below the logo and stop float behaviors */
+    a[href*="new_request"], 
+    a.submit-a-request,
+    button[type="button"].collapsible-nav-toggle {
+        position: static !important;
         display: inline-block !important;
-        text-align: center;
+        margin: 5px auto !important;
+        float: none !important;
+        clear: both !important;
+        width: auto !important;
+        text-align: center !important;
     }
 }
