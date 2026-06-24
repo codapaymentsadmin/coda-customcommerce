@@ -5129,54 +5129,58 @@ main,
 
 
 /* ==========================================
-    MOBILE RESPONSIVE FIX
+MOBILE RESPONSIVE Fix
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* 1. Reset the header container layout and prevent right overflow */
+    /* 1. Header layout: Side-by-side, perfectly spaced */
     header, 
     .header, 
     [class*="header"],
     .nav-wrapper {
         display: flex !important;
-        flex-direction: row !important;      /* Force side-by-side */
-        flex-wrap: nowrap !important;        /* Prevent wrapping onto a second line */
-        align-items: center !important;       /* Center items vertically */
-        justify-content: space-between !important; /* Push logo to left, button to right */
+        flex-direction: row !important;      
+        flex-wrap: nowrap !important;        
+        align-items: center !important;       
+        justify-content: space-between !important; 
         height: auto !important;
-        min-height: 60px !important;
-        padding: 10px !important;            /* Tighten edge spacing */
+        min-height: 65px !important;
+        padding: 10px 15px !important;            
         box-sizing: border-box !important;
     }
 
-    /* 2. Scale down the logo container and image size so it shares space properly */
+    /* 2. Fix the Logo: Let it scale naturally by a set height */
     .logo, [class*="logo"], .logo a {
         display: flex !important;
         align-items: center !important;
         margin: 0 !important;
         float: none !important;
-        max-width: 45% !important;           /* Only allow it to take up under half the width */
+        width: auto !important;
     }
     .logo img, [class*="logo"] img {
-        width: 100% !important;              /* Scale down image fluidly */
-        height: auto !important;
-        max-height: 25px !important;         /* Prevent it from bloating vertically */
+        width: auto !important;
+        height: 32px !important;             /* Sets a highly readable, standard mobile size */
+        max-height: none !important;         /* Removes the trap that squished it */
         margin: 0 !important;
     }
 
-    /* 3. Compact the button layout so it anchors cleanly to the right boundary */
+    /* 3. Fix the Button: Let the box expand to fit the text perfectly */
     a[href*="new_request"], 
     a[href*="requests/new"],
     .submit-a-request,
     [class*="nav-wrapper"] a {
-        position: static !important;         /* Remove layout-breaking absolute positions */
-        display: inline-block !important;
+        position: static !important;         
+        display: inline-flex !important;     /* Flex keeps the text perfectly centered inside */
+        align-items: center !important;
+        justify-content: center !important;
         float: none !important;
         margin: 0 !important;
-        padding: 6px 10px !important;        /* Compact button padding */
-        font-size: 11px !important;          /* Drop font size slightly for tight layouts */
-        white-space: nowrap !important;      /* Lock the text inside the button container */
-        width: auto !important;
-        max-width: 50% !important;           /* Restrict width to half the viewport */
+        padding: 8px 14px !important;        /* Restores healthy breathing room around the text */
+        font-size: 12px !important;          
+        white-space: nowrap !important;      /* Forces text to stay on one line */
+        width: auto !important;              /* Allows the box to stretch with the text */
+        max-width: none !important;          /* Removes the trap that clipped the box */
+        height: auto !important;
+        line-height: normal !important;      /* Prevents the text from vertically breaking the box */
         transform: none !important;
     }
 
