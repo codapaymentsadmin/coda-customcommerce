@@ -5129,7 +5129,7 @@ main,
 
 
 /* ==========================================
-   Mobile Fix
+Mobile Fix
    ========================================== */
 @media screen and (max-width: 768px) {
     /* 1. Create a rigid, fixed-height boundary for the header */
@@ -5144,7 +5144,7 @@ main,
         overflow: visible !important;
     }
 
-    /* 2. Pin the Logo perfectly to the left (UNCHANGED) */
+    /* 2. Pin the Logo perfectly to the left */
     .logo, [class*="logo"] {
         position: absolute !important;
         left: 15px !important;
@@ -5161,7 +5161,7 @@ main,
         display: block !important;
     }
 
-    /* 3. Pin the ENTIRE invisible wrapper to the right wall */
+    /* 3. Pin wrapper and CRUSH the massive height */
     .nav-wrapper, 
     .user-nav,
     #user-nav,
@@ -5172,12 +5172,14 @@ main,
         transform: translateY(-50%) !important;
         display: block !important;
         width: auto !important;
+        height: auto !important;  /* Kills the massive wrapper height */
+        min-height: 0 !important; /* Removes invisible height minimums */
         margin: 0 !important;
         padding: 0 !important;
         z-index: 999 !important;
     }
 
-    /* Reset the button so it sits safely inside its right-pinned wrapper */
+    /* Shrink the button box to fit the text perfectly */
     a[href*="new_request"], 
     .submit-a-request {
         position: relative !important;
@@ -5187,13 +5189,17 @@ main,
         display: inline-block !important;
         margin: 0 !important;
         padding: 8px 12px !important;
+        height: auto !important;      /* Kills Zendesk's 100% height stretching */
+        min-height: 0 !important;     /* Stops the box from artificially expanding */
+        line-height: 1.2 !important;  /* Centers the text vertically inside the tight box */
         font-size: 13px !important;
         white-space: nowrap !important; 
         visibility: visible !important;
         opacity: 1 !important;
+        box-sizing: border-box !important;
     }
 
-    /* 4. Kill the hamburger menu icons (UNCHANGED) */
+    /* 4. Kill the hamburger menu icons */
     .icon-menu,
     [class*="menu-button"],
     button[aria-expanded],
