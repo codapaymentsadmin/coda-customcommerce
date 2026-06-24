@@ -5081,8 +5081,8 @@ a.cta-btn:hover {
 
 /* Shrink the dark background area around the Support Hours */
 .custop {
-    padding-top: 10px !important;
-    padding-bottom: 70px !important; 
+    padding-top: 40px !important;
+    padding-bottom: 40px !important; 
     margin-bottom: 0px !important;
 }
 
@@ -5104,4 +5104,32 @@ main,
 
 .footer {
   margin-top: auto;
+}
+
+/* Responsive Mobile Fixes (Devices 768px and down) */
+@media (max-width: 768px) {
+    /* 1. Prevent the page from overflowing horizontally and eliminate the white gap */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* 2. Re-arrange header elements cleanly */
+    .header {
+        display: flex;
+        flex-direction: column; /* Stack logo on top, button underneath */
+        align-items: center;    /* Center them both perfectly */
+        gap: 12px;              /* Comfortable spacing between items */
+        padding: 15px 10px !important;
+    }
+
+    /* 3. Normalize the Submit button for thumbs on mobile */
+    .header a.submit-a-request, 
+    .header .nav-wrapper a {
+        position: static !important; /* Drop any absolute positioning hacks */
+        margin: 0 auto !important;
+        width: auto !important;
+        display: inline-block !important;
+        text-align: center;
+    }
 }
