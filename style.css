@@ -5129,7 +5129,7 @@ main,
 
 
 /* ==========================================
-  Mobile Fix
+   Mobile Fix
    ========================================== */
 @media screen and (max-width: 768px) {
     /* 1. Create a rigid, fixed-height boundary for the header */
@@ -5161,29 +5161,36 @@ main,
         display: block !important;
     }
 
-    /* 3. Rescue the Button from the hidden mobile menu and pin it right */
+    /* 3. Pin the ENTIRE invisible wrapper to the right wall */
     .nav-wrapper, 
-    .user-nav {
-        display: block !important; /* Forces the hidden Zendesk container open */
-        position: static !important;
-    }
-
-    a[href*="new_request"], 
-    .submit-a-request {
+    .user-nav,
+    #user-nav,
+    [class*="nav-wrapper"] {
         position: absolute !important;
         right: 15px !important;
         top: 50% !important;
         transform: translateY(-50%) !important;
+        display: block !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        z-index: 999 !important;
+    }
+
+    /* Reset the button so it sits safely inside its right-pinned wrapper */
+    a[href*="new_request"], 
+    .submit-a-request {
+        position: relative !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+        display: inline-block !important;
         margin: 0 !important;
         padding: 8px 12px !important;
-        width: auto !important;
-        max-width: none !important;
         font-size: 13px !important;
         white-space: nowrap !important; 
-        display: inline-block !important;
         visibility: visible !important;
         opacity: 1 !important;
-        z-index: 999 !important; /* Forces it to the very front layer */
     }
 
     /* 4. Kill the hamburger menu icons (UNCHANGED) */
