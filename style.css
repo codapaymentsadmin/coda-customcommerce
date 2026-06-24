@@ -5094,41 +5094,36 @@ main,
 .footer {
   margin-top: auto;
 }
+
 /* ==========================================
-   DESKTOP HERO & SEARCH OVERLAP FIX
+   DESKTOP HERO & SEARCH EXACT ALIGNMENT
    ========================================== */
 
-/* 1. Expand the main background container to breathe */
+/* 1. Reset the hero container size to stop over-stretching */
 .hero {
-    padding: 60px 0 40px 0 !important; 
-    height: auto !important;
-    min-height: 380px !important; /* Force structural room for Welcome, Search, and Legends */
+    padding: 0 !important;
+    height: 260px !important; /* Locks the background graphic size */
+    position: relative !important;
 }
 
-/* 2. Target the inner wrapper to separate the elements */
-.hero-inner {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
-    gap: 30px !important; /* Forces massive physical space between your text lines and the search bar */
-    height: 100% !important;
-}
-
-/* 3. Force the search form itself to sit perfectly in the gap */
+/* 2. Place the search bar precisely in the gap between WELCOME and LEGENDS */
 .hero .search, 
 .hero-inner form[role="search"],
 .search-box {
-    position: relative !important;
-    margin: 35px auto !important; /* Generates massive clear margins above and below the bar */
-    z-index: 10 !important;
+    position: absolute !important;
+    top: 48% !important;     /* Moves it exactly into the center horizontal gap */
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important; /* Centers it perfectly over the graphic */
+    margin: 0 !important;
     max-width: 610px !important;
     width: 100% !important;
+    z-index: 10 !important;
 }
 
-/* 4. Fix the Support Hours placement in the dark section */
+/* 3. Bring the Support Hours text back up into the middle of the black section */
 .custop {
-    padding-top: 130px !important;  /* Heavily increased to push text deep into the wide black section */
-    padding-bottom: 70px !important; /* Safe breathing room over the grid navigation blocks below */
+    padding-top: 45px !important;    /* Pulled up drastically to center it in the valley */
+    padding-bottom: 45px !important; /* Balanced padding to frame the text nicely */
     margin-bottom: 0px !important;
 }
 
