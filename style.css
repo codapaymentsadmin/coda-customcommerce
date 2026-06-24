@@ -5161,7 +5161,7 @@ main,
         display: block !important;
     }
 
-    /* 3. Strip wrapper borders and pin it to the right */
+    /* 3. COUNTERMEASURE A: Nuke the wrapper AND any hidden Zendesk lists */
     .nav-wrapper, 
     .user-nav,
     #user-nav {
@@ -5170,37 +5170,62 @@ main,
         top: 50% !important;
         transform: translateY(-50%) !important;
         display: block !important;
+        z-index: 999 !important;
+    }
+
+    /* Strip all borders, heights, and shadows from the invisible list layers */
+    .nav-wrapper,
+    .nav-wrapper ul,
+    .nav-wrapper li,
+    .user-nav ul,
+    .user-nav li {
         border: none !important;        
         background: transparent !important;
+        box-shadow: none !important;
+        outline: none !important;
         height: auto !important;
         min-height: 0 !important;
         padding: 0 !important;
         margin: 0 !important;
-        z-index: 999 !important;
+        display: inline-block !important; /* Forces lists to stop stretching vertically */
     }
 
-    /* 4. CLAMP THE BUTTON HEIGHT AND NUKE ALL VERTICAL PADDING */
+    /* 4. COUNTERMEASURE B: Ironclad Button Rebuild */
     .nav-wrapper a.submit-a-request,
     a.submit-a-request,
-    a[href*="new_request"] {
-        display: flex !important;         /* Flex forces perfect vertical centering */
+    a[href*="new_request"],
+    .nav-wrapper li a {
+        display: inline-flex !important; 
         align-items: center !important; 
         justify-content: center !important;
-        padding: 0 12px !important;       /* SETS VERTICAL PADDING TO ABSOLUTE ZERO */
+        padding: 0 12px !important;
         margin: 0 !important;
         height: 36px !important;          /* Hard-locked height */
-        max-height: 36px !important;      /* Physically prevents stretching */
+        max-height: 36px !important;
         min-height: 36px !important; 
         font-size: 13px !important;
-        line-height: 1 !important;
+        line-height: normal !important;
         white-space: nowrap !important;
-        border: 1px solid #000 !important; 
+        border: 1px solid #000 !important; /* The ONLY border allowed to exist */
         border-radius: 4px !important;     
         box-sizing: border-box !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        outline: none !important;
+        vertical-align: middle !important;
         visibility: visible !important;
     }
 
-    /* 5. Kill the hamburger menu icons */
+    /* 5. COUNTERMEASURE C: Kill Zendesk's hidden click-area hacks */
+    a.submit-a-request::after,
+    a.submit-a-request::before,
+    .nav-wrapper li::after,
+    .nav-wrapper li::before {
+        display: none !important;
+        content: none !important;
+    }
+
+    /* 6. Kill the hamburger menu icons */
     .icon-menu,
     [class*="menu-button"],
     button[aria-expanded],
