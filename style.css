@@ -5129,11 +5129,11 @@ main,
 
 
 /* ==========================================
-  Mobile Fix
+   Mobile Fix
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* 1. Reset Header to a simple Flex container */
-    .header, header, [class*="header"] {
+    /* 1. Reset ONLY the main navigation header (Removed destructive global selector) */
+    .header, header.header {
         display: flex !important;
         flex-direction: row !important;
         justify-content: space-between !important;
@@ -5144,13 +5144,13 @@ main,
     }
 
     /* 2. Logo stays naturally on the left */
-    .logo, [class*="logo"] {
+    .logo {
         position: static !important;
         margin: 0 !important;
         display: flex !important;
         align-items: center !important;
     }
-    .logo img, [class*="logo"] img {
+    .logo img {
         max-height: 26px !important;
         width: auto !important;
         margin: 0 !important;
@@ -5191,12 +5191,12 @@ main,
         align-items: center !important;
         justify-content: center !important;
         position: static !important;
-        height: 36px !important;          /* Hard-locked box height */
+        height: 36px !important;          
         min-height: 36px !important;
         max-height: 36px !important;
-        line-height: normal !important;   /* Let flex center the text */
-        padding: 0 12px !important;       /* Horizontal padding only */
-        margin: 0 !important;             /* Kills the 20px dropdown margin from Zendesk JS */
+        line-height: normal !important;   
+        padding: 0 12px !important;       
+        margin: 0 !important;             
         border: 1px solid #1A1A1A !important;
         border-radius: 4px !important;
         background: transparent !important;
@@ -5205,5 +5205,20 @@ main,
         font-weight: 500 !important;
         white-space: nowrap !important;
         box-sizing: border-box !important;
+    }
+
+    /* 6. RESTORE MISSING CATEGORY LINKS ON PHYSICAL PHONES */
+    .blocks-list {
+        display: flex !important;
+        flex-direction: column !important; /* Force them to stack cleanly in a single vertical column */
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    .blocks-item {
+        flex: 1 1 100% !important; /* Allows the blocks to naturally shrink to fit narrow screens */
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 0 15px 0 !important;
+        height: auto !important;
     }
 }
