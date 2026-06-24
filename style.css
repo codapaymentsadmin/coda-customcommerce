@@ -5129,7 +5129,7 @@ main,
 
 
 /* ==========================================
-   Mobile Fix
+  Mobile Fix
    ========================================== */
 @media screen and (max-width: 768px) {
     /* 1. Create a rigid, fixed-height boundary for the header */
@@ -5144,7 +5144,7 @@ main,
         overflow: visible !important;
     }
 
-    /* 2. Pin the Logo perfectly to the left */
+    /* 2. Pin the Logo perfectly to the left (UNCHANGED) */
     .logo, [class*="logo"] {
         position: absolute !important;
         left: 15px !important;
@@ -5161,10 +5161,15 @@ main,
         display: block !important;
     }
 
-    /* 3. Pin the Button perfectly to the right and STOP text wrapping */
+    /* 3. Rescue the Button from the hidden mobile menu and pin it right */
+    .nav-wrapper, 
+    .user-nav {
+        display: block !important; /* Forces the hidden Zendesk container open */
+        position: static !important;
+    }
+
     a[href*="new_request"], 
-    .submit-a-request,
-    [class*="nav-wrapper"] a {
+    .submit-a-request {
         position: absolute !important;
         right: 15px !important;
         top: 50% !important;
@@ -5173,15 +5178,15 @@ main,
         padding: 8px 12px !important;
         width: auto !important;
         max-width: none !important;
-        min-width: 0 !important;
         font-size: 13px !important;
-        white-space: nowrap !important; /* Forces text to stay flat on one line */
+        white-space: nowrap !important; 
         display: inline-block !important;
-        line-height: normal !important;
-        z-index: 10 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 999 !important; /* Forces it to the very front layer */
     }
 
-    /* 4. Kill the hamburger menu icons */
+    /* 4. Kill the hamburger menu icons (UNCHANGED) */
     .icon-menu,
     [class*="menu-button"],
     button[aria-expanded],
