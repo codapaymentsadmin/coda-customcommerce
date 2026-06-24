@@ -5129,45 +5129,43 @@ main,
 
 
 /* ==========================================
-MOBILE RESPONSIVE
+    MOBILE RESPONSIVE FIX
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* 1. Reset the entire header to stack elements vertically */
+    /* 1. Reset the header to a clean row with elements pulled to the far edges */
     header, 
     .header, 
     [class*="header"],
     .nav-wrapper {
         display: flex !important;
-        flex-direction: column !important; /* Forces logo on top, button below */
-        align-items: center !important;
-        justify-content: center !important;
+        flex-direction: row !important;      /* Force them side-by-side */
+        align-items: center !important;       /* Align them perfectly straight vertically */
+        justify-content: space-between !important; /* Push logo to the left, button to the right */
         height: auto !important;
-        padding-top: 20px !important;
-        padding-bottom: 25px !important;
+        min-height: 70px !important;
+        padding: 10px 15px !important;       /* Give a clean edge gap on mobile screens */
     }
 
-    /* 2. Disarm absolute floats and force a clean gap below the logo */
+    /* 2. Format the logo to cleanly sit on the left */
+    .logo, [class*="logo"] {
+        display: block !important;
+        margin: 0 !important;                /* Strip out centering margins */
+        float: left !important;
+    }
+
+    /* 3. Format the Submit a Request button to sit on the right */
     a[href*="new_request"], 
     a[href*="requests/new"],
     .submit-a-request,
     [class*="nav-wrapper"] a {
-        position: static !important;   /* Destroys absolute position layout locks */
-        display: block !important;
-        float: none !important;
-        clear: both !important;
-        margin-top: 18px !important;   /* Forces the button down into clean space away from logo */
-        margin-bottom: 5px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        position: static !important;         /* Strip absolute coordinate locks */
+        display: inline-block !important;
+        float: right !important;
+        margin: 0 !important;                /* Strip out centering margins */
+        padding: 6px 12px !important;        /* Slightly slim down paddings for mobile viewports */
+        font-size: 13px !important;          /* Keeps text crisp without breaking containers */
+        width: auto !important;
         transform: none !important;
-        width: max-content !important; /* Locks button container tightly around the text */
-    }
-
-    /* 3. Ensure the logo is perfectly centered alone */
-    .logo, [class*="logo"] {
-        display: block !important;
-        margin: 0 auto !important;
-        float: none !important;
     }
 
     /* 4. Permanently hide the conflicting menu button toggle bars */
