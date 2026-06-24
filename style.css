@@ -5132,43 +5132,55 @@ main,
     MOBILE RESPONSIVE FIX
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* 1. Reset the header to a clean row with elements pulled to the far edges */
+    /* 1. Reset the header container layout and prevent right overflow */
     header, 
     .header, 
     [class*="header"],
     .nav-wrapper {
         display: flex !important;
-        flex-direction: row !important;      /* Force them side-by-side */
-        align-items: center !important;       /* Align them perfectly straight vertically */
-        justify-content: space-between !important; /* Push logo to the left, button to the right */
+        flex-direction: row !important;      /* Force side-by-side */
+        flex-wrap: nowrap !important;        /* Prevent wrapping onto a second line */
+        align-items: center !important;       /* Center items vertically */
+        justify-content: space-between !important; /* Push logo to left, button to right */
         height: auto !important;
-        min-height: 70px !important;
-        padding: 10px 15px !important;       /* Give a clean edge gap on mobile screens */
+        min-height: 60px !important;
+        padding: 10px !important;            /* Tighten edge spacing */
+        box-sizing: border-box !important;
     }
 
-    /* 2. Format the logo to cleanly sit on the left */
-    .logo, [class*="logo"] {
-        display: block !important;
-        margin: 0 !important;                /* Strip out centering margins */
-        float: left !important;
+    /* 2. Scale down the logo container and image size so it shares space properly */
+    .logo, [class*="logo"], .logo a {
+        display: flex !important;
+        align-items: center !important;
+        margin: 0 !important;
+        float: none !important;
+        max-width: 45% !important;           /* Only allow it to take up under half the width */
+    }
+    .logo img, [class*="logo"] img {
+        width: 100% !important;              /* Scale down image fluidly */
+        height: auto !important;
+        max-height: 25px !important;         /* Prevent it from bloating vertically */
+        margin: 0 !important;
     }
 
-    /* 3. Format the Submit a Request button to sit on the right */
+    /* 3. Compact the button layout so it anchors cleanly to the right boundary */
     a[href*="new_request"], 
     a[href*="requests/new"],
     .submit-a-request,
     [class*="nav-wrapper"] a {
-        position: static !important;         /* Strip absolute coordinate locks */
+        position: static !important;         /* Remove layout-breaking absolute positions */
         display: inline-block !important;
-        float: right !important;
-        margin: 0 !important;                /* Strip out centering margins */
-        padding: 6px 12px !important;        /* Slightly slim down paddings for mobile viewports */
-        font-size: 13px !important;          /* Keeps text crisp without breaking containers */
+        float: none !important;
+        margin: 0 !important;
+        padding: 6px 10px !important;        /* Compact button padding */
+        font-size: 11px !important;          /* Drop font size slightly for tight layouts */
+        white-space: nowrap !important;      /* Lock the text inside the button container */
         width: auto !important;
+        max-width: 50% !important;           /* Restrict width to half the viewport */
         transform: none !important;
     }
 
-    /* 4. Permanently hide the conflicting menu button toggle bars */
+    /* 4. Permanently hide conflicting slide menu components */
     .icon-menu,
     [class*="menu-button"],
     button[aria-expanded],
