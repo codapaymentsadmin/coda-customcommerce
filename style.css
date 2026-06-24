@@ -5129,7 +5129,7 @@ main,
 
 
 /* ==========================================
-Mobile Fix
+   Mobile Fix
    ========================================== */
 @media screen and (max-width: 768px) {
     /* 1. Create a rigid, fixed-height boundary for the header */
@@ -5161,7 +5161,7 @@ Mobile Fix
         display: block !important;
     }
 
-    /* 3. Pin wrapper and CRUSH the massive height */
+    /* 3. HARDCODE EXACT PIXEL HEIGHTS TO KILL THE STRETCHING */
     .nav-wrapper, 
     .user-nav,
     #user-nav,
@@ -5169,34 +5169,31 @@ Mobile Fix
         position: absolute !important;
         right: 15px !important;
         top: 50% !important;
+        bottom: auto !important;     /* Severs the invisible anchor pulling it down */
         transform: translateY(-50%) !important;
         display: block !important;
-        width: auto !important;
-        height: auto !important;  /* Kills the massive wrapper height */
-        min-height: 0 !important; /* Removes invisible height minimums */
+        height: 36px !important;     /* Hard-locked height */
+        max-height: 36px !important; 
         margin: 0 !important;
         padding: 0 !important;
         z-index: 999 !important;
     }
 
-    /* Shrink the button box to fit the text perfectly */
     a[href*="new_request"], 
     .submit-a-request {
         position: relative !important;
-        right: auto !important;
-        top: auto !important;
-        transform: none !important;
         display: inline-block !important;
         margin: 0 !important;
-        padding: 8px 12px !important;
-        height: auto !important;      /* Kills Zendesk's 100% height stretching */
-        min-height: 0 !important;     /* Stops the box from artificially expanding */
-        line-height: 1.2 !important;  /* Centers the text vertically inside the tight box */
+        padding: 0 12px !important;   /* Horizontal padding only */
+        height: 36px !important;      /* Forces the box to be exactly 36px tall */
+        max-height: 36px !important;  
+        line-height: 36px !important; /* Perfectly centers the text vertically inside the 36px box */
         font-size: 13px !important;
         white-space: nowrap !important; 
         visibility: visible !important;
         opacity: 1 !important;
         box-sizing: border-box !important;
+        bottom: auto !important;      /* Severs the stretch */
     }
 
     /* 4. Kill the hamburger menu icons */
