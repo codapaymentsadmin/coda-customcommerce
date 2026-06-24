@@ -5129,7 +5129,7 @@ main,
 
 
 /* ==========================================
-   MOBILE HEADER FIX (768px and below)
+   MOBILE HEADER FIX
    ========================================== */
 @media (max-width: 768px) {
     /* Stop the layout from bleeding out to the right */
@@ -5161,7 +5161,7 @@ main,
     a[href*="new_request"], 
     .submit-a-request, 
     [class*="submit-a-request"] {
-        position: static !important; /* Destroys the layout bug seen in image_7da4c1.jpg */
+        position: static !important; 
         display: inline-block !important;
         float: none !important;
         clear: both !important;
