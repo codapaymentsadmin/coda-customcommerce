@@ -5207,3 +5207,15 @@ main,
         box-sizing: border-box !important;
     }
 }
+
+/* ==========================================
+   DESKTOP CATEGORY CONTAINER ALIGNMENT 
+   ========================================== */
+@media (min-width: 769px) {
+    .section,
+    main .section,
+    .blocks-list {
+        margin-top: 60px !important;    /* Pushes the blocks down away from the mountains */
+        margin-bottom: 60px !important; /* Keeps them balanced from the footer */
+    }
+}
