@@ -5093,6 +5093,8 @@ main,
 
 .footer {
   margin-top: auto;
+  background-color: #EAE8F7 !important; /* Changes the pink to light purple */
+  border-top: none !important;          /* Removes the dividing line for a seamless look */
 }
 
 /* ==========================================
