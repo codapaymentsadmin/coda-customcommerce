@@ -5239,8 +5239,8 @@ main,
 
     /* 2. OVERRIDE THE BLACK WAVY SECTION */
     .custop {
-        padding-top: 25px !important;     
-        padding-bottom: 60px !important;  
+        padding-top: 20px !important;     
+        padding-bottom: 50px !important;  
         padding-left: 20px !important;    
         padding-right: 20px !important;   
         margin-top: -10px !important;     /* Physically pulls the whole black container up slightly */
