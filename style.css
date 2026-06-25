@@ -5222,24 +5222,43 @@ main,
 }
 
 /* ==========================================
-   MOBILE HERO & SUPPORT HOURS SPACING FIXES
+   NEW: MOBILE HERO & SUPPORT HOURS SPACING FIXES
    ========================================== */
-@media screen and (max-width: 768px) {
-    /* 1. Add horizontal breathing room so the search bar doesn't touch the edges */
+/* Adding max-width: 450px forces this to outrank the old Zendesk rule */
+@media screen and (max-width: 768px), screen and (max-width: 450px) {
+    
+    /* 1. Add horizontal breathing room to the search bar */
     .hero .search, 
     .hero-inner form[role="search"],
     .search-box {
-        width: 92% !important; /* Shrinks the width slightly so it naturally leaves a gap on the left/right */
+        width: 90% !important;         /* 90% forces a nice 5% gap on both sides */
+        left: 50% !important;          /* Keeps it perfectly centered */
+        transform: translate(-50%, -50%) !important; 
         box-sizing: border-box !important;
     }
 
-    /* 2. Fix the Support Hours text: add side padding and reduce the massive vertical gaps */
+    /* 2. OVERRIDE THE BLACK WAVY SECTION */
     .custop {
-        padding-top: 15px !important;     /* Reduces the wide gap below the search/LEGENDS */
-        padding-bottom: 45px !important;  /* Drops the huge 120px gap, keeping it safely above the jagged edge */
-        padding-left: 20px !important;    /* Stops text from hugging the left screen edge */
-        padding-right: 20px !important;   /* Stops text from hugging the right screen edge */
+        padding-top: 25px !important;     
+        padding-bottom: 60px !important;  
+        padding-left: 20px !important;    
+        padding-right: 20px !important;   
+        margin-top: -10px !important;     /* Physically pulls the whole black container up slightly */
         box-sizing: border-box !important;
         text-align: center !important; 
+    }
+
+    /* 3. CRUSH THE TEXT MARGINS */
+    /* If the text has its own invisible box, this destroys it */
+    .custop p, 
+    .custop h1, 
+    .custop h2, 
+    .custop span,
+    .custop div {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        line-height: 1.2 !important;
     }
 }
