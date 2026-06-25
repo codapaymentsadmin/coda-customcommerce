@@ -5365,5 +5365,6 @@ main,
         padding-top: 0 !important;
         padding-bottom: 0 !important;
         line-height: 1.4 !important;
+        font-size: 12px !important; /* Shrinks the text slightly so the 2nd line fits perfectly */
     }
 }
