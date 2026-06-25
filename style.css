@@ -5216,8 +5216,8 @@ main,
 @media (min-width: 769px) {
     main .blocks-list,
     .blocks-list {
-        margin-top: 110px !important;   
-        margin-bottom: 80px !important; 
+        margin-top: 0px !important;      /* Pulls the boxes right back up to the jagged edge */
+        margin-bottom: 80px !important;  /* Keeps the bottom spacing from the footer */
     }
 }
 
@@ -5366,5 +5366,34 @@ main,
         padding-bottom: 0 !important;
         line-height: 1.4 !important;
         font-size: 14px !important; /* Shrinks the text slightly so the 2nd line fits perfectly */
+    }
+}
+/* ==========================================
+   FOOTER & LANGUAGE SELECTOR FIXES
+   ========================================== */
+/* 1. Make the Language Selector bold and match the T&C color */
+.footer-language-selector button,
+.footer-language-selector .dropdown-toggle {
+    font-weight: bold !important;
+    color: #280031 !important; /* Matches the dark purple/black of the T&C link */
+}
+
+/* 2. Force the language selector to appear and fit on Mobile */
+@media screen and (max-width: 768px) {
+    .footer-inner {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;      /* Allows items to stack nicely if the screen is super narrow */
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0 15px !important;      /* Adds safe padding to the edges */
+    }
+
+    .footer-language-selector,
+    .footer-language-selector button {
+        display: block !important;       /* Forces Zendesk to un-hide the button */
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin-top: 5px !important;
     }
 }
