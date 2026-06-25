@@ -5306,7 +5306,7 @@ main,
     .blocks-list {
         display: block !important;       
         width: 100% !important;
-        margin: 40px auto 0 !important;  /* PUSHES THE BLOCKS DOWN FROM THE JAGGED EDGE */
+        margin: 10px auto 0 !important;  /* PUSHES THE BLOCKS DOWN FROM THE JAGGED EDGE */
         padding: 20px 5% !important;     
         position: relative !important;
         z-index: 50 !important;          
@@ -5348,8 +5348,8 @@ main,
     .custop {
         padding-top: 15px !important;     
         padding-bottom: 50px !important;  
-        padding-left: 45px !important;    /* FORCES THE TEXT TO WRAP EARLY */
-        padding-right: 45px !important;   /* FORCES THE TEXT TO WRAP EARLY */
+        padding-left: 15px !important;    /* FORCES THE TEXT TO WRAP EARLY */
+        padding-right: 15px !important;   /* FORCES THE TEXT TO WRAP EARLY */
         margin-top: -10px !important;     
         box-sizing: border-box !important;
         text-align: center !important; 
