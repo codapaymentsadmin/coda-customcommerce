@@ -5235,8 +5235,8 @@ main,
 
     /* 2. Fix the Support Hours text: add side padding and reduce the massive vertical gaps */
     .custop {
-        padding-top: 25px !important;     /* Reduces the wide gap below the search/LEGENDS */
-        padding-bottom: 60px !important;  /* Drops the huge 120px gap, keeping it safely above the jagged edge */
+        padding-top: 15px !important;     /* Reduces the wide gap below the search/LEGENDS */
+        padding-bottom: 45px !important;  /* Drops the huge 120px gap, keeping it safely above the jagged edge */
         padding-left: 20px !important;    /* Stops text from hugging the left screen edge */
         padding-right: 20px !important;   /* Stops text from hugging the right screen edge */
         box-sizing: border-box !important;
