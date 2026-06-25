@@ -5397,3 +5397,28 @@ main,
         margin-top: 5px !important;
     }
 }
+
+/* ==========================================
+   DYNAMIC LEGAL LINKS STACKING FIX
+   ========================================== */
+.legal-links-container {
+    display: flex !important;
+    flex-direction: column !important;  /* Forces the items to stack vertically */
+    align-items: flex-start !important; /* Aligns them neatly to the left edge */
+    gap: 6px !important;                /* Adds a nice clean gap between the links */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.legal-links-container a {
+    display: block !important;          /* Guarantees each link takes up its own whole line */
+    color: #280031 !important;          /* Matches your dark purple/black theme */
+    text-decoration: none !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+}
+
+.legal-links-container a:hover {
+    text-decoration: underline !important;
+}
