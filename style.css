@@ -5462,3 +5462,10 @@ form[role="search"]::after,
     content: none !important;
     background-image: none !important;
 }
+
+/* 3. KILL THE DEDICATED SEARCH ICON CLASS */
+.search-icon {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
