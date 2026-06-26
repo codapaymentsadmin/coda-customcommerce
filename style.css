@@ -5422,3 +5422,21 @@ main,
 .legal-links-container a:hover {
     text-decoration: underline !important;
 }
+
+/* ==========================================
+	Magnifying Glass Search icon
+   ========================================== */
+.hero .search input[type="search"],
+.hero-inner form[role="search"] input[type="search"],
+.search-box input[type="search"] {
+    /* Add padding to the left so the text doesn't overlap the icon */
+    padding-left: 40px !important;
+    
+    /* Set the magnifying glass as a background image */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="%23666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5"></circle><line x1="15" y1="15" x2="10.5" y2="10.5"></line></svg>') !important;
+    
+    /* Position the icon */
+    background-repeat: no-repeat !important;
+    background-position: 15px center !important; /* 15px from the left, centered vertically */
+    background-size: 16px 16px !important; /* Adjust size if needed */
+}
