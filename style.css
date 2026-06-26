@@ -5442,13 +5442,22 @@ main,
 }
 
 /* ==========================================
-   REMOVE ZENDESK'S GHOST SEARCH ICON
+   THE ULTIMATE GHOST ICON DESTROYER
    ========================================== */
-.hero .search::before,
-.hero .search::after,
-.hero-inner form[role="search"]::before,
-.search-box::before,
-.search-box::after {
+/* 1. Target physical SVG elements Zendesk drops next to the bar */
+.hero .search svg,
+.hero-inner form[role="search"] svg,
+.search-box svg,
+form[role="search"] svg {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* 2. Catch any lingering form-level pseudo-elements just in case */
+form[role="search"]::before,
+form[role="search"]::after,
+.search-container::before {
     display: none !important;
     content: none !important;
     background-image: none !important;
