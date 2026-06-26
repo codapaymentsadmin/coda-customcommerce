@@ -5440,3 +5440,16 @@ main,
     background-position: 15px center !important; /* 15px from the left, centered vertically */
     background-size: 16px 16px !important; /* Adjust size if needed */
 }
+
+/* ==========================================
+   REMOVE ZENDESK'S GHOST SEARCH ICON
+   ========================================== */
+.hero .search::before,
+.hero .search::after,
+.hero-inner form[role="search"]::before,
+.search-box::before,
+.search-box::after {
+    display: none !important;
+    content: none !important;
+    background-image: none !important;
+}
