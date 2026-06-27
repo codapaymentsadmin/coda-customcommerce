@@ -547,3 +547,59 @@ var finalHintText = attachmentHints[currentLang] || attachmentHints[baseLang] ||
 $('div#upload-dropzone').parent().append('<b><p id="attachment_field_hint">' + finalHintText + '</p></b>');
 
 })
+
+// ==========================================
+// DYNAMIC SUPPORT HOURS TEXT
+// ==========================================
+$(document).ready(function() {
+    var currentLang = document.documentElement.lang.toLowerCase();
+    var baseLang = currentLang.split('-')[0];
+
+    var supportHours = {
+        "en": "Support Hours: Monday to Sunday,<br>9:00 AM to 6:00 PM (local time)",
+        "es": "Horario de soporte: Lunes a domingo,<br>9:00 AM a 6:00 PM (hora local)",
+        "ar": "ساعات الدعم: من الاثنين إلى الأحد،<br>من 9:00 صباحاً إلى 6:00 مساءً (بالتوقيت المحلي)",
+        "pt": "Horário de atendimento: Segunda a domingo,<br>9:00 às 18:00 (horário local)",
+        "fr": "Heures d'assistance : du lundi au dimanche,<br>de 9h00 à 18h00 (heure locale)",
+        "de": "Support-Zeiten: Montag bis Sonntag,<br>9:00 bis 18:00 Uhr (Ortszeit)",
+        "no": "Supporttider: Mandag til søndag,<br>09:00 til 18:00 (lokal tid)",
+        "nb": "Supporttider: Mandag til søndag,<br>09:00 til 18:00 (lokal tid)",
+        "ko": "고객 지원 시간: 월요일 ~ 일요일,<br>오전 9:00 ~ 오후 6:00 (현지 시간)",
+        "zh-tw": "客服時間：星期一至星期日，<br>上午 9:00 至下午 6:00（當地時間）",
+        "zh-hk": "客服時間：星期一至星期日，<br>上午 9:00 至下午 6:00（當地時間）",
+        "zh": "客服時間：星期一至星期日，<br>上午 9:00 至下午 6:00（當地時間）",
+        "mn": "Тусламж үйлчилгээний цаг: Даваагаас Ням гараг,<br>09:00 - 18:00 (орон нутгийн цагаар)",
+        "nl": "Supporturen: Maandag t/m zondag,<br>09:00 tot 18:00 (lokale tijd)",
+        "tr": "Destek Saatleri: Pazartesi - Pazar,<br>09:00 - 18:00 (yerel saat)",
+        "ja": "サポート営業時間：月曜日～日曜日、<br>午前9:00～午後6:00（現地時間）",
+        "km": "ម៉ោងធ្វើការ៖ ថ្ងៃច័ន្ទ ដល់ ថ្ងៃអាទិត្យ<br>9:00 ព្រឹក ដល់ 6:00 ល្ងាច (ម៉ោងក្នុងស្រុក)",
+        "pl": "Godziny pracy pomocy technicznej: od poniedziałku do niedzieli,<br>9:00 - 18:00 (czasu lokalnego)",
+        "vi": "Giờ hỗ trợ: Thứ Hai đến Chủ Nhật,<br>9:00 sáng đến 6:00 chiều (giờ địa phương)",
+        "it": "Orari di assistenza: dal lunedì alla domenica,<br>dalle 9:00 alle 18:00 (ora locale)",
+        "ro": "Program de asistență: Luni până Duminică,<br>9:00 - 18:00 (ora locală)",
+        "ne": "समर्थन घण्टा: सोमबार देखि आइतबार,<br>बिहान ९:०० देखि साँझ ६:०० (स्थानीय समय)",
+        "si": "සහාය වේලාවන්: සඳුදා සිට ඉරිදා දක්වා,<br>පෙ.ව. 9:00 සිට ප.ව. 6:00 දක්වා (දේශීය වේලාව)",
+        "kk": "Қолдау көрсету уақыты: Дүйсенбі - Жексенбі,<br>09:00 - 18:00 (жергілікті уақыт)",
+        "ru": "Часы работы поддержки: с понедельника по воскресенье,<br>с 9:00 до 18:00 (местное время)",
+        "bn": "সাপোর্টের সময়: সোমবার থেকে রবিবার,<br>সকাল ৯:০০ থেকে সন্ধ্যা ৬:০০ (স্থানীয় সময়)",
+        "hu": "Ügyfélszolgálati nyitvatartás: Hétfőtől vasárnapig,<br>9:00-tól 18:00-ig (helyi idő szerint)",
+        "cs": "Pracovní doba podpory: Pondělí až neděle,<br>9:00 až 18:00 (místního času)",
+        "sv": "Supportens öppettider: Måndag till söndag,<br>09:00 till 18:00 (lokal tid)",
+        "da": "Supportens åbningstider: Mandag til søndag,<br>09.00 til 18.00 (lokal tid)",
+        "sk": "Pracovná doba podpory: Pondelok až nedeľa,<br>9:00 až 18:00 (miestneho času)",
+        "ur": "سپورٹ کے اوقات: پیر تا اتوار،<br>صبح 9:00 بجے سے شام 6:00 بجے تک (مقامی وقت)",
+        "lo": "ເວລາໃຫ້ບໍລິການ: ວັນຈັນ ຫາ ວັນອາທິດ,<br>9:00 ໂມງເຊົ້າ ຫາ 6:00 ໂມງແລງ (ເວລາທ້ອງຖິ່ນ)",
+        "id": "Jam Layanan: Senin hingga Minggu,<br>09:00 hingga 18:00 (waktu setempat)",
+        "th": "เวลาทำการฝ่ายสนับสนุน: วันจันทร์ถึงวันอาทิตย์<br>09:00 น. ถึง 18:00 น. (เวลาท้องถิ่น)",
+        "ms": "Waktu Sokongan: Isnin hingga Ahad,<br>9:00 PG hingga 6:00 PTG (waktu tempatan)",
+        "fil": "Oras ng Suporta: Lunes hanggang Linggo,<br>9:00 AM hanggang 6:00 PM (lokal na oras)",
+        "hi": "सहायता के घंटे: सोमवार से रविवार,<br>सुबह 9:00 बजे से शाम 6:00 बजे तक (स्थानीय समय)"
+    };
+
+    var finalHoursText = supportHours[currentLang] || supportHours[baseLang] || supportHours["en"];
+    
+    // Check if the container exists on the page, then replace the text
+    if ($('#dynamic-support-hours').length) {
+        $('#dynamic-support-hours').html(finalHoursText);
+    }
+});
