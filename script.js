@@ -422,6 +422,128 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 $(document).ready(function(){
 
-$('div#upload-dropzone').parent().append('<b><p id=attachment_field_hint>For items not received post-purchase, please attach the payment proof.</p></b>')
+// ==========================================
+// DYNAMIC ATTACHMENT HINT TEXT
+// ==========================================
+var currentLang = document.documentElement.lang.toLowerCase();
+var baseLang = currentLang.split('-')[0]; // Grabs just the 'en' from 'en-us'
+
+var attachmentHints = {
+    // English (US, UK, CA, AU, SG, ZA, NG, KE, NZ, etc.)
+    "en": "For items not received post-purchase, please attach the payment proof.",
+    
+    // Spanish (MX, CO, AR, CL, ES, PE, EC, PY, BO, UY)
+    "es": "Para artículos no recibidos después de la compra, adjunte el comprobante de pago.",
+    
+    // Arabic (SA, EG, AE, KW, BH, QA, MA, IQ)
+    "ar": "بالنسبة للعناصر التي لم يتم استلامها بعد الشراء، يرجى إرفاق إثبات الدفع.",
+    
+    // Portuguese (PT, TL)
+    "pt": "Para itens não recebidos após a compra, anexe o comprovante de pagamento.",
+    
+    // French (FR)
+    "fr": "Pour les articles non reçus après l'achat, veuillez joindre la preuve de paiement.",
+    
+    // German (DE, AT, CH)
+    "de": "Für nach dem Kauf nicht erhaltene Artikel fügen Sie bitte den Zahlungsbeleg bei.",
+    
+    // Norwegian (NO - catching both 'no' and 'nb' for Bokmål)
+    "no": "For varer som ikke er mottatt etter kjøp, vennligst legg ved betalingsbevis.",
+    "nb": "For varer som ikke er mottatt etter kjøp, vennligst legg ved betalingsbevis.",
+    
+    // Korean (KR)
+    "ko": "구매 후 상품을 받지 못한 경우 결제 영수증을 첨부해 주세요.",
+    
+    // Traditional Chinese (TW, HK)
+    "zh-tw": "對於購買後未收到的物品，請附上付款證明。",
+    "zh-hk": "對於購買後未收到的物品，請附上付款證明。",
+    "zh": "對於購買後未收到的物品，請附上付款證明。", // Fallback
+    
+    // Mongolian (MN)
+    "mn": "Худалдан авалтын дараа хүлээж аваагүй барааны төлбөрийн баримтыг хавсаргана уу.",
+    
+    // Dutch (NL, BE)
+    "nl": "Voor artikelen die na aankoop niet zijn ontvangen, dient u het betalingsbewijs bij te voegen.",
+    
+    // Turkish (TR)
+    "tr": "Satın alma işleminden sonra teslim alınmayan ürünler için lütfen ödeme kanıtını ekleyin.",
+    
+    // Japanese (JP)
+    "ja": "購入後に商品が届かない場合は、支払い証明書を添付してください。",
+    
+    // Khmer (KH)
+    "km": "សម្រាប់ទំនិញដែលមិនទទួលបានបន្ទាប់ពីការទិញ សូមភ្ជាប់ភស្តុតាងនៃការទូទាត់។",
+    
+    // Polish (PL)
+    "pl": "W przypadku przedmiotów nieotrzymanych po zakupie, prosimy o dołączenie dowodu wpłaty.",
+    
+    // Vietnamese (VN)
+    "vi": "Đối với các mặt hàng không nhận được sau khi mua, vui lòng đính kèm bằng chứng thanh toán.",
+    
+    // Italian (IT)
+    "it": "Per gli articoli non ricevuti dopo l'acquisto, si prega di allegare la prova di pagamento.",
+    
+    // Romanian (RO)
+    "ro": "Pentru articolele neprimite după achiziție, vă rugăm să atașați dovada plății.",
+    
+    // Nepali (NP)
+    "ne": "खरिद गरेपछि प्राप्त नभएका वस्तुहरूको लागि, कृपया भुक्तानी प्रमाण संलग्न गर्नुहोस्।",
+    
+    // Sinhala (LK)
+    "si": "මිලදී ගැනීමෙන් පසු නොලැබුණු අයිතම සඳහා, කරුණාකර ගෙවීම් සාක්ෂිය අමුණන්න.",
+    
+    // Kazakh (KZ)
+    "kk": "Сатып алғаннан кейін алынбаған заттар үшін төлем растауын тіркеңіз.",
+    
+    // Russian (KZ fallback, etc.)
+    "ru": "Для товаров, не полученных после покупки, пожалуйста, прикрепите подтверждение оплаты.",
+    
+    // Bengali (BD)
+    "bn": "কেনার পরে না পাওয়া আইটেমগুলির জন্য, অনুগ্রহ করে অর্থপ্রদানের প্রমাণ সংযুক্ত করুন।",
+    
+    // Hungarian (HU)
+    "hu": "A vásárlás után meg nem kapott tételek esetén kérjük, csatolja a fizetési bizonylatot.",
+    
+    // Czech (CZ)
+    "cs": "U položek, které nebyly po zakoupení obdrženy, přiložte doklad o platbě.",
+    
+    // Swedish (SE)
+    "sv": "För varor som inte mottagits efter köp, vänligen bifoga betalningsbeviset.",
+    
+    // Danish (DK)
+    "da": "For varer, der ikke er modtaget efter køb, bedes du vedhæfte betalingsbeviset.",
+    
+    // Slovak (SK)
+    "sk": "Pre položky, ktoré neboli prijaté po zakúpení, priložte doklad o platbe.",
+    
+    // Urdu (PK)
+    "ur": "خریداری کے بعد موصول نہ ہونے والی اشیاء کے لیے، براہ کرم ادائیگی کا ثبوت منسلک کریں۔",
+    
+    // Lao (LA)
+    "lo": "ສຳລັບສິນຄ້າທີ່ບໍ່ໄດ້ຮັບຫຼັງຈາກການຊື້, ກະລຸນາຄັດຕິດຫຼັກຖານການຈ່າຍເງິນ.",
+    
+    // Indonesian (ID)
+    "id": "Untuk item yang tidak diterima setelah pembelian, harap lampirkan bukti pembayaran.",
+    
+    // Thai (TH)
+    "th": "สำหรับสินค้าที่ไม่ได้รับหลังการซื้อ โปรดแนบหลักฐานการชำระเงิน",
+    
+    // Malay (MY)
+    "ms": "Untuk item yang tidak diterima selepas pembelian, sila lampirkan bukti pembayaran.",
+    
+    // Tagalog / Filipino (PH)
+    "fil": "Para sa mga item na hindi natanggap pagkatapos bumili, mangyaring ilakip ang katibayan ng pagbabayad.",
+    
+    // Hindi (IN)
+    "hi": "खरीद के बाद प्राप्त नहीं हुए आइटम के लिए, कृपया भुगतान प्रमाण संलग्न करें。"
+};
+
+// 1. Try to match the exact full locale (like 'zh-tw'). 
+// 2. If it fails, fallback to the base language (like 'es'). 
+// 3. If everything fails, default to English.
+var finalHintText = attachmentHints[currentLang] || attachmentHints[baseLang] || attachmentHints["en"];
+
+// Inject it into the page
+$('div#upload-dropzone').parent().append('<b><p id="attachment_field_hint">' + finalHintText + '</p></b>');
 
 })
