@@ -16,6 +16,8 @@
 	--color-banner-text: $banner_text_color;
 	--font-heading: $heading_font;
 	--font-main-text: $text_font;
+	--font-customized: $custom_font;
+	--font-ott: "ott";
 }
 :root {
 	--color-brand: $brand_color;
@@ -35,4 +37,6 @@
 	--color-banner-text: $banner_text_color;
 	--font-heading: $heading_font;
 	--font-main-text: $text_font;
+	--font-customized: $custom_font;
+	--font-ott: "ott";
 }

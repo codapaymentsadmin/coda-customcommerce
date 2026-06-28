@@ -1,4 +1,5 @@
-<footer class="footer sm:footer-horizontal bg-footer-bg text-main-text items-center p-4 border-t border-gray-100">
+<footer
+	class="hidden footer sm:footer-horizontal bg-footer-bg text-main-text items-center p-4 border-t border-gray-100">
 	<aside class="flex flex-col items-start gap-1">
 		<h4 class="font-semibold text-white">
 			<span>
@@ -21,6 +22,35 @@
 		<a href="{{settings.terms_link}}" class="link link-hover text-white">
 			{{dc 'hc_-_terms_and_conditions'}}
 		</a>
+		{{/if}}
+	</nav>
+</footer>
+
+<footer id="footer-v2"
+	class="flex flex-col sm:flex-row justify-between items-center max-w-5xl mx-auto bg-footer-bg text-brand p-4">
+	<aside class="flex flex-col items-start gap-1">
+		{{#if settings.show_terms_link}}
+		<a href="{{settings.privacy_link}}" class="link link-hover text-sm"> {{dc 'hc_-_privacy_policy'}} </a>
+		{{/if}}
+		{{#if settings.show_pp_link}}
+		<a href="{{settings.terms_link}}" class="link link-hover text-sm">
+			{{dc 'hc_-_terms_and_conditions'}}
+		</a>
+		{{/if}}
+	</aside>
+	<nav class="">
+		{{#if alternative_locales}}
+		<details class="dropdown dropdown-top dropdown-end">
+			<summary class="btn btn-ghost btn-brand hover:bg-brand hover:text-white">
+				{{current_locale.name}}
+			</summary>
+			<ul
+				class="w-54 menu dropdown-content bg-white shadow-sm border border-gray-200 p-2 max-h-[400px] overflow-y-scroll rounded-b-none rounded-t-xl">
+				{{#each alternative_locales}}
+				<li><a href="{{url}}" dir="{{direction}}" class="text-brand-text text-sm">{{name}}</a></li>
+				{{/each}}
+			</ul>
+		</details>
 		{{/if}}
 	</nav>
 </footer>

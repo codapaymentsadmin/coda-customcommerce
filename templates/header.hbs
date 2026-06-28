@@ -49,17 +49,12 @@
 <header class="w-full bg-navbar-bg shadow-lg">
 	<div class="navbar max-w-7xl mx-auto">
 		<div class="flex-1">
-			<a href="{{page_path 'help_center'}}" class="w-max flex items-center text-sm text-white gap-2">
-				{{#if settings.show_brand_name}}
-				<span>
-					{{settings.brand_name}}
-				</span>
-				{{/if}}
-				<img src="{{settings.logo}}" alt="{{settings.brand_name}}" class="w-24 h-auto pr-3 border-r-2 border-white" />
-				Web Store {{dc 'hc_-_help_center'}}
+			<a href="{{page_path 'help_center'}}" class="w-max flex items-center text-sm text-black gap-2">
+				<img src="{{settings.logo}}" alt="{{settings.brand_name}}" class="w-32 h-auto pr-3 border-r-2 border-black" />
+				Web Store Help Center
 			</a>
 		</div>
-		<div class="flex-none">
+		<div class="flex-none hidden">
 			<ul class="menu menu-horizontal hidden sm:flex items-center px-1">
 				{{#if settings.show_contact_link}}
 				<li>
@@ -68,16 +63,18 @@
 						class="text-white hover:bg-brand hover:text-cta-text mr-2"></a>
 				</li>
 				{{/if}}
-				<li><a href="{{settings.webstore_link}}" class="text-white hover:bg-brand hover:text-cta-text">{{dc
+				<li><a href="{{settings.webstore_link}}" class="text-black hover:bg-brand hover:text-white">{{dc
 						'hc_-_visit_webstore'}}</a></li>
 				{{#if alternative_locales}}
-				<div class="divider divider-horizontal after:bg-white before:bg-white"></div>
+				<div class="divider divider-horizontal after:bg-black before:bg-black"></div>
 				<li>
-					<details>
+					<details class="dropdown dropdown-end">
 						<summary
-							class="font-normal text-white hover:bg-brand hover:text-cta-text focus:bg-brand focus:text-cta-text focus-within:bg-brand focus-within:text-cta-text active:bg-brand active:text-cta-text">
-							{{current_locale.name}}</summary>
-						<ul class="bg-white shadow-sm border border-gray-200 rounded-t-none p-2">
+							class="font-normal text-black hover:bg-brand hover:text-white focus:bg-brand focus:text-white focus-within:bg-brand focus-within:text-white active:bg-brand active:text-white">
+							{{current_locale.name}}
+						</summary>
+						<ul
+							class="w-54 dropdown-content bg-white shadow-sm border border-gray-200 rounded-t-none p-2 max-h-[400px] overflow-y-scroll">
 							{{#each alternative_locales}}
 							<li><a href="{{url}}" dir="{{direction}}" class="text-brand-text">{{name}}</a></li>
 							{{/each}}

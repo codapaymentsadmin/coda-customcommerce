@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 @import "./variables.css";
 @import "tailwindcss";
 @plugin "daisyui";
@@ -5,11 +6,37 @@
 @font-face {
 	font-family: "scout_black";
 	src: url("$assets-scout-black-eot");
-	src: url("$assets-scout-black-eot?#iefix") format("embedded-opentype"),
+	src:
+		url("$assets-scout-black-eot?#iefix") format("embedded-opentype"),
 		url("$assets-scout-black-woff2") format("woff2"),
 		url("$assets-scout-black-woff") format("woff"),
 		url("$assets-scout-black-ttf") format("truetype"),
 		url("$assets-scout-black-svg#scoutblack") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "ott";
+	src: url("$assets-ott-prod-eot");
+	src:
+		url("$assets-ott-prod-eot?#iefix") format("embedded-opentype"),
+		url("$assets-ott-prod-woff2") format("woff2"),
+		url("$assets-ott-prod-woff") format("woff"),
+		url("$assets-ott-prod-ttf") format("truetype"),
+		url("$assets-ott-prod-svg#ottprod") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("$assets-inter-regular-eot");
+	src:
+		url("$assets-inter-regular-eot?#iefix") format("embedded-opentype"),
+		url("$assets-inter-regular-woff2") format("woff2"),
+		url("$assets-inter-regular-woff") format("woff"),
+		url("$assets-inter-regular-ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -34,65 +61,69 @@
 	--color-banner-text: $banner_text_color;
 	--font-heading: $heading_font;
 	--font-main-text: $text_font;
+	--font-customized: $custom_font;
+	--font-ott: "ott";
 }
 
 @import "./article.css";
 @import "./forms.css";
 
-html {
-	line-height: 1.15;
-	-webkit-text-size-adjust: 100%;
+@layer base {
+	html {
+		line-height: 1.15;
+		-webkit-text-size-adjust: 100%;
+	}
+
+	body {
+		@apply m-0 leading-[1.5];
+		background-color: var(--color-bg-main);
+		font-family: var(--font-main-text);
+		color: var(--color-main-text);
+		-webkit-font-smoothing: antialiased;
+	}
+
+	main {
+		display: block;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply mt-0 tracking-wide;
+		font-family: var(--font-heading);
+	}
+
+	h1 {
+		@apply text-2xl lg:text-4xl;
+	}
+
+	h2 {
+		@apply text-xl lg:text-2xl;
+	}
+
+	h3 {
+		@apply text-lg lg:text-xl;
+	}
+
+	h4 {
+		@apply text-lg;
+	}
+
+	p {
+		@apply text-base tracking-wide;
+		font-family: var(--font-main-text);
+	}
+
+	a,
+	button {
+		@apply tracking-wide;
+	}
 }
 
-body {
-	@apply m-0 leading-[1.5];
-	background-color: var(--color-bg-main);
-	font-family: var(--font-main-text);
-	color: var(--color-main-text);
-	-webkit-font-smoothing: antialiased;
-}
-
-main {
-	display: block;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	@apply mt-0 tracking-wide;
-	font-family: var(--font-heading);
-}
-
-h1 {
-	@apply text-2xl lg:text-4xl;
-}
-
-h2 {
-	@apply text-xl lg:text-2xl;
-}
-
-h3 {
-	@apply text-lg lg:text-xl;
-}
-
-h4 {
-	@apply text-lg;
-}
-
-p {
-	@apply text-base tracking-wide;
-	font-family: var(--font-main-text);
-}
-
-a,
-button {
-	@apply tracking-wide;
-}
-
-form.input {
+/* form.input {
 	input[type="search"] {
 		@apply flex-1;
 	}
@@ -105,6 +136,18 @@ form.input {
 
 	input[type="submit"][value="検索"] {
 		@apply !text-brand-text;
+	}
+} */
+
+form[role="search"] {
+	input[type="search"] {
+		@apply flex-1;
+	}
+
+	input[type="submit"] {
+		@apply w-max px-4 py-1 text-xs rounded-md cursor-pointer hidden;
+		background-color: var(--color-brand);
+		color: white;
 	}
 }
 
