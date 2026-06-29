@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const dynamicLinkMobile = document.getElementById("dynamic-link-mobile");
 	const searchInput = document.getElementById("query");
 	const copyrightText = document.querySelector(".copyright");
+	const askCodee = document.getElementById("ask-codee");
 
 	const currentPath = window.location.pathname;
 	const currentLocale = window.location.pathname.split("/")[2];
