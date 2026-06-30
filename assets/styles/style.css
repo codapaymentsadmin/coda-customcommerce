@@ -63,6 +63,7 @@
 	--font-main-text: $text_font;
 	--font-customized: $custom_font;
 	--font-ott: "ott";
+	--font-inter: "Inter, sans-serif";
 }
 
 @import "./article.css";
@@ -148,6 +149,26 @@ form[role="search"] {
 		@apply w-max px-4 py-1 text-xs rounded-md cursor-pointer hidden;
 		background-color: var(--color-brand);
 		color: white;
+	}
+}
+
+.search-wrapper form {
+	width: 100%;
+}
+
+section#self-service-articles-section {
+	div.flex.flex-col.items-center {
+		p.text-center.text-main-text.mt-2 {
+			display: none !important;
+		}
+	}
+}
+
+section#need-assistance-section {
+	div.flex.flex-col.items-center {
+		p.text-center.text-main-text.mt-2 {
+			display: none !important;
+		}
 	}
 }
 

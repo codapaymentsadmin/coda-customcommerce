@@ -1,10 +1,11 @@
 <!-- Hero Section -->
-<section id="cc-hero-section" class="hero relative min-h-[50dvh] overflow-hidden z-0"
+<section id="cc-hero-section" class="hero relative min-h-[70dvh] sm:min-h-[50dvh] overflow-hidden z-0"
 	style="background-color: #280031;">
 	<div class="hero-overlay"></div>
-	<div class="relative hero-content w-full max-w-3xl text-neutral-content text-center z-10">
-		<div class="w-full z-10">
-			<h1 class="mb-5 text-banner-text text-3xl md:text-5xl font-ott font-bold">
+	<div
+		class="relative hero-content w-full h-full max-w-3xl text-neutral-content text-center z-10 py-16 flex flex-col items-center max-sm:justify-start">
+		<div class="w-full h-full z-10">
+			<h1 class="mb-5 text-banner-text text-5xl font-ott font-bold">
 				{{dc 'hc_-_how_can_we_help'}}
 			</h1>
 			<p>
@@ -13,13 +14,13 @@
 				</span>
 				of users resolve issues using Codee
 			</p>
-			<button id="ask-codee" class="bg-[#E8F953] !inline-flex text-brand-text btn rounded-full px-4 py-1 mt-4">
+			<button id="ask-codee" class="bg-[#E8F953] !inline-flex text-brand-text btn w-max rounded-full px-4 py-1 mt-4">
 				Ask Codee
 			</button>
 		</div>
 
 		<img src="{{asset 'codee.webp'}}" alt="" aria-hidden="true"
-			class="pointer-events-none select-none absolute -bottom-24 md:-bottom-16 right-0 w-42 h-42 z-5">
+			class="pointer-events-none select-none absolute max-sm:bottom-8 bottom-0 right-5 w-48 h-48 z-5">
 	</div>
 
 	<!-- Torn-paper edge: blends the hero into the page background -->
@@ -48,21 +49,27 @@
 </section>
 {{/if}}
 
-<section id="self-service-articles-section" class="max-w-5xl max-md:w-full lg:w-full mx-auto px-4 md:px-10 py-12">
+<section id="self-service-articles-section" class="max-w-5xl max-md:w-full lg:w-full mx-auto px-10 py-12">
 	<div class="flex flex-col items-center">
-		{{dc 'hc_-_self_service_support'}}
+		<span class="font-inter">
+			{{dc 'hc_-_self_service_support'}}
+		</span>
 		<div class="w-full mt-8 space-y-8 flex justify-center">
-			{{search
-			instant=true
-			class="input max-md:w-full md:w-1/2 focus-within:outline-brand !text-black rounded-lg h-12 py-1 mx-auto"
-			}}
+			<div class="search-wrapper relative max-sm:w-full sm:w-1/2 mx-auto">
+				<i
+					class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none z-10"></i>
+				{{search
+				instant=true
+				class="input w-full focus-within:outline-brand !text-black rounded-lg h-12 py-1 pl-11"
+				}}
+			</div>
 		</div>
 
 		<div class="w-full mt-8 grid grid-cols-1 md:grid-cols-6 gap-5">
 			{{#each categories}}
 			{{#each sections}}
-			<a href="{{url}}" class="{{#if (compare @index " <" 3)}}md:col-span-2{{else}}md:col-span-3{{/if}} rounded-2xl
-				border border-brand/30 bg-accordion-bg p-6 text-center shadow-sm transition hover:border-brand hover:shadow-md">
+			<a href="{{url}}" class="{{#if (compare @index '<' 3)}}md:col-span-2{{else}}md:col-span-3{{/if}} rounded-2xl
+				border border-brand bg-transparent p-6 text-center shadow-sm transition hover:border-brand hover:shadow-md">
 				<h3 class="text-lg font-semibold text-accordion-text">{{name}}</h3>
 				{{#if description}}
 				<p class="mt-2 text-sm text-accordion-text font-light">{{description}}</p>
@@ -74,9 +81,12 @@
 	</div>
 </section>
 
-<section id="need-assistance-section" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12">
-	<div class="flex flex-col items-center gap-3">
+<section id="need-assistance-section" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-10 py-12">
+	<div class="flex flex-col items-center text-center gap-3">
 		{{dc 'hc_-_need_assistance'}}
+		<p>
+			{{settings.support_hour}}
+		</p>
 		<a href="{{page_path 'new_request'}}"
 			class="btn bg-transparent hover:bg-brand border-brand shadow-none text-brand hover:text-white rounded-full mt-4">
 			{{dc 'hc_standard_-_submit_a_request_button'}}
@@ -84,20 +94,19 @@
 	</div>
 </section>
 
-<div id="codee-container"></div>
-
 <script defer type="text/javascript" src="https://prod-au-druid-cdn.azureedge.net/v2/druid_webchat_v2.js"></script>
 <script data-druid-language="ms" type="text/javascript">
+	const botId = "{{settings.druid_bot_id}}";
+	const botQueryParams = "{{settings.druid_query_params}}";
+
 	document.addEventListener("DOMContentLoaded", function (event) {
 		DruidWebchat_v2.init({
-			botId: "db017925-4ab2-48fa-522b-08ddf7367496",
+			botId: botId,
 			baseUrl: "https://druidapi.au.druidplatform.com",
-			queryParams: `SiteLang=ms&Country=Malaysia`,
+			queryParams: botQueryParams,
 			UI: {
 				containerElement: document.getElementById('ask-codee'),
-				height: '80dvh',
-				closeButtonEnabled: true,
-				showCloseButton: true,
+				height: '80dvh'
 			}
 		});
 	});

@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -47,6 +47,13 @@
 					"description": "webstore_helpcenter_link_text_description",
 					"label": "helpcenter_link_text_label",
 					"value": "EA FC Mobile Help Center"
+				},
+				{
+					"identifier": "support_hour",
+					"type": "text",
+					"description": "Enter the support hour text",
+					"label": "Support hour text",
+					"value": "Support Hours: Monday to Sunday, 10:00 AM to 5:00 PM (local time)"
 				}
 			]
 		},
@@ -475,6 +482,25 @@
 					"description": "show_brand_name_description",
 					"label": "Show brand name in the Navbar?",
 					"value": false
+				}
+			]
+		},
+		{
+			"label": "DruidAI Widget",
+			"variables": [
+				{
+					"identifier": "druid_bot_id",
+					"type": "text",
+					"description": "Enter the Druid Bot ID",
+					"label": "Druid Bot ID",
+					"value": "db017925-4ab2-48fa-522b-08ddf7367496"
+				},
+				{
+					"identifier": "druid_query_params",
+					"type": "text",
+					"description": "Enter the Druid Query Params (For siteLang)",
+					"label": "Druid Query Params",
+					"value": "SiteLang=ms&Country=Malaysia"
 				}
 			]
 		}
