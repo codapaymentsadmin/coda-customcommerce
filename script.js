@@ -603,3 +603,28 @@ $(document).ready(function() {
         $('#dynamic-support-hours').html(finalHoursText);
     }
 });
+
+
+// Lao and mongolian language
+$(document).ready(function() {
+    var currentLang = document.documentElement.lang.toLowerCase();
+
+    // 1. LAO ('lo') FIXES
+    if (currentLang.includes("lo")) {
+        // Fix Search Placeholder
+        $('form[role="search"] input[type="search"]').attr('placeholder', 'ຄົ້ນຫາ'); 
+        
+        // Fix 'Submit a request' Button
+        // We use multiple selectors to ensure we catch it in the header, footer, or mobile menu
+        $('a.submit-a-request, .submit-a-request-header-btn, a[href$="/requests/new"]').text('ສົ່ງຄໍາຮ້ອງຂໍ');
+    }
+
+    // 2. MONGOLIAN ('mn') FIXES
+    if (currentLang.includes("mn")) {
+        // Fix Search Placeholder (Just in case it's broken here too!)
+        $('form[role="search"] input[type="search"]').attr('placeholder', 'Хайх'); 
+        
+        // Fix 'Submit a request' Button
+        $('a.submit-a-request, .submit-a-request-header-btn, a[href$="/requests/new"]').text('Хүсэлт илгээх');
+    }
+});
