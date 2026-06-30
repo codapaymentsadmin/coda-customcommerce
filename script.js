@@ -605,26 +605,28 @@ $(document).ready(function() {
 });
 
 
-// Lao and mongolian language
+
+// Lao, Mongol, Cambodian
 $(document).ready(function() {
     var currentLang = document.documentElement.lang.toLowerCase();
 
-    // 1. LAO ('lo') FIXES
-    if (currentLang.includes("lo")) {
-        // Fix Search Placeholder
-        $('form[role="search"] input[type="search"]').attr('placeholder', 'ຄົ້ນຫາ'); 
-        
-        // Fix 'Submit a request' Button
-        // We use multiple selectors to ensure we catch it in the header, footer, or mobile menu
-        $('a.submit-a-request, .submit-a-request-header-btn, a[href$="/requests/new"]').text('ສົ່ງຄໍາຮ້ອງຂໍ');
-    }
+    var fallbackTranslations = {
+        "lo": { search: "ຄົ້ນຫາ", submit: "ສົ່ງຄໍາຮ້ອງຂໍ" }, // Laos
+        "mn": { search: "Хайх", submit: "Хүсэлт илгээх" }, // Mongolia
+        "km": { search: "ស្វែងរក", submit: "ដាក់ស្នើសំណើ" }  // Cambodia
+    };
 
-    // 2. MONGOLIAN ('mn') FIXES
-    if (currentLang.includes("mn")) {
-        // Fix Search Placeholder (Just in case it's broken here too!)
-        $('form[role="search"] input[type="search"]').attr('placeholder', 'Хайх'); 
+    // Extract the base language code
+    var baseLang = currentLang.split('-')[0];
+
+    // If the current language is in our unsupported list, apply the fix!
+    if (fallbackTranslations[baseLang]) {
+        var text = fallbackTranslations[baseLang];
+
+        // 1. Fix the Search Placeholder
+        $('form[role="search"] input[type="search"]').attr('placeholder', text.search); 
         
-        // Fix 'Submit a request' Button
-        $('a.submit-a-request, .submit-a-request-header-btn, a[href$="/requests/new"]').text('Хүсэлт илгээх');
+        // 2. Fix the 'Submit a request' Button
+        $('a.submit-a-request, .submit-a-request-header-btn, a[href$="/requests/new"]').text(text.submit);
     }
 });
