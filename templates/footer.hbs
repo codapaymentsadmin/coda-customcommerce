@@ -2,7 +2,7 @@
   <div class="footer-inner">
     
     <div id="dynamic-legal-links" class="legal-links-container">
-        </div>
+    </div>
 
     <div class="footer-language-selector">
       {{#if alternative_locales}}
@@ -35,50 +35,78 @@
     var host = window.location.hostname;
     var countryCode = "us"; // Default fallback
     
-    // Grab country from the subdomain (e.g., "dk", "tl")
     if (host.includes(".support.codashop.com")) {
         countryCode = host.split('.')[0].toLowerCase();
     } else if (currentLocale.includes("-")) {
-        countryCode = currentLocale.split('-')[1]; // Sandbox fallback (e.g., 'gb' from 'en-gb')
+        countryCode = currentLocale.split('-')[1]; 
     }
 
-    // Grab language for translations (e.g., "en", "da")
     var langCode = currentLocale.split('-')[0];
 
-    // 2. DEFINE STANDARD URLS
-    var stdTC = "https://www.coda.co/terms-conditions/";
-    var stdPP = "https://www.coda.co/privacy-policy";
-
-    // 3. DEFINE COUNTRY-SPECIFIC URLS (Only listing countries that deviate from standard)
+    // 2. DEFINE MASTER URL DICTIONARY (From CSV)
     var countryURLs = {
-      "gb": { tc: "https://www.coda.co/terms-conditions/terms-conditions-uk/", pp: "https://www.coda.co/privacy-policy/privacy-policy-uk", legal: "https://www.coda.co/legal-notice-impressum/legal-notice-uk", refund: "https://www.coda.co/refund-policy/refund-policy-uk" },
-      "uk": { tc: "https://www.coda.co/terms-conditions/terms-conditions-uk/", pp: "https://www.coda.co/privacy-policy/privacy-policy-uk", legal: "https://www.coda.co/legal-notice-impressum/legal-notice-uk", refund: "https://www.coda.co/refund-policy/refund-policy-uk" },
-      "es": { tc: "https://www.coda.co/terms-conditions/terms-conditions-spain", pp: "https://www.coda.co/privacy-policy/privacy-policy-spain", legal: "https://www.coda.co/legal-notice-impressum/legal-notice-spain", refund: "https://www.coda.co/refund-policy/refund-policy-spain/" },
-      "pt": { tc: "https://www.coda.co/terms-conditions/terms-conditions-portugal/", pp: "https://www.coda.co/privacy-policy/privacy-policy-portugal", legal: "https://www.coda.co/legal-notice-impressum/legal-notice-portugal", refund: "https://www.coda.co/refund-policy/refund-policy-portugal/" },
-      "ch": { tc: "https://www.coda.co/terms-conditions/terms-conditions-de-ch/", pp: "https://www.coda.co/privacy-policy/privacy-policy-germany/", legal: "https://www.coda.co/legal-notice-impressum/legal-notice-germany/", refund: "https://www.coda.co/refund-policy/refund-policy-germany/" },
-      "fr": { tc: "https://www.coda.co/terms-conditions/terms-conditions-france/", pp: "https://www.coda.co/privacy-policy/privacy-policy-france", legal: "https://www.coda.co/legal-notice-impressum/legal-notice-france", refund: "https://www.coda.co/refund-policy/refund-policy-france" },
-      "ro": { tc: "https://www.coda.co/terms-conditions/terms-conditions-romania/", pp: "https://www.coda.co/privacy-policy/privacy-policy-romania", legal: "https://www.coda.co/legal-notice-impressum/legal-notice-romania", refund: "https://www.coda.co/refund-policy/refund-policy-romania" },
-      "be": { tc: "https://www.coda.co/terms-conditions/terms-conditions-nl-be/", pp: "https://www.coda.co/privacy-policy/privacy-policy-netherlands", legal: "https://www.coda.co/legal-notice-impressum/legal-notice-netherlands", refund: "https://www.coda.co/refund-policy/refund-policy-netherlands/" },
-      "hu": { tc: "https://www.coda.co/terms-conditions/terms-conditions-hungary/", pp: "https://www.coda.co/privacy-policy/privacy-policy-hungary", legal: "https://www.coda.co/legal-notice-impressum/legal-notice-hungary", refund: "https://www.coda.co/refund-policy/refund-policy-hungary" },
-      "cz": { tc: "https://www.coda.co/terms-conditions/terms-conditions-czech-republic/", pp: "https://www.coda.co/privacy-policy/privacy-policy-czech-republic", legal: "https://www.coda.co/legal-notice-impressum/legal-notice-czech-republic", refund: "https://www.coda.co/refund-policy/refund-policy-czech-republic" },
-      "at": { tc: "https://www.coda.co/terms-conditions/terms-conditions-de-at/", pp: "https://www.coda.co/privacy-policy/privacy-policy-germany", legal: "https://www.coda.co/legal-notice-impressum/legal-notice-germany//", refund: "https://www.coda.co/refund-policy/refund-policy-germany//" },
-      "se": { tc: "https://www.coda.co/terms-conditions/terms-conditions-sweden/", pp: "https://www.coda.co/privacy-policy/privacy-policy-sweden", legal: "https://www.coda.co/legal-notice-impressum/legal-notice-sweden", refund: "https://www.coda.co/refund-policy/refund-policy-sweden" },
-      "no": { tc: "https://www.coda.co/terms-conditions/terms-conditions-norway/", pp: "https://www.coda.co/privacy-policy/privacy-policy-norway", legal: "https://www.coda.co/legal-notice-impressum/legal-notice-norway", refund: "https://www.coda.co/refund-policy/refund-policy-norway" },
-      "dk": { tc: "https://www.coda.co/terms-conditions/terms-conditions-denmark/", pp: "https://www.coda.co/privacy-policy/privacy-policy-denmark", legal: "https://www.coda.co/legal-notice-impressum/legal-notice-denmark", refund: "https://www.coda.co/privacy-policy/privacy-policy-denmark" },
-      "us": { tc: "https://www.coda.co/terms-conditions/terms-conditions-us/", pp: "https://www.coda.co/privacy-policy/privacy-policy-us" },
-      "kr": { tc: "https://www.coda.co/terms-conditions/terms-conditions-korean/", pp: "https://www.coda.co/privacy-policy/privacy-policy-korean" },
-      "ca": { tc: "https://www.coda.co/terms-conditions/terms-conditions-canada/", pp: stdPP },
-      "au": { tc: stdTC, pp: "https://www.coda.co/privacy-policy/privacy-policy-australia" },
-      "nz": { tc: stdTC, pp: "https://www.coda.co/privacy-policy/privacy-policy-new-zealand" },
-      "tr": { tc: "https://www.coda.co/terms-conditions/terms-conditions-turkey/", pp: "https://www.coda.co/privacy-policy/privacy-policy-turkey" },
-      "jp": { tc: "https://www.coda.co/terms-conditions/terms-conditions-jp/", pp: "https://www.coda.co/privacy-policy/privacy-policy-japan" },
-      "de": { tc: "https://www.coda.co/terms-conditions/terms-conditions-germany/", pp: stdPP },
-      "pl": { tc: "https://www.coda.co/terms-conditions/terms-conditions-poland/", pp: stdPP },
-      "nl": { tc: "https://www.coda.co/terms-conditions/terms-conditions-netherlands/", pp: stdPP },
-      "it": { tc: "https://www.coda.co/terms-conditions/terms-conditions-italy/", pp: stdPP }
+      "sa": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "pk": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "us": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-us/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-us" },
+      "kr": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-korean/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-korean" },
+      "eg": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "tw": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "mx": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "mn": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "sg": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "ng": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "gb": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-uk/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-uk", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-uk", "refund": "https://www.coda.co/refund-policy/refund-policy-uk" },
+      "uk": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-uk/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-uk", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-uk", "refund": "https://www.coda.co/refund-policy/refund-policy-uk" },
+      "ae": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "ca": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-canada/", "pp": "https://www.coda.co/privacy-policy" },
+      "kw": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "co": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "ar": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "cl": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "es": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-spain", "pp": "https://www.coda.co/privacy-policy/privacy-policy-spain", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-spain", "refund": "https://www.coda.co/refund-policy/refund-policy-spain/" },
+      "au": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-australia" },
+      "bh": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "za": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "pe": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "ch": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-de-ch/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-germany/", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-germany/", "refund": "https://www.coda.co/refund-policy/refund-policy-germany/" },
+      "qa": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "ec": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "nz": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-new-zealand" },
+      "pt": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-portugal/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-portugal", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-portugal", "refund": "https://www.coda.co/refund-policy/refund-policy-portugal/" },
+      "ke": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "ma": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "py": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "bo": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "uy": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "tl": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "la": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "tr": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-turkey/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-turkey" },
+      "in": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "hk": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "jp": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-jp/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-japan", "refund": "https://www.coda.co/refund-policy/refund-policy-japan" },
+      "kh": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "fr": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-france/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-france", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-france", "refund": "https://www.coda.co/refund-policy/refund-policy-france" },
+      "de": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-germany/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-germany", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-germany", "refund": "https://www.coda.co/refund-policy/refund-policy-germany" },
+      "pl": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-poland/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-poland/", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-poland", "refund": "https://www.coda.co/refund-policy/refund-policy-poland" },
+      "vn": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "nl": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-netherlands/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-netherlands", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-netherlands", "refund": "https://www.coda.co/refund-policy/refund-policy-netherlands" },
+      "it": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-italy/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-italy", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-italy", "refund": "https://www.coda.co/refund-policy/refund-policy-italy" },
+      "ro": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-romania/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-romania", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-romania", "refund": "https://www.coda.co/refund-policy/refund-policy-romania" },
+      "np": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "lk": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "kz": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "bd": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" },
+      "be": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-nl-be/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-netherlands", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-netherlands", "refund": "https://www.coda.co/refund-policy/refund-policy-netherlands/" },
+      "hu": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-hungary/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-hungary", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-hungary", "refund": "https://www.coda.co/refund-policy/refund-policy-hungary" },
+      "cz": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-czech-republic/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-czech-republic", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-czech-republic", "refund": "https://www.coda.co/refund-policy/refund-policy-czech-republic" },
+      "at": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-de-at/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-germany", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-germany//", "refund": "https://www.coda.co/refund-policy/refund-policy-germany//" },
+      "se": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-sweden/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-sweden", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-sweden", "refund": "https://www.coda.co/refund-policy/refund-policy-sweden" },
+      "no": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-norway/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-norway", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-norway", "refund": "https://www.coda.co/refund-policy/refund-policy-norway" },
+      "dk": { "tc": "https://www.coda.co/terms-conditions/terms-conditions-denmark/", "pp": "https://www.coda.co/privacy-policy/privacy-policy-denmark", "legal": "https://www.coda.co/legal-notice-impressum/legal-notice-denmark", "refund": "https://www.coda.co/privacy-policy/privacy-policy-denmark" },
+      "iq": { "tc": "https://www.coda.co/terms-conditions/", "pp": "https://www.coda.co/privacy-policy" }
     };
 
-    // 4. DEFINE TEXT TRANSLATIONS
+    // 3. DEFINE TEXT TRANSLATIONS
     var translations = {
       "en": { tc: "Terms & Conditions", pp: "Privacy Policy", legal: "Legal Notice", refund: "Refund Policy" },
       "es": { tc: "Términos y Condiciones", pp: "Política de Privacidad", legal: "Aviso Legal", refund: "Política de Reembolso" },
@@ -94,9 +122,9 @@
       "sv": { tc: "Användarvillkor", pp: "Integritetspolicy", legal: "Rättsligt meddelande", refund: "Återbetalningspolicy" },
       "no": { tc: "Vilkår og betingelser", pp: "Personvernerklæring", legal: "Juridisk merknad", refund: "Refusjonspolicy" },
       "tr": { tc: "Şartlar ve Koşullar", pp: "Gizlilik Politikası" },
-      "ja": { tc: "利用規約", pp: "プライバシーポリシー" },
-      "pl": { tc: "Regulamin", pp: "Polityka prywatności" },
-      "it": { tc: "Termini e Condizioni", pp: "Informativa sulla privacy" },
+      "ja": { tc: "利用規約", pp: "プライバシーポリシー", refund: "返金ポリシー" }, 
+      "pl": { tc: "Regulamin", pp: "Polityka prywatności", legal: "Nota Prawna", refund: "Polityka Zwrotów" }, 
+      "it": { tc: "Termini e Condizioni", pp: "Informativa sulla privacy", legal: "Note legali", refund: "Politica di rimborso" }, 
       "ar": { tc: "الشروط والأحكام", pp: "سياسة الخصوصية" },
       "km": { tc: "លក្ខខណ្ឌ", pp: "គោលការណ៍ឯកជនភាព" },
       "id": { tc: "Syarat & Ketentuan", pp: "Kebijakan Privasi" },
@@ -118,9 +146,11 @@
       "sk": { tc: "Terms & Conditions", pp: "Zásady ochrany osobných údajov" }
     };
 
-    // 5. MERGE AND RENDER
-    // Get URLs for the current country (or fallback to standard TC/PP)
-    var activeURLs = countryURLs[countryCode] || { tc: stdTC, pp: stdPP };
+    // 4. MERGE AND RENDER
+    // Default URLs if country isn't in the list
+    var fallbackURLs = { tc: "https://www.coda.co/terms-conditions/", pp: "https://www.coda.co/privacy-policy" };
+    var activeURLs = countryURLs[countryCode] || fallbackURLs;
+    
     // Get Translated text for current language (or fallback to English)
     var activeText = translations[langCode] || translations["en"];
 
