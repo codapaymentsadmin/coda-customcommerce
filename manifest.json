@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -133,21 +133,21 @@
 					"type": "color",
 					"description": "link_color_description",
 					"label": "link_color_label",
-					"value": "#76F3FF"
+					"value": "#280031"
 				},
 				{
 					"identifier": "hover_link_color",
 					"type": "color",
 					"description": "hover_link_color_description",
 					"label": "hover_link_color_label",
-					"value": "#61cad4"
+					"value": "#280031"
 				},
 				{
 					"identifier": "visited_link_color",
 					"type": "color",
 					"description": "visited_link_color_description",
 					"label": "visited_link_color_label",
-					"value": "#203E4E"
+					"value": "#280031"
 				},
 				{
 					"identifier": "background_color",
@@ -182,7 +182,7 @@
 					"type": "color",
 					"description": "accordion_text_color_description",
 					"label": "accordion_text_color_label",
-					"value": "#000"
+					"value": "#280031"
 				},
 				{
 					"identifier": "cta_text_color",
@@ -266,6 +266,10 @@
 							"value": "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
 						},
 						{
+							"label": "Inter",
+							"value": "Inter, sans-serif"
+						},
+						{
 							"label": "Lucida Grande",
 							"value": "'Lucida Grande', 'Lucida Sans', 'Lucida Sans Unicode', sans-serif"
 						},
@@ -282,7 +286,7 @@
 							"value": "ott"
 						}
 					],
-					"value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+					"value": "Inter, sans-serif"
 				},
 				{
 					"identifier": "text_font",
@@ -493,14 +497,14 @@
 					"type": "text",
 					"description": "Enter the Druid Bot ID",
 					"label": "Druid Bot ID",
-					"value": "db017925-4ab2-48fa-522b-08ddf7367496"
+					"value": "aa66a6da-83cd-4864-44c5-08dde492a4ed"
 				},
 				{
 					"identifier": "druid_query_params",
 					"type": "text",
 					"description": "Enter the Druid Query Params (For siteLang)",
 					"label": "Druid Query Params",
-					"value": "SiteLang=ms&Country=Malaysia"
+					"value": ""
 				}
 			]
 		}

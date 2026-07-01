@@ -1,10 +1,11 @@
-<footer id="footer-v2" class="flex flex-row justify-between items-center max-w-5xl mx-auto bg-footer-bg text-brand p-4">
+<footer id="footer-v2"
+	class="flex flex-row justify-between items-center max-w-5xl mx-auto bg-footer-bg text-brand max-sm:px-5 py-8">
 	<aside class="flex flex-col items-start gap-1">
 		{{#if settings.show_terms_link}}
-		<a href="{{settings.privacy_link}}" class="link link-hover text-sm"> {{dc 'hc_-_privacy_policy'}} </a>
+		<a href="{{settings.privacy_link}}" class="link link-hover text-sm font-semibold"> {{dc 'hc_-_privacy_policy'}} </a>
 		{{/if}}
 		{{#if settings.show_pp_link}}
-		<a href="{{settings.terms_link}}" class="link link-hover text-sm">
+		<a href="{{settings.terms_link}}" class="link link-hover text-sm font-semibold">
 			{{dc 'hc_-_terms_and_conditions'}}
 		</a>
 		{{/if}}

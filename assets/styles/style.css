@@ -29,16 +29,40 @@
 	font-style: normal;
 }
 
+/* @font-face {
+	font-family: "Inter";
+	src: url("$assets-inter-Regular-otf");
+	src:
+		url("$assets-inter-Black-otf") format("opentype"),
+		url("$assets-inter-BlackItalic-otf") format("opentype"),
+		url("$assets-inter-Bold-otf") format("opentype"),
+		url("$assets-inter-BoldItalic-otf") format("opentype"),
+		url("$assets-inter-ExtraBold-otf") format("opentype"),
+		url("$assets-inter-ExtraBoldItalic-otf") format("opentype"),
+		url("$assets-inter-Italic-otf") format("opentype"),
+		url("$assets-inter-Light-otf") format("opentype"),
+		url("$assets-inter-LightItalic-otf") format("opentype"),
+		url("$assets-inter-Medium-otf") format("opentype"),
+		url("$assets-inter-MediumItalic-otf") format("opentype"),
+		url("$assets-inter-Regular-otf") format("opentype"),
+		url("$assets-inter-SemiBold-otf") format("opentype"),
+		url("$assets-inter-SemiBoldItalic-otf") format("opentype"),
+		url("$assets-inter-Thin-otf") format("opentype"),
+		url("$assets-inter-ThinItalic-otf") format("opentype");
+	font-weight: 100 900;
+	font-style: normal;
+} */
+
 @font-face {
 	font-family: "Inter";
-	src: url("$assets-inter-regular-eot");
+	src: url("$assets-InterVariable-woff2");
 	src:
-		url("$assets-inter-regular-eot?#iefix") format("embedded-opentype"),
-		url("$assets-inter-regular-woff2") format("woff2"),
-		url("$assets-inter-regular-woff") format("woff"),
-		url("$assets-inter-regular-ttf") format("truetype");
-	font-weight: normal;
+		url("$assets-InterVariable-woff2") format("woff2"),
+		url("$assets-InterVariable-ttf") format("truetype"),
+		url("$assets-InterVariable-Italic-woff2") format("woff2");
+	font-weight: 100 900;
 	font-style: normal;
+	font-display: swap;
 }
 
 @theme {
@@ -64,6 +88,8 @@
 	--font-customized: $custom_font;
 	--font-ott: "ott";
 	--font-inter: "Inter, sans-serif";
+	--font-interbold: "Inter Bold";
+	--font-interextrabold: "Inter ExtraBold";
 }
 
 @import "./article.css";
@@ -114,7 +140,7 @@
 	}
 
 	p {
-		@apply text-base tracking-wide;
+		@apply text-sm tracking-wide;
 		font-family: var(--font-main-text);
 	}
 
@@ -158,6 +184,10 @@ form[role="search"] {
 
 section#self-service-articles-section {
 	div.flex.flex-col.items-center {
+		h2 {
+			@apply text-lg sm:text-[32px] font-extrabold;
+		}
+
 		p.text-center.text-main-text.mt-2 {
 			display: none !important;
 		}
@@ -165,9 +195,15 @@ section#self-service-articles-section {
 }
 
 section#need-assistance-section {
-	div.flex.flex-col.items-center {
-		p.text-center.text-main-text.mt-2 {
-			display: none !important;
+	div.flex.flex-col.items-center.text-center.gap-10 {
+		div.flex.flex-col.items-center.gap-4 {
+			h2 {
+				@apply text-lg sm:text-[32px] font-extrabold;
+			}
+
+			p.text-center.text-main-text.mt-2 {
+				display: none !important;
+			}
 		}
 	}
 }

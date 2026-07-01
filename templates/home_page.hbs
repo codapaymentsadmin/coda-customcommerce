@@ -1,31 +1,32 @@
 <!-- Hero Section -->
-<section id="cc-hero-section" class="hero relative min-h-[70dvh] sm:min-h-[50dvh] overflow-hidden z-0"
+<section id="cc-hero-section" class="hero relative min-h-[500px] sm:min-h-[425px] overflow-visible z-0"
 	style="background-color: #280031;">
 	<div class="hero-overlay"></div>
 	<div
-		class="relative hero-content w-full h-full max-w-3xl text-neutral-content text-center z-10 py-16 flex flex-col items-center max-sm:justify-start">
+		class="relative hero-content w-full h-full max-w-5xl text-neutral-content text-center z-10 py-16 flex flex-col items-center max-sm:justify-start">
 		<div class="w-full h-full z-10">
-			<h1 class="mb-5 text-banner-text text-5xl font-ott font-bold">
+			<h1 class="mb-5 text-banner-text text-[48px] sm:text-[64px] font-ott font-bold">
 				{{dc 'hc_-_how_can_we_help'}}
 			</h1>
-			<p>
+			<h2 class="mb-5 text-base sm:text-xl">
 				<span class="text-green-400">
 					85%
 				</span>
 				of users resolve issues using Codee
-			</p>
-			<button id="ask-codee" class="bg-[#E8F953] !inline-flex text-brand-text btn w-max rounded-full px-4 py-1 mt-4">
-				Ask Codee
+			</h2>
+			<button id="ask-codee"
+				class="bg-[#E8F953] !inline-flex text-brand-text font-bold text-xl btn w-max rounded-full px-[28px] py-[13px] sm:py-[16px]">
+				Chat with Codee
 			</button>
 		</div>
 
 		<img src="{{asset 'codee.webp'}}" alt="" aria-hidden="true"
-			class="pointer-events-none select-none absolute max-sm:bottom-8 bottom-0 right-5 w-48 h-48 z-5">
+			class="pointer-events-none select-none absolute max-sm:bottom-4 -bottom-8 right-10 w-[177px] min-[500px]:w-[222px] md:w-[272px] z-5">
 	</div>
 
 	<!-- Torn-paper edge: blends the hero into the page background -->
-	<img src="{{asset 'tear.webp'}}" alt="" aria-hidden="true"
-		class="pointer-events-none select-none absolute inset-x-0 bottom-0 w-full h-16 z-1">
+	<img src="{{asset 'tear2.webp'}}" alt="" aria-hidden="true"
+		class="pointer-events-none select-none absolute object-cover bottom-0 w-full h-16 z-1">
 </section>
 
 {{#if settings.show_popular_section}}
@@ -49,12 +50,12 @@
 </section>
 {{/if}}
 
-<section id="self-service-articles-section" class="max-w-5xl max-md:w-full lg:w-full mx-auto px-10 py-12">
+<section id="self-service-articles-section" class="max-w-5xl max-md:w-full lg:w-full mx-auto px-5 py-8">
 	<div class="flex flex-col items-center">
 		<span class="font-inter">
 			{{dc 'hc_-_self_service_support'}}
 		</span>
-		<div class="w-full mt-8 space-y-8 flex justify-center">
+		<div class="w-full mt-6 space-y-8 flex justify-center">
 			<div class="search-wrapper relative max-sm:w-full sm:w-1/2 mx-auto">
 				<i
 					class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none z-10"></i>
@@ -65,12 +66,12 @@
 			</div>
 		</div>
 
-		<div class="w-full mt-8 grid grid-cols-1 md:grid-cols-6 gap-5">
+		<div class="w-full mt-8 grid grid-cols-1 md:grid-cols-6 gap-6">
 			{{#each categories}}
 			{{#each sections}}
 			<a href="{{url}}" class="{{#if (compare @index '<' 3)}}md:col-span-2{{else}}md:col-span-3{{/if}} rounded-2xl
 				border border-brand bg-transparent p-6 text-center shadow-sm transition hover:border-brand hover:shadow-md">
-				<h3 class="text-lg font-semibold text-accordion-text">{{name}}</h3>
+				<h3 class="text-lg font-bold text-accordion-text">{{name}}</h3>
 				{{#if description}}
 				<p class="mt-2 text-sm text-accordion-text font-light">{{description}}</p>
 				{{/if}}
@@ -81,14 +82,16 @@
 	</div>
 </section>
 
-<section id="need-assistance-section" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-10 py-12">
-	<div class="flex flex-col items-center text-center gap-3">
-		{{dc 'hc_-_need_assistance'}}
-		<p>
-			{{settings.support_hour}}
-		</p>
+<section id="need-assistance-section" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-5 py-8">
+	<div class="flex flex-col items-center text-center gap-10">
+		<div class="flex flex-col items-center gap-4">
+			{{dc 'hc_-_need_assistance'}}
+			<p class="text-[14px] sm:text-[16px]">
+				{{settings.support_hour}}
+			</p>
+		</div>
 		<a href="{{page_path 'new_request'}}"
-			class="btn bg-transparent hover:bg-brand border-brand shadow-none text-brand hover:text-white rounded-full mt-4">
+			class="btn bg-transparent hover:bg-brand border-brand shadow-none text-brand text-[16px] sm:text-lg hover:text-white rounded-full px-10 py-4">
 			{{dc 'hc_standard_-_submit_a_request_button'}}
 		</a>
 	</div>

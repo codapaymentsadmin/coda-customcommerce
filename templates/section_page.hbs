@@ -1,33 +1,35 @@
 <!-- Hero Section -->
-<section id="cc-hero-section" class="hero relative min-h-[50dvh] overflow-hidden z-0"
+<section id="cc-hero-section" class="hero relative min-h-[500px] sm:min-h-[425px] overflow-visible z-0"
   style="background-color: #280031;">
   <div class="hero-overlay"></div>
-  <div class="relative hero-content w-full max-w-3xl text-neutral-content text-center z-10">
-    <div class="w-full z-10">
-      <h1 class="mb-5 text-banner-text text-3xl md:text-5xl font-ott font-bold">
+  <div
+    class="relative hero-content w-full h-full max-w-5xl text-neutral-content text-center z-10 py-16 flex flex-col items-center max-sm:justify-start">
+    <div class="w-full h-full z-10">
+      <h1 class="mb-5 text-banner-text text-[48px] sm:text-[64px] font-ott font-bold">
         {{dc 'hc_-_how_can_we_help'}}
       </h1>
-      <p>
+      <h2 class="mb-5 text-base sm:text-xl">
         <span class="text-green-400">
           85%
         </span>
         of users resolve issues using Codee
-      </p>
-      <button id="ask-codee" class="bg-[#E8F953] text-brand-text btn rounded-full px-4 py-1 mt-4">
-        Ask Codee
+      </h2>
+      <button id="ask-codee"
+        class="bg-[#E8F953] !inline-flex text-brand-text font-bold text-xl btn w-max rounded-full px-[28px] py-[13px] sm:py-[16px]">
+        Chat with Codee
       </button>
     </div>
 
     <img src="{{asset 'codee.webp'}}" alt="" aria-hidden="true"
-      class="pointer-events-none select-none absolute -bottom-24 md:-bottom-16 right-0 w-42 h-42 z-5">
+      class="pointer-events-none select-none absolute max-sm:bottom-4 -bottom-8 right-10 w-[177px] min-[500px]:w-[222px] md:w-[272px] z-5">
   </div>
 
   <!-- Torn-paper edge: blends the hero into the page background -->
-  <img src="{{asset 'tear.webp'}}" alt="" aria-hidden="true"
-    class="pointer-events-none select-none absolute inset-x-0 bottom-0 w-full h-16 z-1">
+  <img src="{{asset 'tear2.webp'}}" alt="" aria-hidden="true"
+    class="pointer-events-none select-none absolute object-cover bottom-0 w-full h-16 z-1">
 </section>
 
-<section id="main-content" class="flex-1 min-h-[50dvh] py-12">
+<section id="main-content" class="flex-1 min-h-[50dvh] max-md:w-full lg:w-full mx-auto px-5 py-8">
   <div class="flex flex-col max-w-5xl mx-auto px-4 xl:px-0">
     <!-- Breadcrumbs using Zendesk helper -->
     <nav class="custom-breadcrumbs text-sm mb-6">
@@ -76,3 +78,21 @@
     </div>
   </div>
 </section>
+
+<script defer type="text/javascript" src="https://prod-au-druid-cdn.azureedge.net/v2/druid_webchat_v2.js"></script>
+<script data-druid-language="ms" type="text/javascript">
+  const botId = "{{settings.druid_bot_id}}";
+  const botQueryParams = "{{settings.druid_query_params}}";
+
+  document.addEventListener("DOMContentLoaded", function (event) {
+    DruidWebchat_v2.init({
+      botId: botId,
+      baseUrl: "https://druidapi.au.druidplatform.com",
+      queryParams: botQueryParams,
+      UI: {
+        containerElement: document.getElementById('ask-codee'),
+        height: '80dvh'
+      }
+    });
+  });
+</script>
