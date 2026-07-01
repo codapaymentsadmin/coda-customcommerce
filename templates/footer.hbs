@@ -152,7 +152,7 @@
     var activeURLs = countryURLs[countryCode] || fallbackURLs;
     
     // ==========================================
-    // LANGUAGE-SPECIFIC URL OVERRIDES
+    // Switzerland and Belgium Legal Links
     // ==========================================
     if (countryCode === "ch" && langCode === "fr") {
         activeURLs = {
@@ -161,8 +161,17 @@
             legal: "https://www.coda.co/legal-notice-impressum/legal-notice-france",
             refund: "https://www.coda.co/refund-policy/refund-policy-france"
         };
+    } else if (countryCode === "be" && langCode === "fr") {
+        activeURLs = {
+            tc: "https://www.coda.co/terms-conditions/terms-conditions-fr-be",
+            pp: "https://www.coda.co/privacy-policy/privacy-policy-france/",
+            legal: "https://www.coda.co/legal-notice-impressum/legal-notice-france/",
+            refund: "https://www.coda.co/refund-policy/refund-policy-france/"
+        };
     }
     // ==========================================
+
+    
 
     // Get Translated text for current language (or fallback to English)
     var activeText = translations[langCode] || translations["en"];
