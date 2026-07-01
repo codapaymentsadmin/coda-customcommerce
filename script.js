@@ -617,37 +617,53 @@ $(document).ready(function() {
     var currentLang = document.documentElement.lang.toLowerCase();
     var baseLang = currentLang.split('-')[0];
 
-    // LAOS FIXES
-    if (baseLang === "lo") {
-        $('form[role="search"] input[type="search"]').attr('placeholder', 'ຄົ້ນຫາ'); 
-        $('a.submit-a-request, .submit-a-request-header-btn, a[href$="/requests/new"]').text('ສົ່ງຄໍາຮ້ອງຂໍ');
-        
-        // If they are on the actual Submit a Request page:
-        if (window.location.href.indexOf('/requests/new') > -1) {
-            $('.page-header h1').text('ສົ່ງຄໍາຮ້ອງຂໍ'); // Page Title
-            $('label[for="request-attachments"]').text('ໄຟລ໌ແນບ (ທາງເລືອກ)'); // Attachments (optional)
-            $('#upload-dropzone').html('<a>ເພີ່ມໄຟລ໌</a> ຫຼື ວາງໄຟລ໌ຢູ່ທີ່ນີ້'); // Add file or drop files here
+    // Master Dictionary for the 3 Unsupported Languages
+    var fallbackFixes = {
+        "lo": { 
+            search: "ຄົ້ນຫາ", 
+            submitReq: "ສົ່ງຄໍາຮ້ອງຂໍ", 
+            submitBtn: "ສົ່ງ",
+            attachLabel: "ໄຟລ໌ແນບ (ທາງເລືອກ)",
+            dropzone: "<a>ເພີ່ມໄຟລ໌</a> ຫຼື ວາງໄຟລ໌ຢູ່ທີ່ນີ້"
+        },
+        "mn": { 
+            search: "Хайх", 
+            submitReq: "Хүсэлт илгээх", 
+            submitBtn: "Илгээх",
+            attachLabel: "Хавсралт (заавал биш)",
+            dropzone: "<a>Файл нэмэх</a> эсвэл энд байршуулах"
+        },
+        "km": { 
+            search: "ស្វែងរក", 
+            submitReq: "ដាក់ស្នើសំណើ", 
+            submitBtn: "ដាក់ស្នើ",
+            attachLabel: "ឯកសារភ្ជាប់ (ជាជម្រើស)",
+            dropzone: "<a>បន្ថែមឯកសារ</a> ឬទម្លាក់ឯកសារនៅទីនេះ"
         }
-    }
+    };
 
-    // MONGOLIA FIXES
-    if (baseLang === "mn") {
-        $('form[role="search"] input[type="search"]').attr('placeholder', 'Хайх'); 
-        $('a.submit-a-request, .submit-a-request-header-btn, a[href$="/requests/new"]').text('Хүсэлт илгээх');
-        
-        // If they are on the actual Submit a Request page:
-        if (window.location.href.indexOf('/requests/new') > -1) {
-            $('.page-header h1').text('Хүсэлт илгээх'); // Page Title
-        }
-    }
+    var fix = fallbackFixes[baseLang];
 
-    // CAMBODIA FIXES
-    if (baseLang === "km") {
-        $('form[role="search"] input[type="search"]').attr('placeholder', 'ស្វែងរក'); 
-        $('a.submit-a-request, .submit-a-request-header-btn, a[href$="/requests/new"]').text('ដាក់ស្នើសំណើ');
+    if (fix) {
+        // 1. GLOBAL FIXES (Header & Search)
+        $('form[role="search"] input[type="search"]').attr('placeholder', fix.search); 
+        $('a.submit-a-request, .submit-a-request-header-btn, a[href$="/requests/new"]').text(fix.submitReq);
         
+        // 2. SPECIFIC FORM PAGE FIXES (/requests/new)
         if (window.location.href.indexOf('/requests/new') > -1) {
-            $('.page-header h1').text('ដាក់ស្នើសំណើ'); // Page Title
+            
+            // Force the Page Title to translate
+            $('h1').text(fix.submitReq);
+            
+            // Force the last Breadcrumb to translate
+            $('.breadcrumbs li:last-child').text(fix.submitReq);
+            
+            // Force the actual form "Submit" input button to translate
+            $('input[type="submit"]').val(fix.submitBtn);
+            
+            // Force the Attachment labels to translate
+            $('label[for="request-attachments"]').text(fix.attachLabel);
+            $('#upload-dropzone').html(fix.dropzone);
         }
     }
 });
