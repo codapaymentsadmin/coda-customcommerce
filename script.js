@@ -624,21 +624,24 @@ $(document).ready(function() {
             submitReq: "ສົ່ງຄໍາຮ້ອງຂໍ", 
             submitBtn: "ສົ່ງ",
             attachLabel: "ໄຟລ໌ແນບ (ທາງເລືອກ)",
-            dropzone: "<a>ເພີ່ມໄຟລ໌</a> ຫຼື ວາງໄຟລ໌ຢູ່ທີ່ນີ້"
+            uploadLink: "ເພີ່ມໄຟລ໌",
+            dropText: " ຫຼື ວາງໄຟລ໌ຢູ່ທີ່ນີ້"
         },
         "mn": { 
             search: "Хайх", 
             submitReq: "Хүсэлт илгээх", 
             submitBtn: "Илгээх",
             attachLabel: "Хавсралт (заавал биш)",
-            dropzone: "<a>Файл нэмэх</a> эсвэл энд байршуулах"
+            uploadLink: "Файл нэмэх",
+            dropText: " эсвэл энд байршуулах"
         },
         "km": { 
             search: "ស្វែងរក", 
             submitReq: "ដាក់ស្នើសំណើ", 
             submitBtn: "ដាក់ស្នើ",
             attachLabel: "ឯកសារភ្ជាប់ (ជាជម្រើស)",
-            dropzone: "<a>បន្ថែមឯកសារ</a> ឬទម្លាក់ឯកសារនៅទីនេះ"
+            uploadLink: "បន្ថែមឯកសារ",
+            dropText: " ឬទម្លាក់ឯកសារនៅទីនេះ"
         }
     };
 
@@ -652,18 +655,27 @@ $(document).ready(function() {
         // 2. SPECIFIC FORM PAGE FIXES (/requests/new)
         if (window.location.href.indexOf('/requests/new') > -1) {
             
-            // Force the Page Title to translate
+            // Force the Page Title & Breadcrumb to translate
             $('h1').text(fix.submitReq);
-            
-            // Force the last Breadcrumb to translate
             $('.breadcrumbs li:last-child').text(fix.submitReq);
             
-            // Force the actual form "Submit" input button to translate
+            // Force the Submit input button to translate
             $('input[type="submit"]').val(fix.submitBtn);
             
-            // Force the Attachment labels to translate
+            // Translate Attachment label
             $('label[for="request-attachments"]').text(fix.attachLabel);
-            $('#upload-dropzone').html(fix.dropzone);
+            
+            // SAFELY translate the dropzone without breaking Zendesk's upload mechanics!
+            var $dropzoneLink = $('#upload-dropzone a');
+            if ($dropzoneLink.length > 0) {
+                // Change just the clickable link text
+                $dropzoneLink.text(fix.uploadLink);
+                
+                // Change the plain text node floating next to the link
+                $dropzoneLink.parent().contents().filter(function() {
+                    return this.nodeType === 3 && this.nodeValue.trim() !== "";
+                }).replaceWith(fix.dropText);
+            }
         }
     }
 });
