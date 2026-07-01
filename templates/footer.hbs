@@ -151,6 +151,19 @@
     var fallbackURLs = { tc: "https://www.coda.co/terms-conditions/", pp: "https://www.coda.co/privacy-policy" };
     var activeURLs = countryURLs[countryCode] || fallbackURLs;
     
+    // ==========================================
+    // LANGUAGE-SPECIFIC URL OVERRIDES
+    // ==========================================
+    if (countryCode === "ch" && langCode === "fr") {
+        activeURLs = {
+            tc: "https://www.coda.co/terms-conditions/terms-conditions-fr-ch",
+            pp: "https://www.coda.co/privacy-policy/privacy-policy-france",
+            legal: "https://www.coda.co/legal-notice-impressum/legal-notice-france",
+            refund: "https://www.coda.co/refund-policy/refund-policy-france"
+        };
+    }
+    // ==========================================
+
     // Get Translated text for current language (or fallback to English)
     var activeText = translations[langCode] || translations["en"];
 
