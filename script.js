@@ -610,27 +610,44 @@ $(document).ready(function() {
 
 
 
-// Lao, Mongol, Cambodian
+// ==========================================
+// FORCE UNSUPPORTED LANGUAGE FIXES (LAOS, MONGOLIA, CAMBODIA)
+// ==========================================
 $(document).ready(function() {
     var currentLang = document.documentElement.lang.toLowerCase();
-
-    var fallbackTranslations = {
-        "lo": { search: "ຄົ້ນຫາ", submit: "ສົ່ງຄໍາຮ້ອງຂໍ" }, // Laos
-        "mn": { search: "Хайх", submit: "Хүсэлт илгээх" }, // Mongolia
-        "km": { search: "ស្វែងរក", submit: "ដាក់ស្នើសំណើ" }  // Cambodia
-    };
-
-    // Extract the base language code
     var baseLang = currentLang.split('-')[0];
 
-    // If the current language is in our unsupported list, apply the fix!
-    if (fallbackTranslations[baseLang]) {
-        var text = fallbackTranslations[baseLang];
-
-        // 1. Fix the Search Placeholder
-        $('form[role="search"] input[type="search"]').attr('placeholder', text.search); 
+    // LAOS FIXES
+    if (baseLang === "lo") {
+        $('form[role="search"] input[type="search"]').attr('placeholder', 'ຄົ້ນຫາ'); 
+        $('a.submit-a-request, .submit-a-request-header-btn, a[href$="/requests/new"]').text('ສົ່ງຄໍາຮ້ອງຂໍ');
         
-        // 2. Fix the 'Submit a request' Button
-        $('a.submit-a-request, .submit-a-request-header-btn, a[href$="/requests/new"]').text(text.submit);
+        // If they are on the actual Submit a Request page:
+        if (window.location.href.indexOf('/requests/new') > -1) {
+            $('.page-header h1').text('ສົ່ງຄໍາຮ້ອງຂໍ'); // Page Title
+            $('label[for="request-attachments"]').text('ໄຟລ໌ແນບ (ທາງເລືອກ)'); // Attachments (optional)
+            $('#upload-dropzone').html('<a>ເພີ່ມໄຟລ໌</a> ຫຼື ວາງໄຟລ໌ຢູ່ທີ່ນີ້'); // Add file or drop files here
+        }
+    }
+
+    // MONGOLIA FIXES
+    if (baseLang === "mn") {
+        $('form[role="search"] input[type="search"]').attr('placeholder', 'Хайх'); 
+        $('a.submit-a-request, .submit-a-request-header-btn, a[href$="/requests/new"]').text('Хүсэлт илгээх');
+        
+        // If they are on the actual Submit a Request page:
+        if (window.location.href.indexOf('/requests/new') > -1) {
+            $('.page-header h1').text('Хүсэлт илгээх'); // Page Title
+        }
+    }
+
+    // CAMBODIA FIXES
+    if (baseLang === "km") {
+        $('form[role="search"] input[type="search"]').attr('placeholder', 'ស្វែងរក'); 
+        $('a.submit-a-request, .submit-a-request-header-btn, a[href$="/requests/new"]').text('ដាក់ស្នើសំណើ');
+        
+        if (window.location.href.indexOf('/requests/new') > -1) {
+            $('.page-header h1').text('ដាក់ស្នើសំណើ'); // Page Title
+        }
     }
 });
