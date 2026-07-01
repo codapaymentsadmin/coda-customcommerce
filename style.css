@@ -5418,17 +5418,24 @@ form[role="search"]::after,
 /* ==========================================
    THE ULTIMATE RTL (ARABIC) SEARCH ICON FIX
    ========================================== */
-/* 1. Target ANY search SVG on the entire site in RTL mode */
-[dir="rtl"] form[role="search"] svg,
-[dir="rtl"] .search-icon,
-[dir="rtl"] .hero-inner form[role="search"] svg,
-[dir="rtl"] .search-box svg {
-    left: auto !important;          /* Unpin from the left */
-    right: 20px !important;         /* Pin to the right side */
+/* 1. FIX THE HOME PAGE (It uses a background-image) */
+[dir="rtl"] .hero .search input[type="search"],
+[dir="rtl"] .hero-inner form[role="search"] input[type="search"],
+[dir="rtl"] .search-box input[type="search"] {
+    background-position: calc(100% - 15px) center !important; /* Moves background image 15px from the right */
+    padding-left: 15px !important;  /* Resets left padding */
+    padding-right: 40px !important; /* Pushes Arabic text to the left so it doesn't overlap the icon */
 }
 
-/* 2. Adjust the typing area for ALL search bars in RTL */
-[dir="rtl"] form[role="search"] input[type="search"] {
-    padding-left: 20px !important;  /* Clear out the left padding */
-    padding-right: 50px !important; /* Push text inward from the right so it doesn't overlap the icon */
+/* 2. FIX THE REQUEST PAGE (It uses a physical SVG icon) */
+[dir="rtl"] .sub-nav .search-container .search-icon,
+[dir="rtl"] .sub-nav .search-container form[role="search"] svg {
+    left: auto !important;          /* Unpin from the left */
+    right: 15px !important;         /* Pin to the right side */
+}
+
+/* 3. FIX THE REQUEST PAGE TEXT PADDING */
+[dir="rtl"] .sub-nav .search-container form input[type="search"] {
+    padding-left: 15px !important;  /* Resets left padding */
+    padding-right: 40px !important; /* Pushes Arabic text to the left */
 }
