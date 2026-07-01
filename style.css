@@ -5414,3 +5414,20 @@ form[role="search"]::after,
 .sub-nav .search-container form input[type="search"] {
     padding-left: 40px !important; 
 }
+
+/* ==========================================
+   RTL (ARABIC) SEARCH ICON FIX
+   ========================================== */
+/* When the page is Right-to-Left, move the icon to the right side */
+[dir="rtl"] .search-container .search-icon,
+[dir="rtl"] .search-container form[role="search"] svg {
+    left: auto !important;          /* Unpin from the left */
+    right: 15px !important;         /* Pin to the right */
+}
+
+/* Adjust the padding so Arabic text doesn't overlap the right-aligned icon */
+[dir="rtl"] .search-container form input[type="search"],
+[dir="rtl"] form[role="search"] input[type="search"] {
+    padding-left: 15px !important;  /* Reset left padding */
+    padding-right: 40px !important; /* Add padding to the right */
+}
