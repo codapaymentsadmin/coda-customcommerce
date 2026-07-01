@@ -91,7 +91,7 @@
 			</p>
 		</div>
 		<a href="{{page_path 'new_request'}}"
-			class="btn bg-transparent hover:bg-brand border-brand shadow-none text-brand text-[16px] sm:text-lg hover:text-white rounded-full px-10 py-4">
+			class="btn bg-transparent max-[475px]:w-full hover:bg-brand border-brand shadow-none text-brand text-[16px] sm:text-lg hover:text-white rounded-xl min-[475px]:rounded-full px-10 py-4">
 			{{dc 'hc_standard_-_submit_a_request_button'}}
 		</a>
 	</div>
@@ -109,7 +109,6 @@
 			queryParams: botQueryParams,
 			UI: {
 				containerElement: document.getElementById('ask-codee'),
-				height: '80dvh'
 			}
 		});
 	});
