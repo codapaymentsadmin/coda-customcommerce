@@ -625,7 +625,8 @@ $(document).ready(function() {
             submitBtn: "ສົ່ງ",
             attachLabel: "ໄຟລ໌ແນບ (ທາງເລືອກ)",
             uploadLink: "ເພີ່ມໄຟລ໌",
-            dropText: " ຫຼື ວາງໄຟລ໌ຢູ່ທີ່ນີ້"
+            dropText: " ຫຼື ວາງໄຟລ໌ຢູ່ທີ່ນີ້",
+            emailLabel: "ທີ່ຢູ່ອີເມວຂອງທ່ານ"
         },
         "mn": { 
             search: "Хайх", 
@@ -633,7 +634,8 @@ $(document).ready(function() {
             submitBtn: "Илгээх",
             attachLabel: "Хавсралт (заавал биш)",
             uploadLink: "Файл нэмэх",
-            dropText: " эсвэл энд байршуулах"
+            dropText: " эсвэл энд байршуулах",
+            emailLabel: "Имэйл хаяг"
         },
         "km": { 
             search: "ស្វែងរក", 
@@ -641,7 +643,8 @@ $(document).ready(function() {
             submitBtn: "ដាក់ស្នើ",
             attachLabel: "ឯកសារភ្ជាប់ (ជាជម្រើស)",
             uploadLink: "បន្ថែមឯកសារ",
-            dropText: " ឬទម្លាក់ឯកសារនៅទីនេះ"
+            dropText: " ឬទម្លាក់ឯកសារនៅទីនេះ",
+            emailLabel: "អាសយដ្ឋានអ៊ីមែលរបស់អ្នក"
         }
     };
 
@@ -662,8 +665,9 @@ $(document).ready(function() {
             // Force the Submit input button to translate
             $('input[type="submit"]').val(fix.submitBtn);
             
-            // Translate Attachment label
+            // Translate Attachment & Email labels
             $('label[for="request-attachments"]').text(fix.attachLabel);
+            $('label[for="request_anonymous_requester_email"]').text(fix.emailLabel);
             
             // SAFELY translate the dropzone without breaking Zendesk's upload mechanics!
             var $dropzoneLink = $('#upload-dropzone a');
