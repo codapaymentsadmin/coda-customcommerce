@@ -5416,18 +5416,19 @@ form[role="search"]::after,
 }
 
 /* ==========================================
-   RTL (ARABIC) SEARCH ICON FIX
+   THE ULTIMATE RTL (ARABIC) SEARCH ICON FIX
    ========================================== */
-/* When the page is Right-to-Left, move the icon to the right side */
-[dir="rtl"] .search-container .search-icon,
-[dir="rtl"] .search-container form[role="search"] svg {
+/* 1. Target ANY search SVG on the entire site in RTL mode */
+[dir="rtl"] form[role="search"] svg,
+[dir="rtl"] .search-icon,
+[dir="rtl"] .hero-inner form[role="search"] svg,
+[dir="rtl"] .search-box svg {
     left: auto !important;          /* Unpin from the left */
-    right: 15px !important;         /* Pin to the right */
+    right: 20px !important;         /* Pin to the right side */
 }
 
-/* Adjust the padding so Arabic text doesn't overlap the right-aligned icon */
-[dir="rtl"] .search-container form input[type="search"],
+/* 2. Adjust the typing area for ALL search bars in RTL */
 [dir="rtl"] form[role="search"] input[type="search"] {
-    padding-left: 15px !important;  /* Reset left padding */
-    padding-right: 40px !important; /* Add padding to the right */
+    padding-left: 20px !important;  /* Clear out the left padding */
+    padding-right: 50px !important; /* Push text inward from the right so it doesn't overlap the icon */
 }
