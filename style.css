@@ -5391,23 +5391,26 @@ form[role="search"]::after,
 }
 
 /* ==========================================
-   FIX REQUEST PAGE SEARCH ICON
+   THE REQUEST PAGE ICON REVIVER
    ========================================== */
-.search-container {
-    position: relative !important;
-}
-
-.search-container .search-icon {
+/* 1. Overpower the Destroyer by being highly specific */
+.sub-nav .search-container .search-icon,
+.sub-nav .search-container form[role="search"] svg {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    
+    /* 2. Position it perfectly */
     position: absolute !important;
-    left: 15px !important;            /* Pins the icon to the left inside the box */
+    left: 15px !important;            
     top: 50% !important;
-    transform: translateY(-50%) !important; /* Perfectly centers it vertically */
-    color: #68737D !important;        /* Gives it a visible, dark grey color */
-    z-index: 10 !important;           /* Forces it to sit ON TOP of the white background */
-    pointer-events: none !important;  /* Lets the user click "through" the icon to type */
+    transform: translateY(-50%) !important; 
+    color: #68737D !important;        
+    z-index: 10 !important;           
+    pointer-events: none !important;  
 }
 
-/* Ensure the typing doesn't overlap the new icon */
-.search-container form input[type="search"] {
+/* 3. Make room for the text so it doesn't overlap the icon */
+.sub-nav .search-container form input[type="search"] {
     padding-left: 40px !important; 
 }
