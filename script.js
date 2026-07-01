@@ -568,7 +568,7 @@ $(document).ready(function() {
         "zh-tw": "客服時間：星期一至星期日，<br>上午 9:00 至下午 6:00（當地時間）",
         "zh-hk": "客服時間：星期一至星期日，<br>上午 9:00 至下午 6:00（當地時間）",
         "zh": "客服時間：星期一至星期日，<br>上午 9:00 至下午 6:00（當地時間）",
-        "mn": "Тусламж үйлчилгээний цаг: Даваагаас Ням гараг,<br>09:00 - 18:00 (орон нутгийн цагаар)",
+        "mn": "Тусламж үйлчилгээний цаг: Даваагаас Ням гараг,<br>11:30 - 20:30 (орон нутгийн цагаар)",
         "nl": "Supporturen: Maandag t/m zondag,<br>09:00 tot 18:00 (lokale tijd)",
         "tr": "Destek Saatleri: Pazartesi - Pazar,<br>09:00 - 18:00 (yerel saat)",
         "ja": "サポート営業時間：月曜日～日曜日、<br>午前9:00～午後6:00（現地時間）",
@@ -598,9 +598,9 @@ $(document).ready(function() {
 
     var finalHoursText = supportHours[currentLang] || supportHours[baseLang] || supportHours["en"];
 
-	if (window.location.hostname.includes("mx.support")) {
-        finalHoursText = "Horario de soporte: Lunes a domingo,<br>9:00 AM a 7:00 PM (hora local)";
-    }
+	//if (window.location.hostname.includes("mx.support")) {
+       // finalHoursText = "Horario de soporte: Lunes a domingo,<br>9:00 AM a 7:00 PM (hora local)";
+  //  }
 	
     // Check if the container exists on the page, then replace the text
     if ($('#dynamic-support-hours').length) {
