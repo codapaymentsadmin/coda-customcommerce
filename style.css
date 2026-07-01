@@ -5389,3 +5389,25 @@ form[role="search"]::after,
     visibility: hidden !important;
     opacity: 0 !important;
 }
+
+/* ==========================================
+   FIX REQUEST PAGE SEARCH ICON
+   ========================================== */
+.search-container {
+    position: relative !important;
+}
+
+.search-container .search-icon {
+    position: absolute !important;
+    left: 15px !important;            /* Pins the icon to the left inside the box */
+    top: 50% !important;
+    transform: translateY(-50%) !important; /* Perfectly centers it vertically */
+    color: #68737D !important;        /* Gives it a visible, dark grey color */
+    z-index: 10 !important;           /* Forces it to sit ON TOP of the white background */
+    pointer-events: none !important;  /* Lets the user click "through" the icon to type */
+}
+
+/* Ensure the typing doesn't overlap the new icon */
+.search-container form input[type="search"] {
+    padding-left: 40px !important; 
+}
