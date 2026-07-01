@@ -597,7 +597,11 @@ $(document).ready(function() {
     };
 
     var finalHoursText = supportHours[currentLang] || supportHours[baseLang] || supportHours["en"];
-    
+
+	if (window.location.hostname.includes("mx.support")) {
+        finalHoursText = "Horario de soporte: Lunes a domingo,<br>9:00 AM a 7:00 PM (hora local)";
+    }
+	
     // Check if the container exists on the page, then replace the text
     if ($('#dynamic-support-hours').length) {
         $('#dynamic-support-hours').html(finalHoursText);
