@@ -92,7 +92,7 @@
 	h4,
 	h5,
 	h6 {
-		@apply mt-0 tracking-wide;
+		@apply mt-0 tracking-normal;
 		font-family: var(--font-heading);
 	}
 
@@ -113,13 +113,13 @@
 	}
 
 	p {
-		@apply text-sm tracking-wide;
+		@apply text-sm tracking-normal;
 		font-family: var(--font-main-text);
 	}
 
 	a,
 	button {
-		@apply tracking-wide;
+		@apply tracking-normal;
 	}
 }
 
