@@ -18,12 +18,12 @@
 
 @font-face {
 	font-family: "ott";
-	src: url("$assets-ott-prod-eot");
+	src: url("$assets-ott-bold-eot");
 	src:
-		url("$assets-OTT-Bold-eot?#iefix") format("embedded-opentype"),
-		url("$assets-OTT-Bold-woff2") format("woff2"),
-		url("$assets-OTT-Bold-woff") format("woff"),
-		url("$assets-OTT-Bold-otf") format("opentype");
+		url("$assets-ott-bold-eot?#iefix") format("embedded-opentype"),
+		url("$assets-ott-bold-woff2") format("woff2"),
+		url("$assets-ott-bold-woff") format("woff"),
+		url("$assets-ott-bold-otf") format("opentype");
 	font-weight: normal;
 	font-style: normal;
 }
