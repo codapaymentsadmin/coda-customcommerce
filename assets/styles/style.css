@@ -20,38 +20,13 @@
 	font-family: "ott";
 	src: url("$assets-ott-prod-eot");
 	src:
-		url("$assets-ott-prod-eot?#iefix") format("embedded-opentype"),
-		url("$assets-ott-prod-woff2") format("woff2"),
-		url("$assets-ott-prod-woff") format("woff"),
-		url("$assets-ott-prod-ttf") format("truetype"),
-		url("$assets-ott-prod-svg#ottprod") format("svg");
+		url("$assets-OTT-Bold-eot?#iefix") format("embedded-opentype"),
+		url("$assets-OTT-Bold-woff2") format("woff2"),
+		url("$assets-OTT-Bold-woff") format("woff"),
+		url("$assets-OTT-Bold-otf") format("opentype");
 	font-weight: normal;
 	font-style: normal;
 }
-
-/* @font-face {
-	font-family: "Inter";
-	src: url("$assets-inter-Regular-otf");
-	src:
-		url("$assets-inter-Black-otf") format("opentype"),
-		url("$assets-inter-BlackItalic-otf") format("opentype"),
-		url("$assets-inter-Bold-otf") format("opentype"),
-		url("$assets-inter-BoldItalic-otf") format("opentype"),
-		url("$assets-inter-ExtraBold-otf") format("opentype"),
-		url("$assets-inter-ExtraBoldItalic-otf") format("opentype"),
-		url("$assets-inter-Italic-otf") format("opentype"),
-		url("$assets-inter-Light-otf") format("opentype"),
-		url("$assets-inter-LightItalic-otf") format("opentype"),
-		url("$assets-inter-Medium-otf") format("opentype"),
-		url("$assets-inter-MediumItalic-otf") format("opentype"),
-		url("$assets-inter-Regular-otf") format("opentype"),
-		url("$assets-inter-SemiBold-otf") format("opentype"),
-		url("$assets-inter-SemiBoldItalic-otf") format("opentype"),
-		url("$assets-inter-Thin-otf") format("opentype"),
-		url("$assets-inter-ThinItalic-otf") format("opentype");
-	font-weight: 100 900;
-	font-style: normal;
-} */
 
 @font-face {
 	font-family: "Inter";
@@ -88,8 +63,6 @@
 	--font-customized: $custom_font;
 	--font-ott: "ott";
 	--font-inter: "Inter, sans-serif";
-	--font-interbold: "Inter Bold";
-	--font-interextrabold: "Inter ExtraBold";
 }
 
 @import "./article.css";
@@ -150,22 +123,6 @@
 	}
 }
 
-/* form.input {
-	input[type="search"] {
-		@apply flex-1;
-	}
-
-	input[type="submit"] {
-		@apply w-max px-4 py-1 text-xs rounded-md cursor-pointer;
-		background-color: var(--color-brand);
-		color: white;
-	}
-
-	input[type="submit"][value="検索"] {
-		@apply !text-brand-text;
-	}
-} */
-
 form[role="search"] {
 	input[type="search"] {
 		@apply flex-1;
@@ -185,7 +142,7 @@ form[role="search"] {
 section#self-service-articles-section {
 	div.flex.flex-col.items-center {
 		h2 {
-			@apply text-lg sm:text-[32px] font-extrabold;
+			@apply text-xl sm:text-[32px] font-extrabold;
 		}
 
 		p.text-center.text-main-text.mt-2 {
@@ -198,7 +155,7 @@ section#need-assistance-section {
 	div.flex.flex-col.items-center.text-center.gap-10 {
 		div.flex.flex-col.items-center.gap-4 {
 			h2 {
-				@apply text-lg sm:text-[32px] font-extrabold;
+				@apply text-xl sm:text-[32px] font-extrabold;
 			}
 
 			p.text-center.text-main-text.mt-2 {

@@ -1,29 +1,36 @@
-<footer id="footer-v2"
-	class="flex flex-row justify-between items-center max-w-5xl mx-auto bg-footer-bg text-brand max-sm:px-5 py-8">
-	<aside class="flex flex-col items-start gap-1">
-		{{#if settings.show_terms_link}}
-		<a href="{{settings.privacy_link}}" class="link link-hover text-sm font-semibold"> {{dc 'hc_-_privacy_policy'}} </a>
-		{{/if}}
-		{{#if settings.show_pp_link}}
-		<a href="{{settings.terms_link}}" class="link link-hover text-sm font-semibold">
-			{{dc 'hc_-_terms_and_conditions'}}
-		</a>
-		{{/if}}
-	</aside>
-	<nav class="">
-		{{#if alternative_locales}}
-		<details class="dropdown dropdown-top dropdown-end">
-			<summary class="btn btn-ghost btn-brand flex items-center hover:bg-brand hover:text-white">
-				<i class="ph ph-globe text-xl"></i>
-				{{current_locale.name}}
-			</summary>
-			<ul
-				class="w-54 menu dropdown-content bg-transparent shadow-sm border border-brand p-2 max-h-[400px] overflow-y-scroll rounded-xl">
-				{{#each alternative_locales}}
-				<li><a href="{{url}}" dir="{{direction}}" class="text-brand-text text-sm">{{name}}</a></li>
-				{{/each}}
-			</ul>
-		</details>
-		{{/if}}
-	</nav>
+<footer id="footer-v2" class="max-w-5xl mx-auto bg-footer-bg text-brand px-5 py-8">
+	<hr class="block sm:hidden w-full h-4 px-5 border-t-2 border-gray-300">
+	</hr>
+	<div class="w-full flex items-center justify-between gap-4">
+		<aside class="flex flex-col items-start gap-1">
+			{{#if settings.show_terms_link}}
+			<a href="{{settings.privacy_link}}" class="link link-hover text-sm font-semibold"> {{dc 'hc_-_privacy_policy'}}
+			</a>
+			{{/if}}
+			{{#if settings.show_pp_link}}
+			<a href="{{settings.terms_link}}" class="link link-hover text-sm font-semibold">
+				{{dc 'hc_-_terms_and_conditions'}}
+			</a>
+			{{/if}}
+		</aside>
+		<nav class="">
+			{{#if alternative_locales}}
+			<details class="dropdown dropdown-top dropdown-end">
+				<summary class="btn max-w-[200px] btn-ghost btn-brand flex items-center hover:bg-brand hover:text-white">
+					<i class="max-sm:hidden ph ph-globe text-xl"></i>
+					<span class="line-clamp-1 text-ellipsis">
+						{{current_locale.name}}
+					</span>
+					<i class="ph ph-caret-down text-sm"></i>
+				</summary>
+				<ul
+					class="w-54 menu dropdown-content bg-gray-100 shadow-sm border border-brand p-2 max-h-[400px] overflow-y-scroll rounded-xl">
+					{{#each alternative_locales}}
+					<li><a href="{{url}}" dir="{{direction}}" class="text-brand-text text-sm">{{name}}</a></li>
+					{{/each}}
+				</ul>
+			</details>
+			{{/if}}
+		</nav>
+	</div>
 </footer>

@@ -1,10 +1,10 @@
 <!-- Hero Section -->
-<section id="cc-hero-section" class="hero relative min-h-[500px] sm:min-h-[425px] overflow-visible z-0"
+<section id="cc-hero-section" class="hero relative min-h-[550px] sm:min-h-[450px] overflow-visible z-0"
 	style="background-color: #280031;">
 	<div class="hero-overlay"></div>
 	<div
-		class="relative hero-content w-full h-full max-w-5xl text-neutral-content text-center z-10 py-16 flex flex-col items-center max-sm:justify-start">
-		<div class="w-full h-full z-10">
+		class="relative hero-content w-full max-w-5xl text-neutral-content text-center z-10 py-8 flex flex-col items-center justify-center">
+		<div class="w-full z-10">
 			<h1 class="mb-5 text-banner-text text-[48px] sm:text-[64px] font-ott font-bold">
 				{{dc 'hc_-_how_can_we_help'}}
 			</h1>
@@ -20,13 +20,17 @@
 			</button>
 		</div>
 
-		<img src="{{asset 'codee.webp'}}" alt="" aria-hidden="true"
-			class="pointer-events-none select-none absolute max-sm:bottom-4 -bottom-8 right-10 w-[177px] min-[500px]:w-[222px] md:w-[272px] z-5">
+		<img src="{{asset 'codee.webp'}}" alt="Codee" aria-hidden="true"
+			class="block md:hidden pointer-events-none select-none mt-10 self-end mr-4 -mb-8 w-[177px] min-[500px]:w-[222px] z-5">
+		<img src="{{asset 'codee.webp'}}" alt="Codee" aria-hidden="true"
+			class="hidden md:block pointer-events-none select-none absolute -bottom-24 right-4 w-[222px] lg:w-[272px] z-5">
 	</div>
 
 	<!-- Torn-paper edge: blends the hero into the page background -->
-	<img src="{{asset 'tear2.webp'}}" alt="" aria-hidden="true"
-		class="pointer-events-none select-none absolute object-cover bottom-0 w-full h-16 z-1">
+	<img id="tear-desktop" src="{{asset 'tear.webp'}}" alt="tear background" aria-hidden="true"
+		class="hidden sm:block pointer-events-none select-none absolute object-cover bottom-0 w-full h-18 z-1">
+	<img id="tear-mobile" src="{{asset 'tear-mobile.webp'}}" alt="tear background" aria-hidden="true"
+		class="block sm:hidden pointer-events-none select-none absolute object-cover bottom-0 w-full h-18 z-1">
 </section>
 
 {{#if settings.show_popular_section}}
@@ -61,7 +65,7 @@
 					class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none z-10"></i>
 				{{search
 				instant=true
-				class="input w-full focus-within:outline-brand !text-black rounded-lg h-12 py-1 pl-11"
+				class="input w-full focus-within:outline-brand !text-black rounded-[26px] h-12 py-1 pl-11"
 				}}
 			</div>
 		</div>
@@ -109,6 +113,7 @@
 			queryParams: botQueryParams,
 			UI: {
 				containerElement: document.getElementById('ask-codee'),
+				fullScreenMode: true
 			}
 		});
 	});

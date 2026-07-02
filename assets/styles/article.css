@@ -371,7 +371,7 @@
 }
 .article {
 	table {
-		@apply !w-full table table-auto border-2 border-collapse border-gray-400;
+		@apply !w-full table table-auto border-2 border-collapse border-brand;
 
 		p {
 			@apply !text-sm;
@@ -383,7 +383,7 @@
 
 		td,
 		th {
-			@apply border-2 border-gray-400;
+			@apply border-2 border-brand;
 		}
 	}
 

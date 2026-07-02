@@ -14,7 +14,7 @@ export default defineConfig({
 		outDir: "./",
 		rollupOptions: {
 			input: {
-				script: "./assets/scripts/index.js",
+				script: "./assets/scripts/global.js",
 				style: "./assets/styles/style.css",
 			},
 			output: {
