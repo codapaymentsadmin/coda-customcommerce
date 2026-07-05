@@ -30,12 +30,14 @@
 
 @font-face {
 	font-family: "Inter";
-	src: url("$assets-InterVariable-woff2");
+	src: url("$assets-InterVariable-eot");
 	src:
 		url("$assets-InterVariable-woff2") format("woff2"),
 		url("$assets-InterVariable-ttf") format("truetype"),
+		url("$assets-InterVariable-woff") format("woff"),
+		url("$assets-InterVariable-eot") format("embedded-opentype"),
 		url("$assets-InterVariable-Italic-woff2") format("woff2");
-	font-weight: 100 900;
+	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
 }
