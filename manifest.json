@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -485,6 +485,20 @@
 					"type": "checkbox",
 					"description": "show_brand_name_description",
 					"label": "Show brand name in the Navbar?",
+					"value": false
+				},
+				{
+					"identifier": "show_category",
+					"type": "checkbox",
+					"description": "Show all categories?",
+					"label": "Render category",
+					"value": true
+				},
+				{
+					"identifier": "show_section",
+					"type": "checkbox",
+					"description": "Show all sections?",
+					"label": "Render section",
 					"value": false
 				}
 			]

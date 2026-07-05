@@ -1,0 +1,82 @@
+<!-- Hero Section -->
+<section id="cc-hero-section" class="hero relative min-h-[550px] sm:min-h-[450px] overflow-visible z-0"
+  style="background-color: #280031;">
+  <div class="hero-overlay"></div>
+  <div
+    class="relative hero-content w-full max-w-5xl text-neutral-content text-center z-10 py-8 flex flex-col items-center justify-center">
+    <div class="w-full z-10">
+      <h1 class="mb-5 text-banner-text text-[48px] sm:text-[64px] font-ott font-bold">
+        {{dc 'hc_-_how_can_we_help'}}
+      </h1>
+      <h2 id="codee-resolve" class="mb-5 text-base sm:text-xl">
+        {{dc 'hc_-_codee_resolve'}}
+      </h2>
+      <button id="ask-codee"
+        class="bg-[#E8F953] !inline-flex text-brand-text font-bold text-xl btn w-max rounded-full px-[28px] py-[13px] sm:py-[16px]">
+        {{dc 'hc_-_chat_with_codee'}}
+      </button>
+    </div>
+
+    <img src="{{asset 'codee.webp'}}" alt="Codee" aria-hidden="true"
+      class="block md:hidden pointer-events-none select-none mt-10 self-end mr-4 -mb-8 w-[177px] min-[500px]:w-[222px] z-5">
+    <img src="{{asset 'codee.webp'}}" alt="Codee" aria-hidden="true"
+      class="hidden md:block pointer-events-none select-none absolute -bottom-24 right-4 w-[222px] lg:w-[272px] z-5">
+  </div>
+
+  <!-- Torn-paper edge: blends the hero into the page background -->
+  <img id="tear-desktop" src="{{asset 'tear.webp'}}" alt="tear background" aria-hidden="true"
+    class="hidden sm:block pointer-events-none select-none absolute object-cover bottom-0 w-full h-18 z-1">
+  <img id="tear-mobile" src="{{asset 'tear-mobile.webp'}}" alt="tear background" aria-hidden="true"
+    class="block sm:hidden pointer-events-none select-none absolute object-cover bottom-0 w-full h-18 z-1">
+</section>
+
+<section id="main-content" class="flex-1 min-h-[50dvh] max-md:w-full lg:w-full mx-auto px-5 py-8">
+  <div class="flex flex-col max-w-5xl mx-auto px-4 xl:px-0">
+    <!-- Breadcrumbs using Zendesk helper -->
+    <nav class="custom-breadcrumbs text-sm mb-6">
+      {{breadcrumbs}}
+    </nav>
+
+    <div class="w-full flex flex-col gap-4 mt-8">
+      {{#if sections}}
+      <div class="w-full mb-4 border-b border-gray-300 pb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {{#each sections}}
+          <a href="{{url}}"
+            class="btn btn-md h-[60px] flex items-center justify-between bg-brand text-brand-text hover:bg-brand/90 hover:text-white transition-colors rounded-lg text-start text-sm font-medium shadow-md subsection-btn">
+            <div class="flex items-center gap-3">
+              <i class="ph ph-folder text-lg"></i>
+              <span class="line-clamp-1">{{name}}</span>
+            </div>
+            <i class="ph ph-arrow-right"></i>
+          </a>
+          {{/each}}
+        </div>
+      </div>
+      {{/if}}
+
+      {{#unless sections}}
+      <div class="text-center py-8">
+        <p class="text-main-text">No content available in this section yet.</p>
+      </div>
+      {{/unless}}
+    </div>
+  </div>
+</section>
+
+<script defer type="text/javascript" src="https://prod-au-druid-cdn.azureedge.net/v2/druid_webchat_v2.js"></script>
+<script data-druid-language="ms" type="text/javascript">
+  const botId = "{{settings.druid_bot_id}}";
+  const botQueryParams = "{{settings.druid_query_params}}";
+
+  document.addEventListener("DOMContentLoaded", function (event) {
+    DruidWebchat_v2.init({
+      botId: botId,
+      baseUrl: "https://druidapi.au.druidplatform.com",
+      queryParams: botQueryParams,
+      UI: {
+        containerElement: document.getElementById('ask-codee'),
+      }
+    });
+  });
+</script>
