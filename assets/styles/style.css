@@ -141,6 +141,12 @@ form[role="search"] {
 	width: 100%;
 }
 
+h2#codee-resolve {
+	span {
+		@apply !text-[#81D273];
+	}
+}
+
 section#self-service-articles-section {
 	div.flex.flex-col.items-center {
 		h2 {
