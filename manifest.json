@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.1.3",
+	"version": "1.1.4",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -511,14 +511,21 @@
 					"type": "text",
 					"description": "Enter the Druid Bot ID",
 					"label": "Druid Bot ID",
-					"value": "aa66a6da-83cd-4864-44c5-08dde492a4ed"
+					"value": "db017925-4ab2-48fa-522b-08ddf7367496"
 				},
 				{
 					"identifier": "druid_query_params",
 					"type": "text",
 					"description": "Enter the Druid Query Params (For siteLang)",
 					"label": "Druid Query Params",
-					"value": ""
+					"value": "SiteLang=ms&Country=Malaysia"
+				},
+				{
+					"identifier": "druid_lang",
+					"type": "text",
+					"description": "-",
+					"label": "Druid Lang",
+					"value": "ms"
 				}
 			]
 		}
