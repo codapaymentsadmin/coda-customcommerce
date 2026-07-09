@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -19,7 +19,7 @@
 					"type": "text",
 					"description": "brand_name_description",
 					"label": "brand_name_label",
-					"value": "Rainbow Six Mobile Global "
+					"value": "Plants vs. Zombies 3 Global"
 				},
 				{
 					"identifier": "favicon",
@@ -32,21 +32,21 @@
 					"type": "text",
 					"description": "webstore_link_description",
 					"label": "webstore_link_label",
-					"value": "https://store.fcm.ea.com/international"
+					"value": ""
 				},
 				{
 					"identifier": "ws_hc_link_url",
 					"type": "text",
 					"description": "webstore_helpcenter_link_description",
 					"label": "webstore_helpcenter_link_label",
-					"value": "https://help.ea.com/en/help-top-issues/?product=fc-mobile"
+					"value": "https://help.ea.com/en/games/plants-vs-zombies/plants-vs-zombies-3/"
 				},
 				{
 					"identifier": "ws_hc_link_label",
 					"type": "text",
 					"description": "webstore_helpcenter_link_text_description",
 					"label": "helpcenter_link_text_label",
-					"value": "EA FC Mobile Help Center"
+					"value": "Plants vs. Zombies 3 Help Center"
 				}
 			]
 		},
