@@ -154,42 +154,42 @@
 					"type": "color",
 					"description": "navbar_background_color_description",
 					"label": "navbar_background_color_label",
-					"value": "#000"
+					"value": "#006F96"
 				},
 				{
 					"identifier": "footer_background_color",
 					"type": "color",
 					"description": "footer_background_color_description",
 					"label": "footer_background_color_label",
-					"value": "#000"
+					"value": "#072C3E"
 				},
 				{
 					"identifier": "accordion_background_color",
 					"type": "color",
 					"description": "accordion_background_color_description",
 					"label": "accordion_background_color_label",
-					"value": "#fff"
+					"value": "#0C3A50"
 				},
 				{
 					"identifier": "accordion_text_color",
 					"type": "color",
 					"description": "accordion_text_color_description",
 					"label": "accordion_text_color_label",
-					"value": "#000"
+					"value": "#FFFFF"
 				},
 				{
 					"identifier": "cta_text_color",
 					"type": "color",
 					"description": "cta_text_color_description",
 					"label": "cta_text_color_label",
-					"value": "#203E4E"
+					"value": "#FFFFF"
 				},
 				{
 					"identifier": "banner_text_color",
 					"type": "color",
 					"description": "banner_text_color_description",
 					"label": "banner_text_color_label",
-					"value": "#fff"
+					"value": "#FFFFF"
 				}
 			]
 		},
