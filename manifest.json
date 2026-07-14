@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -147,7 +147,7 @@
 					"type": "color",
 					"description": "background_color_description",
 					"label": "background_color_label",
-					"value": "#FFFFF"
+					"value": "#FFF"
 				},
 				{
 					"identifier": "navbar_background_color",
@@ -175,21 +175,21 @@
 					"type": "color",
 					"description": "accordion_text_color_description",
 					"label": "accordion_text_color_label",
-					"value": "#FFFFF"
+					"value": "#FFF"
 				},
 				{
 					"identifier": "cta_text_color",
 					"type": "color",
 					"description": "cta_text_color_description",
 					"label": "cta_text_color_label",
-					"value": "#FFFFF"
+					"value": "#FFF"
 				},
 				{
 					"identifier": "banner_text_color",
 					"type": "color",
 					"description": "banner_text_color_description",
 					"label": "banner_text_color_label",
-					"value": "#FFFFF"
+					"value": "#FFF"
 				}
 			]
 		},
