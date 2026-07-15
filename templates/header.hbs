@@ -3,7 +3,7 @@
 	<div id="infobar-component"
 		class="critical infobar-component w-full flex items-center justify-center bg-crit-infobar-bg h-[60px]">
 		<div role="alert"
-			class="alert w-full bg-transparent flex items-center max-w-7xl mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none shadow-none">
+			class="alert w-full bg-transparent flex items-center mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none shadow-none" style="max-width: 1280px;">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"
 				class="!text-crit-infobar-text">
 				<path
@@ -23,7 +23,7 @@
 	<div id="infobar-component"
 		class="infobar-component w-full items-center justfy-center bg-infobar-bg h-[50px] sm:h-[40px]">
 		<div role="alert"
-			class="alert bg-transparent flex items-center max-w-7xl mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none">
+			class="alert bg-transparent flex items-center mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none" style="max-width: 1280px;">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"
 				class="!text-infobar-text">
 				<path
@@ -44,7 +44,7 @@
 </section>
 
 <header class="w-full bg-navbar-bg shadow-lg">
-    <div class="navbar max-w-5xl mx-auto px-4">
+    <div class="navbar mx-auto px-4" style="max-width: 1152px;">
 		<div class="flex-1">
 			<a href="{{page_path 'help_center'}}" class="w-max flex items-center text-sm text-white gap-2">
 				{{#if settings.show_brand_name}}
@@ -52,7 +52,7 @@
 					{{settings.brand_name}}
 				</span>
 				{{/if}}
-                <img src="{{settings.logo}}" alt="{{settings.brand_name}}" class="pr-3 border-r-2 border-white object-contain" style="height: 40px; width: auto;" />
+				<img src="{{settings.logo}}" alt="{{settings.brand_name}}" class="pr-3 border-r-2 border-white object-contain" style="height: 40px; width: auto;" />
 				Web Store {{dc 'hc_-_help_center'}}
 			</a>
 		</div>
