@@ -55,13 +55,14 @@
                     {{settings.brand_name}}
                 </span>
                 {{/if}}
-                <img src="{{settings.logo}}" alt="{{settings.brand_name}}" class="w-24 h-auto pr-3 border-r-2 border-white" />
+                <!-- Fixed Logo Classes to restrict height instead of width -->
+                <img src="{{settings.logo}}" alt="{{settings.brand_name}}" class="h-10 w-auto pr-3 border-r-2 border-white object-contain" />
                 Web Store {{dc 'hc_-_help_center'}}
             </a>
         </div>
         <div class="flex-none">
             <ul class="menu menu-horizontal hidden sm:flex items-center px-1">
-                <!-- Forced Dynamic Link -->
+                <!-- Dynamic Link -->
                 <li>
                     <a id="dynamic-link" href="" data-help-center="{{dc 'hc_-_help_center'}}"
                         data-contact-text="{{dc 'hc_-_contact_support'}}"
@@ -71,7 +72,7 @@
                 <li><a href="http://store.pvz.ea.com/international" target="_blank" class="text-white hover:bg-brand hover:text-cta-text">{{dc
                         'hc_-_visit_webstore'}}</a></li>
                 {{#if alternative_locales}}
-                <div class="divider divider-horizontal after:bg-white before:bg-white mx-2"></div>
+                <div class="divider divider-horizontal after:bg-white before:bg-white"></div>
                 <li>
                     <details>
                         <summary
