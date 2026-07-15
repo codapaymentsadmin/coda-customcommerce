@@ -47,8 +47,7 @@
 
 <!-- Navbar -->
 <header class="w-full bg-navbar-bg shadow-lg">
-    <!-- Changed width to stretch fully with responsive padding -->
-    <div class="navbar w-full px-6 lg:px-12 mx-auto">
+    <div class="navbar max-w-7xl mx-auto">
         <div class="flex-1">
             <a href="{{page_path 'help_center'}}" class="w-max flex items-center text-sm text-white gap-2">
                 {{#if settings.show_brand_name}}
@@ -62,13 +61,13 @@
         </div>
         <div class="flex-none">
             <ul class="menu menu-horizontal hidden sm:flex items-center px-1">
-                <!-- Forced Dynamic Link to always show -->
+                <!-- Forced Dynamic Link -->
                 <li>
                     <a id="dynamic-link" href="" data-help-center="{{dc 'hc_-_help_center'}}"
                         data-contact-text="{{dc 'hc_-_contact_support'}}"
-                        class="text-white hover:bg-brand hover:text-cta-text mr-4"></a>
+                        class="text-white hover:bg-brand hover:text-cta-text mr-2"></a>
                 </li>
-                <!-- Hardcoded Webstore URL -->
+                <!-- Webstore URL Update -->
                 <li><a href="http://store.pvz.ea.com/international" target="_blank" class="text-white hover:bg-brand hover:text-cta-text">{{dc
                         'hc_-_visit_webstore'}}</a></li>
                 {{#if alternative_locales}}
