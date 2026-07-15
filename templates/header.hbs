@@ -1,122 +1,121 @@
 <!-- Critical Infobar -->
 <section id="infobar-container" class="w-full flex flex-col">
-	{{#if settings.show_warning_infobar_global}}
-	<div id="infobar-component"
-		class="critical infobar-component w-full flex items-center justify-center bg-crit-infobar-bg h-[60px]">
-		<div role="alert"
-			class="alert w-full bg-transparent flex items-center max-w-7xl mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none shadow-none">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"
-				class="!text-crit-infobar-text">
-				<path
-					d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z">
-				</path>
-			</svg>
-			<div id="infobar-content">
-				<p class="!text-xs sm:!text-sm text-crit-infobar-text font-bold">
-					{{dc "cc_help_center_infobar_content"}}
-				</p>
-			</div>
-		</div>
-	</div>
-	{{/if}}
+    {{#if settings.show_warning_infobar_global}}
+    <div id="infobar-component"
+        class="critical infobar-component w-full flex items-center justify-center bg-crit-infobar-bg h-[60px]">
+        <div role="alert"
+            class="alert w-full bg-transparent flex items-center max-w-7xl mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none shadow-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"
+                class="!text-crit-infobar-text">
+                <path
+                    d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z">
+                </path>
+            </svg>
+            <div id="infobar-content">
+                <p class="!text-xs sm:!text-sm text-crit-infobar-text font-bold">
+                    {{dc "cc_help_center_infobar_content"}}
+                </p>
+            </div>
+        </div>
+    </div>
+    {{/if}}
 
-	<!-- Infobar General -->
-	{{#if settings.show_infobar_global}}
-	<div id="infobar-component"
-		class="infobar-component w-full items-center justfy-center bg-infobar-bg h-[50px] sm:h-[40px]">
-		<div role="alert"
-			class="alert bg-transparent flex items-center max-w-7xl mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"
-				class="!text-infobar-text">
-				<path
-					d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z">
-				</path>
-			</svg>
-			<div id="infobar-content">
-				<p class="!text-xs sm:!text-sm text-infobar-text font-bold">
-					{{dc "cc_help_center_infobar_content"}}
-				</p>
-			</div>
-			<span class="infobar-dismiss ms-auto cursor-pointer">
-				<i class="ph ph-x text-infobar-text"></i>
-			</span>
-		</div>
-	</div>
-	{{/if}}
+    <!-- Infobar General -->
+    {{#if settings.show_infobar_global}}
+    <div id="infobar-component"
+        class="infobar-component w-full items-center justfy-center bg-infobar-bg h-[50px] sm:h-[40px]">
+        <div role="alert"
+            class="alert bg-transparent flex items-center max-w-7xl mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"
+                class="!text-infobar-text">
+                <path
+                    d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z">
+                </path>
+            </svg>
+            <div id="infobar-content">
+                <p class="!text-xs sm:!text-sm text-infobar-text font-bold">
+                    {{dc "cc_help_center_infobar_content"}}
+                </p>
+            </div>
+            <span class="infobar-dismiss ms-auto cursor-pointer">
+                <i class="ph ph-x text-infobar-text"></i>
+            </span>
+        </div>
+    </div>
+    {{/if}}
 </section>
 
 <!-- Navbar -->
 <header class="w-full bg-navbar-bg shadow-lg">
-	<div class="navbar max-w-7xl mx-auto">
-		<div class="flex-1">
-			<a href="{{page_path 'help_center'}}" class="w-max flex items-center text-sm text-white gap-2">
-				{{#if settings.show_brand_name}}
-				<span>
-					{{settings.brand_name}}
-				</span>
-				{{/if}}
-				<img src="{{settings.logo}}" alt="{{settings.brand_name}}" class="w-24 h-auto pr-3 border-r-2 border-white" />
-				Web Store {{dc 'hc_-_help_center'}}
-			</a>
-		</div>
-		<div class="flex-none">
-			<ul class="menu menu-horizontal hidden sm:flex items-center px-1">
-				{{#if settings.show_contact_link}}
-				<li>
-					<a id="dynamic-link" href="" data-help-center="{{dc 'hc_-_help_center'}}"
-						data-contact-text="{{dc 'hc_-_contact_support'}}"
-						class="text-white hover:bg-brand hover:text-cta-text mr-2"></a>
-				</li>
-				{{/if}}
-				<li><a href="{{settings.webstore_link}}" class="text-white hover:bg-brand hover:text-cta-text">{{dc
-						'hc_-_visit_webstore'}}</a></li>
-				{{#if alternative_locales}}
-				<div class="divider divider-horizontal after:bg-white before:bg-white"></div>
-				<li>
-					<details>
-						<summary
-							class="font-normal text-white hover:bg-brand hover:text-cta-text focus:bg-brand focus:text-cta-text focus-within:bg-brand focus-within:text-cta-text active:bg-brand active:text-cta-text">
-							{{current_locale.name}}</summary>
-						<ul class="bg-white shadow-sm border border-gray-200 rounded-t-none p-2">
-							{{#each alternative_locales}}
-							<li><a href="{{url}}" dir="{{direction}}" class="text-brand-text">{{name}}</a></li>
-							{{/each}}
-						</ul>
-					</details>
-				</li>
-				{{/if}}
-			</ul>
-			<div id="hamburger-btn" tabindex="0" role="button" class="btn border-none bg-brand text-cta-text sm:hidden">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" stroke="currentColor"
-					viewBox="0 0 256 256">
-					<path
-						d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z">
-					</path>
-				</svg>
-			</div>
-		</div>
-	</div>
-	<!-- Menu drawer on mobile -->
-	<ul id="mobile-drawer" class="menu bg-base-200 rounded-box w-full hidden sm:hidden">
-		{{#if settings.show_contact_link}}
-		<li>
-			<a id="dynamic-link-mobile" href="" data-contact-text="{{dc 'hc_-_contact_support'}}"
-				data-help-center="{{dc 'hc_-_help_center'}}"></a>
-		</li>
-		{{/if}}
-		<li><a href="{{settings.webstore_link}}">{{dc
-				'hc_-_visit_webstore'}}</a></li>
-		{{#if alternative_locales}}
-		<li>
-			<details>
-				<summary class="font-normal">{{current_locale.name}}</summary>
-				<ul class="p-2">
-					{{#each alternative_locales}}
-					<li><a href="{{url}}" dir="{{direction}}">{{name}}</a></li>
-					{{/each}}
-				</ul>
-			</details>
-		</li>
-		{{/if}}
-	</ul>
+    <!-- Changed width to stretch fully with responsive padding -->
+    <div class="navbar w-full px-6 lg:px-12 mx-auto">
+        <div class="flex-1">
+            <a href="{{page_path 'help_center'}}" class="w-max flex items-center text-sm text-white gap-2">
+                {{#if settings.show_brand_name}}
+                <span>
+                    {{settings.brand_name}}
+                </span>
+                {{/if}}
+                <img src="{{settings.logo}}" alt="{{settings.brand_name}}" class="w-24 h-auto pr-3 border-r-2 border-white" />
+                Web Store {{dc 'hc_-_help_center'}}
+            </a>
+        </div>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal hidden sm:flex items-center px-1">
+                <!-- Forced Dynamic Link to always show -->
+                <li>
+                    <a id="dynamic-link" href="" data-help-center="{{dc 'hc_-_help_center'}}"
+                        data-contact-text="{{dc 'hc_-_contact_support'}}"
+                        class="text-white hover:bg-brand hover:text-cta-text mr-4"></a>
+                </li>
+                <!-- Hardcoded Webstore URL -->
+                <li><a href="http://store.pvz.ea.com/international" target="_blank" class="text-white hover:bg-brand hover:text-cta-text">{{dc
+                        'hc_-_visit_webstore'}}</a></li>
+                {{#if alternative_locales}}
+                <div class="divider divider-horizontal after:bg-white before:bg-white mx-2"></div>
+                <li>
+                    <details>
+                        <summary
+                            class="font-normal text-white hover:bg-brand hover:text-cta-text focus:bg-brand focus:text-cta-text focus-within:bg-brand focus-within:text-cta-text active:bg-brand active:text-cta-text">
+                            {{current_locale.name}}</summary>
+                        <ul class="bg-white shadow-sm border border-gray-200 rounded-t-none p-2">
+                            {{#each alternative_locales}}
+                            <li><a href="{{url}}" dir="{{direction}}" class="text-brand-text">{{name}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </details>
+                </li>
+                {{/if}}
+            </ul>
+            <div id="hamburger-btn" tabindex="0" role="button" class="btn border-none bg-brand text-cta-text sm:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" stroke="currentColor"
+                    viewBox="0 0 256 256">
+                    <path
+                        d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z">
+                    </path>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!-- Menu drawer on mobile -->
+    <ul id="mobile-drawer" class="menu bg-base-200 rounded-box w-full hidden sm:hidden">
+        <li>
+            <a id="dynamic-link-mobile" href="" data-contact-text="{{dc 'hc_-_contact_support'}}"
+                data-help-center="{{dc 'hc_-_help_center'}}"></a>
+        </li>
+        <li><a href="http://store.pvz.ea.com/international" target="_blank">{{dc
+                'hc_-_visit_webstore'}}</a></li>
+        {{#if alternative_locales}}
+        <li>
+            <details>
+                <summary class="font-normal">{{current_locale.name}}</summary>
+                <ul class="p-2">
+                    {{#each alternative_locales}}
+                    <li><a href="{{url}}" dir="{{direction}}">{{name}}</a></li>
+                    {{/each}}
+                </ul>
+            </details>
+        </li>
+        {{/if}}
+    </ul>
 </header>
