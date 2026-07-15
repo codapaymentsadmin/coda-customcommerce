@@ -17,25 +17,29 @@
 	</div>
 </section> -->
 
-<section id="contact-support" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 pt-16 pb-12">
-	<div class="w-full">
-		{{dc 'hc_-_contact_support_element'}}
-	</div>
-</section>
+<div class="min-h-[65vh] flex flex-col justify-start">
 
-<section id="submit-request" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12">
-	<div class="w-full bg-white p-6 rounded-lg shadow-md">
-		{{request_form wysiwyg=true}}
-		<p id="ingame-warning" class="hidden text-black !text-sm mt-2">
-			<span>
-				<i class="ph ph-bold ph-warning text-yellow-500"></i>
-			</span>
-			{{dc 'hc_-_for_in-game_inquiries'}}
-			<span>
-				<a href="{{settings.ws_hc_link_url}}" target="_blank" class="warning-hc-link">
-					{{settings.ws_hc_link_label}}
-				</a>
-			</span>
-		</p>
-	</div>
-</section>
+    <section id="contact-support" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 pt-16 pb-12">
+        <div class="w-full">
+            {{dc 'hc_-_contact_support_element'}}
+        </div>
+    </section>
+
+    <section id="submit-request" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12">
+        <div class="w-full bg-white p-6 rounded-lg shadow-md">
+            {{request_form wysiwyg=true}}
+            <p id="ingame-warning" class="hidden text-black !text-sm mt-2">
+                <span>
+                    <i class="ph ph-bold ph-warning text-yellow-500"></i>
+                </span>
+                {{dc 'hc_-_for_in-game_inquiries'}}
+                <span>
+                    <a href="{{settings.ws_hc_link_url}}" target="_blank" class="warning-hc-link">
+                        {{settings.ws_hc_link_label}}
+                    </a>
+                </span>
+            </p>
+        </div>
+    </section>
+
+</div>
