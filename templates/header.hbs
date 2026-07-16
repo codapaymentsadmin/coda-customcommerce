@@ -73,11 +73,12 @@
 				{{#if alternative_locales}}
 				<div class="divider divider-horizontal after:bg-white before:bg-white"></div>
 				<li>
-					<details>
+					<details class="dropdown dropdown-end">
 						<summary
 							class="font-normal text-white hover:bg-brand hover:text-cta-text focus:bg-brand focus:text-cta-text focus-within:bg-brand focus-within:text-cta-text active:bg-brand active:text-cta-text">
 							{{current_locale.name}}</summary>
-						<ul class="bg-white shadow-sm border border-gray-200 rounded-t-none p-2">
+						<ul
+							class="w-64 dropdown-content bg-white shadow-sm border border-gray-200 rounded-t-none p-2 max-h-[400px] overflow-y-scroll">
 							{{#each alternative_locales}}
 							<li><a href="{{url}}" dir="{{direction}}" class="text-brand-text">{{name}}</a></li>
 							{{/each}}
