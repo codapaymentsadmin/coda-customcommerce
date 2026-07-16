@@ -14,6 +14,18 @@
   </div>
 </section>
 
+<!-- Bulletproof CSS block for Section Page Links -->
+<style>
+  /* Forces the article links to turn white when hovered */
+  .article-btn:hover {
+      color: #ffffff !important;
+  }
+  /* Forces the solid folder categories to ALWAYS be white */
+  .subsection-btn {
+      color: #ffffff !important;
+  }
+</style>
+
 <section id="main-content" class="flex-1 min-h-[50dvh] py-12 bg-white">
   <div class="flex flex-col max-w-5xl mx-auto px-4 xl:px-0">
     <!-- Breadcrumbs using Zendesk helper -->
@@ -21,14 +33,14 @@
       {{breadcrumbs}}
     </nav>
 
-
     <div class="w-full flex flex-col gap-4 mt-8">
       {{#if section.sections}}
       <div class="w-full mb-4 border-b border-gray-300 pb-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           {{#each section.sections}}
+          <!-- Changed to text-white to keep the folder permanently white -->
           <a href="{{url}}"
-            class="btn btn-md h-[60px] flex items-center justify-between bg-brand text-brand-text hover:bg-brand/90 transition-colors rounded-lg text-start text-sm font-medium shadow-md subsection-btn">
+            class="btn btn-md h-[60px] flex items-center justify-between bg-brand text-white hover:bg-brand/90 transition-colors rounded-lg text-start text-sm font-medium shadow-md subsection-btn">
             <div class="flex items-center gap-3">
               <i class="ph ph-folder text-lg"></i>
               <span class="line-clamp-1">{{name}}</span>
@@ -44,8 +56,9 @@
       <div class="w-full">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           {{#each section.articles}}
+          <!-- Changed to text-black so it's readable on the white background, CSS handles the hover -->
           <a id="article-{{id}}" href="{{url}}"
-            class="btn btn-md h-[50px] flex items-center justify-between border-2 border-brand bg-transparent text-brand-text hover:bg-brand !hover:text-white transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm article-btn">
+            class="btn btn-md h-[50px] flex items-center justify-between border-2 border-brand bg-transparent text-black hover:bg-brand transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm article-btn">
             <span class="w-full line-clamp-1">
               {{title}}
             </span>
