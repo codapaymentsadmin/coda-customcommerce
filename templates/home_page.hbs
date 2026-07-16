@@ -36,6 +36,18 @@
 </section>
 {{/if}}
 
+<!-- Bulletproof CSS block for Home Page Links -->
+<style>
+    /* Forces the article links to turn white when hovered */
+    .home-article-btn:hover {
+        color: #ffffff !important;
+    }
+    /* Forces the solid folder categories to ALWAYS be white */
+    .subsection-btn {
+        color: #ffffff !important;
+    }
+</style>
+
 <section id="self-service-articles-section" class="max-w-5xl max-md:w-full lg:w-full mx-auto px-4 md:px-10 py-12">
 	<div class="flex flex-col items-center">
 		{{dc 'hc_-_self_service_support'}}
@@ -64,8 +76,10 @@
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 					{{#each sections}}
-					{{#if (compare @index "<" 5)}} <a href="{{url}}"
-						class="btn btn-md h-[60px] flex items-center justify-between bg-brand text-brand-text hover:bg-brand/90 transition-colors rounded-lg text-start text-sm font-medium shadow-md subsection-btn">
+					{{#if (compare @index "<" 5)}} 
+                        <!-- Changed to text-white to keep it permanently white -->
+                        <a href="{{url}}"
+						class="btn btn-md h-[60px] flex items-center justify-between bg-brand text-white hover:bg-brand/90 transition-colors rounded-lg text-start text-sm font-medium shadow-md subsection-btn">
 						<div class="flex items-center gap-3">
 							<i class="ph ph-folder text-lg"></i>
 							<span class="line-clamp-1">{{name}}</span>
@@ -75,8 +89,10 @@
 						{{/if}}
 						{{/each}}
 						{{#each articles}}
-						{{#if (compare @index "<" 5)}} <a href="{{url}}"
-							class="btn btn-md h-[60px] flex items-center justify-between border-2 border-brand bg-white text-brand-text hover:bg-brand hover:text-brand-text transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm p-4">
+						{{#if (compare @index "<" 5)}} 
+                            <!-- Changed to text-black and added home-article-btn class to trigger the CSS hover -->
+                            <a href="{{url}}"
+							class="btn btn-md h-[60px] flex items-center justify-between border-2 border-brand bg-white text-black hover:bg-brand transition-colors rounded-lg text-start text-sm line-clamp-1 leading-4 shadow-sm p-4 home-article-btn">
 							<span class="text-left">{{title}}</span>
 							<i class="ph ph-arrow-right flex-shrink-0"></i>
 							</a>
@@ -91,18 +107,45 @@
 </section>
 
 <section id="self-service-articles-section" class="max-w-5xl max-md:w-full md:w-2/3 lg:w-full mx-auto px-4 py-12">
-	<div class="flex flex-col items-center gap-3">
-		<div class="p-4 flex items-center justify-center rounded-full bg-brand">
-			<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="000" viewBox="0 0 256 256">
-				<path
-					d="M144,180a16,16,0,1,1-16-16A16,16,0,0,1,144,180Zm92-52A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128ZM128,64c-24.26,0-44,17.94-44,40v4a12,12,0,0,0,24,0v-4c0-8.82,9-16,20-16s20,7.18,20,16-9,16-20,16a12,12,0,0,0-12,12v8a12,12,0,0,0,23.73,2.56C158.31,137.88,172,122.37,172,104,172,81.94,152.26,64,128,64Z">
-				</path>
-			</svg>
-		</div>
-		{{dc 'hc_-_need_assistance'}}
-		<a href="{{page_path 'new_request'}}"
-			class="btn bg-brand/80 hover:bg-brand border-none shadow-none text-cta-text mt-4">
-			{{dc 'hc_-_contact_support'}}
-		</a>
-	</div>
+    <div class="flex flex-col items-center gap-3">
+        <div class="p-4 flex items-center justify-center rounded-full bg-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="000" viewBox="0 0 256 256">
+                <path
+                    d="M144,180a16,16,0,1,1-16-16A16,16,0,0,1,144,180Zm92-52A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128ZM128,64c-24.26,0-44,17.94-44,40v4a12,12,0,0,0,24,0v-4c0-8.82,9-16,20-16s20,7.18,20,16-9,16-20,16a12,12,0,0,0-12,12v8a12,12,0,0,0,23.73,2.56C158.31,137.88,172,122.37,172,104,172,81.94,152.26,64,128,64Z">
+                </path>
+            </svg>
+        </div>
+        
+        <div id="dynamic-assistance-text" class="text-center text-main-text">
+            {{dc 'hc_-_need_assistance'}}
+        </div>
+        
+        <a href="{{page_path 'new_request'}}"
+            class="btn bg-brand/80 hover:bg-brand border-none shadow-none text-cta-text mt-4">
+            {{dc 'hc_-_contact_support'}}
+        </a>
+    </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const container = document.getElementById("dynamic-assistance-text");
+    if (container) {
+      const fullText = container.textContent.trim();
+      
+      // Finds the first question mark (supports standard ?, Arabic ؟, and Asian full-width ？)
+      const splitPoint = fullText.search(/[?؟？]/); 
+      
+      if (splitPoint !== -1) {
+        // Splits the text into two halves
+        const question = fullText.substring(0, splitPoint + 1).trim();
+        const statement = fullText.substring(splitPoint + 1).trim();
+        
+        // Re-injects the text using STRICT INLINE CSS to completely bypass Tailwind
+        container.innerHTML = 
+          '<span style="display: block; font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">' + question + '</span>' +
+          '<span style="display: block; font-size: 1rem; font-weight: normal;">' + statement + '</span>';
+      }
+    }
+  });
+</script>
