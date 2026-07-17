@@ -3,7 +3,8 @@
 	<div id="infobar-component"
 		class="critical infobar-component w-full flex items-center justify-center bg-crit-infobar-bg h-[60px]">
 		<div role="alert"
-			class="alert w-full bg-transparent flex items-center mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none shadow-none" style="max-width: 1280px;">
+			class="alert w-full bg-transparent flex items-center mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none shadow-none"
+			style="max-width: 1280px;">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"
 				class="!text-crit-infobar-text">
 				<path
@@ -23,7 +24,8 @@
 	<div id="infobar-component"
 		class="infobar-component w-full items-center justfy-center bg-infobar-bg h-[50px] sm:h-[40px]">
 		<div role="alert"
-			class="alert bg-transparent flex items-center mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none" style="max-width: 1280px;">
+			class="alert bg-transparent flex items-center mx-auto border-x-0 border-y-0 px-4 py-2 rounded-none"
+			style="max-width: 1280px;">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"
 				class="!text-infobar-text">
 				<path
@@ -44,7 +46,7 @@
 </section>
 
 <header class="w-full bg-navbar-bg shadow-lg">
-    <div class="navbar mx-auto px-4" style="max-width: 1152px;">
+	<div class="navbar mx-auto px-4" style="max-width: 1152px;">
 		<div class="flex-1">
 			<a href="{{page_path 'help_center'}}" class="w-max flex items-center text-sm text-white gap-2">
 				{{#if settings.show_brand_name}}
@@ -52,7 +54,8 @@
 					{{settings.brand_name}}
 				</span>
 				{{/if}}
-				<img src="{{settings.logo}}" alt="{{settings.brand_name}}" class="pr-3 border-r-2 border-white object-contain" style="height: 40px; width: auto;" />
+				<img src="{{settings.logo}}" alt="{{settings.brand_name}}" class="pr-3 border-r-2 border-white object-contain"
+					style="height: 40px; width: auto;" />
 				Web Store {{dc 'hc_-_help_center'}}
 			</a>
 		</div>
@@ -60,8 +63,7 @@
 			<ul class="menu menu-horizontal hidden sm:flex items-center px-1">
 				<li>
 					<a id="dynamic-link" href="" data-help-center="{{dc 'hc_-_help_center'}}"
-						data-contact-text="{{dc 'hc_-_contact_support'}}"
-						class="text-white hover:bg-brand hover:text-cta-text"></a>
+						data-contact-text="{{dc 'hc_-_contact_support'}}" class="text-white hover:bg-brand hover:text-cta-text"></a>
 				</li>
 				<!-- <li><a href="http://store.pvz.ea.com/international" target="_blank" class="text-white hover:bg-brand hover:text-cta-text">{{dc 'hc_-_visit_webstore'}}</a></li> -->
 				{{#if alternative_locales}}
@@ -74,7 +76,8 @@
 						<ul
 							class="w-64 dropdown-content bg-white shadow-sm border border-gray-200 rounded-t-none p-2 max-h-[400px] overflow-y-scroll">
 							{{#each alternative_locales}}
-							<li><a href="{{url}}" dir="{{direction}}" class="text-brand-text">{{name}}</a></li>
+							<li><a href="{{url}}" dir="{{direction}}"
+									class="text-brand hover:bg-brand hover:text-brand-text">{{name}}</a></li>
 							{{/each}}
 						</ul>
 					</details>
