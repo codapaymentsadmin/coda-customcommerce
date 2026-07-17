@@ -1,7 +1,7 @@
 {
 	"name": "Coda Custom Commerce Theme",
 	"author": "Operations Optimization",
-	"version": "1.1.9",
+	"version": "1.2.0",
 	"api_version": 3,
 	"default_locale": "en-us",
 	"settings": [
@@ -154,28 +154,28 @@
 					"type": "color",
 					"description": "navbar_background_color_description",
 					"label": "navbar_background_color_label",
-					"value": "#006F96"
+					"value": "#000"
 				},
 				{
 					"identifier": "footer_background_color",
 					"type": "color",
 					"description": "footer_background_color_description",
 					"label": "footer_background_color_label",
-					"value": "#072C3E"
+					"value": "#000"
 				},
 				{
 					"identifier": "accordion_background_color",
 					"type": "color",
 					"description": "accordion_background_color_description",
 					"label": "accordion_background_color_label",
-					"value": "#0C3A50"
+					"value": "#fff"
 				},
 				{
 					"identifier": "accordion_text_color",
 					"type": "color",
 					"description": "accordion_text_color_description",
 					"label": "accordion_text_color_label",
-					"value": "#FFF"
+					"value": "#000"
 				},
 				{
 					"identifier": "cta_text_color",
@@ -404,14 +404,14 @@
 					"type": "checkbox",
 					"description": "-",
 					"label": "Show terms link?",
-					"value": false
+					"value": true
 				},
 				{
 					"identifier": "show_pp_link",
 					"type": "checkbox",
 					"description": "-",
 					"label": "Show privacy link?",
-					"value": false
+					"value": true
 				},
 				{
 					"identifier": "show_popular_section",

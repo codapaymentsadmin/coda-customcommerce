@@ -1,13 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const inquirySelect = document.getElementById(
-		"request_custom_fields_10519906052751"
+		"request_custom_fields_10519906052751",
 	);
 	const warningText = document.getElementById("ingame-warning");
 	const submitButton = document.querySelector(
-		'input[type="submit"][name="commit"]'
+		'input[type="submit"][name="commit"]',
 	);
-
-	console.log("Form script loaded.");
 
 	if (inquirySelect) {
 		inquirySelect.addEventListener("change", () => {
