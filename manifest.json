@@ -119,7 +119,7 @@
 					"type": "color",
 					"description": "brand_text_color_description",
 					"label": "brand_text_color_label",
-					"value": "#280031"
+					"value": "#fff"
 				},
 				{
 					"identifier": "text_color",
