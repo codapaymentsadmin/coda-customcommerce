@@ -69,7 +69,7 @@
           <div class="article-body">{{article.body}}</div>
 
           {{#if (compare article.content_tags.length ">" 0)}}
-          <section class="content-tags">
+          <section class="content-tags hidden">
             <p>{{t 'content_tags_label'}}</p>
             <ul class="content-tag-list">
               {{#each article.content_tags}}
@@ -103,6 +103,25 @@
             </ul>
           </div>
           {{/if}}
+        </div>
+      </section>
+
+      <section id="article-footer">
+        {{#with article}}
+        <div class="article-votes">
+          <span class="text-xl font-semibold" id="article-votes-label">{{t 'was_this_article_helpful'}}</span>
+          <div class="mt-4" role="group" aria-labelledby="article-votes-label">
+            {{vote 'up' role='radio' class='btn btn-neutral btn-outline' selected_class="btn-active"}}
+            {{vote 'down' role='radio' class='btn btn-neutral btn-outline' selected_class="btn-active"}}
+          </div>
+          <div class="mt-4">
+            {{vote 'label' class='text-sm'}}
+          </div>
+        </div>
+        {{/with}}
+
+        <div class="article-relatives">
+          {{related_articles}}
         </div>
       </section>
     </article>
