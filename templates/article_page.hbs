@@ -42,8 +42,8 @@
       <div class="flex-1 flex flex-col mt-2 gap-2">
         {{#each section.articles}}
         <a href="{{url}}"
-          class="btn btn-xl flex items-center justify-start {{#is id ../article.id}}bg-brand text-white{{else}}border-2 bg-transparent border-brand text-brand-text
-          hover:bg-brand hover:border-brand hover:text-white {{/is}} transition-colors rounded-lg text-start text-xs sm:text-sm leading-4 article-sidebar-btn">
+          class="btn btn-xl flex items-center justify-start {{#is id ../article.id}}bg-brand text-white{{else}}border-2 bg-transparent border-brand text-brand
+          hover:bg-brand hover:border-brand hover:text-brand-text {{/is}} transition-colors rounded-lg text-start text-xs sm:text-sm leading-4 article-sidebar-btn">
           {{title}}
         </a>
         {{/each}}
