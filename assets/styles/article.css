@@ -395,3 +395,15 @@
 		@apply !list-disc !pl-1 !text-sm;
 	}
 }
+
+.article-relatives {
+	section.related-articles {
+		ul {
+			@apply !list-none ml-0 mt-4 pl-0;
+
+			li a {
+				@apply hover:underline;
+			}
+		}
+	}
+}

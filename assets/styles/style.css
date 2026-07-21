@@ -2,6 +2,8 @@
 @import "./variables.css";
 @import "tailwindcss";
 @plugin "daisyui";
+@import "./article.css";
+@import "./forms.css";
 
 @font-face {
 	font-family: "scout_black";
@@ -66,9 +68,6 @@
 	--font-ott: "ott";
 	--font-inter: "Inter, sans-serif";
 }
-
-@import "./article.css";
-@import "./forms.css";
 
 @layer base {
 	html {
