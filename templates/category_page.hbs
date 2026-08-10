@@ -65,17 +65,18 @@
 </section>
 
 <script defer type="text/javascript" src="https://prod-au-druid-cdn.azureedge.net/v2/druid_webchat_v2.js"></script>
-<script data-druid-language="ms" type="text/javascript">
-  const botId = "{{settings.druid_bot_id}}";
-  const botQueryParams = "{{settings.druid_query_params}}";
-
+<script data-druid-language="{{settings.druid_lang}}" type="text/javascript">
   document.addEventListener("DOMContentLoaded", function (event) {
+    const botId = "{{settings.druid_bot_id}}".trim();
+    const botQueryParams = "{{settings.druid_query_params}}".split("amp;").join('');
+    const druidLang = "{{settings.druid_lang}}".trim();
+
     DruidWebchat_v2.init({
       botId: botId,
       baseUrl: "https://druidapi.au.druidplatform.com",
       queryParams: botQueryParams,
       UI: {
-        containerElement: document.getElementById('ask-codee'),
+        containerElement: document.getElementById('ask-codee')
       }
     });
   });
